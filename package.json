@@ -17,10 +17,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Grax32/Grax32.github.io.git"
+    "url": "https://github.com/Grax32/pages-assemble"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["static"],
+  "author": "David Walker <dwalker-git@grax32.com> (https://grax32.com/)",
   "license": "ISC",
   "dependencies": {
     "@types/command-line-usage": "^5.0.1",
