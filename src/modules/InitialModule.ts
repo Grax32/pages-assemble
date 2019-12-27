@@ -1,13 +1,13 @@
 import grayMatter from 'gray-matter';
 import fs from 'fs';
-import path, { sep } from 'path';
+import path from 'path';
+import glob from 'glob';
 
 import IBuildModule from '../interfaces/IBuildModule';
 import ResultContext from '../models/ResultContext';
 import BuildContext from '../models/BuildContext';
 import OutputType from '../models/OutputType';
 import BuildAsset from '../models/BuildAsset';
-import { stringify } from 'querystring';
 
 export default class InitialModule implements IBuildModule {
   private outputTypeValues = Object.values(OutputType);
@@ -17,6 +17,14 @@ export default class InitialModule implements IBuildModule {
     if (context.options.verbose) {
       console.log('Entering InitialModule');
     }
+
+    // delete old output
+    const outputGlobPattern = context.options.output + '/**';
+    glob.sync(outputGlobPattern, { nodir: true, dot: true }).forEach(v => fs.unlinkSync(v));
+    glob
+      .sync(outputGlobPattern + '/')
+      .sort((a, b) => b.length - a.length) // remove the deepest folders first
+      .forEach(v => fs.rmdirSync(v));
 
     const getSourcePath = (asset: BuildAsset) => path.join(context.options.source, asset.path);
     const getOutputType = (filePath: string, matterData: { [key: string]: any }): OutputType => {

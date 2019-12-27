@@ -13,6 +13,7 @@ import ValidateOptions from './utility/validate-options';
 
 import StaticSiteModule from './modules/StaticSiteModule';
 import SimpleTemplateModule from './modules/SimpleTemplateModule';
+import VashRazorTemplateModule from './modules/VashRazorTemplateModule';
 import MarkdownModule from './modules/MarkdownModule';
 import InitialModule from './modules/InitialModule';
 import FinalModule from './modules/FinalModule';
@@ -108,9 +109,10 @@ if (options.help) {
   moduleMap.set(StaticSiteModule.name, StaticSiteModule);
   moduleMap.set(MarkdownModule.name, MarkdownModule);
   moduleMap.set(SimpleTemplateModule.name, SimpleTemplateModule);
+  moduleMap.set(VashRazorTemplateModule.name, VashRazorTemplateModule);
   moduleMap.set(FinalModule.name, FinalModule);
 
-  const modules = [InitialModule.name, StaticSiteModule.name, MarkdownModule.name, SimpleTemplateModule.name, FinalModule.name];
+  const modules = [InitialModule.name, StaticSiteModule.name, MarkdownModule.name, VashRazorTemplateModule.name, FinalModule.name];
   let lastInvoke = (context: BuildContext) => new ResultContext();
   let module: IBuildModule | undefined;
 

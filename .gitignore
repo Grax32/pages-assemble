@@ -1,5 +1,6 @@
 lib
 build
+static-basedir/build
 
 # Logs
 logs
