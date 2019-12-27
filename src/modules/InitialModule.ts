@@ -48,8 +48,6 @@ export default class InitialModule implements IBuildModule {
       return outputType;
     };
 
-    const frontMatterSuperset: { [key: string]: string[] } = {};
-
     context.assets.forEach(asset => {
       const sourcePath = getSourcePath(asset);
       const separator = '---';
@@ -69,31 +67,19 @@ export default class InitialModule implements IBuildModule {
       asset.frontMatter = matterData;
       asset.outputType = outputType;
 
-      for (const key of Object.keys(matterData)) {
-        const values = frontMatterSuperset[key] || [];
-        values.push(matterData[key]);
-        frontMatterSuperset[key] = values;
+      for (const tag of matterData.tags || []) {
+        InitialModule.getCollection(context, tag).push(asset);
       }
     });
 
-    console.log('frontmatter');
-    for (const key of Object.keys(frontMatterSuperset)) {
-      const values = frontMatterSuperset[key];
-      values.sort();
-      values.forEach((v,index)=> {
-          if (Array.isArray(v)) {
-            values[index] =  v.join(',');
-          }
-      });
-      console.log('---');
-      console.log(key);
-      values
-        .filter((v, index) => index === values.indexOf(v))
-        .forEach(v => console.log('   ' + v + ':' + values.filter(x => x === v).length));
+    return this.next(context);
+  }
+
+  private static getCollection(context: BuildContext, collectionKey: string): BuildAsset[] {
+    if (!context.collections[collectionKey]) {
+      context.collections[collectionKey] = [];
     }
 
-    process.exit();
-
-    return this.next(context);
+    return context.collections[collectionKey];
   }
 }

@@ -136,5 +136,5 @@ if (options.help) {
   }
 
   const result = module.invoke(context);
-  //console.log(context, result);
+  console.log(context, result);
 }
