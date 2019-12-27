@@ -48,6 +48,8 @@ export default class InitialModule implements IBuildModule {
       return outputType;
     };
 
+    const frontMatterSuperset: { [key: string]: string[] } = {};
+
     context.assets.forEach(asset => {
       const sourcePath = getSourcePath(asset);
       const separator = '---';
@@ -66,7 +68,31 @@ export default class InitialModule implements IBuildModule {
 
       asset.frontMatter = matterData;
       asset.outputType = outputType;
+
+      for (const key of Object.keys(matterData)) {
+        const values = frontMatterSuperset[key] || [];
+        values.push(matterData[key]);
+        frontMatterSuperset[key] = values;
+      }
     });
+
+    console.log('frontmatter');
+    for (const key of Object.keys(frontMatterSuperset)) {
+      const values = frontMatterSuperset[key];
+      values.sort();
+      values.forEach((v,index)=> {
+          if (Array.isArray(v)) {
+            values[index] =  v.join(',');
+          }
+      });
+      console.log('---');
+      console.log(key);
+      values
+        .filter((v, index) => index === values.indexOf(v))
+        .forEach(v => console.log('   ' + v + ':' + values.filter(x => x === v).length));
+    }
+
+    process.exit();
 
     return this.next(context);
   }
