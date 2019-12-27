@@ -1,4 +1,4 @@
-export interface IPageAssembleOptions {
+export default interface IPageAssembleOptions {
   baseDirectory: string;
   source: string;
   output: string;

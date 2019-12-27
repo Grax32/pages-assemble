@@ -1,12 +1,12 @@
-import { IPageAssembleOptions } from '../interfaces/IPageAssembleOptions';
-import * as fs from 'fs';
+import IPageAssembleOptions from '../interfaces/IPageAssembleOptions';
+import fs from 'fs';
 
 interface optionValue {
   value: any;
   description: string;
 }
 
-export class ValidateOptions {
+export default class ValidateOptions {
   public static validate(options: IPageAssembleOptions) {
     if (!options) {
       this.exitWithError('Options must not be null');
@@ -21,7 +21,6 @@ export class ValidateOptions {
     this.require(outputOption);
     this.require(templateOption);
 
-    this.requireDirectoryExists(baseDirectoryOption);
     this.requireDirectoryExists(sourceOption);
     this.forceDirectoryExists(outputOption);
   }

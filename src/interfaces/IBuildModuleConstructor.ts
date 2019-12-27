@@ -1,5 +1,5 @@
-import { IBuildModule } from './IBuildModule';
+import IBuildModule from './IBuildModule';
 
-export interface IBuildModuleConstructor {
+export default interface IBuildModuleConstructor {
   new (): IBuildModule;
 }

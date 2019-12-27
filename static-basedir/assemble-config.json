@@ -1,0 +1,9 @@
+{
+  "source": "static-source",
+  "output": "build",
+  "ignore": ["**/node_modules/**"],
+  "modules": ["static"],
+  "static": ["**/*.jpg"],
+  "verbose": false,
+  "template": "_templates/default.html"
+}

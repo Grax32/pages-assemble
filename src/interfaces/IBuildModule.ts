@@ -1,7 +1,7 @@
-import { BuildContext } from '../models/buildcontext';
-import { ResultContext } from '../models/resultcontext';
+import BuildContext from "../models/BuildContext";
+import ResultContext from "../models/ResultContext";
 
-export interface IBuildModule {
+export default interface IBuildModule {
   next: (context: BuildContext) => ResultContext;
   invoke: (context: BuildContext) => ResultContext;
 }

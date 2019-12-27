@@ -1,0 +1,3 @@
+<html><body><p><img src="https://www.gravatar.com/avatar/a8c11640fc00c7c10db85d6e725993e5?s=100" alt="David Walker"></p>
+<p>David Walker is a Secure Software Consultant, a Certified Secure Software Lifecycle Professional (CSSLP), and a <a href="https://www.scrum.org/professional-scrum-master-i-certification">Professional Scrum Master</a>. He believes in secure and reliable software and productive happy teams. He lives in Orlando with his lovely wife Lynn and his 2 dogs.</p>
+</body></html>

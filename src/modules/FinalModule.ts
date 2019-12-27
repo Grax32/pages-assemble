@@ -1,11 +1,13 @@
-import { BuildContext } from '../models/buildcontext';
-import { IBuildModule } from '../interfaces/IBuildModule';
-import { ResultContext } from '../models/resultcontext';
+import IBuildModule from '../interfaces/IBuildModule';
+import BuildContext from '../models/BuildContext';
+import ResultContext from '../models/ResultContext';
 
-export class FinalModule implements IBuildModule {
+export default class FinalModule implements IBuildModule {
   public next!: (context: BuildContext) => ResultContext;
   public invoke(context: BuildContext): ResultContext {
-    console.log('Final Module');
-    return {};
+    if (context.options.verbose) {
+      console.log('Final Module');
+    }
+    return new ResultContext();
   }
 }

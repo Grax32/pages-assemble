@@ -1,1 +1,2 @@
-export class ResultContext{}
+export default class ResultContext {
+}

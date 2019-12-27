@@ -1,9 +1,9 @@
-import { IPageAssembleOptions } from '../interfaces/IPageAssembleOptions';
+import IPageAssembleOptions from '../interfaces/IPageAssembleOptions';
 interface optionValue {
     value: any;
     description: string;
 }
-export declare class ValidateOptions {
+export default class ValidateOptions {
     static validate(options: IPageAssembleOptions): void;
     static forceDirectoryExists(outputOption: optionValue): void;
     private static require;

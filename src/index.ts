@@ -2,21 +2,25 @@ import commandLineArgs from 'command-line-args';
 import commandLineUsage from 'command-line-usage';
 import { Minimatch } from 'minimatch';
 
-import * as fs from 'fs';
-import * as glob from 'glob';
-import * as path from 'path';
+import fs from 'fs';
+import glob from 'glob';
+import path from 'path';
 
-import * as packageJson from './package.json';
-import { IPageAssembleOptions } from './interfaces/IPageAssembleOptions';
-import { BuildContext } from './models/buildcontext';
-import { ValidateOptions } from './utility/validate-options';
+import packageJson from './package-reference.json';
+import IPageAssembleOptions from './interfaces/IPageAssembleOptions';
+import BuildContext from './models/BuildContext';
+import ValidateOptions from './utility/validate-options';
 
-import { StaticSiteModule } from './modules/StaticSiteModule';
-import { FinalModule } from './modules/FinalModule';
+import StaticSiteModule from './modules/StaticSiteModule';
+import SimpleTemplateModule from './modules/SimpleTemplateModule';
+import MarkdownModule from './modules/MarkdownModule';
+import InitialModule from './modules/InitialModule';
+import FinalModule from './modules/FinalModule';
 
-import { ResultContext } from './models/resultcontext.js';
-import { IBuildModule } from './interfaces/IBuildModule';
-import { IBuildModuleConstructor } from './interfaces/IBuildModuleConstructor';
+import ResultContext from './models/ResultContext';
+import IBuildModule from './interfaces/IBuildModule';
+import IBuildModuleConstructor from './interfaces/IBuildModuleConstructor';
+import BuildAsset from './models/BuildAsset';
 
 const configFileName = 'assemble-config.json';
 
@@ -36,6 +40,8 @@ const options = <IPageAssembleOptions>commandLineArgs(optionDefinitions);
 
 if (options.baseDirectory) {
   process.chdir(options.baseDirectory);
+} else {
+  options.baseDirectory = '.';
 }
 
 if (fs.existsSync(configFileName)) {
@@ -57,7 +63,7 @@ if (fs.existsSync(configFileName)) {
 }
 
 if (options.verbose) {
-  console.log('Configured Options', options);
+  console.log('Prevalidated Options', options);
 }
 
 ValidateOptions.validate(options);
@@ -79,27 +85,32 @@ if (options.help) {
   console.log(usage);
   process.exit();
 } else {
-  console.log(options);
+  if (options.verbose) {
+    console.log('Running options', options);
+  }
 
   const isStatic = (path: string): boolean => options.static.some(pattern => new Minimatch(pattern).match(path));
   const isIgnored = (path: string): boolean => options.ignore.some(pattern => new Minimatch(pattern).match(path));
-  const getAllAssets = (options: IPageAssembleOptions): { path: string; isStatic: boolean }[] => {
+  const getAllAssets = (options: IPageAssembleOptions): BuildAsset[] => {
     const sourceGlobPattern = options.source.replace(/\\/g, '/') + '/**';
     const sourcePattern = glob.sync(options.source)[0];
-    const removeSourceFromFilename = (file:string) => file.replace(new RegExp('^' + sourcePattern), '');
+    const removeSourceFromFilename = (file: string) => file.replace(new RegExp('^' + sourcePattern), '');
 
     return glob
       .sync(sourceGlobPattern, { nodir: true })
       .map(removeSourceFromFilename)
-      .map(file => ({ path: file, isStatic: isStatic(file), isIgnored: isIgnored(file) }))
-      .filter(asset => !isIgnored(asset.path));
+      .filter(file => !isIgnored(file))
+      .map(file => new BuildAsset(file, isStatic(file)));
   };
 
   const moduleMap: Map<string, IBuildModuleConstructor> = new Map<string, IBuildModuleConstructor>();
+  moduleMap.set(InitialModule.name, InitialModule);
   moduleMap.set(StaticSiteModule.name, StaticSiteModule);
+  moduleMap.set(MarkdownModule.name, MarkdownModule);
+  moduleMap.set(SimpleTemplateModule.name, SimpleTemplateModule);
   moduleMap.set(FinalModule.name, FinalModule);
 
-  const modules = [StaticSiteModule.name, FinalModule.name];
+  const modules = [InitialModule.name, StaticSiteModule.name, MarkdownModule.name, SimpleTemplateModule.name, FinalModule.name];
   let lastInvoke = (context: BuildContext) => new ResultContext();
   let module: IBuildModule | undefined;
 
@@ -121,6 +132,7 @@ if (options.help) {
     console.error('No modules configured');
     process.exit(1);
   }
-  console.log('module', module);
-  module.invoke(context);
+
+  const result = module.invoke(context);
+  //console.log(context, result);
 }

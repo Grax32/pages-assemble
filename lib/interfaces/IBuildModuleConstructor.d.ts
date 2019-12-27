@@ -1,4 +1,4 @@
-import { IBuildModule } from './IBuildModule';
-export interface IBuildModuleConstructor {
+import IBuildModule from './IBuildModule';
+export default interface IBuildModuleConstructor {
     new (): IBuildModule;
 }
