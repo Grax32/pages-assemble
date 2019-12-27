@@ -7,6 +7,7 @@
   "scripts": {
     "clean": "rimraf lib",
     "build": "node prebuild.js && tsc",
+    "netlify": "node prebuild.js && tsc --build -v -b static-basedir",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
