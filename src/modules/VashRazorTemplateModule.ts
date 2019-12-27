@@ -16,7 +16,7 @@ export default class VashRazorTemplateModule implements IBuildModule {
     context.assets
       .filter(v => v.outputType === OutputType.html)
       .forEach(asset => {
-        const outputTemplate = '<html><body>@model.asset.sections.main</body></html>';
+        const outputTemplate = '<html><body>@html.raw(model.asset.sections.main)</body></html>';
         const compiled = Vash.compile(outputTemplate);
         const result = compiled({ asset: asset});
         const link = <string>(asset.frontMatter.permalink || asset.path.replace(/\.md$/, ''));
