@@ -11,11 +11,12 @@ import IPageAssembleOptions from './interfaces/IPageAssembleOptions';
 import BuildContext from './models/BuildContext';
 import ValidateOptions from './utility/validate-options';
 
+import InitialModule from './modules/InitialModule';
+import MarkdownModule from './modules/MarkdownModule';
 import StaticSiteModule from './modules/StaticSiteModule';
 import SimpleTemplateModule from './modules/SimpleTemplateModule';
+import CompileVashRazorTemplateModule from './modules/CompileVashRazorTemplateModule.js';
 import VashRazorTemplateModule from './modules/VashRazorTemplateModule';
-import MarkdownModule from './modules/MarkdownModule';
-import InitialModule from './modules/InitialModule';
 import FinalModule from './modules/FinalModule';
 
 import ResultContext from './models/ResultContext';
@@ -105,24 +106,37 @@ if (options.help) {
   };
 
   const moduleMap: Map<string, IBuildModuleConstructor> = new Map<string, IBuildModuleConstructor>();
-  moduleMap.set(InitialModule.name, InitialModule);
-  moduleMap.set(StaticSiteModule.name, StaticSiteModule);
-  moduleMap.set(MarkdownModule.name, MarkdownModule);
-  moduleMap.set(SimpleTemplateModule.name, SimpleTemplateModule);
-  moduleMap.set(VashRazorTemplateModule.name, VashRazorTemplateModule);
-  moduleMap.set(FinalModule.name, FinalModule);
 
-  const modules = [InitialModule.name, StaticSiteModule.name, MarkdownModule.name, VashRazorTemplateModule.name, FinalModule.name];
+  const modulesTypes: IBuildModuleConstructor[] = [
+    InitialModule,
+    StaticSiteModule,
+    MarkdownModule,
+    SimpleTemplateModule,
+    CompileVashRazorTemplateModule,
+    FinalModule,
+  ];
+
+  console.log(modulesTypes);
+  modulesTypes.forEach(v => moduleMap.set(v.name, v));
+
   let lastInvoke = (context: BuildContext) => new ResultContext();
   let module: IBuildModule | undefined;
 
-  for (let loopModuleName = modules.pop(); loopModuleName; loopModuleName = modules.pop()) {
-    const builder = moduleMap.get(loopModuleName)!;
-    const thisModule = new builder();
+  for (let loopModule = modulesTypes.pop(); loopModule; loopModule = modulesTypes.pop()) {
+console.log('looping',loopModule);
+    const thisModule = new loopModule();
+    const thisModuleName = loopModule.name;
     const invoke = lastInvoke;
-
     thisModule.next = context => invoke(context);
-    lastInvoke = context => thisModule.invoke(context);
+
+    const invokeThis = (context: BuildContext): ResultContext => {
+      if (options.verbose) {
+        console.log('Entering module ' + thisModuleName);
+      }
+      return thisModule.invoke(context);
+    };
+
+    lastInvoke = invokeThis;
 
     module = thisModule;
   }
@@ -136,5 +150,5 @@ if (options.help) {
   }
 
   const result = module.invoke(context);
-  console.log(context, result);
+  // console.log(context, result);
 }

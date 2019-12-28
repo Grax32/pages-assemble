@@ -3,4 +3,5 @@ enum OutputType {
   html = 'html',
   binary = 'binary',
 }
+
 export default OutputType;

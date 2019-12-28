@@ -1,4 +1,5 @@
-import OutputType from './OutputType';
+import OutputType from '../models/OutputType';
+
 export default class BuildAsset {
   public outputType: OutputType;
   public textContent: string;
