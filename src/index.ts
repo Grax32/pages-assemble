@@ -6,23 +6,17 @@ import fs from 'fs';
 import glob from 'glob';
 import path from 'path';
 
+import * as interfaces from './interfaces/index';
+import * as modules from './modules/buildModules';
+
 import packageJson from './package-reference.json';
-import IPageAssembleOptions from './interfaces/IPageAssembleOptions';
 import BuildContext from './models/BuildContext';
 import ValidateOptions from './utility/validate-options';
 
-import InitialModule from './modules/InitialModule';
-import MarkdownModule from './modules/MarkdownModule';
-import StaticSiteModule from './modules/StaticSiteModule';
-import SimpleTemplateModule from './modules/SimpleTemplateModule';
-import CompileVashRazorTemplateModule from './modules/CompileVashRazorTemplateModule.js';
-import VashRazorTemplateModule from './modules/VashRazorTemplateModule';
-import FinalModule from './modules/FinalModule';
-
 import ResultContext from './models/ResultContext';
-import IBuildModule from './interfaces/IBuildModule';
-import IBuildModuleConstructor from './interfaces/IBuildModuleConstructor';
-import BuildAsset from './models/BuildAsset';
+import SourceFileContext from './models/SourceFileContext';
+import ConsoleLogger from './services/ConsoleLogger.js';
+import LogLevel from './models/LogLevel.js';
 
 const configFileName = 'assemble-config.json';
 
@@ -38,7 +32,7 @@ optionDefinitions.push({ alias: 'h', name: 'help', type: Boolean });
 optionDefinitions.push({ alias: 'v', name: 'verbose', type: Boolean });
 optionDefinitions.push({ alias: 't', name: 'template', type: String, defaultValue: '_templates/default.html' });
 
-const options = <IPageAssembleOptions>commandLineArgs(optionDefinitions);
+const options = <interfaces.IPageAssembleOptions>commandLineArgs(optionDefinitions);
 
 if (options.baseDirectory) {
   process.chdir(options.baseDirectory);
@@ -48,7 +42,7 @@ if (options.baseDirectory) {
 
 if (fs.existsSync(configFileName)) {
   const configFile = fs.readFileSync(configFileName, { encoding: 'utf8' });
-  const configFileOptions = <IPageAssembleOptions>JSON.parse(configFile);
+  const configFileOptions = <interfaces.IPageAssembleOptions>JSON.parse(configFile);
 
   if (options.verbose) {
     console.log('Configuration File', configFileOptions);
@@ -93,7 +87,7 @@ if (options.help) {
 
   const isStatic = (path: string): boolean => options.static.some(pattern => new Minimatch(pattern).match(path));
   const isIgnored = (path: string): boolean => options.ignore.some(pattern => new Minimatch(pattern).match(path));
-  const getAllAssets = (options: IPageAssembleOptions): BuildAsset[] => {
+  const getAllAssets = (options: interfaces.IPageAssembleOptions): SourceFileContext[] => {
     const sourceGlobPattern = options.source.replace(/\\/g, '/') + '/**';
     const sourcePattern = glob.sync(options.source)[0];
     const removeSourceFromFilename = (file: string) => file.replace(new RegExp('^' + sourcePattern), '');
@@ -102,28 +96,26 @@ if (options.help) {
       .sync(sourceGlobPattern, { nodir: true })
       .map(removeSourceFromFilename)
       .filter(file => !isIgnored(file))
-      .map(file => new BuildAsset(file, isStatic(file)));
+      .map(file => new SourceFileContext(file, isStatic(file)));
   };
 
-  const moduleMap: Map<string, IBuildModuleConstructor> = new Map<string, IBuildModuleConstructor>();
+  const moduleMap = new Map<string, interfaces.IBuildModuleStatic>();
 
-  const modulesTypes: IBuildModuleConstructor[] = [
-    InitialModule,
-    StaticSiteModule,
-    MarkdownModule,
-    SimpleTemplateModule,
-    CompileVashRazorTemplateModule,
-    FinalModule,
+  const modulesTypes: interfaces.IBuildModuleStatic[] = [
+    modules.InitialModule,
+    modules.StaticSiteModule,
+    modules.MarkdownModule,
+    modules.SimpleTemplateModule,
+    modules.CompileVashRazorTemplateModule,
+    modules.FinalModule,
   ];
 
-  console.log(modulesTypes);
   modulesTypes.forEach(v => moduleMap.set(v.name, v));
 
   let lastInvoke = (context: BuildContext) => new ResultContext();
-  let module: IBuildModule | undefined;
+  let module: interfaces.IBuildModule | undefined;
 
-  for (let loopModule = modulesTypes.pop(); loopModule; loopModule = modulesTypes.pop()) {
-console.log('looping',loopModule);
+  for (const loopModule of modulesTypes) {
     const thisModule = new loopModule();
     const thisModuleName = loopModule.name;
     const invoke = lastInvoke;

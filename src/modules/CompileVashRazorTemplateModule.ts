@@ -1,21 +1,22 @@
 const Vash = require('vash');
-import fs from 'fs';
-import path from 'path';
-
-import { injectable } from '../decorators/injectable';
+import 'reflect-metadata';
+import 'fs';
+import 'path';
+import { injectable } from 'inversify';
 
 import IBuildModule from '../interfaces/IBuildModule';
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
 import OutputType from '../models/OutputType';
 import BaseModule from './BaseModule';
+import ILogger from '../interfaces/ILogger';
 
-@injectable<CompileVashRazorTemplateModule, IBuildModule>()
 export default class CompileVashRazorTemplateModule extends BaseModule {
   public next!: (context: BuildContext) => ResultContext;
   public invoke(context: BuildContext): ResultContext {
     if (context.options.verbose) {
-      console.log('Entering SimpleTemplateModule');
+      console.log('Entering CompileVashRazorTemplateModule');
+      console.log(Reflect.getMetadata('injector:parameterTypes', CompileVashRazorTemplateModule));
     }
 
     context.assets

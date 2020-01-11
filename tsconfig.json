@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "plugins": [
+      { "transform": "ts-nameof", "type": "raw" },
+      { "transform": "./plugins/lib/decorate-interface.js" },
+    ],
+    "target": "ESNext",
     "lib": ["es6", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "types": ["reflect-metadata"],
     "declaration": true,
     "outDir": "./lib",
     "strict": true,

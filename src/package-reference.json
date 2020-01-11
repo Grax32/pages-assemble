@@ -5,15 +5,17 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "clean": "rimraf lib",
-    "build": "node prebuild.js && tsc",
-    "netlify": "node prebuild.js && tsc --build && node lib/index.js -v -b static-basedir",
+    "prebuild": "node prebuild.js && npm run clean && npm run clean:compiler-plugins && npm run build:compiler-plugins",
+    "clean": "rimraf lib && mkdir lib",
+    "build": "ttsc",
+    "netlify": "npm run build && node lib -v -b static-basedir",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "demo": "npm run build && node lib/index.js",
-    "start": "node lib/index.js",
-    "test-deploy": "npm run build && node lib/index.js -b static-basedir -o static-dist "
+    "demo": "npm run build && node lib",
+    "start": "node lib",
+    "build:compiler-plugins": "tsc --project plugins",
+    "clean:compiler-plugins": "rimraf plugins/lib"
   },
   "files": [
     "lib/**/*"
@@ -40,15 +42,18 @@
     "markdown-it": "^10.0.0",
     "minimatch": "^3.0.4",
     "path": "^0.12.7",
-    "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0"
   },
   "devDependencies": {
     "@types/command-line-args": "^5.0.0",
     "@types/node": "^12.12.21",
+    "@types/ts-nameof": "^4.2.0",
     "prettier": "^1.19.1",
+    "ts-nameof": "^4.2.2",
+    "ts-node": "^8.5.4",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
+    "ttypescript": "^1.5.8",
     "typescript": "^3.7.4",
     "vash": "^0.12.9"
   }

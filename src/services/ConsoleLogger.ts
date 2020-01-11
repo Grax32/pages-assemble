@@ -1,7 +1,14 @@
+import 'reflect-metadata';
+import LogLevel from '../models/LogLevel';
 import ILogger from '../interfaces/ILogger';
+import { IBuildModule, injectIBuildModule } from '../interfaces/IBuildModule';
+import { injectable } from 'inversify';
 
+@injectable()
 export default class ConsoleLogger implements ILogger {
-  constructor(private logLevel: LogLevel) {}
+  constructor(
+    private logLevel: LogLevel,    
+    @injectIBuildModule private arbitrary: IBuildModule) {}
 
   private log(level: LogLevel, message: string) {
     if (level >= this.logLevel) {
@@ -10,18 +17,18 @@ export default class ConsoleLogger implements ILogger {
   }
 
   debug(message: string): void {
-    this.log(LogLevel.debug ,message);
+    this.log(LogLevel.debug, message);
   }
   information(message: string): void {
-    this.log(LogLevel.information ,message);
+    this.log(LogLevel.information, message);
   }
   error(message: string): void {
-    this.log(LogLevel.error ,message);
+    this.log(LogLevel.error, message);
   }
   fatal(message: string): void {
-    this.log(LogLevel.fatal ,message);
+    this.log(LogLevel.fatal, message);
   }
   warning(message: string): void {
-    this.log(LogLevel.warning ,message);
+    this.log(LogLevel.warning, message);
   }
 }

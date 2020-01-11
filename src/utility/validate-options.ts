@@ -1,5 +1,8 @@
-import IPageAssembleOptions from '../interfaces/IPageAssembleOptions';
 import fs from 'fs';
+import 'reflect-metadata';
+
+import IPageAssembleOptions from '../interfaces/IPageAssembleOptions';
+import IBuildModule from '../interfaces/IBuildModule';
 
 interface optionValue {
   value: any;
@@ -7,6 +10,8 @@ interface optionValue {
 }
 
 export default class ValidateOptions {
+constructor(public bw: IBuildModule){}
+
   public static validate(options: IPageAssembleOptions) {
     if (!options) {
       this.exitWithError('Options must not be null');

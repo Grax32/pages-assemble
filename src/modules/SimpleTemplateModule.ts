@@ -31,6 +31,6 @@ export default class SimpleTemplateModule implements IBuildModule {
         fs.writeFileSync(outputPath, outputTemplate);
       });
 
-    return new ResultContext();
+    return this.next(context);
   }
 }

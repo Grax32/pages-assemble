@@ -3,11 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
 
-import IBuildModule from '../interfaces/IBuildModule';
+import { IBuildModule } from '../interfaces/IBuildModule';
 import ResultContext from '../models/ResultContext';
 import BuildContext from '../models/BuildContext';
 import OutputType from '../models/OutputType';
-import BuildAsset from '../models/BuildAsset';
+import SourceFileContext from '../models/SourceFileContext';
 
 export default class InitialModule implements IBuildModule {
   private outputTypeValues = Object.values(OutputType);
@@ -26,7 +26,7 @@ export default class InitialModule implements IBuildModule {
       .sort((a, b) => b.length - a.length) // remove the deepest folders first
       .forEach(v => fs.rmdirSync(v));
 
-    const getSourcePath = (asset: BuildAsset) => path.join(context.options.source, asset.path);
+    const getSourcePath = (asset: SourceFileContext) => path.join(context.options.source, asset.path);
     const getOutputType = (filePath: string, matterData: { [key: string]: any }): OutputType => {
       if (matterData.outputType) {
         if (this.outputTypeValues.includes(matterData.outputType)) {
@@ -75,7 +75,7 @@ export default class InitialModule implements IBuildModule {
     return this.next(context);
   }
 
-  private static getCollection(context: BuildContext, collectionKey: string): BuildAsset[] {
+  private static getCollection(context: BuildContext, collectionKey: string): SourceFileContext[] {
     if (!context.collections[collectionKey]) {
       context.collections[collectionKey] = [];
     }

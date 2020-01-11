@@ -5,3 +5,5 @@ enum LogLevel {
     error,
     fatal
 }
+
+export default LogLevel;
