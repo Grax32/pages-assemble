@@ -8,7 +8,7 @@
     "prebuild": "node prebuild.js && npm run clean && npm run clean:compiler-plugins && npm run build:compiler-plugins",
     "clean": "rimraf lib && mkdir lib",
     "build": "node ./node_modules/ttypescript/bin/tsc",
-    "netlify": "npm run build && node lib -v -b static-basedir",
+    "netlify": "npm run build && node lib -v -b static-basedir && ls -l static-basedir/build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
