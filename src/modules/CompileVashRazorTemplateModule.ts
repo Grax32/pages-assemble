@@ -1,5 +1,4 @@
 const Vash = require('vash');
-import 'reflect-metadata';
 import 'fs';
 import 'path';
 import BuildContext from '../models/BuildContext';

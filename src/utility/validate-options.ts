@@ -1,5 +1,4 @@
 import fs from 'fs';
-import 'reflect-metadata';
 
 import IPageAssembleOptions from '../interfaces/IPageAssembleOptions';
 import IBuildModule from '../interfaces/IBuildModule';

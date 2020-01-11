@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import LogLevel from '../models/LogLevel';
 import ILogger from '../interfaces/ILogger';
 import { IBuildModule, injectIBuildModule } from '../interfaces/IBuildModule';
