@@ -1,9 +1,13 @@
-﻿<!DOCTYPE html>
+﻿---
+layout: home
+---
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <link rel="stylesheet" href="/stylesheets/home.css" />
     {% include headers.html %}
+    <%=new Date()%>
 </head>
 
 <body>

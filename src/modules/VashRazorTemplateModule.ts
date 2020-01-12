@@ -30,10 +30,14 @@ export default class VashRazorTemplateModule implements IBuildModule {
 
         const outputFolder = path.dirname(outputPath);
 
+        if (context.options.verbose) {
+          console.log('writing templated file ' + outputPath);
+        }
+
         fs.mkdirSync(outputFolder, { recursive: true });
         fs.writeFileSync(outputPath, result);
       });
 
-    return new ResultContext();
+      return this.next(context);
   }
 }

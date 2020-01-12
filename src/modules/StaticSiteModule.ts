@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import IBuildModule from '../interfaces/IBuildModule';
-import BuildContext from "../models/BuildContext";
-import ResultContext from "../models/ResultContext";
+import BuildContext from '../models/BuildContext';
+import ResultContext from '../models/ResultContext';
 
 export default class StaticSiteModule implements IBuildModule {
   public next!: (context: BuildContext) => ResultContext;
@@ -28,7 +28,6 @@ export default class StaticSiteModule implements IBuildModule {
         fs.copyFileSync(path.join(source, v.path), destFile);
       });
 
-    const results = this.next(context);
-    return results;
+    return this.next(context);
   }
 }

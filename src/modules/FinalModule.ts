@@ -8,6 +8,7 @@ export default class FinalModule implements IBuildModule {
     if (context.options.verbose) {
       console.log('Final Module');
     }
+
     return new ResultContext();
   }
 }

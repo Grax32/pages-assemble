@@ -103,6 +103,7 @@ if (options.help) {
 
   const modulesTypes: interfaces.IBuildModuleStatic[] = [
     modules.InitialModule,
+    modules.ComputeOutputPathModule,
     modules.StaticSiteModule,
     modules.MarkdownModule,
     modules.SimpleTemplateModule,
@@ -115,14 +116,14 @@ if (options.help) {
   let lastInvoke = (context: BuildContext) => new ResultContext();
   let module: interfaces.IBuildModule | undefined;
 
-  for (const loopModule of modulesTypes) {
+  for (const loopModule of [...modulesTypes].reverse()) {
     const thisModule = new loopModule();
     const thisModuleName = loopModule.name;
     const invoke = lastInvoke;
     thisModule.next = context => invoke(context);
 
     const invokeThis = (context: BuildContext): ResultContext => {
-      if (options.verbose) {
+      if (context.options.verbose) {
         console.log('Entering module ' + thisModuleName);
       }
       return thisModule.invoke(context);

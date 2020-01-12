@@ -16,7 +16,6 @@ constructor(public bw: IBuildModule){}
       this.exitWithError('Options must not be null');
     }
 
-    const baseDirectoryOption = { value: options.baseDirectory, description: 'BaseDirectory' };
     const sourceOption = { value: options.source, description: 'Source' };
     const outputOption = { value: options.output, description: 'Output' };
     const templateOption = { value: options.template, description: 'Template' };
