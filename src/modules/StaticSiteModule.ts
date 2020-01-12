@@ -10,7 +10,7 @@ export default class StaticSiteModule implements IBuildModule {
 
   public invoke(context: BuildContext): ResultContext {
     if (context.options.verbose) {
-      console.log('Entering StaticSiteModule');
+      console.log('Entering', StaticSiteModule.name);
     }
 
     const source = context.options.source;
@@ -21,10 +21,9 @@ export default class StaticSiteModule implements IBuildModule {
       .forEach(v => {
         const destFile = path.join(dest, v.path);
         const destDir = path.dirname(destFile);
-        if (!fs.existsSync(destDir)) {
-          fs.mkdirSync(destDir, { recursive: true });
-        }
 
+        console.log('Writing',path.join(source, v.path), destFile);
+        fs.mkdirSync(destDir, { recursive: true });
         fs.copyFileSync(path.join(source, v.path), destFile);
       });
 
