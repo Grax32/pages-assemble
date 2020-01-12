@@ -7,7 +7,7 @@ layout: home
 <head>
     <link rel="stylesheet" href="/stylesheets/home.css" />
     {% include headers.html %}
-    <%=new Date()%>
+    @(new Date())
 </head>
 
 <body>
