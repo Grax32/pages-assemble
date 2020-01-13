@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/10/combining-function-expressions-in-c.html
+route: /2014/10/combining-function-expressions-in-c.html
 title: Combining Function Expressions in C# using a ReplacementVisitor
 tags:
  - coding

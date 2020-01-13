@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2015/01/ffastinjector-101-is-here-brace-yourself.html
+route: /2015/01/ffastinjector-101-is-here-brace-yourself.html
 title: fFastInjector 1.0.1 is here.  Brace yourself!
 tags:
  - software

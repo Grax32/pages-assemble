@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/06/how-fast-is-ffastinjector.html
+route: /2013/06/how-fast-is-ffastinjector.html
 title: How fast is fFastInjector?
 tags:
  - software

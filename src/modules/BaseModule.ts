@@ -8,9 +8,10 @@ export default abstract class BaseModule implements IBuildModule {
   public next!: (context: BuildContext) => ResultContext;
   public abstract invoke(context: BuildContext): ResultContext;
 
-  public log(context: BuildContext, message: string) {
-    if (context.options.verbose) {
-      console.log(message);
+  public log(message: string, ...args: any[]) {
+    if (args) {
+      message += '; ' + JSON.stringify(args);
     }
+    this.logger.information(message);
   }
 }

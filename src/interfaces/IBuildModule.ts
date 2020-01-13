@@ -3,6 +3,7 @@ import '../inversify.types';
 
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
+import { ILogger } from '.';
 
 interface IBuildModule {
   next: (context: BuildContext) => ResultContext;
@@ -10,7 +11,7 @@ interface IBuildModule {
 }
 
 interface IBuildModuleStatic {
-    new(...args: any): IBuildModule;
+    new(logger: ILogger): IBuildModule;
 }
 
 const IBuildModuleSymbol = Symbol('IBuildModule');

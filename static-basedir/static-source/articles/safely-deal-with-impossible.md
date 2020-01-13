@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/09/safely-deal-with-impossible.html
+route: /2014/09/safely-deal-with-impossible.html
 title: Safely deal with the impossible
 tags:
  - coding

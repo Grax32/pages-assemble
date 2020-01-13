@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/07/filter-pattern-for-linq-query-filter.html
+route: /2013/07/filter-pattern-for-linq-query-filter.html
 title: Custom LINQ Filter Operators
 tags:
  - coding

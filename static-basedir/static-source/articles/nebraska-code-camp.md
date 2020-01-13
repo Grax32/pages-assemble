@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2012/03/nebraska-code-camp.html
+route: /2012/03/nebraska-code-camp.html
 title: Nebraska Code Camp
 tags:
  - opinion

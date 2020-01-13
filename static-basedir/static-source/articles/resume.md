@@ -1,6 +1,6 @@
 ---
 layout: resume
-permalink: /about/david-walker/resume.html
+route: /about/david-walker/resume.html
 title: DAVID WALKER
 subtitle: 11834 Overlook Drive<br/> Clermont, FL 34711<br/>402-440-9707
 pagefooter: David Walker &bull; 402-440-9707 &bull; dwalker@vorteon.com

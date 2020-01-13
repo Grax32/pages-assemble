@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/06/css-gotchas-part-2-css-margin-height-in.html
+route: /2014/06/css-gotchas-part-2-css-margin-height-in.html
 title: CSS Gotchas - Part 2 - CSS Margin Height In Percent is Calculated Using the Width of the Parent Object
 tags:
  - coding

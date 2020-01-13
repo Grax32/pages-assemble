@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2015/03/trimming-all-strings-submitted-to-aspnet.html
+route: /2015/03/trimming-all-strings-submitted-to-aspnet.html
 title: Trimming all strings submitted to ASP.NET
 tags:
  - coding

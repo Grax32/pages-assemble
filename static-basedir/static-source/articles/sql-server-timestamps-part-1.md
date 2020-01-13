@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /articles/sql-server-timestamp-introduction
+route: /articles/sql-server-timestamp-introduction
 title: SQL Server Timestamp/RowVersion - Part 1 Introduction
 tags: [coding]
 ---

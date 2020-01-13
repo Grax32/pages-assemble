@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/05/fFastInjector-Initial.html
+route: /2013/05/fFastInjector-Initial.html
 title: fFastInjector - World's Fastest Dependency Injector
 tags:
  - software

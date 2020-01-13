@@ -2,12 +2,12 @@ import path from 'path';
 
 import MarkdownIt from 'markdown-it';
 
-import IBuildModule from '../interfaces/IBuildModule';
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
 import OutputType from '../models/OutputType';
+import BaseModule from './BaseModule';
 
-export default class MarkdownModule implements IBuildModule {
+export default class MarkdownModule extends BaseModule {
   private markdown = new MarkdownIt({
     html: true,
     langPrefix: '',
@@ -20,15 +20,14 @@ export default class MarkdownModule implements IBuildModule {
   public next!: (context: BuildContext) => ResultContext;
 
   public invoke(context: BuildContext): ResultContext {
-    if (context.options.verbose) {
-      console.log('Entering MarkdownModule');
-    }
-    const markdownAssets = context.assets.filter(v => path.extname(v.path) === '.md');
+    this.log('Entering', MarkdownModule.name);
 
-    markdownAssets.forEach(asset => {
-      asset.outputType = OutputType.html;
-      asset.sections['main'] = this.markdown.render(asset.textContent);
-    });
+    context.assets
+      .filter(v => path.extname(v.path) === '.md')
+      .forEach(asset => {
+        asset.outputType = OutputType.html;
+        asset.sections.main = this.markdown.render(asset.textContent);
+      });
 
     return this.next(context);
   }

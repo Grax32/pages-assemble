@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/12/announcing-subtractjs.html
+route: /2013/12/announcing-subtractjs.html
 title: Announcing SubtractJS
 tags: 
  - software

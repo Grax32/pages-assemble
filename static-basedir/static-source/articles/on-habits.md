@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /articles/on-habits
+route: /articles/on-habits
 title: On Habits
 tags:
  - life-placeholder

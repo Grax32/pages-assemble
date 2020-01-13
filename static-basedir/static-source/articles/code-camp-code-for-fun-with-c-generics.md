@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/03/code-camp-code-for-fun-with-c-generics.html
+route: /2013/03/code-camp-code-for-fun-with-c-generics.html
 title: Code Camp Code for Fun with C# Generics
 tags:
  - coding

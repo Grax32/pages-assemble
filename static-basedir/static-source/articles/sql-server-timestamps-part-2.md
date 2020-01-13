@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /articles/sql-server-timestamp-basic-concurrency
+route: /articles/sql-server-timestamp-basic-concurrency
 title: SQL Server Timestamp/RowVersion - Part 2 Optimistic Concurrency
 tags: [coding]
 ---

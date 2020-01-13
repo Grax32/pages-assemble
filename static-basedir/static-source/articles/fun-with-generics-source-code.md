@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/04/fun-with-generics-source-code.html
+route: /2013/04/fun-with-generics-source-code.html
 title: Fun with Generic's Source Code
 tags:
  - coding

@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/06/css-gotchas-part-1.html
+route: /2014/06/css-gotchas-part-1.html
 title: CSS Gotchas - Part 1
 tags:
  - coding

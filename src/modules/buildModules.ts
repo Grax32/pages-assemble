@@ -3,17 +3,17 @@ import FinalModule from './FinalModule';
 import InitialModule from './InitialModule';
 import MarkdownModule from './MarkdownModule';
 import SimpleTemplateModule from './SimpleTemplateModule';
-import StaticSiteModule from './StaticSiteModule';
+import StaticFilesModule from './StaticFilesModule';
 import VashRazorTemplateModule from './VashRazorTemplateModule';
-import ComputeOutputPathModule from './ComputeOutputPathModule';
+import ComputeRouteModule from './ComputeRouteModule';
 
 export {
   CompileVashRazorTemplateModule,
   FinalModule,
   InitialModule,
-  ComputeOutputPathModule,
+  ComputeRouteModule,
   MarkdownModule,
   SimpleTemplateModule,
-  StaticSiteModule,
+  StaticFilesModule,
   VashRazorTemplateModule,
 };

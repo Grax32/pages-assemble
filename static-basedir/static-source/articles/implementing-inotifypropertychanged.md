@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/10/implementing-inotifypropertychanged.html
+route: /2014/10/implementing-inotifypropertychanged.html
 title: Implementing INotifyPropertyChanged Manually Just Got A Little Easier
 tags:
  - coding

@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/11/use-of-unassigned-local-variable-in-c.html
+route: /2014/11/use-of-unassigned-local-variable-in-c.html
 title: Use of unassigned local variable in C#
 tags:
  - coding

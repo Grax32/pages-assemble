@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2011/11/initialize-array-to-value-in-c-very.html
+route: /2011/11/initialize-array-to-value-in-c-very.html
 title: Method to Quickly Initialize All Elements of an Array to a Value
 tags:
  - coding

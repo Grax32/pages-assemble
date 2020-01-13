@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/04/generic-tryparse.html
+route: /2013/04/generic-tryparse.html
 title: Generic TryParse, convert string to any type
 tags:
  - coding

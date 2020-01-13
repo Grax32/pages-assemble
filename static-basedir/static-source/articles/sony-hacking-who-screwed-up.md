@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/12/sony-hacking-who-screwed-up.html
+route: /2014/12/sony-hacking-who-screwed-up.html
 title: Sony Hacking - Who Screwed Up
 tags:
  - opinion

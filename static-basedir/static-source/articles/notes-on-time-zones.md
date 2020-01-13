@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/05/notes-on-time-zones.html
+route: /2014/05/notes-on-time-zones.html
 title: Notes on Time Zones
 tags:
  - coding

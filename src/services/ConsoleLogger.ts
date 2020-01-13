@@ -1,13 +1,9 @@
 import LogLevel from '../models/LogLevel';
 import ILogger from '../interfaces/ILogger';
-import { IBuildModule, injectIBuildModule } from '../interfaces/IBuildModule';
-import { injectable } from 'inversify';
 
-@injectable()
 export default class ConsoleLogger implements ILogger {
   constructor(
-    private logLevel: LogLevel,    
-    @injectIBuildModule private arbitrary: IBuildModule) {}
+    private logLevel: LogLevel) {}
 
   private log(level: LogLevel, message: string) {
     if (level >= this.logLevel) {

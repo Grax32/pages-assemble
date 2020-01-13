@@ -11,7 +11,7 @@ import * as modules from './modules/buildModules';
 
 import packageJson from './package-reference.json';
 import BuildContext from './models/BuildContext';
-import ValidateOptions from './utility/validate-options';
+import ValidateOptions from './utility/ValidateOptions';
 
 import ResultContext from './models/ResultContext';
 import SourceFileContext from './models/SourceFileContext';
@@ -100,13 +100,11 @@ if (options.help) {
   };
 
   const moduleMap = new Map<string, interfaces.IBuildModuleStatic>();
-
   const modulesTypes: interfaces.IBuildModuleStatic[] = [
     modules.InitialModule,
-    modules.ComputeOutputPathModule,
-    modules.StaticSiteModule,
+    modules.ComputeRouteModule,
+    modules.StaticFilesModule,
     modules.MarkdownModule,
-    modules.SimpleTemplateModule,
     modules.CompileVashRazorTemplateModule,
     modules.FinalModule,
   ];
@@ -116,8 +114,11 @@ if (options.help) {
   let lastInvoke = (context: BuildContext) => new ResultContext();
   let module: interfaces.IBuildModule | undefined;
 
+  const logLevel = options.verbose ? LogLevel.information : LogLevel.error;
+  const logger = new ConsoleLogger(logLevel);
+
   for (const loopModule of [...modulesTypes].reverse()) {
-    const thisModule = new loopModule();
+    const thisModule = new loopModule(logger);
     const thisModuleName = loopModule.name;
     const invoke = lastInvoke;
     thisModule.next = context => invoke(context);

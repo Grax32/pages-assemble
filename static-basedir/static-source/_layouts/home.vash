@@ -1,0 +1,5 @@
+---
+layout: home
+---
+
+@html.extend('base', function(model){ @html.block('headers', function(model){ }) })

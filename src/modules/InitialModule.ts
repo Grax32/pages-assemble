@@ -3,13 +3,13 @@ import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
 
-import { IBuildModule } from '../interfaces/IBuildModule';
 import ResultContext from '../models/ResultContext';
 import BuildContext from '../models/BuildContext';
 import OutputType from '../models/OutputType';
 import SourceFileContext from '../models/SourceFileContext';
+import BaseModule from './BaseModule';
 
-export default class InitialModule implements IBuildModule {
+export default class InitialModule extends BaseModule {
   private outputTypeValues = Object.values(OutputType);
 
   public next!: (context: BuildContext) => ResultContext;

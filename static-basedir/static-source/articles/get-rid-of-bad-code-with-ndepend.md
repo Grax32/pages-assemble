@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/04/get-rid-of-bad-code-with-ndepend.html
+route: /2014/04/get-rid-of-bad-code-with-ndepend.html
 title: Get Rid of Bad Code once and for all with nDepend 5
 tags:
  - opinion

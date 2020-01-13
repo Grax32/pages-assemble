@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2017/12/why-hiding-is-bad
+route: /2017/12/why-hiding-is-bad
 title: Why Hiding Is Bad 
 tags: [coding]
 ---

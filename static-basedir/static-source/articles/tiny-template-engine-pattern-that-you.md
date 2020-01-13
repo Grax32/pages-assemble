@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/10/tiny-template-engine-pattern-that-you.html
+route: /2014/10/tiny-template-engine-pattern-that-you.html
 title: Tiny Template Engine Pattern That You Can Remember
 tags:
  - coding

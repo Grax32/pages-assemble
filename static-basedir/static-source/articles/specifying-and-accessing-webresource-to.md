@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2011/12/specifying-and-accessing-webresource-to.html
+route: /2011/12/specifying-and-accessing-webresource-to.html
 title: Specifying and using a WebResource to access embedded resources
 tags:
  - coding

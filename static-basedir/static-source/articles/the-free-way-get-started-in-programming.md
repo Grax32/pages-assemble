@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/04/the-free-way-get-started-in-programming.html
+route: /2014/04/the-free-way-get-started-in-programming.html
 title: The Free Way To Get Started In Programming 
 tags:
  - coding

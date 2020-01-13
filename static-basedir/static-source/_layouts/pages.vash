@@ -1,11 +1,14 @@
-﻿<html>
+﻿---
+layout: pages
+---
+<html>
 <head>
-    {% include headers.html %}
+    @html.block('headers')
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:title" content="@model.title" />
     <meta property="og:description" content="Secure Software, Strong Teams" />
-    <meta property="og:image" content="{{ site.url }}{{ page.ogImage | default: "/images/david-walker.png" }}" />
+    <meta property="og:image" content="@model.image" />
 </head>
 
 <body>
@@ -20,11 +23,11 @@
 
     <div class="container">
         <header class="row">
-            <h1 class="col-md-10">{{ page.title }}</h1>
+            <h1 class="col-md-10">@model.title</h1>
         </header>
         <div class="row">
             <section class="col-md-10 grax-content-pane">
-                {{content}}
+                @html.raw(model.textContent)
             </section>
             <section class="col-md-2 grax-navigation-pane">
                 <a href="/">Home</a><br />
@@ -39,7 +42,6 @@
             </section>
         </div>
     </div>
-
-    {% include trailing-scripts.html %}
+    @html.block('trailing-scripts')
 </body>
 </html>

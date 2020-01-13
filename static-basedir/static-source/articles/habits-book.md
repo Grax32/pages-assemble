@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /books/habits-by-william-james
+route: /books/habits-by-william-james
 title: Habit
 tags: [books]
 ---

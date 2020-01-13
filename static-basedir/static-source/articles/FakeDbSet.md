@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/04/FakeDbSet.html
+route: /2013/04/FakeDbSet.html
 title: A FakeDbSet that implements IDbSet and uses IList for data manipulation 
 tags:
  - coding

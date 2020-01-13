@@ -1,18 +1,27 @@
-﻿<html>
+﻿
+
+@html.extend('base', function(model){
+	@html.block('headers', function(model){
+		<h1 class="name">Welcome to </h1>
+	})
+})
+
+
+<html>
 
 <head>
-    {% include headers.html %}
+    @html.block('headers')
 </head>
 
 <body class="container">
     <header class="row">
-        <h1>{{ page.title }}</h1>
+        <h1>@page.title</h1>
         <hr />
     </header>
 
     <div class="row">
         <section class="col-md-10">
-            {{content}}
+            @html.block('content')
             <hr />
             {% for sitePage in site.pages | where_exp: "sitePage","sitePage.tags contains page.slug" %} 
                 <a href="{{ sitePage.url | replace: ".html", "" }}">{{ sitePage.title }}</a><br /> 
@@ -28,6 +37,6 @@
             <a href="/software/projects">Software Projects</a><br />
         </section>
     </div>
-    {% include trailing-scripts.html %}
+    @html.block('trailing-scripts')
 </body>
 </html>

@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/06/simple-strongly-typed-pattern-for.html
+route: /2013/06/simple-strongly-typed-pattern-for.html
 title: Simple Strongly-Typed pattern for ViewData, Session, Request, etc
 tags:
  - coding

@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/08/testing-custom-linq-filter-operators.html
+route: /2013/08/testing-custom-linq-filter-operators.html
 title: Testing Custom LINQ Filter Operators (and LINQ Where clauses in general)
 tags:
  - coding

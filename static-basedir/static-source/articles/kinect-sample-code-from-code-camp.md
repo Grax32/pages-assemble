@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2012/03/kinect-sample-code-from-code-camp.html
+route: /2012/03/kinect-sample-code-from-code-camp.html
 title: Kinect sample code from Code Camp
 tags:
  - coding

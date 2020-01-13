@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/03/fun-with-c-generics-in-visual-studio.html
+route: /2013/03/fun-with-c-generics-in-visual-studio.html
 title: Fun with C# Generics in Visual Studio 2010
 tags:
  - coding

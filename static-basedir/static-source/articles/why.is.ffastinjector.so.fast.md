@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2013/06/why.is.ffastinjector.so.fast.html
+route: /2013/06/why.is.ffastinjector.so.fast.html
 title: Why is fFastInjector so fast?  Is it thread-safe and otherwise safe?
 tags:
  - software

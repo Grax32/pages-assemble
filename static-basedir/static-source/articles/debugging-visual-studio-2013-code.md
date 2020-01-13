@@ -1,6 +1,6 @@
 ---
 layout: pages
-permalink: /2014/05/debugging-visual-studio-2013-code.html
+route: /2014/05/debugging-visual-studio-2013-code.html
 title: Debugging Visual Studio 2013 Code Coverage with ILSpy
 tags:
  - coding
