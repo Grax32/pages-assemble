@@ -20,6 +20,8 @@ export default class CompileVashRazorTemplateModule extends BaseModule {
 
     const templates: templateCollection = {};
 
+    this.log(vash, vash.config);
+
     context.assets
       .filter(asset => asset.path.endsWith('.vash'))
       .forEach(asset => {
