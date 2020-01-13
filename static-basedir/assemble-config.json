@@ -5,5 +5,5 @@
   "modules": ["static"],
   "static": ["**/*.jpg"],
   "verbose": false,
-  "template": "_templates/default.html"
+  "template": "pages"
 }

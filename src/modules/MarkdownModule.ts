@@ -25,7 +25,6 @@ export default class MarkdownModule extends BaseModule {
     context.assets
       .filter(v => path.extname(v.path) === '.md')
       .forEach(asset => {
-        asset.outputType = OutputType.html;
         asset.sections.main = this.markdown.render(asset.textContent);
       });
 

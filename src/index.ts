@@ -30,9 +30,11 @@ optionDefinitions.push({ alias: 'm', name: 'modules', type: String, multiple: tr
 optionDefinitions.push({ alias: 'f', name: 'static', type: String, multiple: true });
 optionDefinitions.push({ alias: 'h', name: 'help', type: Boolean });
 optionDefinitions.push({ alias: 'v', name: 'verbose', type: Boolean });
-optionDefinitions.push({ alias: 't', name: 'template', type: String, defaultValue: '_templates/default.html' });
+optionDefinitions.push({ alias: 't', name: 'template', type: String, defaultValue: 'default' });
 
 const options = <interfaces.IPageAssembleOptions>commandLineArgs(optionDefinitions);
+const optionsNoDefaults = <interfaces.IPageAssembleOptions>commandLineArgs(optionDefinitions
+    .map(v=> Object.assign({}, v, { defaultValue: undefined})));
 
 if (options.baseDirectory) {
   process.chdir(options.baseDirectory);
@@ -52,7 +54,7 @@ if (fs.existsSync(configFileName)) {
   delete configFileOptions.baseDirectory;
 
   // Override file options with command line options
-  Object.assign(configFileOptions, options);
+  Object.assign(configFileOptions, optionsNoDefaults);
 
   // Apply config to original object
   Object.assign(options, configFileOptions);

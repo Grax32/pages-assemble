@@ -10,7 +10,7 @@ export default abstract class BaseModule implements IBuildModule {
 
   public log(message: string, ...args: any[]) {
     if (args) {
-      message += '; ' + JSON.stringify(args);
+      message += " " + args.join(" ");
     }
     this.logger.information(message);
   }

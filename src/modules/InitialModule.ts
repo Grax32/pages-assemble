@@ -14,9 +14,7 @@ export default class InitialModule extends BaseModule {
 
   public next!: (context: BuildContext) => ResultContext;
   public invoke(context: BuildContext): ResultContext {
-    if (context.options.verbose) {
-      console.log('Entering InitialModule');
-    }
+    this.log('Entering', InitialModule.name);
 
     // delete old output
     const outputGlobPattern = context.options.output + '/**';

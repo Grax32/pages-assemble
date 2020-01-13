@@ -43,7 +43,7 @@ export default class CompileVashRazorTemplateModule extends BaseModule {
         const template = asset.frontMatter.layout || context.options.template;
         const applyTemplate = templates[template];
         if (applyTemplate) {
-          this.log('applying template', template, 'to asset', asset.path);
+          this.log('applying template', template, 'to asset', asset.path, 'output', asset.outputPath);
           const result = applyTemplate(asset);
           FileSystemUtility.saveFile(asset.outputPath, result);
         } else {
