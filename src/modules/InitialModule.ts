@@ -2,6 +2,7 @@ import grayMatter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
+import minimatch, { IOptions } from 'minimatch';
 
 import ResultContext from '../models/ResultContext';
 import BuildContext from '../models/BuildContext';
@@ -48,7 +49,7 @@ export default class InitialModule extends BaseModule {
 
     context.assets.forEach(asset => {
       const sourcePath = getSourcePath(asset);
-      const separator = '---';
+      const separator = '---\n';
       const matter = grayMatter.read(sourcePath);
       const matterData = matter.data || {};
       const outputType = getOutputType(sourcePath, matterData);

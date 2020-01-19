@@ -87,7 +87,6 @@ if (options.help) {
     console.log('Running options', options);
   }
 
-  const isStatic = (path: string): boolean => options.static.some(pattern => new Minimatch(pattern).match(path));
   const isIgnored = (path: string): boolean => options.ignore.some(pattern => new Minimatch(pattern).match(path));
   const getAllAssets = (options: interfaces.IPageAssembleOptions): SourceFileContext[] => {
     const sourceGlobPattern = options.source.replace(/\\/g, '/') + '/**';
@@ -98,7 +97,7 @@ if (options.help) {
       .sync(sourceGlobPattern, { nodir: true })
       .map(removeSourceFromFilename)
       .filter(file => !isIgnored(file))
-      .map(file => new SourceFileContext(file, isStatic(file)));
+      .map(file => new SourceFileContext(file));
   };
 
   const moduleMap = new Map<string, interfaces.IBuildModuleStatic>();
@@ -108,6 +107,8 @@ if (options.help) {
     modules.StaticFilesModule,
     modules.MarkdownModule,
     modules.CompileVashRazorTemplateModule,
+    modules.MinifierModule,
+    modules.TextOutputModule,
     modules.FinalModule,
   ];
 

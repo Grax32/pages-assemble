@@ -8,14 +8,25 @@ export default class ComputeRouteModule extends BaseModule {
   public next!: (context: BuildContext) => ResultContext;
 
   public invoke(context: BuildContext): ResultContext {
+    const removeExtension = (filePath: string) => {
+      const lastDot = filePath.lastIndexOf('.');
+      if (lastDot < 0) {
+        return filePath;
+      }
+
+      return filePath.slice(0, lastDot);
+    };
+
     context.assets
-      .filter(v => v.outputType === OutputType.html)
+      .filter(asset => asset.outputType !== OutputType.binary)
       .forEach(asset => {
-        const link = <string>(asset.frontMatter.route || asset.path.replace(/\.md$/, ''));
+        const link = <string>(asset.frontMatter.route || removeExtension(asset.path));
         let route = path.join(context.options.output, link);
 
-        if (!route.endsWith('.html')) {
-          route += '.html';
+        const extension = asset.outputType === OutputType.text ? ".txt" : ".html";
+
+        if (!route.endsWith(extension)) {
+          route += extension;
         }
 
         // normalize path to forward slash (fix windows paths)

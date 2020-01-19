@@ -9,6 +9,7 @@ export default class SourceFileContext {
   public outputPath: string = '';
   public isHandled = false;
   public page = this.frontMatter;
+  public output: string = '';
 
-  constructor(public path: string, public isStatic: boolean) {}
+  constructor(public path: string) {}
 }

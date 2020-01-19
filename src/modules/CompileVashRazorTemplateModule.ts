@@ -31,6 +31,7 @@ export default class CompileVashRazorTemplateModule extends BaseModule {
     .forEach(templateAsset => {
         const compiledTemplate = vash.compile(templateAsset.textContent);
         vash.install(getTemplateName(templateAsset), compiledTemplate);
+        templateAsset.isHandled = true;
     });
 
     this.log('Applying templates');
@@ -46,18 +47,18 @@ export default class CompileVashRazorTemplateModule extends BaseModule {
           try {
             const model = {
               ...baseModel,
-              content: asset.textContent,
+              sections: asset.sections,
               page: asset,
               ...asset.frontMatter,
             };
-            const result = applyTemplate(model, finishLayout);
-            FileSystemUtility.saveFile(asset.outputPath, result);
+            asset.output = applyTemplate(model, finishLayout);
           } catch (exception) {
             this.log('error applying template', JSON.stringify(asset.frontMatter));
             throw exception;
           }
         } else {
           this.log('Template', templateName, 'was not found');
+          process.exit(1);
         }
       });
 

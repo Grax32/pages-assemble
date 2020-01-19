@@ -1,4 +1,5 @@
 import * as path from 'path';
+import minimatch from 'minimatch';
 
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
@@ -14,8 +15,23 @@ export default class StaticFilesModule extends BaseModule {
     const source = context.options.source;
     const dest = context.options.output;
 
+    const isStatic = (filename: string) => {
+      for (let pattern of context.options.static) {
+        if (/^\.\w*?$/.test(pattern)) {
+          // pattern is an extension matching pattern.  i.e. .gif
+          pattern = '**/*' + pattern;
+        }
+
+        if (minimatch.match([filename], pattern)[0] === filename) {
+          return true;
+        }
+      }
+
+      return false;
+    };
+
     context.assets
-      .filter(asset => asset.isStatic)
+      .filter(asset => isStatic(asset.path))
       .forEach(asset => {
         const sourceFile = path.join(source, asset.path);
         const destFile = path.join(dest, asset.path);
