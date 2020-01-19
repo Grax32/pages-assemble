@@ -18,6 +18,8 @@ export default class CompileVashRazorTemplateModule extends BaseModule {
 
     this.log('Compiling templates');
 
+    const finishLayout = (err: any, ctx: { finishLayout: () => void}) => ctx.finishLayout();
+
     const getTemplateName = (templateAsset: SourceFileContext) => {
       return templateAsset.frontMatter.layout || path.basename(templateAsset.path, '.vash');
     };
@@ -48,7 +50,7 @@ export default class CompileVashRazorTemplateModule extends BaseModule {
               page: asset,
               ...asset.frontMatter,
             };
-            const result = applyTemplate(model, (err: any,ctx: any) => ctx.finishLayout());
+            const result = applyTemplate(model, finishLayout);
             FileSystemUtility.saveFile(asset.outputPath, result);
           } catch (exception) {
             this.log('error applying template', JSON.stringify(asset.frontMatter));
