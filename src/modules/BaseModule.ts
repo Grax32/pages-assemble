@@ -10,7 +10,16 @@ export default abstract class BaseModule implements IBuildModule {
 
   public log(message: string, ...args: any[]) {
     if (args) {
-      message += " " + args.join(" ");
+      const messageArgs: string[] = [];
+      for (const arg of args) {
+        if (typeof arg === 'object' || Array.isArray(arg)) {
+          messageArgs.push(JSON.stringify(arg, null, 2));
+        } else {
+          messageArgs.push(arg);
+        }
+      }
+
+      message += ' ' + messageArgs.join(' ');
     }
     this.logger.information(message);
   }

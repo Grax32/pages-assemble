@@ -52,7 +52,7 @@
         width: max-content;
       }
 
-      @media screen {
+      @@media screen {
         .resume-container {
           border: 1px solid #eeeeee;
           margin-bottom: 25px;
@@ -64,7 +64,7 @@
         }
       }
 
-      @media print {
+      @@media print {
         * {
           font-size: 11px;
         }

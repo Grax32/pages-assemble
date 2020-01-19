@@ -1,11 +1,7 @@
-﻿---
-layout: base
----
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- @'build-time: ' + (new Date()).toISOString() -->
+    <!-- build time @(new Date()).toISOString() -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -17,11 +13,13 @@ layout: base
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css" rel="stylesheet" />
 
-    <title>@model.title</title>
-    @html.block('headers')
+    <title>@title</title>
+    @html.block('headers', function () {
+      <meta name="blah" />
+    })
   </head>
   <body>
-    @html.block('body')
+    @html.block('body', function () {})
     <section style="display: none;">
       <script
         src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

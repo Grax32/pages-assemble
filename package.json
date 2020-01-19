@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "prebuild": "node prebuild.js && npm run clean && npm run clean:compiler-plugins && npm run build:compiler-plugins",
-    "clean": "rimraf lib && mkdir lib",
+    "clean": "rimraf lib && mkdir lib && rimraf static-basedir/build",
     "build": "npm run ttsc",
     "assemble-pages": "node lib -v -b static-basedir",
     "ttsc": "node ./node_modules/ttypescript/bin/tsc",
@@ -15,7 +15,8 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "build:compiler-plugins": "tsc --project plugins",
-    "clean:compiler-plugins": "rimraf plugins/lib"
+    "clean:compiler-plugins": "rimraf plugins/lib",
+    "start": "npx serve ./static-basedir/build"
   },
   "files": [
     "lib/**/*"

@@ -15,7 +15,7 @@
 
 <body class="container">
     <header class="row">
-        <h1>@model.title</h1>
+        <h1>@title</h1>
         <hr />
     </header>
 
