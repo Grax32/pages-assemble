@@ -4,8 +4,8 @@ import BaseModule from './BaseModule';
 import FileSystemUtility from '../utility/FileSystemUtility';
 
 export default class FinalModule extends BaseModule {
-  public next!: (context: BuildContext) => ResultContext;
-  public invoke(context: BuildContext): ResultContext {
+  public next!: (context: BuildContext) => Promise<ResultContext>;
+  public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', FinalModule.name);
 
     context.assets

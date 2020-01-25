@@ -6,8 +6,8 @@ import ResultContext from '../models/ResultContext';
 import { ILogger } from '.';
 
 interface IBuildModule {
-  next: (context: BuildContext) => ResultContext;
-  invoke: (context: BuildContext) => ResultContext;
+  next: (context: BuildContext) => Promise<ResultContext>;
+  invoke: (context: BuildContext) => Promise<ResultContext>;
 }
 
 interface IBuildModuleStatic {

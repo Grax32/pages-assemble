@@ -17,9 +17,9 @@ export default class MarkdownModule extends BaseModule {
     // }
   });
 
-  public next!: (context: BuildContext) => ResultContext;
+  public next!: (context: BuildContext) => Promise<ResultContext>;
 
-  public invoke(context: BuildContext): ResultContext {
+  public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', MarkdownModule.name);
 
     context.assets
@@ -28,6 +28,6 @@ export default class MarkdownModule extends BaseModule {
         asset.sections.main = this.markdown.render(asset.textContent);
       });
 
-    return this.next(context);
+    return await this.next(context);
   }
 }

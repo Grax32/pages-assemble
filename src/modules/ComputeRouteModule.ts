@@ -5,9 +5,9 @@ import OutputType from '../models/OutputType';
 import BaseModule from './BaseModule';
 
 export default class ComputeRouteModule extends BaseModule {
-  public next!: (context: BuildContext) => ResultContext;
+  public next!: (context: BuildContext) => Promise<ResultContext>;
 
-  public invoke(context: BuildContext): ResultContext {
+  public async invoke(context: BuildContext): Promise<ResultContext> {
     const removeExtension = (filePath: string) => {
       const lastDot = filePath.lastIndexOf('.');
       if (lastDot < 0) {
@@ -34,6 +34,6 @@ export default class ComputeRouteModule extends BaseModule {
         asset.outputPath = route;
       });
 
-    return this.next(context);
+    return await this.next(context);
   }
 }

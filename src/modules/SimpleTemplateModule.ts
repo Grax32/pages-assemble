@@ -6,8 +6,8 @@ import path from 'path';
 import BaseModule from './BaseModule';
 
 export default class SimpleTemplateModule extends BaseModule {
-  public next!: (context: BuildContext) => ResultContext;
-  public invoke(context: BuildContext): ResultContext {
+  public next!: (context: BuildContext) => Promise<ResultContext>;
+  public async invoke(context: BuildContext): Promise<ResultContext> {
     if (context.options.verbose) {
       console.log('Entering', SimpleTemplateModule.name);
     }
@@ -35,6 +35,6 @@ export default class SimpleTemplateModule extends BaseModule {
         fs.writeFileSync(outputPath, outputTemplate);
       });
 
-    return this.next(context);
+    return await this.next(context);
   }
 }

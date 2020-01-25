@@ -5,11 +5,10 @@ import ResultContext from '../models/ResultContext';
 import BaseModule from './BaseModule';
 import SourceFileContext from '../models/SourceFileContext';
 import OutputType from '../models/OutputType';
-import FileSystemUtility from '../utility/FileSystemUtility';
 
 export default class CompileVashRazorTemplateModule extends BaseModule {
-  public next!: (context: BuildContext) => ResultContext;
-  public invoke(context: BuildContext): ResultContext {
+  public next!: (context: BuildContext) => Promise<ResultContext>;
+  public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', CompileVashRazorTemplateModule.name);
 
     const viewsFolder = path.join(context.options.source, '_layouts');
@@ -18,7 +17,7 @@ export default class CompileVashRazorTemplateModule extends BaseModule {
 
     this.log('Compiling templates');
 
-    const finishLayout = (err: any, ctx: { finishLayout: () => void}) => ctx.finishLayout();
+    const finishLayout = (err: any, ctx: { finishLayout: () => void }) => ctx.finishLayout();
 
     const getTemplateName = (templateAsset: SourceFileContext) => {
       return templateAsset.frontMatter.layout || path.basename(templateAsset.path, '.vash');
@@ -27,12 +26,12 @@ export default class CompileVashRazorTemplateModule extends BaseModule {
     const templates = vash.helpers.tplcache;
 
     context.assets
-    .filter(asset => asset.path.endsWith('.vash'))
-    .forEach(templateAsset => {
+      .filter(asset => asset.path.endsWith('.vash'))
+      .forEach(templateAsset => {
         const compiledTemplate = vash.compile(templateAsset.textContent);
         vash.install(getTemplateName(templateAsset), compiledTemplate);
         templateAsset.isHandled = true;
-    });
+      });
 
     this.log('Applying templates');
 
@@ -62,6 +61,6 @@ export default class CompileVashRazorTemplateModule extends BaseModule {
         }
       });
 
-    return this.next(context);
+    return await this.next(context);
   }
 }

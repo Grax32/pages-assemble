@@ -13,8 +13,8 @@ import BaseModule from './BaseModule';
 export default class InitialModule extends BaseModule {
   private outputTypeValues = Object.values(OutputType);
 
-  public next!: (context: BuildContext) => ResultContext;
-  public invoke(context: BuildContext): ResultContext {
+  public next!: (context: BuildContext) => Promise<ResultContext>;
+  public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', InitialModule.name);
 
     // delete old output

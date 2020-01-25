@@ -7,9 +7,9 @@ import FileSystemUtility from '../utility/FileSystemUtility';
 import BaseModule from './BaseModule';
 
 export default class StaticFilesModule extends BaseModule {
-  public next!: (context: BuildContext) => ResultContext;
+  public next!: (context: BuildContext) => Promise<ResultContext>;
 
-  public invoke(context: BuildContext): ResultContext {
+  public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', StaticFilesModule.name);
 
     const source = context.options.source;
@@ -41,6 +41,6 @@ export default class StaticFilesModule extends BaseModule {
         asset.isHandled = true;
       });
 
-    return this.next(context);
+    return await this.next(context);
   }
 }
