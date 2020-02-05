@@ -2,16 +2,15 @@ import grayMatter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
-import minimatch, { IOptions } from 'minimatch';
 
 import ResultContext from '../models/ResultContext';
 import BuildContext from '../models/BuildContext';
-import OutputType from '../models/OutputType';
+import { OutputTypes } from '../models/OutputType';
 import SourceFileContext from '../models/SourceFileContext';
 import BaseModule from './BaseModule';
 
 export default class InitialModule extends BaseModule {
-  private outputTypeValues = Object.values(OutputType);
+  private outputTypeValues = Object.values(OutputTypes.OutputType);
 
   public next!: (context: BuildContext) => Promise<ResultContext>;
   public async invoke(context: BuildContext): Promise<ResultContext> {
@@ -26,7 +25,7 @@ export default class InitialModule extends BaseModule {
       .forEach(v => fs.rmdirSync(v));
 
     const getSourcePath = (asset: SourceFileContext) => path.join(context.options.source, asset.path);
-    const getOutputType = (filePath: string, matterData: { [key: string]: any }): OutputType => {
+    const getOutputType = (filePath: string, matterData: { [key: string]: any }) => {
       if (matterData.outputType) {
         if (this.outputTypeValues.includes(matterData.outputType)) {
           return matterData.outputType;
@@ -35,32 +34,37 @@ export default class InitialModule extends BaseModule {
         }
       }
 
-      let outputType = OutputType.binary;
-
-      switch (path.extname(filePath)) {
-        case '.md':
-        case '.html':
-        case '.htm':
-          outputType = OutputType.html;
-      }
-
-      return outputType;
+      return OutputTypes.getOutputTypeFromExtension(path.extname(filePath));
     };
 
     context.assets.forEach(asset => {
       const sourcePath = getSourcePath(asset);
-      const separator = '---\n';
-      const matter = grayMatter.read(sourcePath);
+      const defaultSeparator = '---';
+      let separator: string | [string, string] = defaultSeparator;
+
+      if (!asset.textContent.startsWith(defaultSeparator)) {
+        // custom separators for file types
+        // TODO: Move to file-type component
+        switch (path.extname(asset.path)) {
+          case '.css':
+          case '.js':
+            separator = ['/****', '****/'];
+            break;
+        }
+      }
+
+      const matter = grayMatter.read(sourcePath, { delimiters: separator });
       const matterData = matter.data || {};
       const outputType = getOutputType(sourcePath, matterData);
 
-      const content = matter.content.split(separator, 2);
-      if (content[1]) {
+      const excerptSeparator = defaultSeparator;
+      const content = matter.content.split(excerptSeparator, 2);
+      if (content.length === 1) {
+        asset.textContent = matter.content;
+        asset.sections.excerpt = '';
+      } else {
         asset.textContent = content[1];
         asset.sections.excerpt = content[0];
-      } else {
-        asset.textContent = content[0];
-        asset.sections.excerpt = '';
       }
 
       asset.frontMatter = matterData;

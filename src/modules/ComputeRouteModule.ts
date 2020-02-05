@@ -1,7 +1,7 @@
 import path from 'path';
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
-import OutputType from '../models/OutputType';
+import OutputType, { OutputTypes } from '../models/OutputType';
 import BaseModule from './BaseModule';
 
 export default class ComputeRouteModule extends BaseModule {
@@ -23,7 +23,7 @@ export default class ComputeRouteModule extends BaseModule {
         const link = <string>(asset.frontMatter.route || removeExtension(asset.path));
         let route = path.join(context.options.output, link);
 
-        const extension = asset.outputType === OutputType.text ? ".txt" : ".html";
+        const extension = OutputTypes.getOutputExtension(asset.outputType);
 
         if (!route.endsWith(extension)) {
           route += extension;

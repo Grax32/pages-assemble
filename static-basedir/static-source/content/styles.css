@@ -1,3 +1,8 @@
+/****
+webImport: true,
+minify: true
+****/
+
 /*******************************************************************************
 Slate Theme for GitHub Pages
 by Jason Costello, @jsncostello
@@ -479,6 +484,5 @@ footer td:nth-child(2) {
 	padding-top: 20px;
 }
 
-@import url(pygment_trac.css);
 @import url(https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css);
