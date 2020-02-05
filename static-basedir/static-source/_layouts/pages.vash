@@ -1,8 +1,8 @@
 ﻿@html.extend('base', function(model) {
   @html.block('body', function(model){
     <div class="page-header">
-      <a href="/"><img class="page-header-main-image" src="/images/redleaf.jpg" alt="Photo by David Walker"/></a>
-      <img class="page-header-author-image" src="/images/david-walker.png" alt="David Walker" />
+      <a href="/"><img class="page-header-main-image" src="/images/butterfly-banner.jpg" alt="Photo by David Walker"/></a>
+      <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
       <div class="page-header-text">
         <h1>David Walker</h1>
         <h3>
@@ -13,6 +13,6 @@
     </div>
     <h3>@title</h3>
     <hr/>
-    @html.raw(sections.main) 
+    <div class="page-content">@html.raw(sections.main)</div>     
   }) 
 })
