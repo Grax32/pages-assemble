@@ -1,18 +1,18 @@
-﻿@html.extend('base', function(model) {
-  @html.block('body', function(model){
-    <div class="page-header">
-      <a href="/"><img class="page-header-main-image" src="/images/butterfly-banner.jpg" alt="Photo by David Walker"/></a>
-      <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
-      <div class="page-header-text">
-        <h1>David Walker</h1>
-        <h3>
-          Secure&nbsp;Software &bull;&nbsp;Strong&nbsp;Teams &bull;&nbsp;DotNet&nbsp;Core &bull;&nbsp;ASP.NET
-          &bull;&nbsp;SQL Server
-        </h3>
-      </div>
-    </div>
-    <h3>@title</h3>
-    <hr/>
-    <div class="page-content">@html.raw(sections.main)</div>     
-  }) 
-})
+﻿@html.extend('base', function(model) { @html.block('body', function(model){
+<div class="page-header page-general">
+  <a href="/"><img class="page-header-main-image" src="/images/butterfly-banner.jpg" alt="Photo by David Walker"/></a>
+  <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
+  <div class="page-header-text">
+    <h1>David Walker</h1>
+    <h3>
+      Secure&nbsp;Software &bull;&nbsp;Strong&nbsp;Teams &bull;&nbsp;DotNet&nbsp;Core &bull;&nbsp;ASP.NET
+      &bull;&nbsp;SQL Server
+    </h3>
+  </div>
+</div>
+<div class="page-title page-general">
+  <h3>@title</h3>
+  <hr />
+</div>
+<div class="page-content page-general">@html.raw(sections.main)</div>
+}) })

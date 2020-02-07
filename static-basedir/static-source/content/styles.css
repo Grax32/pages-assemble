@@ -158,11 +158,8 @@ img {
 
 p img {
   display: inline;
-  margin: 0;
-  padding: 0;
   vertical-align: middle;
   text-align: center;
-  border: none;
 }
 
 pre, code {
@@ -487,9 +484,14 @@ footer td:nth-child(2) {
 @import url(https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css);
 
-.page-header {
+.page-general {
   width: 100%;
-  margin: 0;
+  max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.page-header {
   padding: 0;
   border: 0 none;
   position: relative;

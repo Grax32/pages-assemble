@@ -4,6 +4,8 @@ import minifier from 'html-minifier';
 import uglify from 'uglify-js';
 import uglifycss from 'uglifycss';
 
+import * as base64Img from 'base64-img';
+
 import { BuildContext, SourceFileContext } from '../models';
 import ResultContext from '../models/ResultContext';
 import OutputType from '../models/OutputType';
@@ -27,7 +29,7 @@ export default class MinifyModule extends BaseModule {
 
         const resolveRelativePath: stringFunc = (relativePath: string) => {
           return path.resolve(fullDirName, relativePath);
-        }; 
+        };
 
         switch (asset.outputType) {
           case OutputType.html:
@@ -58,29 +60,38 @@ export default class MinifyModule extends BaseModule {
     asset.output = asset.frontMatter.minify ? uglifycss.processString(textContent) : textContent;
   }
 
-  private getWebUrlFromLine(line: string) {
-    const webUrlPart = line.split(/import.url\(/, 2)[1];
-
-    if (webUrlPart) {
-      return StringUtility.trim(webUrlPart.split(')')[0], "'");
-    } else {
-      return null;
-    }
-  }
+  private importUrlRegex = /import.url\((.*?)\)/;
+  private urlRegex = /(.*?)url\((.*?)\)(.*?)/;
 
   private async resolveLine(line: string, getAssetPath: stringFunc): Promise<string> {
-    const webUrl = this.getWebUrlFromLine(line);
+    const replaceUrlsInLine = async (line: string): Promise<string> => {
+      const importUrlMatch = this.importUrlRegex.exec(line);
+      const embeddedImageUrlMatch = this.urlRegex.exec(line);
 
-    if (webUrl) {
-      if (webUrl.startsWith('http')) {
-        return await UrlFetchUtility.get(webUrl);
+      if (importUrlMatch) {
+        const importUrl = StringUtility.trim(importUrlMatch[1], "'");
+        const value = await fetchPath(importUrl);
+        return value;
+      } else if (embeddedImageUrlMatch) {
+        const embeddedPath = getAssetPath(StringUtility.trim(embeddedImageUrlMatch[2], "'"));
+        const encoded = base64Img.base64Sync(embeddedPath);
+
+        return `${embeddedImageUrlMatch[1]} url(${encoded})${embeddedImageUrlMatch[3]}`;
       } else {
-        const filePath = getAssetPath(webUrl);
+        return line;
+      }
+    };
+
+    const fetchPath = async (path: string) => {
+      if (path.startsWith('http')) {
+        return await UrlFetchUtility.get(path);
+      } else {
+        const filePath = getAssetPath(path);
         return fs.readFileSync(filePath, 'utf-8');
       }
-    } else {
-      return line;
-    }
+    };
+
+    return replaceUrlsInLine(line);    
   }
 
   private async resolveAllLines(textContent: string, getAssetPath: stringFunc): Promise<string> {

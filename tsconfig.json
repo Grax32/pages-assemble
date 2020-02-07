@@ -14,7 +14,9 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "allowJs": true,
+    "typeRoots": ["/types"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
