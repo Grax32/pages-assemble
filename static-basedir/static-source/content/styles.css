@@ -605,9 +605,14 @@ body {
   padding: 5px;
   vertical-align: bottom;
   overflow: hidden;
-  flex: 1;
+  margin: 0;
 }
 
 .page-header h1 {
   border-right: 3px solid black;
+  flex: 1;
+}
+
+.page-header h3 {
+  flex: 2;
 }
