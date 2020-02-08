@@ -138,7 +138,6 @@ body {
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  padding: 20px;
 }
 
 h1,
@@ -225,21 +224,6 @@ em {
 
 strong {
   font-weight: bold;
-}
-
-img {
-  position: relative;
-  margin: 0 auto;
-  max-width: 739px;
-  padding: 5px;
-  margin: 10px 0 10px 0;
-  border: 1px solid #ebebeb;
-
-  box-shadow: 0 0 5px #ebebeb;
-  -webkit-box-shadow: 0 0 5px #ebebeb;
-  -moz-box-shadow: 0 0 5px #ebebeb;
-  -o-box-shadow: 0 0 5px #ebebeb;
-  -ms-box-shadow: 0 0 5px #ebebeb;
 }
 
 p img {
@@ -571,137 +555,56 @@ footer td:nth-child(2) {
 @import url(https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css);
 
+body {
+  min-height: 300px;
+  min-width: 100px;
+}
+
+.page-banner {
+  background-size: cover;
+  background-position: left center;
+  background-image: url(/images/butterfly-banner.jpg);
+  width: 100vw;
+  height: 20vh;
+  background-size: auto 20vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+.page-header-author-image {
+  height: 20vh;
+  position: absolute;
+  top: 0;
+  left: 5vw;
+  border: 2px double black;
+  border-radius: 10px;
+  background-color: greenyellow;
+}
+
 .page-general {
-  width: 100%;
-  max-width: 1024px;
+  margin-left: 5vw;
   margin-right: auto;
-  margin-left: auto;
+  min-width: 150px;
+  max-width: 1024px;
+  width: 90vw;
 }
 
 .page-header {
-  padding: 0;
-  border: 0 none;
-  position: relative;
+  background-color: lightgray;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  border-bottom: 3px solid black;
+  color: black;
+  display: flex;
 }
 
-.page-header-main-image {
-  width: 100%;
-  max-width: 1440px;
-}
-
-.page-header-author-image {
-  position: absolute;
-  border-radius: 10px;
-  border: 2px rgba(255, 255, 255, 0.6) solid;
-  left: 10px;
-  bottom: 10px;
-  width: 200px;
-  transition: width 1s;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 2px;
-  margin-right: 4px;
-}
-
-.page-header-text {
-  position: absolute;
-  left: 220px;
-  bottom: 15px;
-  color: white;
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 5px 15px;
-  border-radius: 10px;
-  border: 2px rgba(255, 255, 255, 0.6) solid;
-  transition: left 1s;
-}
-
-.page-header-text h1 {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.page-header-text h3 {
-  font-size: 14px;
-  margin-bottom: 0px;
-}
-
-@media (min-width: 1170px) {
-  .page-header {
-    min-height: 12vh;
-  }
-
-  .page-header-text {
-    left: 220px;
-  }
-
-  .page-header-text h1 {
-    font-size: 4vh;
-  }
-
-  .page-header-text h3 {
-    font-size: 3vh;
-  }
-
-  .page-header-author-image {
-    width: 200px;
-  }
-
-  @media (max-height: 2000px) {
-    .page-header-author-image {
-      width: 9vh;
-    }
-
-    .page-header-text {
-      left: 11vh;
-    }
-  }
-}
-
-@media (min-width: 700px) and (max-width: 1169px) {
-  .page-header-text {
-    left: 136px;
-  }
-
-  .page-header-author-image {
-    width: 120px;
-  }
-}
-
-@media (max-width: 699px) {
-  .page-header-text {
-    left: 90px;
-  }
-
-  .page-header-author-image {
-    width: 120px;
-    max-width: 25vh;
-  }
-
-  .page-header-text h1 {
-    font-size: 16px;
-  }
-
-  .page-header-text h3 {
-    font-size: 10px;
-  }
-}
-
-.grax-content-pane table {
-  border: 1px solid black;
-  margin: 10px 5px;
-}
-
-.grax-content-pane td,
-.grax-content-pane th {
+.page-header h1,
+.page-header h3 {
   padding: 5px;
-  border: 1px solid gray;
+  vertical-align: bottom;
 }
 
-.page-content {
-  background: #fafafa;
-  padding: 5px;
-  border: 1px solid #eeeeee;
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
+.page-header h1 {
+  border-right: 3px solid black;
 }

@@ -78,7 +78,7 @@ export default class MinifyModule extends BaseModule {
         const value = await fetchPath(importUrl);
         const debugLeader = '// File: ' + importUrl + ';\n';
         return debugLeader + value + ';';
-      } else if (embeddedImageUrlMatch) {
+      } else if (embeddedImageUrlMatch && !embeddedImageUrlMatch[2].startsWith('/')) {
         const embeddedPath = getAssetPath(StringUtility.trim(embeddedImageUrlMatch[2], "'"));
         const encoded = base64Img.base64Sync(embeddedPath);
 

@@ -1,13 +1,13 @@
 @html.extend('base', function(model) { @html.block('body', function(model){
-<div class="page-header page-general">
-  <a href="/"><img class="page-header-main-image" src="/images/butterfly-banner.jpg" alt="Photo by David Walker"/></a>
+<div class="page-banner">
   <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
-  <div class="page-header-text">
-    <h1>David Walker</h1>
-    <h3>
-      Secure&nbsp;Software &bull;&nbsp;Strong&nbsp;Teams
-    </h3>
-  </div>
+</div>
+
+<div class="page-header page-general">
+  <h1>David&nbsp;Walker</h1>
+  <h3>
+    &bull;&nbsp;Secure&nbsp;Software &bull;&nbsp;Strong&nbsp;Teams &bull;&nbsp;Superior&nbsp;Code
+  </h3>
 </div>
 <div class="page-title page-general">
   <h3>@title</h3>
