@@ -603,6 +603,7 @@ body {
 .page-header h3 {
   padding: 5px;
   vertical-align: bottom;
+  overflow: hidden;
 }
 
 .page-header h1 {
