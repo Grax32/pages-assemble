@@ -556,6 +556,7 @@ footer td:nth-child(2) {
 @import url(https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css);
 
 body {
+  height: 100vh;
   min-height: 300px;
   min-width: 100px;
 }
@@ -596,23 +597,40 @@ body {
   margin-top: 4px;
   border-bottom: 3px solid black;
   color: black;
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  height: 5vh;
 }
 
-.page-header h1,
-.page-header h3 {
+.page-tag {
   padding: 5px;
   vertical-align: bottom;
-  overflow: hidden;
   margin: 0;
+  position: absolute;
+  top: 0;
 }
 
-.page-header h1 {
+.page-tag-left-box {
   border-right: 3px solid black;
-  flex: 1;
+  position: absolute;
+  left: 0;
+  width: 30vw;
+  top: 0;
+  background-color: lightcoral;
+  height: calc( 5vh - 3px );
+  overflow: hidden;
 }
 
-.page-header h3 {
-  flex: 2;
+.page-tag-right-box {
+  position: absolute;
+  left: 30vw;
+  width: 60vw;
+  top: 0;
+  background-color: lightblue;
+  height: calc( 5vh - 3px );
+  overflow: hidden;
+}
+
+.page-tag-text {
+  font-size: 3vmin;
+  background-color: lightgreen;
 }

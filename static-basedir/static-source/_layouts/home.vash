@@ -1,17 +1,24 @@
 @html.extend('base', function(model) { @html.block('body', function(model){
-<div class="page-banner">
-  <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
+<div class="page">
+  <div class="page-banner">
+    <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
+  </div>
+  <div class="page-header page-general">
+    <div class="page-tag-left-box">
+      <div class="page-tag-text">
+        <img src="/images/david-walker-text.svg" />
+      </div>
+    </div>
+    <div class="page-tag-right-box">
+      <div class="page-tag-text">
+        &bull;&nbsp;Secure&nbsp;Software &bull;&nbsp;Strong&nbsp;Teams &bull;&nbsp;Superior&nbsp;Code
+      </div>
+    </div>
+  </div>
+  <div class="page-title page-general">
+    <h3>@title</h3>
+    <hr />
+  </div>
+  <div class="page-content page-general">@html.raw(sections.main)</div>
 </div>
-
-<div class="page-header page-general">
-  <h1>David&nbsp;Walker</h1>
-  <h3>
-    &bull;&nbsp;Secure&nbsp;Software &bull;&nbsp;Strong&nbsp;Teams &bull;&nbsp;Superior&nbsp;Code
-  </h3>
-</div>
-<div class="page-title page-general">
-  <h3>@title</h3>
-  <hr />
-</div>
-<div class="page-content page-general">@html.raw(sections.main)</div>
 }) })

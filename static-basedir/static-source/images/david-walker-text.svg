@@ -1,0 +1,17 @@
+<svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .small{font:italic 13px sans-serif}
+    </style>
+    <text x="20" y="35" class="small">
+        My
+    </text>
+    <text x="40" y="35" style="font:700 30px sans-serif">
+        cat
+    </text>
+    <text x="55" y="55" class="small">
+        is
+    </text>
+    <text x="65" y="55" style="font:italic 40px serif;fill:red">
+        David Walker
+    </text>
+</svg>

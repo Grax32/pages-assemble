@@ -50,12 +50,13 @@ export default class MinifyModule extends BaseModule {
   }
 
   private async shrinkHtml(asset: SourceFileContext) {
-    const options: minifier.Options = {
-      collapseWhitespace: true,
-      collapseInlineTagWhitespace: true
-    };
+    // const options: minifier.Options = {
+    //   collapseWhitespace: true,
+    //   collapseInlineTagWhitespace: true,
+    //   ignoreCustomFragments: [/<svg.*?>.*<\/svg>/g]
+    // };
 
-    asset.output = minifier.minify(asset.output, options);
+    // asset.output = minifier.minify(asset.output, options);
   }
 
   private async shrinkStyle(asset: SourceFileContext, resolveRelativePath: stringFunc) {
