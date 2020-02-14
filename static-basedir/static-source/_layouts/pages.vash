@@ -1,17 +1,25 @@
 ﻿@html.extend('base', function(model) { @html.block('body', function(model){
-<div class="page-header page-general">
-  <a href="/"><img class="page-header-main-image" src="/images/butterfly-banner.jpg" alt="Photo by David Walker"/></a>
-  <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
-  <div class="page-header-text">
-    <h1>David Walker</h1>
-    <h3>
-      Secure&nbsp;Software &bull;&nbsp;Strong&nbsp;Teams
-    </h3>
+  <div class="page">
+    <div class="page-banner">
+      <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
+    </div>
+    <div class="page-header page-general">
+      <div class="page-tag-left-box">
+        <div class="page-tag-text">
+          <img src="/images/david-walker-text.svg" />
+        </div>
+      </div>
+      <div class="page-tag-right-box">
+        <div class="page-tag-text">
+          <img src="/images/tagline.svg" />
+        </div>
+      </div>
+    </div>
+    <div class="page-title page-general">
+      <h3>@title</h3>
+      <hr />
+    </div>
+    <div class="page-content page-general">@html.raw(sections.main)</div>
   </div>
-</div>
-<div class="page-title page-general">
-  <h3>@title</h3>
-  <hr />
-</div>
-<div class="page-content page-general">@html.raw(sections.main)</div>
-}) })
+  }) })
+  

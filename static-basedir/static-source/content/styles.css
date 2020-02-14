@@ -585,7 +585,7 @@ body {
 
 .page-general {
   margin-left: 5vw;
-  margin-right: auto;
+  margin-right: 5vw;
   min-width: 150px;
   max-width: 1024px;
   width: 90vw;
@@ -609,28 +609,39 @@ body {
   top: 0;
 }
 
-.page-tag-left-box {
-  border-right: 3px solid black;
-  position: absolute;
-  left: 0;
-  width: 30vw;
-  top: 0;
-  background-color: lightcoral;
+.page-tag-left-box,
+.page-tag-right-box {
   height: calc( 5vh - 3px );
   overflow: hidden;
+  top: 0;
+  position: absolute;
+
+}
+
+.page-tag-left-box {
+  border-right: 2px solid black;
+  left: 0;
+  width: 35%;
 }
 
 .page-tag-right-box {
-  position: absolute;
-  left: 30vw;
-  width: 60vw;
-  top: 0;
-  background-color: lightblue;
-  height: calc( 5vh - 3px );
-  overflow: hidden;
+  right: 0;
+  width: 65%;
 }
 
-.page-tag-text {
-  font-size: 3vmin;
-  background-color: lightgreen;
+.page-tag-left-box img {
+  height: 80%;
+  max-width: 95%;
+}
+
+.page-tag-right-box img {
+  width: 90%;
+}
+
+.page-tag-text img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
