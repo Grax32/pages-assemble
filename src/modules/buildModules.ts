@@ -8,6 +8,7 @@ import VashRazorTemplateModule from './VashRazorTemplateModule';
 import ComputeRouteModule from './ComputeRouteModule';
 import MinifierModule from './MinifierModule';
 import TextOutputModule from './TextOutputModule';
+import SimpleHtmlModule from './SimpleHtmlModule';
 
 export {
   CompileVashRazorTemplateModule,
@@ -16,6 +17,7 @@ export {
   ComputeRouteModule,
   MarkdownModule,
   SimpleTemplateModule,
+  SimpleHtmlModule,
   StaticFilesModule,
   MinifierModule,
   VashRazorTemplateModule,

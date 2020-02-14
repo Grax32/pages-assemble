@@ -573,6 +573,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .page-header-author-image {
   height: 20vh;
   position: absolute;
@@ -592,7 +593,7 @@ body {
 }
 
 .page-header {
-  background-color: lightgray;
+  background-color: greenyellow;
   margin-bottom: 4px;
   margin-top: 4px;
   border-bottom: 3px solid black;
@@ -615,7 +616,6 @@ body {
   overflow: hidden;
   top: 0;
   position: absolute;
-
 }
 
 .page-tag-left-box {
@@ -644,4 +644,28 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.page-content {
+  margin-top: 2vh;
+}
+
+h3 {
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  background: lightgray;
+  text-align: center;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  font-weight: 600;
+}
+
+a:visited {
+  color: black;
 }

@@ -5,8 +5,6 @@ import OutputType, { OutputTypes } from '../models/OutputType';
 import BaseModule from './BaseModule';
 
 export default class ComputeRouteModule extends BaseModule {
-  public next!: (context: BuildContext) => Promise<ResultContext>;
-
   public async invoke(context: BuildContext): Promise<ResultContext> {
     const removeExtension = (filePath: string) => {
       const lastDot = filePath.lastIndexOf('.');

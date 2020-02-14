@@ -7,7 +7,6 @@ import SourceFileContext from '../models/SourceFileContext';
 import OutputType from '../models/OutputType';
 
 export default class CompileVashRazorTemplateModule extends BaseModule {
-  public next!: (context: BuildContext) => Promise<ResultContext>;
   public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', CompileVashRazorTemplateModule.name);
 

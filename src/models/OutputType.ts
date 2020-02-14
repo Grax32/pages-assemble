@@ -4,6 +4,7 @@ enum OutputType {
   style = 'style',
   script = 'script',
   binary = 'binary',
+  data = 'data'
 }
 
 export class OutputTypes {
@@ -21,6 +22,8 @@ export class OutputTypes {
         return OutputType.style;
       case 'js':
         return OutputType.script;
+      case 'json':
+        return OutputType.data;
       default:
         return OutputType.binary;
     }
@@ -28,6 +31,8 @@ export class OutputTypes {
 
   public static getOutputExtension = (outputType: OutputType) => {
     switch (outputType) {
+      case OutputType.data:
+        return '.json';
       case OutputType.text:
         return '.txt';
       case OutputType.html:

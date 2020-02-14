@@ -12,7 +12,6 @@ import BaseModule from './BaseModule';
 export default class InitialModule extends BaseModule {
   private outputTypeValues = Object.values(OutputTypes.OutputType);
 
-  public next!: (context: BuildContext) => Promise<ResultContext>;
   public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', InitialModule.name);
 
@@ -57,7 +56,7 @@ export default class InitialModule extends BaseModule {
       const matterData = matter.data || {};
       const outputType = getOutputType(sourcePath, matterData);
 
-      const excerptSeparator = defaultSeparator;
+      const excerptSeparator = '/* end excerpt */';
       const content = matter.content.split(excerptSeparator, 2);
       if (content.length === 1) {
         asset.textContent = matter.content;
