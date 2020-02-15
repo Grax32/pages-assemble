@@ -4,6 +4,8 @@ name: about-2
 section: footer
 ---
 
+### About the Author
+
 * Software Architect/Developer
   * [Github - Grax32](http://github.com/Grax32) &bull; [NuGet](https://www.nuget.org/profiles/Grax) &bull; [Resume](/about/david-walker/resume.pdf)
 * Scrum Master
