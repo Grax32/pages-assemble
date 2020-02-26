@@ -5,7 +5,7 @@ import glob from 'glob';
 
 import ResultContext from '../models/ResultContext';
 import BuildContext from '../models/BuildContext';
-import { OutputTypes } from '../models/OutputType';
+import OutputType, { OutputTypes } from '../models/OutputType';
 import SourceFileContext from '../models/SourceFileContext';
 import BaseModule from './BaseModule';
 

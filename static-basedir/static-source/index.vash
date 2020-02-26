@@ -1,0 +1,9 @@
+---
+layout: home
+title: David Walker
+---
+
+@context.getInclude('home_page_sections/articles')
+
+### [Software Projects](/software/projects)
+

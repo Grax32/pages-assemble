@@ -17,6 +17,7 @@ export class OutputTypes {
       case 'md':
       case 'html':
       case 'htm':
+      case 'vash':
         return OutputType.html;
       case 'css':
         return OutputType.style;

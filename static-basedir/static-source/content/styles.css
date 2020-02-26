@@ -552,6 +552,7 @@ footer td:nth-child(2) {
   padding-top: 20px;
 }
 
+@import url(all.min.css);
 @import url(https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css);
 
@@ -612,7 +613,7 @@ body {
 
 .page-tag-left-box,
 .page-tag-right-box {
-  height: calc( 5vh - 3px );
+  height: calc(5vh - 3px);
   overflow: hidden;
   top: 0;
   position: absolute;
@@ -650,31 +651,52 @@ body {
   margin-top: 2vh;
 }
 
-h3 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   border: 2px solid black;
   border-radius: 10px;
   color: black;
   background: lightgray;
   text-align: center;
+  margin-top: 10px;
+}
+
+h1 {
+  width: 100%;
+}
+
+h2 {
+  width: 95%;
+}
+
+h3 {
+  width: 90%;
+}
+
+h4 {
+  width: 85%;
+}
+
+h5 {
+  width: 80%;
 }
 
 a {
-  color: black;
-}
-
-a:hover {
-  font-weight: 600;
+  color: #000066;
 }
 
 a:visited {
-  color: black;
+  color: #660000;
 }
 
 .context-home table {
   border: 0 none;
 }
 
-.context-home th{
+.context-home th {
   white-space: nowrap;
 }
 
@@ -690,4 +712,20 @@ a:visited {
 
 .context-home td {
   border: 0 none;
+}
+
+.fas,
+.far,
+.fal,
+.fad,
+.fab {
+  font-style: normal;
+}
+
+.fixed-width {
+  font-size: 18px;
+  color: black;
+  width: 24px; /* Whatever fixed width you want here */
+  display: inline-block; /* Force the width to be respected. See also: inline-block */
+  text-align: center; /* So the character appears in the middle of the block */
 }

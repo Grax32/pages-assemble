@@ -15,10 +15,12 @@
         </div>
       </div>
     </div>
+    @if (title) {
     <div class="page-title page-general">
       <h3>@title</h3>
       <hr />
     </div>
+    }
     <div class="page-content page-general">@html.raw(sections.main)</div>
   </div>
   }) })

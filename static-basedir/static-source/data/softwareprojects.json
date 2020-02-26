@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Array Extensions",
+    "description": "Fast fill arrays with values or patterns",
+    "source": "https://github.com/Grax32/ArrayExtensions",
+    "package": "https://www.nuget.org/packages/grax.arrayextensions/",
+    "site": "https://sites.grax32.com/ArrayExtensions",
+    "shields": {
+      "package": "https://img.shields.io/nuget/v/grax.arrayextensions",
+      "site": "https://img.shields.io/website/https/sites.grax32.com/ArrayExtensions"
+    }
+  },
+  {
+    "name": "EasyInjectCore",
+    "description": "Configure injection in ASP.NET Core by attribute",
+    "source": "https://github.com/Grax32/EasyInjectCore/",
+    "package": "https://www.nuget.org/packages/Grax32.EasyInjectCore/",
+    "site": "https://sites.grax32.com/EasyInjectCore/",
+    "shields": {
+      "package": "https://img.shields.io/nuget/v/Grax32.Easyinjectcore",
+      "site": "https://img.shields.io/website/https/sites.grax32.com/EasyInjectCore"
+    }
+  },
+  {
+    "name": "OrderByString",
+    "description": "Use strings in OrderBy / ThenBy statements with IQueryable providers.",
+    "source": "https://github.com/Grax32/OrderByString/",
+    "package": "https://www.nuget.org/packages/OrderByString/",
+    "site": "https://sites.grax32.com/OrderByString",
+    "shields": {
+      "package": "https://img.shields.io/nuget/v/orderbystring",
+      "site": "https://img.shields.io/website/https/sites.grax32.com/OrderByString"
+    }
+  },
+  {
+    "name": "EasyResource",
+    "description": "Easily retrieve embedded resources",
+    "source": "https://github.com/Grax32/easyresource/",
+    "package": "https://www.nuget.org/packages/EasyResource/",
+    "site": "https://sites.grax32.com/EasyResource",
+    "shields": {
+      "package": "https://img.shields.io/nuget/v/easyresource",
+      "site": "https://img.shields.io/website/https/sites.grax32.com/EasyResource"
+    }
+  },
+  {
+    "name": "Interpolation Format Provider",
+    "description": "Fill template strings from dictionary or anonymous types",
+    "source": "https://github.com/Grax32/interpolationformatprovider/",
+    "package": "https://www.nuget.org/packages/InterpolationFormatProvider/",
+    "site": "https://sites.grax32.com/InterpolationFormatProvider",
+    "shields": {
+      "package": "https://img.shields.io/nuget/v/interpolationformatprovider",
+      "site": "https://img.shields.io/website/https/sites.grax32.com/InterpolationFormatProvider"
+    }
+  },
+  {
+    "name": "fFastInjector",
+    "description": "High-speed, compact, and portable dependency injector",
+    "source": "https://github.com/Grax32/ffastinjector/",
+    "package": "https://www.nuget.org/packages/fFastInjector/",
+    "site": "https://sites.grax32.com/fFastInjector/",
+    "shields": {
+      "package": "https://img.shields.io/nuget/v/ffastinjector",
+      "site": "https://img.shields.io/website/https/sites.grax32.com/fFastInjector"
+    }
+  },
+  {
+    "name": "fFastMapper",
+    "description": "High-speed mapping between types",
+    "source": "https://github.com/Grax32/fFastMapper/",
+    "package": "https://www.nuget.org/packages/fFastMapper/",
+    "site": "https://sites.grax32.com/fFastMapper",
+    "shields": {
+      "package": "https://img.shields.io/nuget/v/fFastMapper",
+      "site": "https://img.shields.io/website/https/sites.grax32.com/fFastMapper"
+    }
+  }
+]

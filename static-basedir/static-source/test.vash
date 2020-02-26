@@ -1,0 +1,8 @@
+---
+layout: pages
+title: Software Projects
+---
+
+@html.raw(model.context.getInclude('software-projects','home').output)
+
+

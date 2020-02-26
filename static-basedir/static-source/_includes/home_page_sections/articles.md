@@ -14,3 +14,5 @@ name: articles
 * [Trim all strings Submitted to MVC Controllers - ASP.NET, C#](/2015/03/trimming-all-strings-submitted-to-aspnet)
   * How often do you really need a leading or trailing spaces in an input field?
 * [Azure Web Jobs in Source Code](/articles/azure-web-jobs-in-source-code)
+
+[More...](/articles/)
