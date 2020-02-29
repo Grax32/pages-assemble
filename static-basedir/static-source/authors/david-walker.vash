@@ -7,15 +7,15 @@ David Walker is a Secure Software Consultant, a Certified Secure Software Lifecy
 <hr />
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-6">
     <a href="http://github.com/Grax32"><i class="fixed-width fab fa-github-alt"></i> Github / Grax32</a><br />
     <a href="https://www.nuget.org/profiles/Grax32"><i class="fixed-width fas fa-box"></i> NuGet / Grax32</a><br />
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-6">
     <a href="https://stackoverflow.com/users/1056639/grax32"><i class="fixed-width fab fa-stack-overflow"></i> StackOverflow / Grax32</a><br />
     <a href="https://twitter.com/grax32"><i class="fixed-width fab fa-twitter"></i> Twitter / @@grax32</a><br />
 </div>
-<div class="col-md-4">
+<div class="col-md-4 col-sm-6">
     <a href="/about/david-walker/resume.pdf"><i class="fixed-width far fa-file-alt"></i> Resume</a><br />
     <a href="https://www.linkedin.com/in/grax32/"><i class="fixed-width fab fa-linkedin-in"></i> LinkedIn / Grax32</a><br />
   </div>
