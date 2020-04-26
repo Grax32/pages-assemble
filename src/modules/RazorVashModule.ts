@@ -95,7 +95,10 @@ export default class RazorVashModule extends BaseModule {
       .filter(asset => !isSystemFolder(asset.path))
       .filter(asset => asset.outputType === OutputType.html)
       .forEach(asset => {
-        const baseModel = { title: '' };
+        const baseModel = { 
+          title: '',
+          titleonly: '' 
+        };
         const templateName = asset.frontMatter.layout || context.options.template;
         const applyTemplate = templates[templateName];
 

@@ -504,69 +504,47 @@ Small Device Styles
   Specialized customizations
 */
 
-.grax-content-pane {
-  background-color: #fefefe;
-  border: 1px solid #d0d0d0;
-}
-
-.grax-content-pane p:first-of-type {
-  font-size: 1.2em;
-}
-
-.grax-author-pane {
-  background-color: #fefefe;
-  border: 1px solid #d0d0d0;
-  border-top-width: 0;
-  font-style: italic;
-}
-
-.grax-navigation-pane {
-  background-color: whitesmoke;
-  font-size: 0.9em;
-  padding: 15px;
-}
-
-.grax-navigation-pane ul {
-  list-style-type: none;
-  padding-left: 5px;
-}
-
-b {
-  font-weight: bold;
-}
-
-i {
-  font-style: italic;
-}
-
-footer table {
-  border: 0 none;
-}
-
-footer td {
-  vertical-align: top;
-  border: 0 none;
-}
-
-footer td:nth-child(2) {
-  padding-top: 20px;
-}
-
 @import url(all.min.css);
 @import url(https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism.min.css);
 
+html {
+  overflow-y: scroll;
+}
+
 body {
+  width: 100%;
   height: 100vh;
+  position: absolute;
+  overflow: hidden;
+
   min-height: 300px;
   min-width: 100px;
+}
+@media screen and (max-width: 100px) {
+  body {
+    background-color: orange;
+  }
+}
+@media screen and (max-width: 100px) {
+  body {
+    overflow-x: scroll;
+    background-color: pink;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  body {
+    overflow-y: scroll;
+    border: 5px solid red;
+  }
 }
 
 .page-banner {
   background-size: cover;
   background-position: left center;
   background-image: url(/images/butterfly-banner.jpg);
-  width: 100vw;
+  width: 100%;
   height: 20vh;
   background-size: auto 20vh;
   top: 0;
@@ -583,6 +561,11 @@ body {
   border: 2px double black;
   border-radius: 10px;
   background-color: greenyellow;
+}
+
+div.row {
+  width: 90vw;
+  max-width: 1024px;
 }
 
 .page-general {
@@ -656,6 +639,7 @@ h2,
 h3,
 h4,
 h5 {
+  margin-left: -1vw;
   border: 2px solid black;
   border-radius: 10px;
   color: black;
@@ -665,7 +649,7 @@ h5 {
 }
 
 h1 {
-  width: 100%;
+  width: calc( 92vw );
 }
 
 h2 {

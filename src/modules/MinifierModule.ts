@@ -55,7 +55,6 @@ export default class MinifyModule extends BaseModule {
     //   collapseInlineTagWhitespace: true,
     //   ignoreCustomFragments: [/<svg.*?>.*<\/svg>/g]
     // };
-
     // asset.output = minifier.minify(asset.output, options);
   }
 
@@ -98,7 +97,7 @@ export default class MinifyModule extends BaseModule {
       }
     };
 
-    return replaceUrlsInLine(line);    
+    return replaceUrlsInLine(line);
   }
 
   private async resolveAllLines(textContent: string, getAssetPath: stringFunc): Promise<string> {
@@ -114,19 +113,35 @@ export default class MinifyModule extends BaseModule {
       ? await this.resolveAllLines(asset.textContent, resolveRelativePath)
       : asset.textContent;
 
-    if (asset.frontMatter.minify) {
-      const result = uglify.minify(textContent);
+    // if (asset.frontMatter.minify) {
+    //   const result = uglify.minify(textContent);
 
-      if (result.warnings) {
-        this.log('Minify warning', ...result.warnings);
-      }
-      if (result.error) {
-        throw result.error;
-      }
+    //   if (result.warnings) {
+    //     this.log('Minify warning', ...result.warnings);
+    //   }
 
-      asset.output = result.code;
-    } else {
-      asset.output = textContent;
-    }
+    //   if (result.error) {
+    //     const error = <any>result.error;
+
+    //     console.error('Error minifying ' + asset.path);
+    //     if (error.pos) {
+    //       const errorSourceSourceStart = textContent.lastIndexOf('\n', error.pos);
+    //       const returnCharAfterErrorPos = textContent.indexOf('\n', error.pos);
+    //       const errorSourceEnd = returnCharAfterErrorPos === -1 ? textContent.length : returnCharAfterErrorPos;
+
+    //       if (errorSourceSourceStart > -1 && errorSourceEnd > -1) {
+    //         console.error('ErrorLine: ' + textContent.slice(errorSourceSourceStart, errorSourceEnd));
+    //       }
+    //       console.error(result.error);
+
+    //       // console.error('Source: ' + textContent);
+    //       throw result.error;
+    //     }
+
+    //     asset.output = result.code;
+    //   } else {
+    asset.output = textContent;
+    //   }
+    // }
   }
 }
