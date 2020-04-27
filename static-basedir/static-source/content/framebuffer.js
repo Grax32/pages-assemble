@@ -9,8 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const transitionTimeMs = 250;
-const transitionPauseTimeMs = 10;
+const transitionTimeMs = 1000;
 const buffers = [];
 if (window === window.parent) {
     window.onload = rewritePageIntoHostPage;
@@ -137,8 +136,6 @@ function init() {
     }
     function transition(buffer) {
         const otherBuffer = buffers.filter(v => v !== buffer)[0];
-        buffer.style.transitionDelay =
-            transitionTimeMs + transitionPauseTimeMs + "ms";
         otherBuffer.style.transitionDelay = "0ms";
         buffer.classList.add("activeBuffer");
         buffer.classList.remove("otherBuffer");

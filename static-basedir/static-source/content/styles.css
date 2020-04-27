@@ -630,8 +630,10 @@ div.row {
   transform: translate(-50%, -50%);
 }
 
-.page-content {
+.page.context-page {
   margin-top: 2vh;
+  height: 80vh;
+  overflow-y: auto;
 }
 
 h1,
