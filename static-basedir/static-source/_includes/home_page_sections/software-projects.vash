@@ -5,7 +5,7 @@
       <a href="@project.site">@project.name</a><br />
       <hr />
       <div>@project.description<br /></div>
-      <a href="@project.source" alt="Source"><i class="fas fa-code">source</i></a> &bull; 
+      <a href="@project.source" alt="Source"><i class="fas fa-code"></i></a> &bull; 
       <a href="@project.site">site</a> &bull;
       <a href="@project.package">pkg</a>
     </div>
