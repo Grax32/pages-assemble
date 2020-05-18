@@ -641,7 +641,6 @@ h2,
 h3,
 h4,
 h5 {
-  margin-left: -1vw;
   border: 2px solid black;
   border-radius: 10px;
   color: black;
@@ -651,7 +650,7 @@ h5 {
 }
 
 h1 {
-  width: calc( 92vw );
+  width: 92vw;
 }
 
 h2 {
@@ -659,7 +658,7 @@ h2 {
 }
 
 h3 {
-  width: 90%;
+  width: 100%;
 }
 
 h4 {

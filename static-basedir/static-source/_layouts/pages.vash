@@ -21,7 +21,13 @@
       <hr />
     </div>
     }
-    <div class="page-content page-general">@html.raw(sections.main)</div>
+    <div class="page-content page-general">@html.raw(sections.main)
+      <hr />
+      <footer>
+        @html.raw(sections.footer)
+      </footer>
+      <br/>
+    </div>
   </div>
   }) })
   

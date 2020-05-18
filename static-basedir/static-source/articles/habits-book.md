@@ -6,6 +6,8 @@ tags: [books]
 ---
 
 ## BY WILLIAM JAMES 
+### The Principles of Psychology (1890)
+#### Chapter IV
 
 WHEN we look at living creatures 
 from an outward point of view, 

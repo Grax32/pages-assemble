@@ -9,6 +9,7 @@ import MinifierModule from './MinifierModule';
 import TextOutputModule from './TextOutputModule';
 import SimpleHtmlModule from './SimpleHtmlModule';
 import DataModule from './DataModule';
+import SectionsModule from './SectionsModule';
 
 export {
   RazorVashModule,
@@ -18,6 +19,7 @@ export {
   MarkdownModule,
   SimpleTemplateModule,
   DataModule,
+  SectionsModule,
   SimpleHtmlModule,
   StaticFilesModule,
   MinifierModule,

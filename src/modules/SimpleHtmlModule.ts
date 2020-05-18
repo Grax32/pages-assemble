@@ -10,23 +10,25 @@ export default class SimpleHtmlModule extends BaseModule {
 
   public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', SimpleHtmlModule.name);
-
-    const sharedSections: {[prop: string]: string} = {};
+ 
+    //const sharedSections: {[prop: string]: string} = {};
 
     const htmlAssets = context.assets.filter(v => path.extname(v.path) === '.html');
 
     htmlAssets
       .forEach(asset => {
-        const sectionName = asset.frontMatter.section;
-        if (sectionName) {
-          sharedSections[sectionName] = asset.output;
-        }
+        asset.sections.main = asset.textContent;
+        
+        // const sectionName = asset.frontMatter.section;
+        // if (sectionName) {
+        //   sharedSections[sectionName] = asset.output;
+        // }
       });
 
-    context.assets.forEach(asset => asset.sections = ({
-      ...sharedSections,
-      ...asset.sections 
-    }));
+    // context.assets.forEach(asset => asset.sections = ({
+    //   ...sharedSections,
+    //   ...asset.sections 
+    // })); 
 
     return await this.next(context);
   }

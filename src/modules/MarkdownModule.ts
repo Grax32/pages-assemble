@@ -31,16 +31,16 @@ export default class MarkdownModule extends BaseModule {
         const rendered = this.markdown.render(asset.textContent);
         asset.sections.main = rendered;
 
-        const sectionName = asset.frontMatter.section;
-        if (sectionName) {
-          sharedSections[sectionName] = rendered;
-        }
+        // const sectionName = asset.frontMatter.section;
+        // if (sectionName) {
+        //   sharedSections[sectionName] = rendered;
+        // }
       });
 
-    context.assets.forEach(asset => asset.sections = ({
-      ...sharedSections,
-      ...asset.sections 
-    }));
+    // context.assets.forEach(asset => asset.sections = ({
+    //   ...sharedSections,
+    //   ...asset.sections 
+    // }));
 
     return await this.next(context);
   }

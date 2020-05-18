@@ -11,9 +11,6 @@
   </head>
   <body>
     @html.block('body', function () {})
-    <footer class="page-general">
-      @html.raw(sections.footer)
-    </footer>
     <script src="/content/scripts.js" type="text/javascript" ></script>
   </body>
 </html>
