@@ -191,33 +191,6 @@ p {
   margin: 10px 0 15px 0;
 }
 
-a {
-  text-decoration: none;
-  color: #007edf;
-  text-shadow: none;
-
-  transition: color 0.5s ease;
-  transition: text-shadow 0.5s ease;
-  -webkit-transition: color 0.5s ease;
-  -webkit-transition: text-shadow 0.5s ease;
-  -moz-transition: color 0.5s ease;
-  -moz-transition: text-shadow 0.5s ease;
-  -o-transition: color 0.5s ease;
-  -o-transition: text-shadow 0.5s ease;
-  -ms-transition: color 0.5s ease;
-  -ms-transition: text-shadow 0.5s ease;
-}
-
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
-footer a {
-  color: black;
-  text-decoration: none;
-}
-
 em {
   font-style: italic;
 }
@@ -540,6 +513,28 @@ body {
   }
 }
 
+a {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 126, 223, 0.3);
+  color: rgb(0, 126, 223);
+  text-shadow: none;
+
+  transition-property: color, text-decoration-color;
+  transition-duration: 200ms;
+}
+
+a:hover,
+a:focus {
+  text-decoration-color: rgba(0, 126, 223, 1);
+  text-shadow: 1px 1px 1px rgba(128, 128, 128, 0.2);
+  color: rgb(0, 126, 223);
+}
+
+a:visited {
+  text-decoration-color: rgba(63, 15, 3, 0.3);
+  color: rgb(63, 15, 3);
+}
+
 .page-banner {
   background-size: cover;
   background-position: left center;
@@ -564,16 +559,16 @@ body {
 }
 
 div.row {
-  width: 90vw;
+  width: 90%;
   max-width: 1024px;
 }
 
 .page-general {
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin-left: 5%;
+  margin-right: 5%;
   min-width: 150px;
   max-width: 1024px;
-  width: 90vw;
+  width: 90%;
 }
 
 .page-header {
@@ -641,12 +636,11 @@ h2,
 h3,
 h4,
 h5 {
-  border: 2px solid black;
-  border-radius: 10px;
+  border-bottom: 1px solid lightgreen;
   color: black;
-  background: lightgray;
-  text-align: center;
+  background: #f9f9f9;
   margin-top: 10px;
+  padding-left: 1rem;
 }
 
 h1 {
@@ -667,14 +661,6 @@ h4 {
 
 h5 {
   width: 80%;
-}
-
-a {
-  color: #000066;
-}
-
-a:visited {
-  color: #660000;
 }
 
 .context-home table {
@@ -713,4 +699,9 @@ a:visited {
   width: 24px; /* Whatever fixed width you want here */
   display: inline-block; /* Force the width to be respected. See also: inline-block */
   text-align: center; /* So the character appears in the middle of the block */
+}
+
+.page-byline {
+  font-weight: bold;
+  margin-bottom: 10px;
 }

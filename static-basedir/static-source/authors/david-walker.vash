@@ -1,5 +1,7 @@
 ---
 titleonly: David Walker
+route: /about/david-walker
+section-footer: 
 ---
 
 <h1 class="row col-md-12">Bio</h1>
@@ -37,7 +39,7 @@ with his lovely wife Lynn and his 2 dogs.
 
 <h4>Photography</h4>
 <ul>
-  <li><a href="https://www.facebook.com/Grax32PhotoArt/">Grax32 Art and Photography</a></li>
+  <li><a href="https://www.facebook.com/Grax32PhotoArt/">Facebook - Grax32 Art and Photography</a></li>
   <li><a href="https://www.instagram.com/grax32/">Instagram - Grax32 Art and Photography</a></li>
-  <li><a href="https://www.instagram.com/clermontreve/">Clear Mountain Dreams </a></li>
+  <li><a href="https://www.instagram.com/clermontreve/">Instagram - Clear Mountain Dreams </a></li>
 </ul>

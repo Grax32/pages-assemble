@@ -1,33 +1,48 @@
 ﻿@html.extend('base', function(model) { @html.block('body', function(model){
-  <div class="page-banner">
-    <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
+<div class="page-banner">
+  <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
+</div>
+<div class="page context-page">
+  <div class="page-header page-general">
+    <div class="page-tag-left-box">
+      <div class="page-tag-text">
+        <a href="/about/david-walker"><img src="/images/david-walker-text.svg"/></a>
+      </div>
+    </div>
+    <div class="page-tag-right-box">
+      <div class="page-tag-text">
+        <img src="/images/tagline.svg" />
+      </div>
+    </div>
   </div>
-  <div class="page context-page">
-    <div class="page-header page-general">
-      <div class="page-tag-left-box">
-        <div class="page-tag-text">
-          <img src="/images/david-walker-text.svg" />
-        </div>
-      </div>
-      <div class="page-tag-right-box">
-        <div class="page-tag-text">
-          <img src="/images/tagline.svg" />
-        </div>
-      </div>
-    </div>
-    @if (title) {
-    <div class="page-title page-general">
-      <h3>@title</h3>
-      <hr />
-    </div>
+
+  <div class="page-nav page-general" style="color: red;">
+    Home > Articles > Programming > C#<br />
+    [dotnet] [concepts]<br />
+  </div>
+
+  @if (title) {
+  <div class="page-title page-general">
+    <h3>@title</h3>
+    @if (excerpt) {
+    <div class="excerpt">@excerpt</div>
     }
-    <div class="page-content page-general">@html.raw(sections.main)
-      <hr />
-      <footer>
-        @html.raw(sections.footer)
-      </footer>
-      <br/>
-    </div>
   </div>
-  }) })
-  
+  }
+
+  <div class="page-byline page-general">
+    by <a href="/about/david-walker/">David Walker</a>
+  </div>
+
+  <div class="page-content page-general">
+    @html.raw(sections.main)
+    <hr />
+    <footer>
+      <span style="color: red;"> Share to: Facebook / Twitter</span>
+
+      @html.raw(sections.footer)
+    </footer>
+    <br />
+  </div>
+</div>
+}) })
