@@ -458,22 +458,16 @@ body {
   min-height: 300px;
   min-width: 100px;
 }
-@media screen and (max-width: 100px) {
-  body {
-    background-color: orange;
-  }
-}
+
 @media screen and (max-width: 100px) {
   body {
     overflow-x: scroll;
-    background-color: pink;
   }
 }
 
 @media screen and (max-height: 300px) {
   body {
     overflow-y: scroll;
-    border: 5px solid red;
   }
 }
 
@@ -487,10 +481,12 @@ a {
   transition-duration: 200ms;
 }
 
+a:visited:hover,
+a:visited:active,
 a:hover,
 a:focus {
   text-decoration-color: rgba(0, 126, 223, 1);
-  text-shadow: 1px 1px 1px rgba(128, 128, 128, 0.2);
+  text-shadow: 1px 1px 1px rgba(200, 200, 0, 0.4);
   color: rgb(0, 126, 223);
 }
 
@@ -694,6 +690,11 @@ h5 {
 footer {
   border: 1px solid #ededed;
   padding: 5px;
+  margin-bottom: 30px;
+}
+
+footer:empty {
+  visibility: hidden;
 }
 
 a.share-link,

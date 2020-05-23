@@ -1,45 +1,46 @@
 ---
 titleonly: David Walker
 route: /about/david-walker
-section-footer: 
+section-footer:
 ---
 
 <h1 class="row col-md-12">All About David</h1>
-David is a Secure Software Consultant, a Certified Secure Software Lifecycle Professional (CSSLP), and a
-Professional Scrum Master. He believes in secure and reliable software and productive happy teams. He lives in Orlando
-with his lovely wife Lynn and his 2 dogs.
+David is a Secure Software Consultant, a Certified Secure Software Lifecycle Professional (CSSLP), and a Professional
+Scrum Master. He believes in secure and reliable software and productive happy teams. He lives in Orlando with his
+lovely wife Lynn and his 2 dogs.
 
 <h4>Connections</h4>
 
 <div class="row">
   <div class="col-md-4 col-sm-6">
-    <a href="http://github.com/Grax32"><i class="fixed-width fab fa-github-alt"></i> Github / Grax32</a><br />
-    <a href="https://www.nuget.org/profiles/Grax32"><i class="fixed-width fas fa-box"></i> NuGet / Grax32</a><br />
+    <i class="fixed-width fab fa-github-alt"></i> <a href="http://github.com/Grax32">Github / Grax32</a><br />
+    <i class="fixed-width fas fa-box"></i> <a href="https://www.nuget.org/profiles/Grax32">NuGet / Grax32</a><br />
   </div>
   <div class="col-md-4 col-sm-6">
-    <a href="https://stackoverflow.com/users/1056639/grax32"
-      ><i class="fixed-width fab fa-stack-overflow"></i> StackOverflow / Grax32</a
-    ><br />
-    <a href="https://twitter.com/grax32"><i class="fixed-width fab fa-twitter"></i> Twitter / @@grax32</a><br />
+    <i class="fixed-width fab fa-stack-overflow"></i>
+    <a href="https://stackoverflow.com/users/1056639/grax32">StackOverflow / Grax32</a><br />
+    <i class="fixed-width fab fa-twitter"></i>
+    <a href="https://twitter.com/grax32">Twitter / @@grax32</a><br />
   </div>
   <div class="col-md-4 col-sm-6">
-    <a href="/about/david-walker/resume.pdf"><i class="fixed-width far fa-file-alt"></i> Resume</a><br />
-    <a href="https://www.linkedin.com/in/grax32/"><i class="fixed-width fab fa-linkedin-in"></i> LinkedIn / Grax32</a
+    <i class="fixed-width far fa-file-alt"></i>
+    <a href="/about/david-walker/resume.pdf">Resume</a><br />
+    <i class="fixed-width fab fa-linkedin-in"></i>
+    <a href="https://www.linkedin.com/in/grax32/">LinkedIn / Grax32</a
     ><br />
   </div>
 </div>
 
 <h4>Certifications</h4>
 
-<img src="/images/psmi.png" style="height: 24px;" /> Professional Scrum Master Level 1 - Scrum.org <br />
-<a href="https://www.youracclaim.com/badges/9829ce74-2534-4ff0-a9d0-56fde62989b6/embedded">
-  <img src="/images/certified-secure-software-lifecycle-professional-csslp.png" style="height: 24px;" /> Certified
-  Secure Software Lifecycle Professional (CSSLP) - ISC2.org </a
-><br />
+<img src="/images/psmi.png" style="height: 24px;" /> 
+Professional Scrum Master Level 1 - Scrum.org <br />
+<img src="/images/certified-secure-software-lifecycle-professional-csslp.png" style="height: 24px;" />
+Certified Secure Software Lifecycle Professional (CSSLP) - ISC2.org<br />
 
 <h4>Photography</h4>
 <ul>
-  <li><a href="https://www.facebook.com/Grax32PhotoArt/">Facebook - Grax32 Art and Photography</a></li>
-  <li><a href="https://www.instagram.com/grax32/">Instagram - Grax32 Art and Photography</a></li>
-  <li><a href="https://www.instagram.com/clermontreve/">Instagram - Clear Mountain Dreams </a></li>
+  <li>Facebook - <a href="https://www.facebook.com/Grax32PhotoArt/">Grax32 Art and Photography</a></li>
+  <li>Instagram - <a href="https://www.instagram.com/grax32/">Grax32 Art and Photography</a></li>
+  <li>Instagram - <a href="https://www.instagram.com/clermontreve/">Clear Mountain Dreams</a></li>
 </ul>

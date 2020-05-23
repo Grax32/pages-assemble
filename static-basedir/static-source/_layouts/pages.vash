@@ -43,9 +43,7 @@
       <a class="share-link" title="Email" onclick="shareTo('email')"><i class="fas fa-at"></i></a>
     </p>
 
-    <footer>
-      @html.raw(sections.footer)
-    </footer>
+    <footer>@html.raw(sections.footer)</footer>
     <br />
   </div>
 </div>
