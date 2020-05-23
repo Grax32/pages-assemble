@@ -140,42 +140,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 10px 0;
-  font-weight: 700;
-  color: #222222;
-  font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
-  letter-spacing: -1px;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-h2 {
-  font-size: 32px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
-h4 {
-  font-size: 21px;
-}
-
-h5 {
-  font-size: 18px;
-}
-
-h6 {
-  font-size: 16px;
-}
 
 sup {
   vertical-align: super;
@@ -355,7 +319,7 @@ Full-Width Styles
   color: #fff;
   font-size: 42px;
   font-weight: 700;
-  text-shadow: #111 0px 0px 10px;
+  text-shadow: 0px 0px 10px #111;
 }
 
 #project_tagline {
@@ -363,7 +327,7 @@ Full-Width Styles
   font-size: 24px;
   font-weight: 300;
   background: none;
-  text-shadow: #111 0px 0px 10px;
+  text-shadow: 0px 0px 10px #111;
 }
 
 #downloads {
@@ -535,6 +499,46 @@ a:visited {
   color: rgb(63, 15, 3);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 700;
+  color: #222222;
+  font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 21px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
 .page-banner {
   background-size: cover;
   background-position: left center;
@@ -572,10 +576,11 @@ div.row {
 }
 
 .page-header {
-  background-color: greenyellow;
+  background-color: rgb(115, 170, 33);
   margin-bottom: 4px;
   margin-top: 4px;
-  border-bottom: 3px solid black;
+  border-top: 2px solid rgb(75, 110, 22);
+  border-bottom: 2px solid rgb(75, 110, 22);
   color: black;
   position: relative;
   height: 5vh;
@@ -643,26 +648,6 @@ h5 {
   padding-left: 1rem;
 }
 
-h1 {
-  width: 92vw;
-}
-
-h2 {
-  width: 95%;
-}
-
-h3 {
-  width: 100%;
-}
-
-h4 {
-  width: 85%;
-}
-
-h5 {
-  width: 80%;
-}
-
 .context-home table {
   border: 0 none;
 }
@@ -704,4 +689,22 @@ h5 {
 .page-byline {
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+footer {
+  border: 1px solid #ededed;
+  padding: 5px;
+}
+
+a.share-link,
+a.share-link {
+  color: black;
+  margin: 0px 5px;
+  text-decoration: none;
+}
+
+a.share-link:hover,
+a.share-link:active {
+  text-decoration: none;
+  text-shadow: 1px 1px 1px lightblue;
 }
