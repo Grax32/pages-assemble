@@ -605,8 +605,8 @@ div.row {
 }
 
 .page-tag-right-box {
-  right: 0;
-  width: 65%;
+  height: 80%;
+  max-width: 95%;
 }
 
 .page-tag-left-box img {
