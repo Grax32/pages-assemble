@@ -1,6 +1,7 @@
 ---
 layout: pages
-route: /2014/03/female-code-camp-speakers.html
+route: /articles/opinion/female-code-camp-speakers.html
+alternateRoutes: [/2014/03/female-code-camp-speakers.html]
 title: Female Code Camp Speakers?
 tags: 
  - opinion

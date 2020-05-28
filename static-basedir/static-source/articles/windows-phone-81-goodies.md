@@ -1,6 +1,7 @@
 ---
 layout: pages
-route: /2014/07/windows-phone-81-goodies.html
+route: /articles/archive/2014/windows-phone-81-goodies.html
+alternateRoutes: [/2014/07/windows-phone-81-goodies.html]
 title: Windows Phone 8.1 Goodies
 tags:
  - opinion

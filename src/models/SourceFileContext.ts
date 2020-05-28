@@ -6,6 +6,7 @@ export default class SourceFileContext {
   public sections: { [prop: string]: string } = {};
   public frontMatter: { [prop: string]: string } = {};
   public children: SourceFileContext[] = [];
+  public outputRoute: string = '';
   public outputPath: string = '';
   public isHandled = false;
   public page = this.frontMatter;

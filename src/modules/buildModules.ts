@@ -10,8 +10,10 @@ import TextOutputModule from './TextOutputModule';
 import SimpleHtmlModule from './SimpleHtmlModule';
 import DataModule from './DataModule';
 import SectionsModule from './SectionsModule';
+import RedirectModule from './RedirectModule';
 
 export {
+  RedirectModule,
   RazorVashModule,
   FinalModule,
   InitialModule,

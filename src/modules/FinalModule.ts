@@ -20,6 +20,7 @@ export default class FinalModule extends BaseModule {
         process.exit(1);
       }
 
+      console.log('Finalize: ', asset.outputPath, !!asset.output)
       FileSystemUtility.saveFile(asset.outputPath, asset.output);
     });
 

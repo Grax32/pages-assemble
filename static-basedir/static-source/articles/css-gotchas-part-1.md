@@ -1,6 +1,7 @@
 ---
 layout: pages
-route: /2014/06/css-gotchas-part-1.html
+route: /articles/coding/css-gotchas-part-1.html
+alternateRoutes: [/2014/06/css-gotchas-part-1.html]
 title: CSS Gotchas - Part 1
 tags:
  - coding

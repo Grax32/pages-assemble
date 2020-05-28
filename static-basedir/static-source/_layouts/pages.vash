@@ -16,9 +16,12 @@
     </div>
   </div>
 
-  <div class="page-nav page-general" style="color: red;">
-    Home > Articles > Programming > C#<br />
-    [dotnet] [concepts]<br />
+  <div class="page-nav page-general">
+    <a href="/">Home</a> / <a href="/articles/">Articles</a> / <a href="tech">Tech</a> <br />
+    @tags.forEach(tag => {
+    <span><a class="tag-link" href="/categories/@tag">@tag</a></span>
+    })
+    <br />
   </div>
 
   @if (title) {
@@ -35,7 +38,7 @@
   <div class="page-content page-general">
     @html.raw(sections.main)
 
-    <p>
+    <p class="share-block">
       Share to:
       <a class="share-link" title="Facebook" onclick="shareTo('facebook')"><i class="fab fa-facebook-f"></i></a>
       <a class="share-link" title="Twitter" to onclick="shareTo('twitter')"><i class="fab fa-twitter"></i></a>

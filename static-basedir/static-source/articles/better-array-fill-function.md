@@ -1,6 +1,7 @@
 ---
 layout: pages
-route: /2014/04/better-array-fill-function.html
+route: /articles/coding/array-fill-function.html
+alternateRoutes: [/2014/04/better-array-fill-function.html]
 title: Better Array Fill Function
 tags:
  - coding

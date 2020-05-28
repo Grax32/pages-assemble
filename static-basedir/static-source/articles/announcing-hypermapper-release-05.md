@@ -1,6 +1,7 @@
 ---
 layout: pages
-route: /2013/04/announcing-hypermapper-release-05.html
+route: /articles/archive/2013/announcing-hypermapper-release-05.html
+alternateRoutes: [/2013/04/announcing-hypermapper-release-05.html]
 title: Announcing fFastMapper release 0.5
 tags: [ software ]
 ---

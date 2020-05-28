@@ -110,6 +110,7 @@ const asyncRoot = async () => {
       modules.SimpleHtmlModule,
       modules.DataModule,
       modules.SectionsModule,
+      modules.RedirectModule,
       modules.RazorVashModule,
       modules.MinifierModule,
       modules.TextOutputModule,
