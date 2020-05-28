@@ -36,14 +36,14 @@ export default class RedirectModule extends BaseModule {
           outputRoute,
           outputPath,
           outputType,
-          textContent: '',
-          sections: {},
           frontMatter,
-          children: [],
-          isHandled: false,
-          page: {},
+          textContent: '',
           output: '',
           path: '',
+          sections: {},
+          page: {},
+          children: [],
+          isHandled: false,
         });
       });
     });

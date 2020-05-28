@@ -53,6 +53,10 @@ class frameBuffer {
         animation-duration: 600ms;
       }
 
+      body {
+          height: calc( 100vh + 1px ); // allow nav bar to hide on mobile
+      }
+
       @keyframes blurFadeOut {
         from { filter: blur(0px); opacity: 1; z-index: 10; }
         50% { filter: blur(15px); opacity: .7; z-index: 10; }
