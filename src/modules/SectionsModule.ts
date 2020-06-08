@@ -15,7 +15,7 @@ export default class SectionsModule extends BaseModule {
     // get sections from assets
     assets
       .filter(asset => asset && asset.frontMatter && asset.frontMatter.section)
-      .forEach(asset => (sharedSections[asset.frontMatter.section] = asset.sections.main));
+      .forEach(asset => (sharedSections[asset.frontMatter.section!] = asset.sections.main));
 
     const frontMatterSectionPrefix = 'section-';
     const getKey = (frontMatterKey: string) => frontMatterKey.slice(frontMatterSectionPrefix.length);
@@ -23,10 +23,11 @@ export default class SectionsModule extends BaseModule {
     // set sections to assets
     assets.forEach(asset => {
       const frontMatterSectionKeys = Object.keys(asset.frontMatter).filter(key => key.startsWith('section-'));
+      const frontMatter = <{[key: string]: string}>asset.frontMatter;
       const frontMatterSections = frontMatterSectionKeys
         .map(key => ({
           key: getKey(key), // convert frontMatter key to section key
-          value: asset.frontMatter[key],
+          value: frontMatter[key],
         }))
         .forEach(frontMatterSection => { // assign section value to section
           asset.sections[frontMatterSection.key] = frontMatterSection.value;

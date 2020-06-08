@@ -4,6 +4,7 @@ import ResultContext from '../models/ResultContext';
 import BaseModule from './BaseModule';
 import OutputType from '../models/OutputType';
 import RouteUtility from '../utility/RouteUtility';
+import { FileContext } from '../models';
 
 export default class RedirectModule extends BaseModule {
   public async invoke(context: BuildContext): Promise<ResultContext> {
@@ -32,19 +33,13 @@ export default class RedirectModule extends BaseModule {
         const outputRoute = routeUtility.getOutputRoute(frontMatter.route, '', outputType);
         const outputPath = path.join(context.options.output, outputRoute);
 
-        context.assets.push({
-          outputRoute,
-          outputPath,
-          outputType,
-          frontMatter,
-          textContent: '',
-          output: '',
-          path: '',
-          sections: {},
-          page: {},
-          children: [],
-          isHandled: false,
-        });
+        const asset = new FileContext();
+        asset.outputRoute = outputRoute;
+        asset.outputPath = outputPath;
+        asset.outputType = outputType;
+        asset.frontMatter = frontMatter;
+
+        context.assets.push(asset);
       });
     });
 

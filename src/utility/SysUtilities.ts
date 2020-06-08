@@ -5,7 +5,7 @@ enum AssetGroup {
   system = 'system',
 }
 
-const isSystemFolder = (path: string) => path.startsWith('/_');
+const isSystemFolder = (path: string | undefined) => path ? path.startsWith('/_') : false;
 
 const categoryFolders = [
   { category: AssetGroup.includes, folder: '_includes' },

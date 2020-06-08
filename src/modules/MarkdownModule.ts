@@ -22,25 +22,12 @@ export default class MarkdownModule extends BaseModule {
   public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', MarkdownModule.name);
 
-    const sharedSections: {[prop: string]: string} = {};
+    const markdownAssets = context.assets.filter(v => path.extname(v.path ?? 'unknown.unk') === '.md');
 
-    const markdownAssets = context.assets.filter(v => path.extname(v.path) === '.md');
-
-    markdownAssets
-      .forEach(asset => {
-        const rendered = this.markdown.render(asset.textContent);
-        asset.sections.main = rendered;
-
-        // const sectionName = asset.frontMatter.section;
-        // if (sectionName) {
-        //   sharedSections[sectionName] = rendered;
-        // }
-      });
-
-    // context.assets.forEach(asset => asset.sections = ({
-    //   ...sharedSections,
-    //   ...asset.sections 
-    // }));
+    markdownAssets.forEach(asset => {
+      const rendered = this.markdown.render(asset.textContent);
+      asset.sections.main = rendered;
+    });
 
     return await this.next(context);
   }

@@ -18,7 +18,7 @@ export default class DataModule extends BaseModule {
           source = "x=" + source;
         }
         const result = eval(source);
-        const dataKey = (asset.frontMatter.dataKey || path.basename(asset.path, '.json'))
+        const dataKey = (asset.frontMatter.dataKey || path.basename(asset.path ?? 'unknown', '.json'))
           .replace(/[ -](\w)/g, v => v.toUpperCase())
           .replace(/[ -]/g, '');
 

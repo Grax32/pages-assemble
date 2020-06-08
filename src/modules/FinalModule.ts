@@ -8,21 +8,21 @@ export default class FinalModule extends BaseModule {
     this.log('Entering', FinalModule.name);
 
     context.assets
-    .filter(asset => !asset.isHandled)
-    .forEach(asset => {
-      if (!asset.output) {
-        throw new Error('No output was generated for source file ' + asset.path);
-        process.exit(1);
-      }
+      .filter(asset => !asset.isHandled)
+      .forEach(asset => {
+        if (!asset.output) {
+          throw new Error('No output was generated for source file ' + asset.path);
+          process.exit(1);
+        }
 
-      if (!asset.outputPath) {
-        throw new Error('No output path was generated for source file ' + asset.path);
-        process.exit(1);
-      }
+        if (!asset.outputPath) {
+          console.error('No output path in ', { asset });
+          throw new Error('No output path was generated for source file ' + asset.path);
+          process.exit(1);
+        }
 
-      console.log('Finalize: ', asset.outputPath, !!asset.output)
-      FileSystemUtility.saveFile(asset.outputPath, asset.output);
-    });
+        FileSystemUtility.saveFile(asset.outputPath, asset.output);
+      });
 
     return new ResultContext();
   }

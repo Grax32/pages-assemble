@@ -13,7 +13,6 @@ import.url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoload
 function shareTo(service) {
   const encodedUrl = encodeURIComponent(document.URL);
   function navigate(url) {
-    console.log('!!nav url', url);
     window.top.location.href = url;
   }
 

@@ -1,11 +1,6 @@
 {
   "compilerOptions": {
-    "plugins": [
-      { "transform": "ts-nameof", "type": "raw" },
-      { "transform": "./plugins/lib/decorate-interface.js" },
-    ],
-    "target": "ESNext",
-    "lib": ["es6", "dom"],
+    "target": "ES2019",
     "module": "commonjs",
     "moduleResolution": "node",
     "declaration": true,

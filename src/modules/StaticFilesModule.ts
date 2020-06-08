@@ -15,7 +15,9 @@ export default class StaticFilesModule extends BaseModule {
     const source = context.options.source;
     const dest = context.options.output;
 
-    const isStatic = (filename: string) => {
+    const isStatic = (filename: string | undefined) => {
+      if (!filename) return false;
+
       for (let pattern of context.options.static) {
         if (/^\.\w*?$/.test(pattern)) {
           // pattern is an extension matching pattern.  i.e. .gif
@@ -31,12 +33,13 @@ export default class StaticFilesModule extends BaseModule {
     };
 
     context.assets
+      .filter(asset => asset.path)
       .filter(asset => isStatic(asset.path))
       .forEach(asset => {
-        const sourceFile = path.join(source, asset.path);
-        const destFile = path.join(dest, asset.path);
+        const assetPath = asset.path!;
 
-        console.log('Writing', sourceFile, destFile);
+        const sourceFile = path.join(source, assetPath);
+        const destFile = path.join(dest, assetPath);
         FileSystemUtility.copyFile(sourceFile, destFile);
         asset.isHandled = true;
       });

@@ -1,6 +1,7 @@
 ﻿@html.extend('base', function(model) { @html.block('body', function(model){
 <div class="page-banner">
   <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
+  <div class="overflow"></div>
 </div>
 <div class="page context-page">
   <div class="page-header page-general">

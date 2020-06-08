@@ -5,9 +5,10 @@ import glob from 'glob';
 
 import ResultContext from '../models/ResultContext';
 import BuildContext from '../models/BuildContext';
-import OutputType, { OutputTypes } from '../models/OutputType';
-import SourceFileContext from '../models/SourceFileContext';
+import { OutputTypes } from '../models/OutputType';
+import SourceFileContext from '../models/FileContexts/SourceFileContext';
 import BaseModule from './BaseModule';
+import { FileContext } from '../models';
 
 export default class InitialModule extends BaseModule {
   private outputTypeValues = Object.values(OutputTypes.OutputType);
@@ -36,7 +37,9 @@ export default class InitialModule extends BaseModule {
       return OutputTypes.getOutputTypeFromExtension(path.extname(filePath));
     };
 
-    context.assets.forEach(asset => {
+    const sourceFileAssets = <SourceFileContext[]>context.assets.filter(asset => asset.isType(SourceFileContext.name));
+
+    sourceFileAssets.forEach(asset => {
       const sourcePath = getSourcePath(asset);
       const defaultSeparator = '---';
       let separator: string | [string, string] = defaultSeparator;
@@ -77,7 +80,7 @@ export default class InitialModule extends BaseModule {
     return this.next(context);
   }
 
-  private static getCollection(context: BuildContext, collectionKey: string): SourceFileContext[] {
+  private static getCollection(context: BuildContext, collectionKey: string): FileContext[] {
     if (!context.collections[collectionKey]) {
       context.collections[collectionKey] = [];
     }

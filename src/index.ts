@@ -13,9 +13,10 @@ import BuildContext from './models/BuildContext';
 import ValidateOptions from './utility/ValidateOptions';
 
 import ResultContext from './models/ResultContext';
-import SourceFileContext from './models/SourceFileContext';
+import SourceFileContext from './models/FileContexts/SourceFileContext';
 import ConsoleLogger from './services/ConsoleLogger.js';
 import LogLevel from './models/LogLevel.js';
+import { createFileContext } from './models';
 
 const asyncRoot = async () => {
   const configFileName = 'assemble-config.json';
@@ -98,7 +99,7 @@ const asyncRoot = async () => {
         .sync(sourceGlobPattern, { nodir: true })
         .map(removeSourceFromFilename)
         .filter(file => !isIgnored(file))
-        .map(file => new SourceFileContext(file));
+        .map(file => createFileContext(file));
     };
 
     const moduleMap = new Map<string, interfaces.IBuildModuleStatic>();
@@ -111,6 +112,7 @@ const asyncRoot = async () => {
       modules.DataModule,
       modules.SectionsModule,
       modules.RedirectModule,
+      modules.TagsModule,
       modules.RazorVashModule,
       modules.MinifierModule,
       modules.TextOutputModule,

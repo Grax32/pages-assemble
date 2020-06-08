@@ -16,7 +16,7 @@ export default class SimpleTemplateModule extends BaseModule {
       .filter(v => v.outputType === OutputType.html)
       .forEach(asset => {
         const outputTemplate = '<html><body>' + asset.sections.main + '</body></html>';
-        const link = <string>(asset.frontMatter.route || asset.path.replace(/\.md$/, ''));
+        const link = <string>(asset.frontMatter.route || asset.path!.replace(/\.md$/, ''));
         let outputPath = path.join(context.options.output, link);
 
         if (!outputPath.endsWith('.html')) {

@@ -30,8 +30,7 @@ export default class RouteUtility {
     return filePath.slice(0, lastDot);
   }
 
-  public getOutputRoute(frontMatterRoute: string, filePath: string, outputType: OutputType) {
-
+  public getOutputRoute(frontMatterRoute: string | undefined, filePath: string, outputType: OutputType) {
     let route = frontMatterRoute || this.removeExtension(filePath);
     const extension = OutputTypes.getOutputExtension(outputType);
 

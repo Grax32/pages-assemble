@@ -11,6 +11,7 @@ import SimpleHtmlModule from './SimpleHtmlModule';
 import DataModule from './DataModule';
 import SectionsModule from './SectionsModule';
 import RedirectModule from './RedirectModule';
+import TagsModule from './TagsModule';
 
 export {
   RedirectModule,
@@ -25,5 +26,6 @@ export {
   SimpleHtmlModule,
   StaticFilesModule,
   MinifierModule,
-  TextOutputModule
+  TextOutputModule,
+  TagsModule
 };

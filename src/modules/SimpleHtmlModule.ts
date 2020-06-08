@@ -3,32 +3,19 @@ import path from 'path';
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
 import BaseModule from './BaseModule';
+import HtmlSourceFileContext from '../models/FileContexts/HtmlSourceFileContext';
 
 export default class SimpleHtmlModule extends BaseModule {
-
   public next!: (context: BuildContext) => Promise<ResultContext>;
 
   public async invoke(context: BuildContext): Promise<ResultContext> {
     this.log('Entering', SimpleHtmlModule.name);
- 
-    //const sharedSections: {[prop: string]: string} = {};
 
-    const htmlAssets = context.assets.filter(v => path.extname(v.path) === '.html');
+    const htmlAssets = context.assets.filter(v => v.isType(HtmlSourceFileContext.name));
 
-    htmlAssets
-      .forEach(asset => {
-        asset.sections.main = asset.textContent;
-        
-        // const sectionName = asset.frontMatter.section;
-        // if (sectionName) {
-        //   sharedSections[sectionName] = asset.output;
-        // }
-      });
-
-    // context.assets.forEach(asset => asset.sections = ({
-    //   ...sharedSections,
-    //   ...asset.sections 
-    // })); 
+    htmlAssets.forEach(asset => {
+      asset.sections.main = asset.textContent;
+    });
 
     return await this.next(context);
   }

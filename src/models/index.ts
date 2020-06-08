@@ -3,7 +3,8 @@ import LogLevel from './LogLevel';
 import OutputType from './OutputType';
 import { OutputTypes } from './OutputType';
 import ResultContext from './ResultContext';
-import SourceFileContext from './SourceFileContext';
+import SourceFileContext from './FileContexts/SourceFileContext';
+import FileContext from './FileContexts/FileContext';
 
 export {
     BuildContext,
@@ -11,5 +12,8 @@ export {
     OutputTypes,
     OutputType,
     ResultContext,
-    SourceFileContext
+    SourceFileContext,
+    FileContext
 };
+
+export * from './FileContexts';

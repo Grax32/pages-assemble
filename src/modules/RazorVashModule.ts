@@ -5,8 +5,9 @@ import { AssetGroup, getCategory, isSystemFolder, getCategoryFolder } from '../u
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
 import BaseModule from './BaseModule';
-import SourceFileContext from '../models/SourceFileContext';
+import SourceFileContext from '../models/FileContexts/SourceFileContext';
 import OutputType from '../models/OutputType';
+import RazerSourceFileContext from '../models/FileContexts/RazerSourceFileContext';
 
 function toGrouping<T, V>(array: T[], keyExpression: (value: T) => string, valueExpression: (value: T) => V) {
   const grouping: { [key: string]: V[] } = {};
@@ -42,7 +43,9 @@ export default class RazorVashModule extends BaseModule {
 
     const templates = vash.helpers.tplcache;
 
-    const allVashAssets = context.assets.filter(asset => asset.path.endsWith('.vash'));
+    const allVashAssets = <RazerSourceFileContext[]>(
+      context.assets.filter(asset => asset.isType(RazerSourceFileContext.name))
+    );
     const assetGrouping = toGrouping(
       allVashAssets,
       v => getCategory(v.path),
@@ -54,6 +57,9 @@ export default class RazorVashModule extends BaseModule {
     const razorPages = assetGrouping[AssetGroup.general] || [];
 
     razorTemplates.forEach(templateAsset => {
+      if (!templateAsset.textContent) {
+        console.error('Error parsing', templateAsset);
+      }
       const compiledTemplate = vash.compile(templateAsset.textContent);
       vash.install(getTemplateName(templateAsset), compiledTemplate);
       templateAsset.isHandled = true;
@@ -73,8 +79,7 @@ export default class RazorVashModule extends BaseModule {
         asset.sections.main = output;
         asset.output = output;
       } else {
-        this.log(asset.path + ' cannot be compiled');
-        this.log(asset.textContent);
+        this.log(asset.path, ' cannot be compiled', asset.textContent);
       }
     };
 
@@ -89,23 +94,22 @@ export default class RazorVashModule extends BaseModule {
     context.assets
       .filter(asset => isSystemFolder(asset.path))
       .filter(asset => asset.outputType === OutputType.html)
-      .forEach(asset => asset.isHandled = true);
+      .forEach(asset => (asset.isHandled = true));
 
     context.assets
       .filter(asset => !isSystemFolder(asset.path))
       .filter(asset => asset.outputType === OutputType.html)
       .forEach(asset => {
-        const baseModel = { 
+        const baseModel = {
           title: '',
           titleonly: '',
           excerpt: '',
-          tags: []
+          tags: [],
         };
         const templateName = asset.frontMatter.layout || context.options.template;
         const applyTemplate = templates[templateName];
 
         if (applyTemplate) {
-          this.log('applying template', templateName, 'to asset', asset.path, 'output', asset.outputPath);
           try {
             const model = {
               ...baseModel,

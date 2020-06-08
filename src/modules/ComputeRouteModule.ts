@@ -1,9 +1,10 @@
 import path from 'path';
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
-import OutputType, { OutputTypes } from '../models/OutputType';
+import OutputType from '../models/OutputType';
 import BaseModule from './BaseModule';
-import RouteUtility from '../utility/RouteUtility';
+import { RouteUtility } from '../utility';
+import { SourceFileContext } from '../models';
 
 export default class ComputeRouteModule extends BaseModule {
   public async invoke(context: BuildContext): Promise<ResultContext> {
@@ -12,8 +13,8 @@ export default class ComputeRouteModule extends BaseModule {
     context.assets
       .filter(asset => asset.outputType !== OutputType.binary)
       .forEach(asset => {
-
-        const outputRoute = routeUtility.getOutputRoute(asset.frontMatter.route, asset.path, asset.outputType);
+        const assetPath = (<SourceFileContext>asset).path;
+        const outputRoute = routeUtility.getOutputRoute(asset.frontMatter.route, assetPath, asset.outputType);
         const outputPath = path.join(context.options.output, outputRoute);
 
         asset.outputRoute = outputRoute;

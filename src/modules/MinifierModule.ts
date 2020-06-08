@@ -6,7 +6,7 @@ import uglifycss from 'uglifycss';
 
 import * as base64Img from 'base64-img';
 
-import { BuildContext, SourceFileContext } from '../models';
+import { BuildContext, FileContext } from '../models';
 import ResultContext from '../models/ResultContext';
 import OutputType from '../models/OutputType';
 import BaseModule from './BaseModule';
@@ -24,7 +24,8 @@ export default class MinifyModule extends BaseModule {
 
     const shrinkAssets = context.assets.map(
       async (asset): Promise<void> => {
-        const fullPath = path.join(context.options.source, asset.path);
+        const assetPath = asset.path || 'no-path';
+        const fullPath = path.join(context.options.source, assetPath);
         const fullDirName = path.dirname(fullPath);
 
         const resolveRelativePath: stringFunc = (relativePath: string) => {
@@ -49,7 +50,7 @@ export default class MinifyModule extends BaseModule {
     return await this.next(context);
   }
 
-  private async shrinkHtml(asset: SourceFileContext) {
+  private async shrinkHtml(asset: FileContext) {
     // const options: minifier.Options = {
     //   collapseWhitespace: true,
     //   collapseInlineTagWhitespace: true,
@@ -58,7 +59,7 @@ export default class MinifyModule extends BaseModule {
     // asset.output = minifier.minify(asset.output, options);
   }
 
-  private async shrinkStyle(asset: SourceFileContext, resolveRelativePath: stringFunc) {
+  private async shrinkStyle(asset: FileContext, resolveRelativePath: stringFunc) {
     const textContent = asset.frontMatter.webImport
       ? await this.resolveAllLines(asset.textContent, resolveRelativePath)
       : asset.textContent;
@@ -108,7 +109,7 @@ export default class MinifyModule extends BaseModule {
     return lines.join('\n');
   }
 
-  private async shrinkScript(asset: SourceFileContext, resolveRelativePath: stringFunc) {
+  private async shrinkScript(asset: FileContext, resolveRelativePath: stringFunc) {
     const textContent = asset.frontMatter.webImport
       ? await this.resolveAllLines(asset.textContent, resolveRelativePath)
       : asset.textContent;
