@@ -1,0 +1,7 @@
+[
+  { "link": "/", "display": "Home" },
+  { "link": "/articles/", "display": "Articles" },
+  { "link": "/articles/tech/", "display": "Tech" },
+  { "link": "/articles/team/", "display": "Team" },
+  { "link": "/articles/art/", "display": "Art" }
+]

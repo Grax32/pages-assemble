@@ -101,6 +101,7 @@ export default class RazorVashModule extends BaseModule {
       .filter(asset => asset.outputType === OutputType.html)
       .forEach(asset => {
         const baseModel = {
+          category: 'tech',
           title: '',
           titleonly: '',
           excerpt: '',

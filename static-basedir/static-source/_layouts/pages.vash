@@ -18,7 +18,13 @@
   </div>
 
   <div class="page-nav page-general">
-    <a href="/">Home</a> / <a href="/articles/">Articles</a> / <a href="tech">Tech</a> <br />
+    <a href="/">Home</a>
+    @if (category) {
+    <span> / <a href="/articles/">Articles</a></span>
+    <span> / <a href="/articles/@category">@category</a></span>
+    }
+    <br />
+
     @tags.forEach(tag => {
     <span><a class="tag-link" href="/categories/@tag">@tag</a></span>
     })
