@@ -759,3 +759,51 @@ a.share-link:active {
   text-decoration: none;
   font-size: 1rem;
 }
+
+.tile-collection {
+  min-height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+}
+
+.tile-item {
+  border: 2px solid white;
+  padding: 2px;
+  background-color: #F6F6F6;
+  width: 204px;
+  height: 162px;
+  margin-bottom: 4px;
+}
+
+.tile-title {
+  width: 100%;
+  background: darkred;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tile-title a {
+  padding: 4px;
+  color: white;
+  text-decoration: none;
+}
+
+.tile-menu {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+.tile-menu a {
+  height: 32px;
+  text-decoration: none;
+}
+
+.tile-menu a:hover {
+  height: 32px;
+  font-size: 1.2em;
+  opacity: .9;
+}

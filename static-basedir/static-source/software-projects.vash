@@ -2,19 +2,21 @@
 layout: pages
 route: /software-projects
 title: Software Projects
-category: 
+category:
 ---
-<div class="container">
-  <div class="row">
-    @model.context.dataStore.softwareprojects.forEach(project => {
-    <div class="col-md-4" style="border: 1px solid white; padding: 5px; background-color: #EEEEEE;">
-      <a href="@project.site">@project.name</a><br />
-      <hr />
-      <div>@project.description<br /></div>
-      <a href="@project.source" alt="Source"><i class="fas fa-code"></i></a> &bull; 
-      <a href="@project.site">site</a> &bull;
-      <a href="@project.package">pkg</a>
+
+<div class="tile-collection">
+  @model.context.dataStore.softwareprojects.forEach(project => {
+  <div class="tile-item">
+    <div class="tile-title">
+      <a href="@project.site">@project.name</a>
     </div>
-    })
+    <div class="tile-menu">
+      <a href="@project.source" alt="Source"><i class="fas fa-code"></i></a> 
+      <a href="@project.site"><i class="fa fa-globe" aria-hidden="true"></i></a> 
+      <a href="@project.package"><i class="fa fa-archive" aria-hidden="true"></i></a>
+    </div>
+    <div class="tile-description">@project.description<br /></div>
   </div>
+  })
 </div>

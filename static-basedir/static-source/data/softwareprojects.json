@@ -5,6 +5,8 @@
     "source": "https://github.com/Grax32/ArrayExtensions",
     "package": "https://www.nuget.org/packages/grax.arrayextensions/",
     "site": "https://sites.grax32.com/ArrayExtensions",
+    "technology": "C#",
+    "active": true,
     "shields": {
       "package": "https://img.shields.io/nuget/v/grax.arrayextensions",
       "site": "https://img.shields.io/website/https/sites.grax32.com/ArrayExtensions"
@@ -16,6 +18,8 @@
     "source": "https://github.com/Grax32/EasyInjectCore/",
     "package": "https://www.nuget.org/packages/Grax32.EasyInjectCore/",
     "site": "https://sites.grax32.com/EasyInjectCore/",
+    "technology": "C#",
+    "active": true,
     "shields": {
       "package": "https://img.shields.io/nuget/v/Grax32.Easyinjectcore",
       "site": "https://img.shields.io/website/https/sites.grax32.com/EasyInjectCore"
@@ -27,6 +31,8 @@
     "source": "https://github.com/Grax32/OrderByString/",
     "package": "https://www.nuget.org/packages/OrderByString/",
     "site": "https://sites.grax32.com/OrderByString",
+    "technology": "C#",
+    "active": true,
     "shields": {
       "package": "https://img.shields.io/nuget/v/orderbystring",
       "site": "https://img.shields.io/website/https/sites.grax32.com/OrderByString"
@@ -38,6 +44,8 @@
     "source": "https://github.com/Grax32/easyresource/",
     "package": "https://www.nuget.org/packages/EasyResource/",
     "site": "https://sites.grax32.com/EasyResource",
+    "technology": "C#",
+    "active": true,
     "shields": {
       "package": "https://img.shields.io/nuget/v/easyresource",
       "site": "https://img.shields.io/website/https/sites.grax32.com/EasyResource"
@@ -49,6 +57,8 @@
     "source": "https://github.com/Grax32/interpolationformatprovider/",
     "package": "https://www.nuget.org/packages/InterpolationFormatProvider/",
     "site": "https://sites.grax32.com/InterpolationFormatProvider",
+    "technology": "C#",
+    "active": true,
     "shields": {
       "package": "https://img.shields.io/nuget/v/interpolationformatprovider",
       "site": "https://img.shields.io/website/https/sites.grax32.com/InterpolationFormatProvider"
@@ -60,6 +70,8 @@
     "source": "https://github.com/Grax32/ffastinjector/",
     "package": "https://www.nuget.org/packages/fFastInjector/",
     "site": "https://sites.grax32.com/fFastInjector/",
+    "technology": "C#",
+    "active": false,
     "shields": {
       "package": "https://img.shields.io/nuget/v/ffastinjector",
       "site": "https://img.shields.io/website/https/sites.grax32.com/fFastInjector"
@@ -71,6 +83,8 @@
     "source": "https://github.com/Grax32/fFastMapper/",
     "package": "https://www.nuget.org/packages/fFastMapper/",
     "site": "https://sites.grax32.com/fFastMapper",
+    "technology": "C#",
+    "active": false,
     "shields": {
       "package": "https://img.shields.io/nuget/v/fFastMapper",
       "site": "https://img.shields.io/website/https/sites.grax32.com/fFastMapper"
