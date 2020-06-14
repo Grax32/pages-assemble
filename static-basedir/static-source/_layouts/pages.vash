@@ -20,9 +20,8 @@
   <div class="page-nav page-general">
     @if (category === 'home') {
       <a href="/articles/">Articles</a> 
-      <span>•</span>
+      <span> • </span>
       <a href="/software-projects">Software Projects</a>
-
     } else {
       <a href="/">Home</a>
       @if (category) {

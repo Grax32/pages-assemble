@@ -55,7 +55,7 @@
   },
   {
     "homepage": true,
-    "name": "Interpolation Format Provider",
+    "name": "Interpolation Formatter",
     "description": "Fill template strings from dictionary or anonymous types",
     "source": "https://github.com/Grax32/interpolationformatprovider/",
     "package": "https://www.nuget.org/packages/InterpolationFormatProvider/",

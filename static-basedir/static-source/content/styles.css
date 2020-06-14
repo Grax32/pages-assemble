@@ -472,7 +472,7 @@ body {
 
 a {
   text-decoration: underline;
-  text-decoration-color: rgba(0, 126, 223, 0.3);
+  text-decoration-color: rgba(0, 126, 223, 0.1);
   color: rgb(0, 126, 223);
   text-shadow: none;
 

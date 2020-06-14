@@ -3,7 +3,7 @@
   "output": "build",
   "ignore": ["**/node_modules/**"],
   "modules": ["static"],
-  "static": ["**/*.{jpg,png,gif}", ".pdf", ".svg", ".eot", ".ttf", ".woff", ".woff2" ],
+  "static": ["**/*.{jpg,png,gif}", ".ico", ".pdf", ".svg", ".eot", ".ttf", ".woff", ".woff2" ],
   "verbose": false,
   "template": "pages"
 }
