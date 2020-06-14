@@ -18,10 +18,19 @@
   </div>
 
   <div class="page-nav page-general">
-    <a href="/">Home</a>
-    @if (category) {
-    <span> / <a href="/articles/">Articles</a></span>
-    <span> / <a href="/articles/@category">@category</a></span>
+    @if (category === 'home') {
+      <a href="/articles/">Articles</a> 
+      <span>•</span>
+      <a href="/software-projects">Software Projects</a>
+
+    } else {
+      <a href="/">Home</a>
+      @if (category) {
+        <span> / <a href="/articles/">Articles</a></span>
+        <span> / <a href="/articles/@category">
+          @model.context.dataStore.sitedata.filter(d => d.category === category).map(d => d.display)[0]
+        </a></span>
+      }
     }
     <br />
 
@@ -40,7 +49,9 @@
   </div>
   }
 
-  <div class="page-byline page-general">by <a href="/about/david-walker/">David Walker</a></div>
+  @if (!hidebyline) {
+    <div class="page-byline page-general">by <a href="/about/david-walker/">David Walker</a></div>
+  }
 
   <div class="page-content page-general">
     @html.raw(sections.main)

@@ -1,5 +1,6 @@
 [
   {
+    "homepage": true,
     "name": "Array Extensions",
     "description": "Fast fill arrays with values or patterns",
     "source": "https://github.com/Grax32/ArrayExtensions",
@@ -26,6 +27,7 @@
     }
   },
   {
+    "homepage": true,
     "name": "OrderByString",
     "description": "Use strings in OrderBy / ThenBy statements with IQueryable providers.",
     "source": "https://github.com/Grax32/OrderByString/",
@@ -52,6 +54,7 @@
     }
   },
   {
+    "homepage": true,
     "name": "Interpolation Format Provider",
     "description": "Fill template strings from dictionary or anonymous types",
     "source": "https://github.com/Grax32/interpolationformatprovider/",

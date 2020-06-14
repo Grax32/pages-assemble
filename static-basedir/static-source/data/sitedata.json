@@ -1,7 +1,8 @@
 [
   { "link": "/", "display": "Home" },
   { "link": "/articles/", "display": "Articles" },
-  { "link": "/articles/tech/", "display": "Tech" },
-  { "link": "/articles/team/", "display": "Team" },
-  { "link": "/articles/art/", "display": "Art" }
+  { "category": "tech", "link": "/articles/tech/", "display": "Tech" },
+  { "category": "team", "link": "/articles/team/", "display": "Team" },
+  { "category": "art",  "link": "/articles/art/", "display": "Art" },
+  { "category": "opinion",  "link": "/articles/opinion/", "display": "Opinion" }
 ]

@@ -105,6 +105,7 @@ export default class RazorVashModule extends BaseModule {
           title: '',
           titleonly: '',
           excerpt: '',
+          hidebyline: false,
           tags: [],
         };
         const templateName = asset.frontMatter.layout || context.options.template;

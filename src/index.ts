@@ -1,3 +1,8 @@
+process.on('uncaughtException', function (err) {
+  console.error(err);
+  process.exit(99);
+})
+
 import commandLineArgs from 'command-line-args';
 import commandLineUsage from 'command-line-usage';
 import { Minimatch } from 'minimatch';
@@ -161,5 +166,8 @@ const asyncRoot = async () => {
 // initiate the async stack
 asyncRoot().then(
   () => console.log('Program Complete'),
-  reason => console.error(reason),
+  reason => {
+    console.error(reason);
+    process.exit(1);
+  }
 );
