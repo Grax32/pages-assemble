@@ -6,6 +6,8 @@ title: Combining Function Expressions in C# using a ReplacementVisitor
 tags:
  - coding
  - memorable
+ - csharp
+category: tech
 ---
 When working with expressions, I often want to combine multiple expressions into one. &nbsp;Using a ReplacementVisitor enables me to do that.<br />
 <h3>

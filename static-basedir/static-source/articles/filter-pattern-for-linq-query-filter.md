@@ -4,6 +4,8 @@ route: /2013/07/filter-pattern-for-linq-query-filter.html
 title: Custom LINQ Filter Operators
 tags:
  - coding
+ - csharp
+category: tech
 ---
 <div class="NoSpacing">
 Generics, expressions, and extension methods are amazing

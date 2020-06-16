@@ -3,6 +3,7 @@ layout: pages
 route: /books/habits-by-william-james
 title: Habit
 tags: [books]
+category: books
 ---
 
 ## BY WILLIAM JAMES 

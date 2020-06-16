@@ -2,7 +2,8 @@
 layout: pages
 route: /2017/07/csslp-certification
 title: Certified Secure Software Lifecycle Professional (CSSLP)  
-tags: [coding,security]
+tags: [coding,security,opinion]
+category: opinion
 ---
 
 I just received my official notification from ISC² that I am officially a Certified Secure Software Lifecycle Professional (CSSLP).  For those of you familiar with the CISSP, the CSSLP is related but it is specifically focused software development or procurement.

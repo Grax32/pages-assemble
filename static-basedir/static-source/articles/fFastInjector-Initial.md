@@ -4,6 +4,7 @@ route: /2013/05/fFastInjector-Initial.html
 title: fFastInjector - World's Fastest Dependency Injector
 tags:
  - software
+category: archive
 ---
 <span style="color: red;">(2013-6-16: See updated lifestyle section for details on singleton lifestyle)</span><br />
 <h2>

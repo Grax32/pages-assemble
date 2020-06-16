@@ -4,6 +4,8 @@ route: /2014/06/t-sql-foreach-style-loop.html
 title: T-SQL ForEach style loop
 tags:
  - coding
+ - sql
+category: tech
 ---
 Here is a simple pattern that I came up with for executing a ForEach style loop in t-sql against a set of data in T-SQL.<br />
 <br />

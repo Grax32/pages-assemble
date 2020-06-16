@@ -26,7 +26,7 @@ export default class TagsModule extends BaseModule {
     allTags.forEach(tag => tagCounts[tag]++);
 
     const distinctTags = distinct(allTags);
-    const filteredTags = distinctTags.filter(tag => tagCounts[tag] > 3);
+    const filteredTags = distinctTags.filter(tag => tagCounts[tag] >= 3);
 
     context.assets
       .forEach(asset => {

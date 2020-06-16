@@ -6,6 +6,7 @@ title: Working Kinect sample code available
 tags:
  - coding
  - kinect
+category: archive
 ---
 
 When the commercial API came out, I found that they had made quite a few changes.  I am sure they are mostly good changes but they broke my previous sample code.  Here is the new WPF sample code, unfortunately minus the special effects such as 3D freeze and foreground disappear.  Download it at <span style="text-decoration: line-through">unavailable</span>.

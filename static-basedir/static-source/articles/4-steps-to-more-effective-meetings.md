@@ -5,6 +5,7 @@ alternateRoutes: [/2015/06/4-steps-to-more-effective-meetings.html]
 title: 4 Steps to More Effective Meetings
 tags:
   - team
+category: team
 ---
 In my business, meetings are constantly happening. As a developer by nature, I tend to think I am not working when I am in a meeting but the truth is that these meetings are an essential part of the process.
 

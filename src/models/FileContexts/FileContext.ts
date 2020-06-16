@@ -9,13 +9,14 @@ export default class FileContext {
   public frontMatter: {
     tags?: string[];
     route?: string;
-    alternateRoutes?: string;
+    alternateRoutes?: string[];
     title?: string;
     section?: string;
     dataKey?: string;
     webImport?: string;
     layout?: string;
     minify?: string;
+    category?: string;
   } = {};
   public outputRoute: string = '';
   public outputPath: string = '';

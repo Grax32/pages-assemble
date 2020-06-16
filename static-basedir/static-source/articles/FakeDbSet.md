@@ -5,6 +5,7 @@ alternateRoutes: [/2013/04/FakeDbSet.html]
 title: A FakeDbSet that implements IDbSet and uses IList for data manipulation 
 tags:
  - coding
+category: archive
 ---
 A FakeDbSet that implements IDbSet<T> and uses IList<T> for data manipulation
 

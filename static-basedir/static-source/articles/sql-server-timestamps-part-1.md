@@ -2,7 +2,10 @@
 layout: pages
 route: /articles/sql-server-timestamp-introduction
 title: SQL Server Timestamp/RowVersion - Part 1 Introduction
-tags: [coding]
+tags:
+ - coding
+ - sql
+category: tech
 ---
 
 Microsoft SQL Server's timestamp (aka rowversion) type has a long of confusing developers.

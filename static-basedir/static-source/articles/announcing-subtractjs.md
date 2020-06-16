@@ -5,6 +5,7 @@ alternateRoutes: [/2013/12/announcing-subtractjs.html]
 title: Announcing SubtractJS
 tags: 
  - software
+category: archive
 ---
 <h4>
 Quick Summary:</h4>

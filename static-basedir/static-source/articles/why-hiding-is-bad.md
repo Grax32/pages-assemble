@@ -3,7 +3,10 @@ layout: pages
 route: /articles/understanding-hiding-in-c-sharp
 alternateRoutes: [/2017/12/why-hiding-is-bad]
 title: Understanding Hiding in C#
-tags: [coding]
+tags: 
+ - coding
+ - csharp
+category: tech
 ---
 
 Most of us have seen an error like the following:

@@ -4,6 +4,8 @@ route: /2014/07/detecting-infinite-recursion.html
 title: Detecting Infinite Recursion with a ThreadStatic Variable in C#
 tags:
  - coding
+ - csharp
+category: tech
 ---
 TLDR: Use ThreadStatic static variables for a performant recursion test.<br />
 <br />

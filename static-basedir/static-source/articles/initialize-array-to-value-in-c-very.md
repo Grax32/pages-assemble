@@ -4,6 +4,7 @@ route: /2011/11/initialize-array-to-value-in-c-very.html
 title: Method to Quickly Initialize All Elements of an Array to a Value
 tags:
  - coding
+category: tech
 ---
 
 Update 1: I decided to revisit this with a [a new blog post](/2013/06/fast-array-fill-function-revisited.html)

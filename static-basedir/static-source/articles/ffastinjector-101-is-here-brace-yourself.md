@@ -4,6 +4,7 @@ route: /2015/01/ffastinjector-101-is-here-brace-yourself.html
 title: fFastInjector 1.0.1 is here.  Brace yourself!
 tags:
  - software
+category: archive
 ---
 fFastInjector 1.0.1 is here! &nbsp;(I skipped the 1.0.0 release since that programs with that version number always seems to have problems.)<br />
 <br />

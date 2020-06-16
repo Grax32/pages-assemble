@@ -6,6 +6,7 @@ title: Code Camp Code for Fun with C# Generics
 tags:
  - coding
  - codecamp
+category: archive
 ---
 The source code from my Nebraska Code Camp presentation on Fun with C# Generics can be downloaded from&nbsp;<a href="http://sdrv.ms/119gDMP">http://sdrv.ms/119gDMP</a>. &nbsp;This is a Visual Studio 2012 project.<br />
 <br />

@@ -4,6 +4,7 @@ route: /articles/archive/2013-announcing-ffastmapper-release-052.html
 alternateRoutes: [/2013/04/announcing-ffastmapper-release-052.html]
 title: Announcing fFastMapper release 0.5.2
 tags: [ software, ffastmapper ]
+category: archive
 ---
 Announcing fFastMapper release 0.5.2. &nbsp;Get <a href="http://www.nuget.org/packages?q=ffastmapper" target="_blank">fFastMapper </a>from nuGet.<br />
 <br />

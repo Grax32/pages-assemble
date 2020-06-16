@@ -4,6 +4,7 @@ route: /2013/05/linking-db2-to-ms-sql-server.html
 title: Linking db2 to MS Sql Server
 tags:
  - coding
+category: tech
 ---
 My current project has a need to read and update DB2 data in addition to MS Sql Server data.  The primary server is Sql Server, DB2 is additional.
 

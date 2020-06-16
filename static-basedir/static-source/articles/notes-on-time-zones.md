@@ -4,6 +4,7 @@ route: /2014/05/notes-on-time-zones.html
 title: Notes on Time Zones
 tags:
  - coding
+category: tech
 ---
 <b>TLDR Version</b><br />
 <i>In your persistence medium, database or otherwise, convert all times to UTC before storing them, store all times as UTC, and convert on-the-fly to the user's local time zone when displaying. &nbsp;In order to convert accurately, use the location style time zones such as "America/Chicago" or "Australia/Sydney".</i><br />

@@ -4,6 +4,8 @@ route: /2014/04/the-free-way-get-started-in-programming.html
 title: The Free Way To Get Started In Programming 
 tags:
  - coding
+ - free
+category: tech
 ---
 <h3>
 Introduction</h3>
