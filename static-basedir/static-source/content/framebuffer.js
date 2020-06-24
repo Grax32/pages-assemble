@@ -22,6 +22,13 @@ var framebufferCssClass;
     framebufferCssClass["passive"] = "framebuffer-passive";
     framebufferCssClass["visible"] = "visible";
 })(framebufferCssClass || (framebufferCssClass = {}));
+const fromUrlAttributeName = "data-from-url";
+function checkFromUrl(buffer) {
+    return !!buffer.getAttribute(fromUrlAttributeName);
+}
+function setFromUrl(buffer, value) {
+    buffer.setAttribute(fromUrlAttributeName, value ? '1' : '');
+}
 class frameBuffer {
     constructor() {
         this.buffers = [0, 1].map((v) => this.createFrameBufferElement(v));
@@ -51,10 +58,6 @@ class frameBuffer {
         left: 0;
         overflow: hidden;
         animation-duration: 600ms;
-      }
-
-      body {
-          height: calc( 100vh + 1px ); // allow nav bar to hide on mobile
       }
 
       @keyframes blurFadeOut {
@@ -117,10 +120,15 @@ class frameBuffer {
         callback(newBuffer);
     }
     loadNewBufferFromHistory(ev) {
+        const state = ev.state;
         this.doNewBufferAction((buffer) => {
-            if (ev.state && ev.state.loadHtmlFromState) {
-                buffer.innerHTML = ev.state.html;
+            setFromUrl(buffer, false);
+            if (state && state.loadHtmlFromState && state.html) {
+                buffer.innerHTML = state.html;
                 this.transition(buffer);
+            }
+            else {
+                location.href = state.url;
             }
         });
     }
@@ -161,6 +169,7 @@ class frameBuffer {
     }
     loadNewBufferFromUrl(path) {
         this.doNewBufferAction((buffer) => {
+            setFromUrl(buffer, true);
             buffer.src = path;
         });
     }
@@ -195,10 +204,16 @@ class frameBuffer {
                 element.target = "_parent";
             }
         });
-        window.history.pushState({
-            html: framedDocument.documentElement.outerHTML,
-            loadHtmlFromState: true,
-        }, framedDocument.title, framedDocument.location.href);
+        const isFromUrl = checkFromUrl(buffer);
+        if (isFromUrl) {
+            const state = {
+                html: framedDocument.documentElement.outerHTML,
+                loadHtmlFromState: true,
+                url: framedDocument.location.href,
+                title: framedDocument.title,
+            };
+            window.history.pushState(state, state.title, state.url);
+        }
         if (buffer.contentWindow.document.URL === document.URL) {
             this.show(buffer);
         }

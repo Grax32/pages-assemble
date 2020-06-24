@@ -1,9 +1,11 @@
 ---
 layout: pages
-route: /2013/04/generic-tryparse.html
+route: /articles/generic-tryparse.html
+alternateRoute: /2013/04/generic-tryparse.html
 title: Generic TryParse, convert string to any type
 tags:
  - coding
+ - csharp
 category: tech
 ---
 I came up with this nifty little extension method today.  This method works in a similar fashion to TryParse but you can pass in any type.  You may want to throw an exception if converter == null, as that means there is no converter available for the specified type.

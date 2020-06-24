@@ -4,8 +4,7 @@
     "webImport": true
 }
 ****/
-// import.url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.min.js');
-// import.url('https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js');
+import.url('prism.js');
 
 function shareTo(service) {
   const encodedUrl = encodeURIComponent(document.URL);

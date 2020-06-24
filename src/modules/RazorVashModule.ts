@@ -107,7 +107,9 @@ export default class RazorVashModule extends BaseModule {
           excerpt: '',
           hidebyline: false,
           tags: [],
+          categoryDescription: ''
         };
+
         const templateName = asset.frontMatter.layout || context.options.template;
         const applyTemplate = templates[templateName];
 
@@ -120,7 +122,16 @@ export default class RazorVashModule extends BaseModule {
               context: context,
               ...asset.frontMatter,
             };
-            console.log('!!', model.page.outputPath, model.category, asset.frontMatter,  asset.frontMatter.category);
+
+            if (model.category) {
+              const siteData: { category: string; display: string }[] = context.dataStore.sitedata;
+              const categoryData = siteData.find(d => d.category === model.category);
+              if (!categoryData) {
+                this.log('Category description missing for ' + model.category);
+              }
+              model.categoryDescription = categoryData?.display || model.category;
+            }
+
             asset.output = applyTemplate(model, finishLayout);
           } catch (exception) {
             this.log('error applying template', JSON.stringify(asset.frontMatter));

@@ -26,15 +26,13 @@
       <a href="/">Home</a>
       @if (category) {
         <span> / <a href="/articles/">Articles</a></span>
-        <span> / <a href="/articles/@category">
-          @model.context.dataStore.sitedata.filter(d => d.category === category).map(d => d.display)[0]
-        </a></span>
+        <span> / <a href="/articles/@category">@categoryDescription</a></span>
       }
     }
     <br />
 
     @tags.forEach(tag => {
-    <span><a class="tag-link" href="/categories/@tag">@tag</a></span>
+    <span><a class="tag-link" href="/tag/@tag">@tag</a></span>
     })
     <br />
   </div>

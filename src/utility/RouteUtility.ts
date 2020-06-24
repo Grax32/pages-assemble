@@ -30,16 +30,17 @@ export default class RouteUtility {
     return filePath.slice(0, lastDot);
   }
 
+  public getBasicOutputRoute(frontMatterRoute: string | undefined, filePath: string, outputType: OutputType) {
+    // resolve path and normalize to forward slash (fix windows paths)
+    return (
+       frontMatterRoute || this.removeExtension(filePath)
+    ).replace(/\\/g, '/');
+  }
+
   public getOutputRoute(frontMatterRoute: string | undefined, filePath: string, outputType: OutputType) {
-    let route = frontMatterRoute || this.removeExtension(filePath);
+    const basicRoute = this.getBasicOutputRoute(frontMatterRoute, filePath, outputType);    
     const extension = OutputTypes.getOutputExtension(outputType);
 
-    if (!route.endsWith(extension)) {
-      route += extension;
-    }
-
-    // normalize path to forward slash (fix windows paths)
-    route = route.replace(/\\/g, '/');
-    return route;
+    return basicRoute.endsWith(extension) ? basicRoute : basicRoute + extension;
   }
 }

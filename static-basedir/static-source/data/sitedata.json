@@ -1,8 +1,9 @@
 [
   { "link": "/", "display": "Home" },
   { "link": "/articles/", "display": "Articles" },
-  { "category": "tech", "link": "/articles/tech/", "display": "Tech" },
-  { "category": "team", "link": "/articles/team/", "display": "Team" },
+  { "category": "tech", "link": "/articles/tech/", "display": "Technology" },
+  { "category": "team", "link": "/articles/team/", "display": "Teamwork" },
   { "category": "art",  "link": "/articles/art/", "display": "Art" },
-  { "category": "opinion",  "link": "/articles/opinion/", "display": "Opinion" }
+  { "category": "opinion",  "link": "/articles/opinion/", "display": "Opinion (Rants, Kudos, Randomness)" },
+  { "category": "archive", "link": "/articles/archive/", "display": "Archive (The old junk)" }
 ]

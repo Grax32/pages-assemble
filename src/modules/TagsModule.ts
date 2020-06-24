@@ -36,15 +36,17 @@ export default class TagsModule extends BaseModule {
     context.dataStore.tags = filteredTags;
 
     filteredTags.forEach(tag => {
-      const route = '/categories/' + tag;
+      const route = '/tag/' + tag;
       const outputType = OutputType.html;
       const outputRoute = routeUtility.getOutputRoute(route, '', outputType);
       const outputPath = path.join(context.options.output, outputRoute);
 
       const categoryAsset = new FileContext();
       const frontMatter = categoryAsset.frontMatter;
+
       frontMatter.layout = "pages";
       frontMatter.title = "Tagged " + tag;
+
       categoryAsset.outputRoute = outputRoute;
       categoryAsset.outputPath = outputPath;
       categoryAsset.outputType = outputType;
@@ -52,6 +54,7 @@ export default class TagsModule extends BaseModule {
       const collection = context.collections[tag];
       const links = collection.map(asset => 
         '<a href="' + asset.outputRoute +'">' + asset.frontMatter.title + '</a>\n');
+
       categoryAsset.textContent = links.join('<hr/>');
       categoryAsset.sections.main = links.join('<br/>');
       categoryAsset.output = categoryAsset.textContent;

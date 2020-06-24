@@ -1,6 +1,8 @@
 ---
 layout: pages
-route: /2014/07/detecting-infinite-recursion.html
+route: /articles/detecting-infinite-recursion.html
+alternateRoute:
+ - /2014/07/detecting-infinite-recursion.html
 title: Detecting Infinite Recursion with a ThreadStatic Variable in C#
 tags:
  - coding
@@ -11,9 +13,9 @@ TLDR: Use ThreadStatic static variables for a performant recursion test.<br />
 <br />
 As I was building fFastInjector, I found that it was fairly easy to create infinitely recursive configurations of the dependency injection. &nbsp;As fFastInjector examines a constructor to determine what to inject, it calls itself to resolve those injections. <br />
 <br />
-<pre>Injector.Resolve&lt;MyConcreteClass&gt;()</pre>
+<pre><code class="language-csharp">Injector.Resolve&lt;MyConcreteClass&gt;()</code></pre>
 can generate a resolution function that looks like <br />
-<pre>new MyConcreteClass(Injector.Resolve&lt;IMyService&gt;(), Injector.Resolve&lt;IMySecurity&gt;())</pre>
+<pre><code class="language-csharp">new MyConcreteClass(Injector.Resolve&lt;IMyService&gt;(), Injector.Resolve&lt;IMySecurity&gt;())</code></pre>
 <br />
 A mis-configuration could cause an infinite loop if one of those resolutions pointed back to MyConcreteClass. &nbsp;In order to detect this, I looked at a few options to determine if I was calling the Resolve method for a type that I was already in the middle of resolving.<br />
 <br />
@@ -21,15 +23,17 @@ First, I tried looking at caller information as shown at&nbsp;<a href="http://ms
 <br />
 I could set a static variable and then if it is already set when I enter the resolution function, I can throw the exception.<br />
 <br />
-<pre>static bool isRecursionTestPending;
+<pre><code class="language-csharp">
+static bool isRecursionTestPending;
 
 static T ResolveWithRecursionCheck()
 {
  if (isRecursionTestPending)
  {
   throw new Exception("Recursion detected in type " + typeofT.Name);
- }</pre>
-<pre> isRecursionTestPending = true;
+ }
+
+ isRecursionTestPending = true;
  
  var returnValue = ActiveResolverFunction.Invoke();
  
@@ -37,17 +41,40 @@ static T ResolveWithRecursionCheck()
  
  return returnValue;
 }
-</pre>
+</code></pre>
 <br />
 The problem with this is that if 2 Resolvers are called at the same time, the 2nd one will fail thinking we have a recursion error because the first one set the isRecursionTestPending variable.<br />
 <br />
 The answer I found is similar to the above with one very important change. &nbsp;As Philip Cox points out on his <a href="http://philsversion.com/2009/04/01/dealing-with-infinite-recursion/">blog post</a>, we can use a ThreadStatic variable to detect this recursion in a thread-safe way.<br />
 <br />
-<pre>[ThreadStatic]
-static bool isRecursionTestPending;
-</pre>
+<pre><code class="language-csharp">[ThreadStatic]
+    static bool isRecursionTestPending;
+
+    static T ResolveWithRecursionCheck()
+    {
+     if (isRecursionTestPending)
+     {
+      throw new Exception("Recursion detected in type " + typeofT.Name);
+     }
+    
+     isRecursionTestPending = true;
+     
+     var returnValue = ActiveResolverFunction.Invoke();
+     
+     isRecursionTestPending = false;
+     
+     return returnValue;
+    }
+</code></pre>
 <br />
 A thread static variable is a different variable on each of the threads it runs on. &nbsp;So if Thread 1 starts to resolve MyConcreteClass, it will set the&nbsp;isRecursionTestPending variable to true for Thread 1. &nbsp;If, in the course of executing the Resolve method, another call to Resolve&lt;MyConcreteClass&gt;() is discovered, the&nbsp;isRecursionTestPending variable will be true and an exception will be thrown. &nbsp;If Thread 2 calls Resolve&lt;MyConcreteClass&gt;(), Thread 2 will have its own independent isRecursionTestPending variable.<br />
 <br />
 In my case, this kind of recursion is not allowed, so a boolean is appropriate. &nbsp;You could also use an int to allow recursion to a specific depth or just to track the depth you are at. <br />
 <br />
+
+<blockquote>
+    2020 Note: It should be mentioned that using ThreadStatic to detect recursion does not 
+    work with async code or any kind of multi-threaded code where a single code path moves 
+    from one thread to another.  The application above relates to constructors and dependency
+    injection, which should not be asynchronous or switch threads.
+</blockquote>

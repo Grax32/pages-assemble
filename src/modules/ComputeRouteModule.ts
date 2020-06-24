@@ -14,10 +14,12 @@ export default class ComputeRouteModule extends BaseModule {
       .filter(asset => asset.outputType !== OutputType.binary)
       .forEach(asset => {
         const assetPath = (<SourceFileContext>asset).path;
-        const outputRoute = routeUtility.getOutputRoute(asset.frontMatter.route, assetPath, asset.outputType);
-        const outputPath = path.join(context.options.output, outputRoute);
+        const route = routeUtility.getBasicOutputRoute(asset.frontMatter.route, assetPath, asset.outputType);
+        asset.outputRoute = route;
 
-        asset.outputRoute = outputRoute;
+        const outputRoutePath = routeUtility.getOutputRoute(asset.frontMatter.route, assetPath, asset.outputType);
+        const outputPath = path.join(context.options.output, outputRoutePath);
+
         asset.outputPath = outputPath;
       });
 
