@@ -8,7 +8,7 @@
     "clean": "rimraf static-basedir/build",
     "build": "tsc -v && tsc",
     "assemble-pages": "node --harmony lib -v -b static-basedir",
-    "netlify": "nvm ls && node -v && npm run build && npm run assemble-pages",
+    "netlify": "node -v && npm run build && npm run assemble-pages",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
