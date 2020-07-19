@@ -2,6 +2,7 @@
 layout: pages
 route: /articles/index
 title: Articles
+category: 
 ---
 
 <ul>

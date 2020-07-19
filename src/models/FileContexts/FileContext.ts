@@ -17,6 +17,7 @@ export default class FileContext {
     layout?: string;
     minify?: string;
     category?: string;
+    sortOrder?: string;
   } = {};
   public outputRoute: string = '';
   public outputPath: string = '';

@@ -26,7 +26,9 @@ export default class TagsModule extends BaseModule {
     allTags.forEach(tag => tagCounts[tag]++);
 
     const distinctTags = distinct(allTags);
-    const filteredTags = distinctTags.filter(tag => tagCounts[tag] >= 3);
+    const filteredTags = distinctTags
+      .filter(tag => !tag.startsWith('page:'))
+      .filter(tag => tagCounts[tag] >= 3);
 
     context.assets
       .forEach(asset => {
@@ -51,7 +53,7 @@ export default class TagsModule extends BaseModule {
       categoryAsset.outputPath = outputPath;
       categoryAsset.outputType = outputType;
 
-      const collection = context.collections[tag];
+      const collection = context.getCollection(tag);
       const links = collection.map(asset => 
         '<a href="' + asset.outputRoute +'">' + asset.frontMatter.title + '</a>\n');
 

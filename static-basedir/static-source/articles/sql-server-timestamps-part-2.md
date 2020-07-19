@@ -5,7 +5,10 @@ title: SQL Server Timestamp/RowVersion - Part 2 Optimistic Concurrency
 tags:
  - coding
  - sql
+ - page:home
+ - page:tech
 category: tech
+sortOrder: 20200102
 ---
 
 As we discussed in our previous [article](/articles/sql-server-timestamp-introduction), the SQL Server timestamp/rowversion type (rowversion is an alias for timestamp) is

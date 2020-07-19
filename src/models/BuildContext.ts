@@ -15,6 +15,20 @@ export default class BuildContext {
     this.assets.push(asset);
   }
 
+  public getCollection(name: string) {
+    if (!this.collections[name]) {
+      this.collections[name] = [];
+    }
+
+    return this.collections[name];
+  }
+
+  public getArchiveCollection() {
+    const archive = this.assets.filter(asset => !asset.frontMatter.tags?.find(tag => tag.startsWith('page:')));
+    archive.sort()
+    return archive;
+  }
+
   public getInclude(name: string, pathContext?: string) {
     const assets = <SourceFileContext[]>this.assets.filter(asset => asset.isType(SourceFileContext.name));
 

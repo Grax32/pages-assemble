@@ -8,7 +8,6 @@ import BuildContext from '../models/BuildContext';
 import { OutputTypes } from '../models/OutputType';
 import SourceFileContext from '../models/FileContexts/SourceFileContext';
 import BaseModule from './BaseModule';
-import { FileContext } from '../models';
 
 export default class InitialModule extends BaseModule {
   private outputTypeValues = Object.values(OutputTypes.OutputType);
@@ -69,22 +68,23 @@ export default class InitialModule extends BaseModule {
         asset.sections.excerpt = content[0];
       }
 
+      matterData.sortOrder = normalizeSortOrder(matterData.sortOrder || '1000');
       asset.frontMatter = matterData;
       asset.outputType = outputType;
 
       for (const tag of matterData.tags || []) {
-        InitialModule.getCollection(context, tag).push(asset);
+        context.getCollection(tag).push(asset);
       }
     });
 
-    return this.next(context);
-  }
-
-  private static getCollection(context: BuildContext, collectionKey: string): FileContext[] {
-    if (!context.collections[collectionKey]) {
-      context.collections[collectionKey] = [];
+    const collectionKeys = Object.keys(context.collections);
+    for (const key of collectionKeys) {
+      const collection = context.getCollection(key);
+      // sort in place
+      sortAssets(collection);
+      collection.sort((a, b) => compareStrings(b.frontMatter.sortOrder, a.frontMatter.sortOrder));
     }
 
-    return context.collections[collectionKey];
+    return this.next(context);
   }
 }

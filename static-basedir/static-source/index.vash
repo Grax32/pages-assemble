@@ -20,30 +20,21 @@ category: home
   }
 </style>
 <p>
-  <i class="fas fa-palette"></i> <b>Art</b>, like many forms of communication, requires a
-  originator and a consumer.  It is not enough just to create, or originate.  Art must be felt, 
-  experienced by another party, before it truely exists as art.
+  <i class="fas fa-palette"></i> <b>Art</b> As an artist, I seek to create and share pieces that speak
+  to your soul.  Generally, I prefer to create pieces I think will bring joy, happiness, and positivity.
 </p>
 
 <p>
- The artist creates something to evoke a reaction.  They share part of their soul in an attempt to connect
- to the feelings, thoughts, desires, in the soul of another.
+  <i class="fas fa-laptop-code"></i> <b>Science</b> As a scientist (software developer), I seek to share
+  information that will enable you to duplicate and build on my results.
 </p>
 
 <p>
-  The artist and the consumer may not even agree on how the piece is experienced, but the consumer understands,
-  sometimes without words to describe it, that they were touched, moved, had feelings about the piece.
-</p>
-
-<p>
-  <i class="fas fa-laptop-code"></i> <b>Science</b>, by contrast, is focused less on the related feelings and more on
-  consistent repeatable results. Where, as an artist, I want to share things that make you feel something, as a
-  scientist, I want to share information that will allow you to duplicate and build on my results.
-</p>
-
-<p>
-  <i class="fas fa-heartbeat"></i> <b>Love</b>, as I see it, is the ability to see a person's value. To see that their
-  experiences and perspectives represent valid alternate viewpoints of the world. To appreciate how much they matter.
+  <i class="fas fa-heartbeat"></i> <b>Love</b> As a human, I seek to educate myself and others around
+  various viewpoints and worldviews in an attempt to bridge some of the gaps in communication and understanding.
+  Even though we each have different labels i.e white, black, tall, short, male, female, and so forth, we 
+  all share the same basic needs, desires, and abilities.  Only by understanding each other's perspectives
+  can we appreciate the value of each person.
 </p>
 
 <p>
@@ -53,9 +44,13 @@ category: home
 </p>
 
 <h3><a href="/articles/">Articles</a></h3>
-
-articles
-
+<ul>
+  @model.context.getCollection('page:home').forEach(asset => {
+    <li><a href="@asset.outputRoute">
+      @asset.frontMatter.title
+    </a></li>
+  })
+</ul> 
 <h3><a href="/software-projects/">Software Projects</a></h3>
 
 <div class="tile-collection">

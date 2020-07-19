@@ -13,11 +13,11 @@ In my last post, I outlined how to build a Custom LINQ Filter Operator.  In this
 <br />
 We are writing a unit test for the extension method below.  The purpose of this method is to filter the OfficeSupplyOrders, leaving only the orders that have an approval date and are not cancelled.  You might see this method referenced elsewhere in code as context.OfficeSupplyOrders.WhereApproved() (assuming context is an entity framework DbContext).<br />
 <br />
-<pre>public static IQueryable&lt;OfficeSupplyOrder&gt; WhereApproved(
+<pre><code class="language-csharp">public static IQueryable&lt;OfficeSupplyOrder&gt; WhereApproved(
           this IQueryable&lt;OfficeSupplyOrder&gt; query)
 {
     return query.Where(v =&gt; v.ApprovalDate != null &amp;&amp; !v.Cancelled);
-}</pre>
+}</code></pre>
 <br />
 <b>Caveat</b><br />
 The tests we are writing will be in C# but often the clauses will actually be used to create a sql (or other LINQ provider) query. &nbsp;Be aware that there are differences between the 2, including how the sql query might handle nulls or case sensitivity. &nbsp;These tests are good for verifying the basic logic of the where clause but there are differences and you should be aware of them.<br />
@@ -44,7 +44,7 @@ In our example, we need one order where ApprovalDate is null and another order w
 <br />
 If you have a mix of "&amp;&amp;" (and) and "||"(or), I will leave the logic exercise up to you to determine the correct entries. &nbsp;If the logic is too complex, you might consider splitting it into multiple filter operators that are easier to test.<br />
 <br />
-<pre>[TestMethod]
+<pre><code class="language-csharp">[TestMethod]
 public void WhereApprovedTest()
 {
     // arrange
@@ -77,7 +77,7 @@ public void WhereApprovedTest()
     findableItems.ForEach(v =&gt; Assert.IsTrue(results.Contains(v)));
     filteredItems.ForEach(v =&gt; Assert.IsFalse(results.Contains(v)));
     Assert.AreEqual(findableItems.Count, results.Count);
-}</pre>
+}</code></pre>
 <br />
 As you can see, we created our findable list, created our filtered list, combined the two lists, and passed the combined list to our filter. &nbsp;We then examine the results by comparing them against our original two lists to determine that the output is what we expect.<br />
 <br />
@@ -85,5 +85,4 @@ As you can see, we created our findable list, created our filtered list, combine
 <br />
 We created a unit test for a Custom LINQ filter operator. &nbsp;We examined the where clause to determine what kind of data we needed to pass to exercise the clause and added the items needed to the findable or filtered lists. &nbsp;We combined the two lists and passed the combination through our filter. &nbsp;We then examined the result to verify that it did filter exactly what we expected.<br />
 <br />
-<br />
-<br />
+

@@ -1,0 +1,14 @@
+---
+layout: pages
+route: /articles/archive
+title: Archive (The old stuff)
+category: ''
+---
+
+@model.context.getArchiveCollection().forEach(asset => {
+<li>
+  <a href="@asset.outputRoute">
+    @asset.frontMatter.title
+  </a>
+</li>
+})

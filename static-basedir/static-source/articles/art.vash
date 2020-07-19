@@ -1,0 +1,14 @@
+---
+layout: pages
+route: /articles/art
+title: Art
+category: ''
+---
+
+@model.context.getCollection('page:art').forEach(asset => {
+<li>
+  <a href="@asset.outputRoute">
+    @asset.frontMatter.title
+  </a>
+</li>
+})

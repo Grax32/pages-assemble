@@ -6,6 +6,9 @@ tags:
  - coding
  - csharp
  - array
+ - page:home
+ - page:tech
+sortOrder: 2014
 category: tech
 ---
 Update: &nbsp;A reader ( <a href="https://github.com/mykohsu" target="_blank">Michael Hsu</a>&nbsp;)&nbsp;posted a faster improved version at&nbsp;<a href="https://github.com/mykohsu/Extensions/blob/master/ArrayExtensions.cs">https://github.com/mykohsu/Extensions/blob/master/ArrayExtensions.cs</a>&nbsp;and I <a href="/2014/04/better-array-fill-function.html">blogged about it</a>.<br />
