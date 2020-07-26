@@ -1,3 +1,4 @@
+export * from './related-models';
 export * from './createFileContext';
 export * from './DataSourceFileContext';
 export * from './FileContext';

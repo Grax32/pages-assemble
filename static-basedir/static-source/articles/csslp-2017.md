@@ -2,7 +2,7 @@
 layout: pages
 route: /2017/07/csslp-certification
 title: Certified Secure Software Lifecycle Professional (CSSLP)  
-tags: [coding,security,opinion]
+tags: [coding,security,opinion,page:opinion]
 category: opinion
 ---
 

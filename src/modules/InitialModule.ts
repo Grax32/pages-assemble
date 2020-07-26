@@ -8,6 +8,7 @@ import BuildContext from '../models/BuildContext';
 import { OutputTypes } from '../models/OutputType';
 import SourceFileContext from '../models/FileContexts/SourceFileContext';
 import BaseModule from './BaseModule';
+import { normalizeSortOrder, sortAssets } from '../utility/SortAssetsUtility';
 
 export default class InitialModule extends BaseModule {
   private outputTypeValues = Object.values(OutputTypes.OutputType);
@@ -68,8 +69,24 @@ export default class InitialModule extends BaseModule {
         asset.sections.excerpt = content[0];
       }
 
-      matterData.sortOrder = normalizeSortOrder(matterData.sortOrder || '1000');
-      asset.frontMatter = matterData;
+      /** Clean up nulls or single string references */
+      const normalizeArrayValue = (values: string[] | undefined | null): string[] => {
+        if (!values) return [];
+        if (typeof values === 'string') return [values];
+        return values;
+      }
+
+      const sortOrder = normalizeSortOrder(matterData.sortOrder || '1000');
+      const tags = normalizeArrayValue(matterData.tags);
+      const systemTags = normalizeArrayValue(matterData.systemTags);
+
+      asset.frontMatter = {
+        ...matterData,
+        sortOrder,
+        tags,
+        systemTags
+      };
+      Object.freeze(asset.frontMatter);
       asset.outputType = outputType;
 
       for (const tag of matterData.tags || []) {
@@ -82,7 +99,7 @@ export default class InitialModule extends BaseModule {
       const collection = context.getCollection(key);
       // sort in place
       sortAssets(collection);
-      collection.sort((a, b) => compareStrings(b.frontMatter.sortOrder, a.frontMatter.sortOrder));
+      // collection.sort((a, b) => compareStrings(b.frontMatter.sortOrder, a.frontMatter.sortOrder));
     }
 
     return this.next(context);

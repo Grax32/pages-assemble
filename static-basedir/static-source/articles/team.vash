@@ -1,12 +1,11 @@
 ---
 layout: pages
-route: /articles/art
-title: Art
+route: /articles/team
+title: Team
 category: ''
-tags: never-archive
 ---
 
-@model.context.getCollection('page:art').forEach(asset => {
+@model.context.getCollection('page:team').forEach(asset => {
 <li>
   <a href="@asset.outputRoute">
     @asset.frontMatter.title

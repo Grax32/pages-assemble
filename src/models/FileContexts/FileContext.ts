@@ -1,4 +1,5 @@
 import OutputType from '../OutputType';
+import { FrontMatterReadonly } from './related-models';
 
 export default class FileContext {
   public contextType = FileContext.name;
@@ -6,19 +7,7 @@ export default class FileContext {
   public outputType: OutputType = OutputType.binary;
   public textContent: string = '';
   public sections: { [prop: string]: string } = {};
-  public frontMatter: {
-    tags?: string[];
-    route?: string;
-    alternateRoutes?: string[];
-    title?: string;
-    section?: string;
-    dataKey?: string;
-    webImport?: string;
-    layout?: string;
-    minify?: string;
-    category?: string;
-    sortOrder?: string;
-  } = {};
+  public frontMatter: FrontMatterReadonly = { tags: [], systemTags: [] };
   public outputRoute: string = '';
   public outputPath: string = '';
   public isHandled = false;

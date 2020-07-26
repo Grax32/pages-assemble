@@ -2,6 +2,7 @@
 layout: pages
 route: /articles/tech
 title: Tech
+tags: never-archive
 ---
 
 ### SQL Server

@@ -3,6 +3,7 @@ import { AssetGroup, getCategoryFolder } from '../utility/SysUtilities';
 import IPageAssembleOptions from '../interfaces/IPageAssembleOptions';
 import FileContext from './FileContexts/FileContext';
 import { SourceFileContext } from '.';
+import { sortAssets } from '../utility/SortAssetsUtility';
 
 export default class BuildContext {
   public collections: { [key: string]: FileContext[] } = {};
@@ -24,8 +25,30 @@ export default class BuildContext {
   }
 
   public getArchiveCollection() {
-    const archive = this.assets.filter(asset => !asset.frontMatter.tags?.find(tag => tag.startsWith('page:')));
-    archive.sort()
+    const pageTagPrefix = 'page:';
+    const neverArchiveTagName = 'never-archive';
+
+    function filterByTags(tags: string[] | undefined | null) {
+      if (!tags) return true;
+
+      const hasTag = (tag: string) => tags.includes(tag);
+
+      if (hasTag(neverArchiveTagName)) return false;
+      if (tags.find(tag => tag.startsWith(pageTagPrefix))) return false;
+
+      return true;      
+    }
+
+    const archive = this.assets
+      .filter(asset => asset.frontMatter.title)
+      .filter(asset => asset.frontMatter.layout === 'pages') // find a better way to filter out redirects/etc
+      .filter(asset => !asset.outputRoute.startsWith('/tag/'))
+      .filter(asset => filterByTags(asset.frontMatter.tags));
+
+    archive.map(asset => ({ route: asset.outputRoute, title: asset.frontMatter.title, tags: asset.frontMatter.tags, other: asset.frontMatter.layout}))
+    .forEach(v => console.log(JSON.stringify(v)));
+
+    sortAssets(archive);
     return archive;
   }
 

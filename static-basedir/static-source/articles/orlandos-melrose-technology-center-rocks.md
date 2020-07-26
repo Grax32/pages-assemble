@@ -6,6 +6,7 @@ alternateRoutes:
 title: Orlando's Giant Melrose Technology Center is a Maker's Paradise 
 tags: 
  - opinion
+ - page:opinion
 ogImage: /articles/images/melrose-center.jpg
 category: opinion
 ---

@@ -5,6 +5,7 @@ alternateRoute: /2014/01/on-success.html
 title: On Success
 tags:
  - life
+ - page:opinion
 category: team
 ---
 <a href="/articles/on-habits">...</a>

@@ -8,14 +8,9 @@ import { distinct } from '../utility';
 import { FileContext } from '../models';
 
 export default class TagsModule extends BaseModule {
-   public async invoke(context: BuildContext): Promise<ResultContext> {
+  public async invoke(context: BuildContext): Promise<ResultContext> {
+    const pageTagPrefix = 'page:';
     const routeUtility = new RouteUtility();
- 
-    context.assets.forEach(asset => {
-      if (!asset.frontMatter.tags) {
-        asset.frontMatter.tags = [];
-      }
-    });
 
     const allTags = context.assets
       .map(asset => asset.frontMatter.tags!)
@@ -26,14 +21,18 @@ export default class TagsModule extends BaseModule {
     allTags.forEach(tag => tagCounts[tag]++);
 
     const distinctTags = distinct(allTags);
-    const filteredTags = distinctTags
-      .filter(tag => !tag.startsWith('page:'))
-      .filter(tag => tagCounts[tag] >= 3);
+    const filteredTags = distinctTags.filter(tag => !tag.startsWith(pageTagPrefix)).filter(tag => tagCounts[tag] >= 3);
 
-    context.assets
-      .forEach(asset => {
-        asset.frontMatter.tags = asset.frontMatter.tags!.filter(tag => filteredTags.includes(tag));
-      });
+    function filterHiddenTags(tags: string[] | undefined | null) {
+      if (!tags) return [];
+
+      return [...tags.filter(tag => tag.startsWith(pageTagPrefix)), ...tags.filter(tag => filteredTags.includes(tag))];
+    }
+
+    context.assets.forEach(asset => {
+      const tags = filterHiddenTags(asset.frontMatter.tags);
+      asset.frontMatter = { ...asset.frontMatter, tags };
+    });
 
     context.dataStore.tags = filteredTags;
 
@@ -44,18 +43,21 @@ export default class TagsModule extends BaseModule {
       const outputPath = path.join(context.options.output, outputRoute);
 
       const categoryAsset = new FileContext();
-      const frontMatter = categoryAsset.frontMatter;
 
-      frontMatter.layout = "pages";
-      frontMatter.title = "Tagged " + tag;
+      categoryAsset.frontMatter = {
+        ...categoryAsset.frontMatter,
+        layout: 'pages',
+        title: 'Tagged ' + tag
+      };
 
       categoryAsset.outputRoute = outputRoute;
       categoryAsset.outputPath = outputPath;
       categoryAsset.outputType = outputType;
 
       const collection = context.getCollection(tag);
-      const links = collection.map(asset => 
-        '<a href="' + asset.outputRoute +'">' + asset.frontMatter.title + '</a>\n');
+      const links = collection.map(
+        asset => '<a href="' + asset.outputRoute + '">' + asset.frontMatter.title + '</a>\n',
+      );
 
       categoryAsset.textContent = links.join('<hr/>');
       categoryAsset.sections.main = links.join('<br/>');

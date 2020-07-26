@@ -37,7 +37,7 @@ export default class RedirectModule extends BaseModule {
         asset.outputRoute = outputRoute;
         asset.outputPath = outputPath;
         asset.outputType = outputType;
-        asset.frontMatter = frontMatter;
+        asset.frontMatter = {...frontMatter, tags: [], systemTags: [] };
 
         context.assets.push(asset);
       });

@@ -2,6 +2,7 @@ import * as path from 'path';
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
 import BaseModule from './BaseModule';
+import { FrontMatter } from '../models';
 
 export default class SectionsModule extends BaseModule {
   public async invoke(context: BuildContext): Promise<ResultContext> {
@@ -21,7 +22,8 @@ export default class SectionsModule extends BaseModule {
     // set sections to assets
     assets.forEach(asset => {
       const frontMatterSectionKeys = Object.keys(asset.frontMatter).filter(key => key.startsWith('section-'));
-      const frontMatter = <{ [key: string]: string }>asset.frontMatter;
+      const fm: Omit<FrontMatter, 'tags' | 'systemTags'> = asset.frontMatter;
+      const frontMatter = <{ [key: string]: string }>fm;
 
       const assetSections = Object.fromEntries(
         frontMatterSectionKeys.map(key => [

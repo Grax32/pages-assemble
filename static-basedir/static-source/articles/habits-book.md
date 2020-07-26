@@ -2,7 +2,7 @@
 layout: pages
 route: /books/habits-by-william-james
 title: Habit
-tags: [books]
+tags: [books, never-archive]
 category: books
 ---
 
