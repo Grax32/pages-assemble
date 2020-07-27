@@ -1,0 +1,13 @@
+---
+layout: pages
+route: /articles/tech
+title: Tech
+systemTags: never-archive
+---
+
+@html.raw(vash.lookup('show-collection', { collection: context.getCollection('page:csharp'), collectionName: 'C# / Programming' }))
+@html.raw(vash.lookup('show-collection', { collection: context.getCollection('page:sql-server'), collectionName: 'Sql Server' }))
+@html.raw(vash.lookup('show-collection', { collection: context.getCollection('page:azure'), collectionName: 'Azure' }))
+@html.raw(vash.lookup('show-collection', { collection: context.getCollection('page:css'), collectionName: 'Content Style Sheets / CSS' }))
+
+@html.raw(vash.lookup('show-collection', { collection: context.getCollection('page:tech', 'page:css', 'page:sql-server', 'page:azure', 'page:csharp'), collectionName: 'Other Tech' }))

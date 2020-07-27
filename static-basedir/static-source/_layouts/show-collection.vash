@@ -1,0 +1,10 @@
+@if (collection.length) {
+    <h3>@collectionName</h3>
+    <ul>
+    @collection.forEach(asset => {
+        <li>
+            <a href="@asset.outputRoute">@asset.frontMatter.title</a>
+        </li>
+    })
+    </ul>
+}

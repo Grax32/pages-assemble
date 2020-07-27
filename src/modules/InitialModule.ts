@@ -79,6 +79,7 @@ export default class InitialModule extends BaseModule {
       const sortOrder = normalizeSortOrder(matterData.sortOrder || '1000');
       const tags = normalizeArrayValue(matterData.tags);
       const systemTags = normalizeArrayValue(matterData.systemTags);
+      const allTags = [...tags, ...systemTags];
 
       asset.frontMatter = {
         ...matterData,
@@ -89,7 +90,7 @@ export default class InitialModule extends BaseModule {
       Object.freeze(asset.frontMatter);
       asset.outputType = outputType;
 
-      for (const tag of matterData.tags || []) {
+      for (const tag of allTags) {
         context.getCollection(tag).push(asset);
       }
     });
@@ -99,7 +100,6 @@ export default class InitialModule extends BaseModule {
       const collection = context.getCollection(key);
       // sort in place
       sortAssets(collection);
-      // collection.sort((a, b) => compareStrings(b.frontMatter.sortOrder, a.frontMatter.sortOrder));
     }
 
     return this.next(context);

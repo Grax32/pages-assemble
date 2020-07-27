@@ -3,7 +3,7 @@ layout: pages
 route: /articles/index
 title: Articles
 category: 
-tags: never-archive
+systemTags: never-archive
 ---
 
 <ul>

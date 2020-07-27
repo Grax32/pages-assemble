@@ -61,15 +61,19 @@ export default class RazorVashModule extends BaseModule {
         console.error('Error parsing', templateAsset);
       }
       const compiledTemplate = vash.compile(templateAsset.textContent);
-      vash.install(getTemplateName(templateAsset), compiledTemplate);
+      const templateName = getTemplateName(templateAsset);
+      vash.install(templateName, compiledTemplate);
       templateAsset.isHandled = true;
+
+      console.log('TemplateName: ', templateName);
     });
 
     const compileOutput = (asset: SourceFileContext) => {
       const model = {
+        vash,
         sections: asset.sections,
         page: asset,
-        context: context,
+        context,
         ...asset.frontMatter,
       };
 

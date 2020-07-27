@@ -5,6 +5,9 @@ title: Use of unassigned local variable in C#
 tags:
  - coding
  - csharp
+systemTags:
+ - page:tech
+ - page:csharp
 category: tech
 ---
 Here is a simple tip that you may not have run across yet. <br />

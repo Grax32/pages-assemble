@@ -5,6 +5,9 @@ title: Custom LINQ Filter Operators
 tags:
  - coding
  - csharp
+systemTags:
+ - page:tech
+ - page:csharp
 category: tech
 ---
 <div class="NoSpacing">

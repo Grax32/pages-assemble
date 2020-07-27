@@ -6,8 +6,10 @@ tags:
  - coding
  - csharp
  - array
+systemTags:
  - page:home
  - page:tech
+ - page:csharp
 sortOrder: 2014
 category: tech
 ---

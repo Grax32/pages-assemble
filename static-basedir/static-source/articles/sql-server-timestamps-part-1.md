@@ -5,8 +5,10 @@ title: SQL Server Timestamp/RowVersion - Part 1 Introduction
 tags:
  - coding
  - sql
+systemTags:
  - page:home
  - page:tech
+ - page:sql-server
 category: tech
 sortOrder: 20200101
 ---

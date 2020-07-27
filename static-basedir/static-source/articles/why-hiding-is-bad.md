@@ -6,6 +6,9 @@ title: Understanding Hiding in C#
 tags: 
  - coding
  - csharp
+systemTags:
+ - page:tech
+ - page:csharp
 category: tech
 ---
 

@@ -3,7 +3,7 @@ layout: pages
 route: /articles/archive
 title: Archive (The old stuff)
 category: ''
-tags: never-archive
+systemTags: never-archive
 ---
 
 @model.context.getArchiveCollection().forEach(asset => {

@@ -9,7 +9,6 @@ import { FileContext } from '../models';
 
 export default class TagsModule extends BaseModule {
   public async invoke(context: BuildContext): Promise<ResultContext> {
-    const pageTagPrefix = 'page:';
     const routeUtility = new RouteUtility();
 
     const allTags = context.assets
@@ -21,12 +20,12 @@ export default class TagsModule extends BaseModule {
     allTags.forEach(tag => tagCounts[tag]++);
 
     const distinctTags = distinct(allTags);
-    const filteredTags = distinctTags.filter(tag => !tag.startsWith(pageTagPrefix)).filter(tag => tagCounts[tag] >= 3);
+    const filteredTags = distinctTags.filter(tag => tagCounts[tag] >= 3);
 
     function filterHiddenTags(tags: string[] | undefined | null) {
       if (!tags) return [];
 
-      return [...tags.filter(tag => tag.startsWith(pageTagPrefix)), ...tags.filter(tag => filteredTags.includes(tag))];
+      return tags.filter(tag => filteredTags.includes(tag));
     }
 
     context.assets.forEach(asset => {

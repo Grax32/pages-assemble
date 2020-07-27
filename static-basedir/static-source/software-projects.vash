@@ -3,6 +3,7 @@ layout: pages
 route: /software-projects
 title: Software Projects
 category:
+systemTags: never-archive
 ---
 
 <div class="tile-collection">

@@ -6,6 +6,7 @@ title: Female Code Camp Speakers?
 tags: 
  - opinion
  - codecamp
+systemTags:
  - page:opinion
 category: opinion
 ---

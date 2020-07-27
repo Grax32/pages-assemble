@@ -12,9 +12,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "serve": "serve ./static-basedir/build",
+    "serve": "serve -n ./static-basedir/build",
     "start-nowatch": "npm run netlify && npm run serve",
-    "start": "onchange -ivk \"src/**\" \"static-basedir/static-source/**\" -- npm run start-nowatch"
+    "start": "onchange -ivk \"src/**\" \"static-basedir/static-source/**\" -- npm run start-nowatch",
+    "push": "git add . && git commit -m PUSH && git push"
   },
   "files": [
     "lib/**/*"

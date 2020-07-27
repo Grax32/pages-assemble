@@ -4,6 +4,9 @@ route: /articles/azure-web-jobs-in-source-code
 title: Azure Web Jobs in Source Code
 tags: 
  - coding
+systemTags:
+ - page:tech
+ - page:azure
 category: tech
 ---
 If you are hosting on Azure, you might have been introduced to WebJobs. &nbsp;WebJobs are great for performing background or batch tasks.

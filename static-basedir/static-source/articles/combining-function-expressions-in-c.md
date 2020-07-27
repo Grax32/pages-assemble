@@ -7,6 +7,9 @@ tags:
  - coding
  - memorable
  - csharp
+systemTags:
+ - page:tech
+ - page:csharp
 category: tech
 ---
 When working with expressions, I often want to combine multiple expressions into one. &nbsp;Using a ReplacementVisitor enables me to do that.<br />

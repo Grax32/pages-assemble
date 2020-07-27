@@ -1,12 +1,12 @@
 ---
 layout: pages
-route: /articles/opinion
-title: Opinion
+route: /articles/tech/sql-server
+title: SQL Server
 category: ''
 systemTags: never-archive
 ---
 
-@model.context.getCollection('page:opinion').forEach(asset => {
+@model.context.getCollection('page:sql-server').forEach(asset => {
 <li>
   <a href="@asset.outputRoute">
     @asset.frontMatter.title
