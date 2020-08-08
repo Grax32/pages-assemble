@@ -1,0 +1,26 @@
+﻿@html.extend('base', function(model) { @html.block('body', function(model){
+  @if (title) {
+  <div class="page-title page-general">
+    <h3>@title</h3>
+  </div>
+  }
+
+  <div class="page-content page-general">
+    @html.raw(sections.main)
+
+    @if (!hidebyline) {
+      <div class="page-byline page-general">by <a href="/about/david-walker/">David Walker</a></div>
+    }
+
+    <p class="share-block">
+      Share to:
+      <a class="share-link" title="Facebook" onclick="shareTo('facebook')"><i class="fab fa-facebook-f"></i></a>
+      <a class="share-link" title="Twitter" to onclick="shareTo('twitter')"><i class="fab fa-twitter"></i></a>
+      <a class="share-link" title="LinkedIn" onclick="shareTo('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+      <a class="share-link" title="Email" onclick="shareTo('email')"><i class="fas fa-at"></i></a>
+    </p>
+
+    <footer>@html.raw(sections.footer)</footer>
+    <br />
+  </div>
+}) })
