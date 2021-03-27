@@ -4,8 +4,8 @@ import { IBuildModule } from '../interfaces/IBuildModule';
 import ILogger from '../interfaces/ILogger';
 
 export default abstract class BaseModule implements IBuildModule {
-  constructor(public logger: ILogger) {}
   public next!: (context: BuildContext) => Promise<ResultContext>;
+  constructor(public logger: ILogger) {}
   public abstract invoke(context: BuildContext): Promise<ResultContext>;
 
   public log(message: string, ...args: any[]) {

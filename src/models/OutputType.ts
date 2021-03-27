@@ -4,6 +4,7 @@ enum OutputType {
   style = 'style',
   script = 'script',
   binary = 'binary',
+  raw = 'raw',
   data = 'data'
 }
 
@@ -25,6 +26,8 @@ export class OutputTypes {
         return OutputType.script;
       case 'json':
         return OutputType.data;
+      case 'svg':
+        return OutputType.raw;
       default:
         return OutputType.binary;
     }
@@ -42,6 +45,9 @@ export class OutputTypes {
         return '.js';
       case OutputType.style:
         return '.css';
+      case OutputType.raw:
+      case OutputType.binary:
+        return '';
       default:
         return '.html';
     }

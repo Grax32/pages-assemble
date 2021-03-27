@@ -1,17 +1,17 @@
-import RazorVashModule from './RazorVashModule';
+import ComputeRouteModule from './ComputeRouteModule';
+import DataModule from './DataModule';
 import FinalModule from './FinalModule';
 import InitialModule from './InitialModule';
 import MarkdownModule from './MarkdownModule';
+import MinifierModule from './MinifierModule';
+import RazorVashModule from './RazorVashModule';
+import RedirectModule from './RedirectModule';
+import SectionsModule from './SectionsModule';
+import SimpleHtmlModule from './SimpleHtmlModule';
 import SimpleTemplateModule from './SimpleTemplateModule';
 import StaticFilesModule from './StaticFilesModule';
-import ComputeRouteModule from './ComputeRouteModule';
-import MinifierModule from './MinifierModule';
-import TextOutputModule from './TextOutputModule';
-import SimpleHtmlModule from './SimpleHtmlModule';
-import DataModule from './DataModule';
-import SectionsModule from './SectionsModule';
-import RedirectModule from './RedirectModule';
 import TagsModule from './TagsModule';
+import TextOutputModule from './TextOutputModule';
 
 export {
   RedirectModule,

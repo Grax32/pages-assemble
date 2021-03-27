@@ -71,8 +71,8 @@ export default class InitialModule extends BaseModule {
 
       /** Clean up nulls or single string references */
       const normalizeArrayValue = (values: string[] | undefined | null): string[] => {
-        if (!values) return [];
-        if (typeof values === 'string') return [values];
+        if (!values) { return []; }
+        if (typeof values === 'string') { return [values]; }
         return values;
       }
 
@@ -84,8 +84,8 @@ export default class InitialModule extends BaseModule {
       asset.frontMatter = {
         ...matterData,
         sortOrder,
-        tags,
-        systemTags
+        systemTags,
+        tags      
       };
       Object.freeze(asset.frontMatter);
       asset.outputType = outputType;

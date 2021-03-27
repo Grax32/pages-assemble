@@ -1,8 +1,8 @@
 import * as path from 'path';
 import BuildContext from '../models/BuildContext';
+import OutputType from '../models/OutputType';
 import ResultContext from '../models/ResultContext';
 import BaseModule from './BaseModule';
-import OutputType from '../models/OutputType';
 
 export default class TextOutputModule extends BaseModule {
   public next!: (context: BuildContext) => Promise<ResultContext>;

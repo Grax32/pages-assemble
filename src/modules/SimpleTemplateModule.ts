@@ -9,6 +9,7 @@ export default class SimpleTemplateModule extends BaseModule {
   public next!: (context: BuildContext) => Promise<ResultContext>;
   public async invoke(context: BuildContext): Promise<ResultContext> {
     if (context.options.verbose) {
+      // tslint:disable-next-line:no-console
       console.log('Entering', SimpleTemplateModule.name);
     }
 
@@ -16,10 +17,10 @@ export default class SimpleTemplateModule extends BaseModule {
       .filter(v => v.outputType === OutputType.html)
       .forEach(asset => {
         const outputTemplate = '<html><body>' + asset.sections.main + '</body></html>';
-        const link = <string>(asset.frontMatter.route || asset.path!.replace(/\.md$/, ''));
+        const link = (asset.frontMatter.route || asset.path!.replace(/\.md$/, '')) as string;
         let outputPath = path.join(context.options.output, link);
 
-        if (!outputPath.endsWith('.html')) {
+        if (!outputPath.endsWith('.html') && asset.outputType !== OutputType.raw) {
           outputPath += '.html';
         }
 
@@ -28,6 +29,7 @@ export default class SimpleTemplateModule extends BaseModule {
         const outputFolder = path.dirname(outputPath);
 
         if (context.options.verbose) {
+          // tslint:disable-next-line:no-console
           console.log('writing simple file ' + outputPath);
         }
 

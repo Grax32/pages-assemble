@@ -1,9 +1,9 @@
 import path from 'path';
 
 import BuildContext from '../models/BuildContext';
+import HtmlSourceFileContext from '../models/FileContexts/HtmlSourceFileContext';
 import ResultContext from '../models/ResultContext';
 import BaseModule from './BaseModule';
-import HtmlSourceFileContext from '../models/FileContexts/HtmlSourceFileContext';
 
 export default class SimpleHtmlModule extends BaseModule {
   public next!: (context: BuildContext) => Promise<ResultContext>;
