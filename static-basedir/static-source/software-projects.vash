@@ -5,7 +5,6 @@ title: Software Projects
 category:
 systemTags: never-archive
 ---
-
 <div class="tile-collection">
   @model.context.dataStore.softwareprojects.forEach(project => {
   <div class="tile-item">

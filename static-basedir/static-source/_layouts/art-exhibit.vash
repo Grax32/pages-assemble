@@ -1,26 +1,124 @@
-﻿@html.extend('base', function(model) { @html.block('body', function(model){
-  @if (title) {
-  <div class="page-title page-general">
-    <h3>@title</h3>
-  </div>
-  }
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <!-- build time @(new Date()).toISOString() -->
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>@(title || titleonly)</title>
+  <script src='/content/scripts.js' type='text/javascript'></script>
 
-  <div class="page-content page-general">
-    @html.raw(sections.main)
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          border: 0 none;
+          box-sizing: border-box;
+          font-family: Arial, Helvetica, sans-serif;
+      }
+  </style>
+  <style>
+      html,
+      body {
+          height: 100vh;
+          width: 100%;
+          overflow: auto;
+      }
 
-    @if (!hidebyline) {
-      <div class="page-byline page-general">by <a href="/about/david-walker/">David Walker</a></div>
-    }
+      #main-body {
+          background-color: lightslategray;
+          flex-direction: column;
+          display: flex;
+          height: 100vh;
+          width: 100%;
+          max-width: 1024px;
+          margin-left: auto;
+          margin-right: auto;
+          box-shadow: 0px 0px 10px 2px black;
+      }
 
-    <p class="share-block">
-      Share to:
-      <a class="share-link" title="Facebook" onclick="shareTo('facebook')"><i class="fab fa-facebook-f"></i></a>
-      <a class="share-link" title="Twitter" to onclick="shareTo('twitter')"><i class="fab fa-twitter"></i></a>
-      <a class="share-link" title="LinkedIn" onclick="shareTo('linkedin')"><i class="fab fa-linkedin-in"></i></a>
-      <a class="share-link" title="Email" onclick="shareTo('email')"><i class="fas fa-at"></i></a>
-    </p>
+      section {
+          width: 100%;
+          position: relative;
+          flex: 1;
+          flex-shrink: 0;
+          min-height: max(50vh, 200px);
+          min-width: 200px;
+      }
 
-    <footer>@html.raw(sections.footer)</footer>
-    <br />
-  </div>
-}) })
+      section > div {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          padding: 30px;
+      }
+
+      header,
+      footer {
+          padding: 10px;
+          width: 100%;
+          background-color: #dcdcdc;
+      }
+
+      header h1 {
+          font-size: 5vmin;
+          text-shadow: 1px 1px 2px gray;
+          border-bottom: 1px solid black;
+          margin-bottom: 20px;
+          color: maroon;
+      }
+
+      header {
+          border-bottom: 2px solid maroon;
+      }
+
+      footer {
+          border-top: 2px solid maroon;
+      }
+
+      #main-image {
+          position: absolute;
+          border-radius: 15px;
+          box-shadow: 0px 0px 0px 3px white, 0px 0px 0px 6px black, 0px 0px 10px 7px lightgray;
+      }
+
+      article {
+          text-align: center;
+          background-color: lightgray;
+      }
+  </style>
+
+</head>
+<body>
+
+<div id='main-body'>
+  <header>
+    <h1>GX Gallery</h1>
+    An online exhibition featuring selected works from the artist David Walker (@@grax32).
+  </header>
+  <section>
+    <div id='show-area'>
+      <img id='main-image' src='/art/virtual-exhibit/great-blue-heron/great-blue-heron.jpg' />
+    </div>
+  </section>
+  <article>
+    <h1>Molting</h1>
+    A Great Blue Heron molts at the end of mating season.
+  </article>
+  <footer>
+    Share to:
+    <a class='share-link' title='Facebook' onclick="shareTo('facebook')"><i class='fab fa-facebook-f'></i></a>
+    <a class='share-link' title='Twitter' to onclick="shareTo('twitter')"><i class='fab fa-twitter'></i></a>
+    <a class='share-link' title='LinkedIn' onclick="shareTo('linkedin')"><i class='fab fa-linkedin-in'></i></a>
+    <a class='share-link' title='Email' onclick="shareTo('email')"><i class='fas fa-at'></i></a>
+
+    <h3>About the Artist</h3>
+    David Walker is an Orlando-based artist working in photography and digital art mediums.
+  </footer>
+</div>
+
+
+<script>
+  initializeImageResizer("#show-area");
+</script>
+</body>
+</html>

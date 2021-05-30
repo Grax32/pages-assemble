@@ -1,6 +1,3 @@
-import { fluentPipe } from 'fluentpipe';
-export { fluentPipe };
-
 import FileSystemUtility from './FileSystemUtility';
 import RouteUtility from './RouteUtility';
 import StringUtility from './StringUtility';

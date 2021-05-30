@@ -1,4 +1,10 @@
-﻿@html.extend('base', function(model) { @html.block('body', function(model){
+﻿@html.extend('base', function(model) {
+
+@html.block('headers', function(model) {
+    <link rel="stylesheet" href="/content/styles.css" />
+});
+
+@html.block('body', function(model){
 <div class="page-banner">
   <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
   <div class="overflow"></div>

@@ -1,6 +1,6 @@
 ---
 layout: art-exhibit
-route: /art/virtual-exhibit/great-blue-heron
+route: /art/virtual-exhibit/great-blue-heron/index.html
 title: Observe - Great Blue Heron
 tags: [art]
 systemTags: page:art
@@ -21,15 +21,4 @@ imgHeight: 2272
     page.img = { width, height, matteOuter, matteInner, matteSize, framedWidth, framedHeight }; 
 }
 
-A Great Blue Heron hunts
-for dinner, completely disregarding hikers on a nearby trail.
-
-<style>
-    .art-exhibit {
-        border: 2px solid yellow;
-        object-fit: contain;
-    }
-</style>
-<div style="width: 100px; height: 100px; border: 2px solid green; ">
-    <img class="art-exhibit" src="/art/virtual-exhibit-great-blue-heron/image.svg" >
-</div>
+<img src="/art/virtual-exhibit/great-blue-heron/great-blue-heron.jpg" class="art-exhibit" />
