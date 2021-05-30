@@ -94,16 +94,16 @@
 <div id='main-body'>
   <header>
     <h1>GX Gallery</h1>
-    An online exhibition featuring selected works from the artist David Walker (@@grax32).
+    An online exhibition featuring selected works from the artist David&nbsp;Walker&nbsp;(@@grax32).
   </header>
   <section>
     <div id='show-area'>
-      <img id='main-image' src='/art/virtual-exhibit/great-blue-heron/great-blue-heron.jpg' />
+      <img id='main-image' src='@imgPath' />
     </div>
   </section>
   <article>
-    <h1>Molting</h1>
-    A Great Blue Heron molts at the end of mating season.
+    <h1>@title</h1>
+    @imgDescription
   </article>
   <footer>
     Share to:
