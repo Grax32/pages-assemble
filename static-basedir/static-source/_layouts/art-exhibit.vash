@@ -121,20 +121,28 @@
   </footer>
 </div>
 
-
+<template id='next'>@next</template>
+<template id='previous'>@previous</template>
 <script>
-  initializeImageResizer("#show-area");
+  initializeImageResizer('#show-area');
 
   const hammerOptions = {};
   var hammertime = new Hammer(document.body, hammerOptions);
-  hammertime.on('swipeleft', function(ev) {
-    alert('swipe left');
 
-    location.href = @
-  });
-  hammertime.on('swiperight', function(ev) {
-    alert('swipe right');
-  });
+  const nextUrl = document.getElementById('next').value;
+  const previousUrl = document.getElementById('previous').value;
+
+  if (nextUrl) {
+    hammertime.on('swipeleft', function(ev) {
+      location.href = nextUrl;
+    });
+  }
+
+  if (previousUrl) {
+    hammertime.on('swiperight', function(ev) {
+      location.href = previousUrl;
+    });
+  }
 </script>
 </body>
 </html>
