@@ -1,11 +1,12 @@
 ---
 layout: art-exhibit
 route: /art/virtual-exhibit/great-blue-heron/index.html
-title: Great Blue Heron Hunting
+title: Parrot
 tags: [art]
 systemTags: page:art
 category: art
-imgPath: /art/virtual-exhibit/great-blue-heron/great-blue-heron.jpg
+imgPath: /art/virtual-exhibit/parrot/great-blue-heron.jpg
 imgDescription: A Great Blue Heron hunts for dinner, completely disregarding hikers on a nearby trail.
-next: /art/virtual-exhibit/parrot/
+previous: /art/virtual-exhibit/great-blue-heron/
+next: /art/virtual-exhibit/red-leaf/
 ---

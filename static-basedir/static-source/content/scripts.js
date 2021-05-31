@@ -43,18 +43,18 @@ function initializeImageResizer(containerQuerySelector) {
   }
 
   const initialContainerStyle = getComputedStyle(container);
-  if (initialContainerStyle.position !== "relative" && initialContainerStyle.position !== "absolute") {
-    throw new Error("Container position must be relative or absolute");
+  if (initialContainerStyle.position !== 'relative' && initialContainerStyle.position !== 'absolute') {
+    throw new Error('Container position must be relative or absolute');
   }
-  
-  const mainImage = container.getElementsByTagName("img")[0];
+
+  const mainImage = container.getElementsByTagName('img')[0];
 
   if (!mainImage) {
     console.error('Could not find image element in ' + containerQuerySelector);
     return;
   }
 
-  mainImage.style.position = "absolute";
+  mainImage.style.position = 'absolute';
 
   function resizeImage() {
     const containerStyle = getComputedStyle(container);
@@ -104,6 +104,6 @@ function initializeImageResizer(containerQuerySelector) {
   mainImage.addEventListener('load', () => {
     resizeImage();
     resizeImage();
+    mainImage.style.opacity = 1;
   });
-
 }

@@ -1,13 +1,13 @@
 import grayMatter from 'gray-matter';
-import fs from 'fs';
-import path from 'path';
-import glob from 'glob';
+import fs         from 'fs';
+import path       from 'path';
+import glob       from 'glob';
 
-import ResultContext from '../models/ResultContext';
-import BuildContext from '../models/BuildContext';
-import { OutputTypes } from '../models/OutputType';
-import SourceFileContext from '../models/FileContexts/SourceFileContext';
-import BaseModule from './BaseModule';
+import ResultContext                      from '../models/ResultContext';
+import BuildContext                       from '../models/BuildContext';
+import { OutputTypes }                    from '../models/OutputType';
+import SourceFileContext                  from '../models/FileContexts/SourceFileContext';
+import BaseModule                         from './BaseModule';
 import { normalizeSortOrder, sortAssets } from '../utility/SortAssetsUtility';
 
 export default class InitialModule extends BaseModule {
@@ -74,7 +74,7 @@ export default class InitialModule extends BaseModule {
         if (!values) { return []; }
         if (typeof values === 'string') { return [values]; }
         return values;
-      }
+      };
 
       const sortOrder = normalizeSortOrder(matterData.sortOrder || '1000');
       const tags = normalizeArrayValue(matterData.tags);
@@ -85,7 +85,7 @@ export default class InitialModule extends BaseModule {
         ...matterData,
         sortOrder,
         systemTags,
-        tags      
+        tags,
       };
       Object.freeze(asset.frontMatter);
       asset.outputType = outputType;
