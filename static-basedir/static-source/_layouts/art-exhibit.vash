@@ -129,8 +129,10 @@
   const hammerOptions = {};
   var hammertime = new Hammer(document.body, hammerOptions);
 
-  const nextUrl = document.getElementById('next').value;
-  const previousUrl = document.getElementById('previous').value;
+  const nextUrl = document.getElementById('next').innerHTML;
+  const previousUrl = document.getElementById('previous').innerHTML;
+
+  console.log('urls', {nextUrl, previousUrl});
 
   if (nextUrl) {
     hammertime.on('swipeleft', function(ev) {
