@@ -86,6 +86,24 @@
           transition: opacity 3s ease;
       }
 
+      .loading-failed,
+      .loading {
+          padding: 20%;
+      }
+
+      .loading-failed {
+          display: none;
+      }
+
+      .image-load-failed .loading-failed {
+          display: block;
+      }
+
+      .image-load-failed .loading,
+      .image-is-loaded .loading {
+          display: none;
+      }
+
       article {
           text-align: center;
           background-color: lightgray;
@@ -102,6 +120,8 @@
   </header>
   <section>
     <div id='show-area'>
+      <div class='loading'>Loading...</div>
+      <div class='loading-failed'>Image Loading Failed.</div>
       <img id='main-image' src='@imgPath' />
     </div>
   </section>
@@ -131,8 +151,6 @@
 
   const nextUrl = document.getElementById('next').innerHTML;
   const previousUrl = document.getElementById('previous').innerHTML;
-
-  console.log('urls', {nextUrl, previousUrl});
 
   if (nextUrl) {
     hammertime.on('swipeleft', function(ev) {

@@ -101,9 +101,14 @@ function initializeImageResizer(containerQuerySelector) {
   }
 
   window.addEventListener('resize', resizeImage);
+  mainImage.addEventListener('error', (error) => {
+    container.classList.add('image-load-failed');
+  });
+
   mainImage.addEventListener('load', () => {
     resizeImage();
     resizeImage();
-    mainImage.style.opacity = 1;
+    mainImage.style.opacity = '1';
+    container.classList.add('image-is-loaded');
   });
 }
