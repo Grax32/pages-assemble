@@ -1,13 +1,14 @@
+// tslint:disable-next-line:no-var-requires
 const vash = require('vash');
 import * as path from 'path';
 
-import { AssetGroup, getCategory, isSystemFolder, getCategoryFolder } from '../utility/SysUtilities';
 import BuildContext from '../models/BuildContext';
-import ResultContext from '../models/ResultContext';
-import BaseModule from './BaseModule';
+import RazerSourceFileContext from '../models/FileContexts/RazerSourceFileContext';
 import SourceFileContext from '../models/FileContexts/SourceFileContext';
 import OutputType from '../models/OutputType';
-import RazerSourceFileContext from '../models/FileContexts/RazerSourceFileContext';
+import ResultContext                                                  from '../models/ResultContext';
+import { AssetGroup, getCategory, getCategoryFolder, isSystemFolder } from '../utility';
+import BaseModule                                                     from './BaseModule';
 
 function toGrouping<T, V>(array: T[], keyExpression: (value: T) => string, valueExpression: (value: T) => V) {
   const grouping: { [key: string]: V[] } = {};
@@ -43,9 +44,8 @@ export default class RazorVashModule extends BaseModule {
 
     const templates = vash.helpers.tplcache;
 
-    const allVashAssets = <RazerSourceFileContext[]>(
-      context.assets.filter(asset => asset.isType(RazerSourceFileContext.name))
-    );
+    const allVashAssets = context.assets.filter(asset => asset.isType(RazerSourceFileContext.name)) as RazerSourceFileContext[];
+
     const assetGrouping = toGrouping(
       allVashAssets,
       v => getCategory(v.path),
@@ -70,16 +70,19 @@ export default class RazorVashModule extends BaseModule {
 
     const compileOutput = (asset: SourceFileContext) => {
       const model = {
-        vash,
-        sections: asset.sections,
-        page: asset,
         context,
+        page: asset,
+        sections: asset.sections,
+        vash,
         ...asset.frontMatter,
       };
 
       if (asset.textContent) {
+        this.log('Compiling ' + asset.path);
+
         const page = vash.compile(asset.textContent);
         const output = page(model, finishLayout);
+
         asset.sections.main = output;
         asset.output = output;
       } else {
@@ -106,12 +109,12 @@ export default class RazorVashModule extends BaseModule {
       .forEach(asset => {
         const baseModel = {
           category: 'tech',
-          title: '',
-          titleonly: '',
+          categoryDescription: '',
           excerpt: '',
           hidebyline: false,
           tags: [],
-          categoryDescription: ''
+          title: '',
+          titleonly: '',
         };
 
         const templateName = asset.frontMatter.layout || context.options.template;
@@ -121,14 +124,14 @@ export default class RazorVashModule extends BaseModule {
           try {
             const model = {
               ...baseModel,
-              sections: asset.sections,
+              context,
               page: asset,
-              context: context,
+              sections: asset.sections,
               ...asset.frontMatter,
             };
 
             if (model.category) {
-              const siteData: { category: string; display: string }[] = context.dataStore.sitedata;
+              const siteData: Array<{ category: string; display: string }> = context.dataStore.sitedata;
               const categoryData = siteData.find(d => d.category === model.category);
               if (!categoryData) {
                 this.log('Category description missing for ' + model.category);

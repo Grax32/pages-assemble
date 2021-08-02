@@ -1,0 +1,12 @@
+---
+layout: art-exhibit
+route: /art/dreamwalker-gallery/red-leaf/index.html
+title: Red Leaf
+tags: [art]
+systemTags: page:art
+category: art
+imgPath: /art/dreamwalker-gallery/red-leaf/red-leaf.jpg
+imgDescription: Red Leaf
+previous: /art/dreamwalker-gallery/parrot/
+next: /art/dreamwalker-gallery/
+---

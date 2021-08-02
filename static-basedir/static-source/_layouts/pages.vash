@@ -29,16 +29,17 @@
       <span> • </span>
       <a href="/software-projects">Software Projects</a>
     } else {
-      <a href="/">Home</a>
+      <a href="/">Home</a><span> &bull; </span>
       @if (category) {
-        <span> / <a href="/articles/">Articles</a></span>
-        <span> / <a href="/articles/@category">@categoryDescription</a></span>
+        <span><a href="/articles/">Articles</a></span>
+        <span> • </span>
+        <span><a href="/articles/@category">@categoryDescription</a></span>
       }
     }
     <br />
 
     @tags.forEach(tag => {
-    <span><a class="tag-link" href="/tag/@tag">@tag</a></span>
+    <span> • <a class="tag-link" href="/tag/@tag">@tag</a></span>
     })
     <br />
   </div>

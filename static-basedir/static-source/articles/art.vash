@@ -1,15 +1,25 @@
 ---
-layout: pages
-route: /articles/art
+layout: art-exhibit
+route: /art/dreamwalker-gallery/index.html
 title: Art
 category: ''
 systemTags: never-archive
+imgPath:
+next:
+previous:
+imgDescription:
 ---
+@html.append('headers', function () {
+  <div>header stuff</div>
+})
 
 @model.context.getCollection('page:art').forEach(asset => {
 <li>
-  <a href="@asset.outputRoute">
+  <a href='@asset.outputRoute'>
     @asset.frontMatter.title
+
+    <img src='@asset.frontMatter.imgPath'/>
+
   </a>
 </li>
 })

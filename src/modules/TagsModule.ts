@@ -1,29 +1,18 @@
 import path from 'path';
-import BuildContext from '../models/BuildContext';
-import ResultContext from '../models/ResultContext';
-import BaseModule from './BaseModule';
-import OutputType from '../models/OutputType';
-import RouteUtility from '../utility/RouteUtility';
-import { distinct } from '../utility';
 import { FileContext } from '../models';
+import BuildContext from '../models/BuildContext';
+import OutputType from '../models/OutputType';
+import ResultContext from '../models/ResultContext';
+import RouteUtility from '../utility/RouteUtility';
+import BaseModule from './BaseModule';
 
 export default class TagsModule extends BaseModule {
   public async invoke(context: BuildContext): Promise<ResultContext> {
     const routeUtility = new RouteUtility();
-
-    const allTags = context.assets
-      .map(asset => asset.frontMatter.tags!)
-      .reduce((tags, tagList) => tags.concat(tagList), []);
-
-    const tagCounts: { [key: string]: number } = {};
-    allTags.forEach(tag => (tagCounts[tag] = 0));
-    allTags.forEach(tag => tagCounts[tag]++);
-
-    const distinctTags = distinct(allTags);
-    const filteredTags = distinctTags.filter(tag => tagCounts[tag] >= 3);
+    const filteredTags = context.getFilteredTagList();
 
     function filterHiddenTags(tags: string[] | undefined | null) {
-      if (!tags) return [];
+      if (!tags) { return []; }
 
       return tags.filter(tag => filteredTags.includes(tag));
     }

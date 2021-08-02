@@ -1,7 +1,7 @@
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
-import BaseModule from './BaseModule';
 import FileSystemUtility from '../utility/FileSystemUtility';
+import BaseModule from './BaseModule';
 
 export default class FinalModule extends BaseModule {
   public async invoke(context: BuildContext): Promise<ResultContext> {

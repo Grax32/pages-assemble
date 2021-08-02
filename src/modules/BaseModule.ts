@@ -1,7 +1,7 @@
-import BuildContext from '../models/BuildContext';
-import ResultContext from '../models/ResultContext';
 import { IBuildModule } from '../interfaces/IBuildModule';
 import ILogger from '../interfaces/ILogger';
+import BuildContext from '../models/BuildContext';
+import ResultContext from '../models/ResultContext';
 
 export default abstract class BaseModule implements IBuildModule {
   public next!: (context: BuildContext) => Promise<ResultContext>;

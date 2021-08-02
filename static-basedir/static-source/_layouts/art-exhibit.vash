@@ -2,6 +2,8 @@
 <html lang='en'>
 <head>
   <!-- build time @(new Date()).toISOString() -->
+  @html.block('headers')
+
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>@(title || titleonly)</title>
@@ -109,7 +111,6 @@
           background-color: lightgray;
       }
   </style>
-
 </head>
 <body>
 
@@ -119,11 +120,16 @@
     An online exhibition featuring selected works from the artist David&nbsp;Walker&nbsp;(@@grax32).
   </header>
   <section>
+    @if (imgPath) {
     <div id='show-area'>
       <div class='loading'>Loading...</div>
       <div class='loading-failed'>Image Loading Failed.</div>
       <img id='main-image' src='@imgPath' />
     </div>
+    } else {
+      @html.raw(sections.main)
+    }
+
   </section>
   <article>
     <h1>@title</h1>

@@ -1,8 +1,8 @@
 import * as path from 'path';
+import { FrontMatter } from '../models';
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
 import BaseModule from './BaseModule';
-import { FrontMatter } from '../models';
 
 export default class SectionsModule extends BaseModule {
   public async invoke(context: BuildContext): Promise<ResultContext> {
@@ -23,7 +23,7 @@ export default class SectionsModule extends BaseModule {
     assets.forEach(asset => {
       const frontMatterSectionKeys = Object.keys(asset.frontMatter).filter(key => key.startsWith('section-'));
       const fm: Omit<FrontMatter, 'tags' | 'systemTags'> = asset.frontMatter;
-      const frontMatter = <{ [key: string]: string }>fm;
+      const frontMatter = fm as { [key: string]: string };
 
       const assetSections = Object.fromEntries(
         frontMatterSectionKeys.map(key => [

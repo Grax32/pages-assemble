@@ -1,0 +1,6 @@
+---
+layout: pages
+route: /tag/index.html
+title: Tags
+---
+@html.raw(vash.lookup('show-collection', { collection: context.getFilteredTagListings() , collectionName: 'Tags' }))

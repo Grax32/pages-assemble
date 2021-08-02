@@ -1,9 +1,10 @@
-import * as path from 'path';
+import * as path                         from 'path';
+import IPageAssembleOptions              from '../interfaces/IPageAssembleOptions';
+import { distinct }                      from '../utility';
+import { sortAssets }                    from '../utility/SortAssetsUtility';
 import { AssetGroup, getCategoryFolder } from '../utility/SysUtilities';
-import IPageAssembleOptions from '../interfaces/IPageAssembleOptions';
-import FileContext from './FileContexts/FileContext';
-import SourceFileContext from './FileContexts/SourceFileContext';
-import { sortAssets } from '../utility/SortAssetsUtility';
+import FileContext                       from './FileContexts/FileContext';
+import SourceFileContext                 from './FileContexts/SourceFileContext';
 
 export default class BuildContext {
   public collections: { [key: string]: FileContext[] } = {};
@@ -16,6 +17,39 @@ export default class BuildContext {
     this.assets.push(asset);
   }
 
+  /* This might not return the correct results until certain modules have run */
+  public getFilteredTagList() {
+    const allTags = this.assets
+      .map(asset => asset.frontMatter.tags!)
+      .reduce((tags, tagList) => tags.concat(tagList), []);
+
+    const tagCounts: { [key: string]: number } = {};
+    allTags.forEach(tag => (tagCounts[tag] = 0));
+    allTags.forEach(tag => tagCounts[tag]++);
+
+    const distinctTags = distinct(allTags);
+    const filteredTags = distinctTags.filter(tag => tagCounts[tag] >= 3);
+
+    return filteredTags;
+  }
+
+  public getFilteredTagListings(): FileContext[] {
+    function createFileContext(name: string) {
+      const ctx = new FileContext();
+      ctx.outputRoute = '/tag/' + name;
+      ctx.frontMatter = {
+        systemTags: [],
+        tags: [],
+        title: name,
+      };
+      return ctx;
+    }
+
+    const filteredTags = this.getFilteredTagList();
+
+    return filteredTags.map(key => createFileContext(key));
+  }
+
   public getCollection(name: string, ...collectionsToSubtract: string[]) {
     if (!this.collections[name]) {
       this.collections[name] = [];
@@ -25,28 +59,19 @@ export default class BuildContext {
     return this.subtractCollection(collection, collectionsToSubtract);
   }
 
-  private subtractCollection(collection: FileContext[], collectionsToSubtract: string[]) {
-    for (const collectionName of collectionsToSubtract) {
-      const collectionToSubtract = this.getCollection(collectionName);
-      collection = collection.filter(c => !collectionToSubtract.includes(c));
-    }
-
-    return collection;
-  }
-
   public getArchiveCollection() {
     const pageTagPrefix = 'page:';
     const neverArchiveTagName = 'never-archive';
 
     function filterByTags(tags: string[] | undefined | null) {
-      if (!tags) return true;
+      if (!tags) { return true; }
 
       const hasTag = (tag: string) => tags.includes(tag);
 
-      if (hasTag(neverArchiveTagName)) return false;
-      if (tags.find(tag => tag.startsWith(pageTagPrefix))) return false;
+      if (hasTag(neverArchiveTagName)) { return false; }
+      if (tags.find(tag => tag.startsWith(pageTagPrefix))) { return false; }
 
-      return true;      
+      return true;
     }
 
     const archive = this.assets
@@ -61,7 +86,7 @@ export default class BuildContext {
   }
 
   public getInclude(name: string, pathContext?: string) {
-    const assets = <SourceFileContext[]>this.assets.filter(asset => asset.isType(SourceFileContext.name));
+    const assets = this.assets.filter(asset => asset.isType(SourceFileContext.name)) as SourceFileContext[];
 
     const pathStartsWith = ['', this.includesFolder, pathContext || ''].join('/');
 
@@ -75,5 +100,14 @@ export default class BuildContext {
     }
 
     return files[0];
+  }
+
+  private subtractCollection(collection: FileContext[], collectionsToSubtract: string[]) {
+    for (const collectionName of collectionsToSubtract) {
+      const collectionToSubtract = this.getCollection(collectionName);
+      collection = collection.filter(c => !collectionToSubtract.includes(c));
+    }
+
+    return collection;
   }
 }

@@ -1,9 +1,9 @@
 [
   { "link": "/", "display": "Home" },
   { "link": "/articles/", "display": "Articles" },
+  { "category": "art",  "link": "/art/dreamwalker-gallery/", "display": "GX Art Gallery" },
   { "category": "tech", "link": "/articles/tech/", "display": "Technology" },
   { "category": "team", "link": "/articles/team/", "display": "Teamwork" },
-  { "category": "art",  "link": "/articles/art/", "display": "Art" },
   { "category": "opinion",  "link": "/articles/opinion/", "display": "Opinion (Rants, Kudos, Randomness)" },
   { "category": "archive", "link": "/articles/archive/", "display": "Archive (The old junk)" }
 ]
