@@ -1,7 +1,7 @@
 [
   { "link": "/", "display": "Home" },
   { "link": "/articles/", "display": "Articles" },
-  { "category": "art",  "link": "/art/dreamwalker-gallery/", "display": "GX Art Gallery" },
+  { "category": "art",  "link": "/art/dreamwalker-gallery/", "display": "Dreamwalker Gallery" },
   { "category": "tech", "link": "/articles/tech/", "display": "Technology" },
   { "category": "team", "link": "/articles/team/", "display": "Teamwork" },
   { "category": "opinion",  "link": "/articles/opinion/", "display": "Opinion (Rants, Kudos, Randomness)" },
