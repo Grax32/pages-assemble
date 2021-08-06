@@ -50,6 +50,11 @@ export default class BuildContext {
     return filteredTags.map(key => createFileContext(key));
   }
 
+  public getRelativeOutputRouteFromCollection(name: string, fileContext: FileContext, offset: number) {
+    const relativeItem = this.getRelativeItemFromCollection(name, fileContext, offset);
+    return relativeItem?.outputRoute;
+  }
+
   public getRelativeItemFromCollection(name: string, fileContext: FileContext, offset: number): FileContext | undefined {
     const collection = this.getCollection(name);
     const currentItemIndex = collection.findIndex(item => item.outputRoute === fileContext.outputRoute);

@@ -196,12 +196,12 @@
     David Walker is an Orlando-based artist working in photography and digital art mediums.
   </footer>
 </div>
-<template id='previous'>@model.context.getRelativeItemFromCollection('page:art', model.page, -1)?.outputRoute</template>
+<template id='previous'>@model.context.getRelativeOutputRouteFromCollection('page:art', model.page, -1)</template>
 <template id='first'>@model.context.getCollection('page:art')[0].outputRoute</template>
-<template id='next'>@model.context.getRelativeItemFromCollection('page:art', model.page, 1)?.outputRoute</template>
+<template id='next'>@model.context.getRelativeOutputRouteFromCollection('page:art', model.page, 1)</template>
 <script>
   function getUrlOrDefault(name) {
-    const url = document.getElementById('first').innerHTML;
+    const url = document.getElementById(name).innerHTML;
     return url || '/art/dreamwalker-gallery/';
   }
   function goFirst() {
