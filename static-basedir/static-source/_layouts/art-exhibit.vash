@@ -196,25 +196,24 @@
     David Walker is an Orlando-based artist working in photography and digital art mediums.
   </footer>
 </div>
-<template id='previous'>@(model.context.getRelativeItemFromCollection('page:art', model.page, -1)?.outputRoute ??
-  "/art/dreamwalker-gallery/")
-</template>
-<template id='first'>@model.context.getCollection('page:art')[0].outputRoute)
-</template>
-<template id='next'>@(model.context.getRelativeItemFromCollection('page:art', model.page, 1)?.outputRoute ??
-  "/art/dreamwalker-gallery/")
-</template>
+<template id='previous'>@model.context.getRelativeItemFromCollection('page:art', model.page, -1)?.outputRoute</template>
+<template id='first'>@model.context.getCollection('page:art')[0].outputRoute</template>
+<template id='next'>@model.context.getRelativeItemFromCollection('page:art', model.page, 1)?.outputRoute</template>
 <script>
+  function getUrlOrDefault(name) {
+    const url = document.getElementById('first').innerHTML;
+    return url || '/art/dreamwalker-gallery/';
+  }
   function goFirst() {
-    location.href = document.getElementById('first').innerHTML;
+    location.href = getUrlOrDefault('first');
   }
 
   function goNext() {
-    location.href = document.getElementById('next').innerHTML;
+    location.href = getUrlOrDefault('next');
   }
 
   function goPrev() {
-    location.href = document.getElementById('previous').innerHTML;
+    location.href = getUrlOrDefault('previous');
   }
 </script>
 @if (imgPath) {

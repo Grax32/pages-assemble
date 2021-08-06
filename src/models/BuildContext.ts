@@ -7,7 +7,7 @@ import FileContext                       from './FileContexts/FileContext';
 import SourceFileContext                 from './FileContexts/SourceFileContext';
 
 export default class BuildContext {
-  public collections: {[key: string]: FileContext[];} = {};
+  public collections: { [key: string]: FileContext[] } = {};
   public dataStore: { [key: string]: any } = {};
   private readonly includesFolder = getCategoryFolder(AssetGroup.includes);
 
@@ -50,7 +50,7 @@ export default class BuildContext {
     return filteredTags.map(key => createFileContext(key));
   }
 
-  public getRelativeItemFromCollection(name: string, fileContext: FileContext, offset: number) : FileContext | undefined {
+  public getRelativeItemFromCollection(name: string, fileContext: FileContext, offset: number): FileContext | undefined {
     const collection = this.getCollection(name);
     const currentItemIndex = collection.findIndex(item => item.outputRoute === fileContext.outputRoute);
 
