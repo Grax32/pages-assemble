@@ -1,13 +1,13 @@
-/****js
-{
-    "minify": true,
-    "webImport": true
-}
+/****
+ webImport: true,
+ minify: true
 ****/
+
 import.url('prism.js');
 
 function shareTo(service) {
   const encodedUrl = encodeURIComponent(document.URL);
+
   function navigate(url) {
     window.top.location.href = url;
   }
@@ -105,10 +105,16 @@ function initializeImageResizer(containerQuerySelector) {
     container.classList.add('image-load-failed');
   });
 
-  mainImage.addEventListener('load', () => {
+  function completeImageLoad() {
     resizeImage();
     resizeImage();
     mainImage.style.opacity = '1';
     container.classList.add('image-is-loaded');
-  });
+  }
+
+  if (mainImage.complete && mainImage.naturalHeight !== 0) {
+    completeImageLoad();
+  } else {
+    mainImage.addEventListener('load', completeImageLoad);
+  }
 }

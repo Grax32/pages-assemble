@@ -41,6 +41,7 @@ export default class InitialModule extends BaseModule {
 
     sourceFileAssets.forEach(asset => {
       const sourcePath = getSourcePath(asset);
+
       const defaultSeparator = '---';
       let separator: string | [string, string] = defaultSeparator;
 
