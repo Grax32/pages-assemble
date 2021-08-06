@@ -22,6 +22,5 @@ export default abstract class BaseModule implements IBuildModule {
       message += ' ' + messageArgs.join(' ');
     }
     this.logger.information(message);
-    console.log(message);
   }
 }

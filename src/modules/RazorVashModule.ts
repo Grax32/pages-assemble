@@ -57,6 +57,7 @@ export default class RazorVashModule extends BaseModule {
     const razorPages = assetGrouping[AssetGroup.general] || [];
 
     razorTemplates.forEach(templateAsset => {
+      console.log("Template Path: " + templateAsset.path);
       if (!templateAsset.textContent) {
         console.error('Error parsing', templateAsset);
       }
