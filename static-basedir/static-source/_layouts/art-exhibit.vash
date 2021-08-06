@@ -170,8 +170,12 @@
       <div class='loading-failed'>Image Loading Failed.</div>
       <img id='main-image' src='@imgPath' />
     </div>
-    <div class="navlink prev" onclick='goPrev()'><div><span class='fas fa-chevron-circle-left'></span></div></div>
-    <div class="navlink next" onclick='goNext()'><div><span class='fas fa-chevron-circle-right'></span></div></div>
+    <div class='navlink prev' onclick='goPrev()'>
+      <div><span class='fas fa-chevron-circle-left'></span></div>
+    </div>
+    <div class='navlink next' onclick='goNext()'>
+      <div><span class='fas fa-chevron-circle-right'></span></div>
+    </div>
     } else {
     @html.raw(sections.main)
     }
@@ -203,7 +207,7 @@
 <script>
   initializeImageResizer('#show-area');
 
-  var hammertime = new Hammer(document.body, { });
+  var hammertime = new Hammer(document.body, {});
 
   function goNext() {
     location.href = document.getElementById('next').innerHTML;
@@ -215,6 +219,26 @@
 
   hammertime.on('swipeleft', goNext);
   hammertime.on('swiperight', goPrev);
+
+  document.addEventListener('keydown', e => {
+    if (e.code == 'ArrowRight') {
+      goNext();
+    }
+
+    if (e.code == 'ArrowLeft') {
+      goPrev();
+    }
+  });
+
+</script>
+} else {
+<script>
+  document.addEventListener('keydown', e => {
+    if (e.code == 'ArrowRight') {
+      const firstImageRoute = `@model.context.getCollection('page:art')[0].outputRoute`;
+      location.href = firstImageRoute;
+    }
+  });
 </script>
 }
 </body>

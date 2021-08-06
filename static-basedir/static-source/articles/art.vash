@@ -32,24 +32,3 @@ imgDescription:
 @model.context.getCollection('page:art').forEach(asset => {
 <img src='@asset.frontMatter.imgPath' alt='@asset.frontMatter.title' onclick="location.href='@asset.outputRoute'" />
 })
-@model.context.getCollection('page:art').forEach(asset => {
-<img src='@asset.frontMatter.imgPath' alt='@asset.frontMatter.title' onclick="location.href='@asset.outputRoute'" />
-})
-@model.context.getCollection('page:art').forEach(asset => {
-<img src='@asset.frontMatter.imgPath' alt='@asset.frontMatter.title' onclick="location.href='@asset.outputRoute'" />
-})
-@model.context.getCollection('page:art').forEach(asset => {
-<img src='@asset.frontMatter.imgPath' alt='@asset.frontMatter.title' onclick="location.href='@asset.outputRoute'" />
-})
-@model.context.getCollection('page:art').forEach(asset => {
-<img src='@asset.frontMatter.imgPath' alt='@asset.frontMatter.title' onclick="location.href='@asset.outputRoute'" />
-})
-@model.context.getCollection('page:art').forEach(asset => {
-<img src='@asset.frontMatter.imgPath' alt='@asset.frontMatter.title' onclick="location.href='@asset.outputRoute'" />
-})
-@model.context.getCollection('page:art').forEach(asset => {
-<img src='@asset.frontMatter.imgPath' alt='@asset.frontMatter.title' onclick="location.href='@asset.outputRoute'" />
-})
-@model.context.getCollection('page:art').forEach(asset => {
-<img src='@asset.frontMatter.imgPath' alt='@asset.frontMatter.title' onclick="location.href='@asset.outputRoute'" />
-})
