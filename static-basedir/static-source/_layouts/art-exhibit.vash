@@ -235,7 +235,7 @@
 <script>
   document.addEventListener('keydown', e => {
     if (e.code == 'ArrowRight') {
-      const firstImageRoute = `@model.context.getCollection('page:art')[0].outputRoute`;
+      const firstImageRoute = "@model.context.getCollection('page:art')[0].outputRoute";
       location.href = firstImageRoute;
     }
   });
