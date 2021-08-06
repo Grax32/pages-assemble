@@ -196,18 +196,18 @@
     David Walker is an Orlando-based artist working in photography and digital art mediums.
   </footer>
 </div>
-
-<template id='next'>@(model.context.getRelativeItemFromCollection('page:art', model.page, 1)?.outputRoute ??
-  "/art/dreamwalker-gallery/")
-</template>
 <template id='previous'>@(model.context.getRelativeItemFromCollection('page:art', model.page, -1)?.outputRoute ??
   "/art/dreamwalker-gallery/")
 </template>
-@if (imgPath) {
+<template id='first'>@model.context.getCollection('page:art')[0].outputRoute)
+</template>
+<template id='next'>@(model.context.getRelativeItemFromCollection('page:art', model.page, 1)?.outputRoute ??
+  "/art/dreamwalker-gallery/")
+</template>
 <script>
-  initializeImageResizer('#show-area');
-
-  var hammertime = new Hammer(document.body, {});
+  function goFirst() {
+    location.href = document.getElementById('first').innerHTML;
+  }
 
   function goNext() {
     location.href = document.getElementById('next').innerHTML;
@@ -216,7 +216,12 @@
   function goPrev() {
     location.href = document.getElementById('previous').innerHTML;
   }
+</script>
+@if (imgPath) {
+<script>
+  initializeImageResizer('#show-area');
 
+  var hammertime = new Hammer(document.body, {});
   hammertime.on('swipeleft', goNext);
   hammertime.on('swiperight', goPrev);
 
@@ -235,8 +240,7 @@
 <script>
   document.addEventListener('keydown', e => {
     if (e.code == 'ArrowRight') {
-      const firstImageRoute = "@model.context.getCollection('page:art')[0].outputRoute";
-      location.href = firstImageRoute;
+      goFirst();
     }
   });
 </script>
