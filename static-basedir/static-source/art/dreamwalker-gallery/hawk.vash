@@ -1,0 +1,12 @@
+---
+layout: art-exhibit
+route: /art/dreamwalker-gallery/hawk/index.html
+title: Hawk
+tags: [art]
+systemTags: page:art
+category: art
+imgPath: /art/dreamwalker-gallery/hawk.jpg
+imgDescription: Hawk Waits and Watches
+previous: /art/dreamwalker-gallery/great-blue-heron/
+next: /art/dreamwalker-gallery/red-leaf/
+---

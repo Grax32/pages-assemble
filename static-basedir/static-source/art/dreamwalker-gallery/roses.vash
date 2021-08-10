@@ -1,0 +1,12 @@
+---
+layout: art-exhibit
+route: /art/dreamwalker-gallery/roses/index.html
+title: Roses
+tags: [art]
+systemTags: page:art
+category: art
+imgPath: /art/dreamwalker-gallery/roses.jpg
+imgDescription: Red Leaf
+previous: /art/dreamwalker-gallery/parrot/
+next: /art/dreamwalker-gallery/
+---
