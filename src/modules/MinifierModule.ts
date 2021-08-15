@@ -1,22 +1,24 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import minifier from 'html-minifier';
-import uglify from 'uglify-js';
 import uglifycss from 'uglifycss';
 
 import * as base64Img from 'base64-img';
 
 import { BuildContext, FileContext } from '../models';
-import ResultContext from '../models/ResultContext';
 import OutputType from '../models/OutputType';
-import BaseModule from './BaseModule';
-import UrlFetchUtility from '../utility/UrlFetchUtility';
+import ResultContext from '../models/ResultContext';
 import StringUtility from '../utility/StringUtility';
+import UrlFetchUtility from '../utility/UrlFetchUtility';
+import BaseModule from './BaseModule';
 
 type stringFunc = (value: string) => string;
 
 export default class MinifyModule extends BaseModule {
   public next!: (context: BuildContext) => Promise<ResultContext>;
+
+  private importUrlRegex = /import.url\((.*?)\)/;
+  private urlRegex = /(.*?)url\((.*?)\)(.*?)/;
+
   public async invoke(context: BuildContext): Promise<ResultContext> {
     if (context.options.verbose) {
       console.log('Entering', MinifyModule.name);
@@ -66,34 +68,31 @@ export default class MinifyModule extends BaseModule {
     asset.output = asset.frontMatter.minify ? uglifycss.processString(textContent) : textContent;
   }
 
-  private importUrlRegex = /import.url\((.*?)\)/;
-  private urlRegex = /(.*?)url\((.*?)\)(.*?)/;
-
   private async resolveLine(line: string, getAssetPath: stringFunc): Promise<string> {
-    const replaceUrlsInLine = async (line: string): Promise<string> => {
-      const importUrlMatch = this.importUrlRegex.exec(line);
-      const embeddedImageUrlMatch = this.urlRegex.exec(line);
+    const replaceUrlsInLine = async (lineX: string): Promise<string> => {
+      const importUrlMatch = this.importUrlRegex.exec(lineX);
+      const embeddedImageUrlMatch = this.urlRegex.exec(lineX);
 
       if (importUrlMatch) {
         const importUrl = StringUtility.trim(importUrlMatch[1], "'");
         const value = await fetchPath(importUrl);
         const debugLeader = '// File: ' + importUrl + ';\n';
-        return debugLeader + value + ';';
+        return debugLeader + value + '\n';
       } else if (embeddedImageUrlMatch && !embeddedImageUrlMatch[2].startsWith('/')) {
         const embeddedPath = getAssetPath(StringUtility.trim(embeddedImageUrlMatch[2], "'"));
         const encoded = base64Img.base64Sync(embeddedPath);
 
-        return `${embeddedImageUrlMatch[1]} url(${encoded})${embeddedImageUrlMatch[3]}`;
+        return `${embeddedImageUrlMatch[1]} url(${encoded})${embeddedImageUrlMatch[3]}\n`;
       } else {
-        return line;
+        return lineX;
       }
     };
 
-    const fetchPath = async (path: string) => {
-      if (path.startsWith('http')) {
-        return await UrlFetchUtility.get(path);
+    const fetchPath = async (pathToFetch: string) => {
+      if (pathToFetch.startsWith('http')) {
+        return await UrlFetchUtility.get(pathToFetch);
       } else {
-        const filePath = getAssetPath(path);
+        const filePath = getAssetPath(pathToFetch);
         return fs.readFileSync(filePath, 'utf-8');
       }
     };

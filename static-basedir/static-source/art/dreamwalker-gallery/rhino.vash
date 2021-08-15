@@ -1,12 +1,10 @@
 ---
 layout: art-exhibit
-route: /art/dreamwalker-gallery/parrot/index.html
+route: /art/dreamwalker-gallery/rhino/index.html
 title: Rhino
 tags: [art]
 systemTags: page:art
 category: art
 imgPath: /art/dreamwalker-gallery/rhino.jpg
 imgDescription: Rhino
-previous: /art/dreamwalker-gallery/great-blue-heron/
-next: /art/dreamwalker-gallery/red-leaf/
 ---
