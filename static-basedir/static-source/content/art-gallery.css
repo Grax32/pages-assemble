@@ -14,10 +14,14 @@ minify: true
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html,
-body {
+html {
+    position: fixed;
     height: 100%;
     width: 100%;
+}
+
+xhtml,
+xbody {
     overflow: hidden;
 }
 
