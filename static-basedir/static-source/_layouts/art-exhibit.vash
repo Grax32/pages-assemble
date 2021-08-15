@@ -4,6 +4,7 @@
   <!-- build time @(new Date()).toISOString() -->
   @html.block('headers')
   <title>@(title || titleonly)</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
   <script src='/content/hammer.min.js' type='text/javascript'></script>
   <script src='/content/scripts.js' type='text/javascript'></script>
   <link rel='stylesheet' href='/content/art-gallery.css' />
