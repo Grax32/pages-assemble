@@ -5,8 +5,9 @@
 
 import.url('prism.js');
 
-function shareTo(service) {
+function shareTo(service, itemDescription) {
   const encodedUrl = encodeURIComponent(document.URL);
+  const description = itemDescription || 'article';
 
   function navigate(url) {
     window.top.location.href = url;
@@ -24,7 +25,7 @@ function shareTo(service) {
       break;
     case 'email':
       const subject = document.title;
-      const body = `Check out this article: \n${subject}\n${document.URL}\n`;
+      const body = `Check out this ${description}: \n${subject}\n${document.URL}\n`;
       const emailLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       navigate(emailLink);
       break;
