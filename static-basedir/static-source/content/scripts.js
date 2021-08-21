@@ -57,7 +57,25 @@ function initializeImageResizer(containerQuerySelector) {
 
   mainImage.style.position = 'absolute';
 
-  function resizeImage() {
+  function resizeImage(noRecurse) {
+    const naturalHeight = mainImage.naturalHeight, naturalWidth = mainImage.naturalWidth;
+    const innerHeight = window.innerHeight, innerWidth = window.innerWidth;
+
+    const bodyAspect = innerWidth / innerHeight;
+    const imageAspect = naturalWidth / naturalHeight;
+
+    /*
+     square = 1.0
+     wide = 2.0
+     skinny = .5
+    */
+
+    if (bodyAspect > imageAspect * 2){
+      document.body.classList.add(('image-skinny'));
+    } else {
+      document.body.classList.remove(('image-skinny'));
+    }
+
     const containerStyle = getComputedStyle(container);
 
     const containerPaddingTop = parseInt(containerStyle.paddingTop);
@@ -66,9 +84,6 @@ function initializeImageResizer(containerQuerySelector) {
     const containerHeight = container.clientHeight - containerPaddingTop - parseInt(containerStyle.paddingBottom);
     const containerWidth = container.clientWidth - containerPaddingLeft - parseInt(containerStyle.paddingRight);
 
-    const imageWidth = mainImage.naturalWidth;
-    const imageHeight = mainImage.naturalHeight;
-
     const newValues = {
       top: 'unset',
       left: 'unset',
@@ -76,9 +91,9 @@ function initializeImageResizer(containerQuerySelector) {
       height: 'unset',
     };
 
-    const testNewWidth = (containerHeight / imageHeight) * imageWidth;
+    const testNewWidth = (containerHeight / naturalHeight) * naturalWidth;
     if (testNewWidth > containerWidth) {
-      const newHeight = (containerWidth / imageWidth) * imageHeight;
+      const newHeight = (containerWidth / naturalWidth) * naturalHeight;
       const topValue = (containerHeight - newHeight) / 2;
 
       newValues.top = containerPaddingTop + topValue + 'px';
@@ -102,9 +117,8 @@ function initializeImageResizer(containerQuerySelector) {
   }
 
   window.addEventListener('resize', resizeImage);
-  mainImage.addEventListener('error', (error) => {
-    container.classList.add('image-load-failed');
-  });
+
+  mainImage.addEventListener('error', _ => container.classList.add('image-load-failed'));
 
   function completeImageLoad() {
     resizeImage();
@@ -118,4 +132,7 @@ function initializeImageResizer(containerQuerySelector) {
   } else {
     mainImage.addEventListener('load', completeImageLoad);
   }
+
+  setInterval(resizeImage, 500);
 }
+

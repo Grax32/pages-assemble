@@ -44,6 +44,18 @@
   <article>
     <h1>@title</h1>
     @imgDescription
+    <div class='ghost-footer'>
+        Share to:
+        <a class='share-link' title='Facebook' onclick="shareTo('facebook')"><i class='fab fa-facebook-f'></i></a>
+        <a class='share-link' title='Twitter' to onclick="shareTo('twitter')"><i class='fab fa-twitter'></i></a>
+        <a class='share-link' title='LinkedIn' onclick="shareTo('linkedin')"><i class='fab fa-linkedin-in'></i></a>
+        <a class='share-link' title='Email' onclick="shareTo('email', 'art')"><i class='fas fa-at'></i></a>
+
+        <h3 class='about-artist-header'>About the Artist</h3>
+        <span class='about-artist'>
+        David Walker is an Orlando-based artist working in photography and digital art mediums.
+        </span>
+    </div>
   </article>
   <footer>
     Share to:
