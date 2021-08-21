@@ -1,8 +1,5 @@
 import path                  from 'path';
-import { SourceFileContext } from '../models';
-import BuildContext          from '../models/BuildContext';
-import OutputType            from '../models/OutputType';
-import ResultContext         from '../models/ResultContext';
+import { BuildContext, OutputType, ResultContext, SourceFileContext } from '../models';
 import { RouteUtility }      from '../utility';
 import BaseModule            from './BaseModule';
 

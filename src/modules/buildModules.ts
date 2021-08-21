@@ -1,3 +1,4 @@
+import ColorThiefModule from './ColorThiefModule';
 import ComputeRouteModule from './ComputeRouteModule';
 import DataModule from './DataModule';
 import FinalModule from './FinalModule';
@@ -16,6 +17,7 @@ import TextOutputModule from './TextOutputModule';
 export {
   RedirectModule,
   RazorVashModule,
+  ColorThiefModule,
   FinalModule,
   InitialModule,
   ComputeRouteModule,

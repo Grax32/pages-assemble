@@ -1,10 +1,10 @@
 import BuildContext from './BuildContext';
+import FileContext from './FileContexts/FileContext';
 import LogLevel from './LogLevel';
 import OutputType from './OutputType';
 import { OutputTypes } from './OutputType';
 import ResultContext from './ResultContext';
 import SourceFileContext from './FileContexts/SourceFileContext';
-import FileContext from './FileContexts/FileContext';
 
 export {
     BuildContext,

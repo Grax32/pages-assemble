@@ -1,3 +1,4 @@
+// tslint:disable-next-line:interface-name
 export interface FrontMatter {
   tags: string[];
   systemTags: string[];
@@ -11,6 +12,7 @@ export interface FrontMatter {
   minify?: string;
   category?: string;
   sortOrder?: string;
+  imgPath?: string;
 }
 
 export type FrontMatterReadonly = Readonly<FrontMatter>;
