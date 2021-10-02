@@ -60,6 +60,7 @@
     "@types/node": "^16.4.9",
     "@types/ts-nameof": "^4.2.1",
     "color-thief-node": "^1.0.4",
+    "jimp": "^0.16.1",
     "onchange": "^7.1.0",
     "prettier": "^2.3.2",
     "serve": "^12.0.0",
