@@ -1,7 +1,7 @@
 ---
 titleonly: David Walker
-route: /about/david-walker
-sections: [footer: '']
+route: /about/david-walker/index.html
+hidefooter: true
 ---
 
 <h1 class="row col-md-12">All About David</h1>

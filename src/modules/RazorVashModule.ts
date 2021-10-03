@@ -87,7 +87,7 @@ export default class RazorVashModule extends BaseModule {
         asset.sections.main = output;
         asset.output = output;
       } else {
-        this.log(asset.path, ' cannot be compiled', asset.textContent);
+        this.log(asset.path, ' cannot be compiled because no textContent', asset.textContent);
       }
     };
 
@@ -113,6 +113,7 @@ export default class RazorVashModule extends BaseModule {
           categoryDescription: '',
           excerpt: '',
           hidebyline: false,
+          hidefooter: false,
           tags: [],
           title: '',
           titleonly: '',
@@ -150,6 +151,8 @@ export default class RazorVashModule extends BaseModule {
           process.exit(1);
         }
       });
+
+
 
     return await this.next(context);
   }
