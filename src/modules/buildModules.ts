@@ -13,6 +13,7 @@ import SimpleTemplateModule from './SimpleTemplateModule';
 import StaticFilesModule from './StaticFilesModule';
 import TagsModule from './TagsModule';
 import TextOutputModule from './TextOutputModule';
+import ThumbnailModule  from './ThumbnailModule';
 
 export {
   RedirectModule,
@@ -29,5 +30,6 @@ export {
   StaticFilesModule,
   MinifierModule,
   TextOutputModule,
-  TagsModule
+  TagsModule,
+  ThumbnailModule
 };

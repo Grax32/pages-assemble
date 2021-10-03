@@ -1,5 +1,5 @@
-import * as path from 'path';
 import minimatch from 'minimatch';
+import * as path from 'path';
 
 import BuildContext from '../models/BuildContext';
 import ResultContext from '../models/ResultContext';
@@ -16,7 +16,7 @@ export default class StaticFilesModule extends BaseModule {
     const dest = context.options.output;
 
     const isStatic = (filename: string | undefined) => {
-      if (!filename) return false;
+      if (!filename) { return false; }
 
       for (let pattern of context.options.static) {
         if (/^\.\w*?$/.test(pattern)) {

@@ -14,7 +14,6 @@
     "lint": "tslint -p tsconfig.json",
     "serve": "serve -n ./static-basedir/build",
     "start-nowatch": "npm run netlify && npm run serve",
-    "start": "onchange -ivk \"src/**\" \"static-basedir/static-source/**\" -- npm run start-nowatch",
     "push": "git add . && git commit -m PUSH && git push"
   },
   "files": [
@@ -60,7 +59,7 @@
     "@types/node": "^16.4.9",
     "@types/ts-nameof": "^4.2.1",
     "color-thief-node": "^1.0.4",
-    "onchange": "^7.1.0",
+    "jimp": "^0.16.1",
     "prettier": "^2.3.2",
     "serve": "^12.0.0",
     "ts-nameof": "^5.0.0",

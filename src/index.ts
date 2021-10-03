@@ -121,6 +121,7 @@ const asyncRoot = async () => {
       modules.RedirectModule,
       modules.TagsModule,
       modules.ColorThiefModule,
+      modules.ThumbnailModule,
       modules.RazorVashModule,
       modules.MinifierModule,
       modules.TextOutputModule,
