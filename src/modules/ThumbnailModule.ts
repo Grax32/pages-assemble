@@ -18,10 +18,12 @@ export default class ThumbnailModule extends BaseModule {
       const realPath = path.join(context.options.source, imgPath);
 
       const parsedPath = path.parse(imgPath);
-      const thumbFileName = parsedPath.name + '.thumb.' + parsedPath.ext;
+      const thumbFileName = parsedPath.name + '.thumb' + parsedPath.ext;
 
-      const thumbPath = path.join(context.options.output, parsedPath.dir, thumbFileName);
-      imageAsset.sections.thumbPath = thumbPath;
+      const thumbUrlPath = path.join(parsedPath.dir, thumbFileName);
+      const thumbPath = path.join(context.options.output, thumbUrlPath);
+
+      imageAsset.sections.thumbPath = thumbUrlPath;
 
       const image = await jimp.read(realPath);
       image.scaleToFit(180, 180);
