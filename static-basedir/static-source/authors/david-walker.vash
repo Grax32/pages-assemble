@@ -2,9 +2,10 @@
 titleonly: David Walker
 route: /about/david-walker/index.html
 hidefooter: true
+hidebyline: true
 ---
 
-<h1 class="row col-md-12">All About David</h1>
+<h1 class="row col-md-12">About David</h1>
 I am a Secure Software Consultant, a Certified Secure Software Lifecycle Professional (CSSLP), and a Professional
 Scrum Master. I believe in secure and reliable software and productive happy teams. I live in Orlando with my
 lovely wife Lynn.
