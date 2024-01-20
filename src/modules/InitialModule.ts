@@ -10,6 +10,11 @@ import SourceFileContext                  from '../models/FileContexts/SourceFil
 import BaseModule                         from './BaseModule';
 import { normalizeSortOrder, sortAssets } from '../utility/SortAssetsUtility';
 
+function rmDirSync(itemPath: string) {
+    console.log('Removing', itemPath);
+    fs.rmdirSync(itemPath);
+}
+
 export default class InitialModule extends BaseModule {
   private outputTypeValues = Object.values(OutputTypes.OutputType);
 
@@ -22,7 +27,7 @@ export default class InitialModule extends BaseModule {
     glob
       .sync(outputGlobPattern + '/')
       .sort((a, b) => b.length - a.length) // remove the deepest folders first
-      .forEach(v => fs.rmdirSync(v));
+      .forEach(v => rmDirSync(v));
 
     const getSourcePath = (asset: SourceFileContext) => path.join(context.options.source, asset.path);
     const getOutputType = (filePath: string, matterData: { [key: string]: any }) => {

@@ -9,7 +9,7 @@ category: tech
 ---
 <b>"Usernames cannot end with a space." 
 You had the time to code that error message, but not the time to call trim()?</b><br />
-&nbsp; &nbsp;&nbsp;<a href="https://twitter.com/shanselman/">@shanselman</a> <a href="https://twitter.com/shanselman/status/575075952767541249">https://twitter.com/shanselman/status/575075952767541249</a><br />
+&nbsp; &nbsp;&nbsp;@shanselman<br />
 <br />
 &nbsp;In my C#/ASP.NET applications, I add the following TrimModelBinder.  This trims every single string that is sent to the server before my controllers even get them.  Before we implemented it, we did a small case study and found no instances of it being necessary to submit leading or trailing spaces.  Since we have had it implemented, we have not once needed to work around it.  Your mileage may vary.
 

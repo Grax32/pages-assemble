@@ -9,10 +9,9 @@ systemTags:
  - page:opinion
 category: team
 ---
-<a href="/articles/on-habits">...</a>
-> "... the strikingly successful groups in America today share three traits that, together, propel success. The first is a superiority complex &#8212; a deep-seated belief  in their exceptionality. The second appears to be the opposite &#8212; insecurity, a feeling that you or what you've done is not good enough. The third is impulse  control."
+ "... the strikingly successful groups in America today share three traits that, together, propel success. The first is a superiority complex &#8212; a deep-seated belief  in their exceptionality. The second appears to be the opposite &#8212; insecurity, a feeling that you or what you've done is not good enough. The third is impulse  control."
 
-From:&nbsp;<a href="http://www.nytimes.com/2014/01/26/opinion/sunday/what-drives-success.html">What Drives Success?</a>&nbsp;by Amy Chua and Jed&nbsp;Rubenfeld<br />
+From:&nbsp;<a href="http://www.nytimes.com/2014/01/26/opinion/sunday/what-drives-success.html">What Drives Success? [Login Required]</a>&nbsp;by Amy Chua and Jed&nbsp;Rubenfeld<br />
 
 I believe the quote to be very true. &nbsp; &nbsp;Here's why.
 

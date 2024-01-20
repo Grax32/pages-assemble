@@ -20,7 +20,7 @@ export default class ThumbnailModule extends BaseModule {
       const parsedPath = path.parse(imgPath);
       const thumbFileName = parsedPath.name + '.thumb' + parsedPath.ext;
 
-      const thumbUrlPath = path.join(parsedPath.dir, thumbFileName);
+      const thumbUrlPath = path.join(parsedPath.dir, thumbFileName).replace(/\\/g, '/');
       const thumbPath = path.join(context.options.output, thumbUrlPath);
 
       imageAsset.sections.thumbPath = thumbUrlPath;

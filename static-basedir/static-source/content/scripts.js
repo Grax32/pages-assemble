@@ -20,9 +20,6 @@ function shareTo(service, itemDescription) {
     case 'linkedin':
       navigate('https://www.linkedin.com/sharing/share-offsite/?url=' + encodedUrl);
       break;
-    case 'twitter':
-      navigate('https://twitter.com/intent/tweet?url=' + encodedUrl);
-      break;
     case 'email':
       const subject = document.title;
       const body = `Check out this ${description}: \n${subject}\n${document.URL}\n`;

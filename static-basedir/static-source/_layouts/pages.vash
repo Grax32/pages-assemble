@@ -63,7 +63,6 @@
     <p class="share-block">
       Share to:
       <a class="share-link" title="Facebook" onclick="shareTo('facebook')"><i class="fab fa-facebook-f"></i></a>
-      <a class="share-link" title="Twitter" to onclick="shareTo('twitter')"><i class="fab fa-twitter"></i></a>
       <a class="share-link" title="LinkedIn" onclick="shareTo('linkedin')"><i class="fab fa-linkedin-in"></i></a>
       <a class="share-link" title="Email" onclick="shareTo('email')"><i class="fas fa-at"></i></a>
     </p>
