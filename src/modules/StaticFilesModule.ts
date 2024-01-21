@@ -1,4 +1,4 @@
-import minimatch from 'minimatch';
+import { Minimatch } from 'minimatch';
 import * as path from 'path';
 
 import BuildContext from '../models/BuildContext';
@@ -24,9 +24,9 @@ export default class StaticFilesModule extends BaseModule {
           pattern = '**/*' + pattern;
         }
 
-        if (minimatch.match([filename], pattern)[0] === filename) {
+        if( new Minimatch(pattern).match(filename)) {
           return true;
-        }
+        }         
       }
 
       return false;

@@ -10,7 +10,7 @@ import commandLineUsage from 'command-line-usage';
 import { Minimatch } from 'minimatch';
 
 import fs from 'fs';
-import glob from 'glob';
+import { glob } from 'glob';
 
 import * as interfaces from './interfaces/index';
 import * as modules from './modules/buildModules';
@@ -98,6 +98,7 @@ const asyncRoot = async () => {
 
     const isIgnored = (path: string): boolean => options.ignore.some(pattern => new Minimatch(pattern).match(path));
     const getAllAssets = (opt: interfaces.IPageAssembleOptions): SourceFileContext[] => {
+ 
       const sourceGlobPattern = opt.source.replace(/\\/g, '/') + '/**';
       const sourcePattern = glob.sync(opt.source)[0];
       const removeSourceFromFilename = (file: string) => file.replace(new RegExp('^' + sourcePattern), '');

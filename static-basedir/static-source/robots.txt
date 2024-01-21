@@ -1,0 +1,7 @@
+---
+{
+    outputType: "text"
+}
+---
+User-agent: *
+Disallow: /super-secret-spy-shit/

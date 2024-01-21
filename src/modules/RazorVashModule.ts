@@ -6,154 +6,155 @@ import BuildContext from '../models/BuildContext';
 import RazerSourceFileContext from '../models/FileContexts/RazerSourceFileContext';
 import SourceFileContext from '../models/FileContexts/SourceFileContext';
 import OutputType from '../models/OutputType';
-import ResultContext                                                  from '../models/ResultContext';
+import ResultContext from '../models/ResultContext';
 import { AssetGroup, getCategory, getCategoryFolder, isSystemFolder } from '../utility';
-import BaseModule                                                     from './BaseModule';
+import BaseModule from './BaseModule';
 
 function toGrouping<T, V>(array: T[], keyExpression: (value: T) => string, valueExpression: (value: T) => V) {
-  const grouping: { [key: string]: V[] } = {};
+    const grouping: { [key: string]: V[]; } = {};
 
-  array.forEach(arrayValue => {
-    const key = keyExpression(arrayValue);
+    array.forEach(arrayValue => {
+        const key = keyExpression(arrayValue);
 
-    if (!grouping[key]) {
-      grouping[key] = [];
-    }
+        if (!grouping[key]) {
+            grouping[key] = [];
+        }
 
-    grouping[key].push(valueExpression(arrayValue));
-  });
+        grouping[key].push(valueExpression(arrayValue));
+    });
 
-  return grouping;
+    return grouping;
 }
 
 export default class RazorVashModule extends BaseModule {
-  public async invoke(context: BuildContext): Promise<ResultContext> {
-    this.log('Entering', RazorVashModule.name);
+    public async invoke(context: BuildContext): Promise<ResultContext> {
+        this.log('Entering', RazorVashModule.name);
 
-    const templatesFolder = path.join(context.options.source, getCategoryFolder(AssetGroup.template));
-    vash.config.settings = { views: templatesFolder };
-    vash.config.useWith = true;
+        const templatesFolder = path.join(context.options.source, getCategoryFolder(AssetGroup.template));
+        vash.config.settings = { views: templatesFolder };
+        vash.config.useWith = true;
 
-    this.log('Compiling razor templates');
+        this.log('Compiling razor templates');
 
-    const finishLayout = (err: any, ctx: { finishLayout: () => void }) => ctx.finishLayout();
+        const finishLayout = (err: any, ctx: { finishLayout: () => void; }) => ctx.finishLayout();
 
-    const getTemplateName = (templateAsset: SourceFileContext) => {
-      return path.basename(templateAsset.path, '.vash');
-    };
-
-    const templates = vash.helpers.tplcache;
-
-    const allVashAssets = context.assets.filter(asset => asset.isType(RazerSourceFileContext.name)) as RazerSourceFileContext[];
-
-    const assetGrouping = toGrouping(
-      allVashAssets,
-      v => getCategory(v.path),
-      v => v,
-    );
-
-    const razorTemplates = assetGrouping[AssetGroup.template] || [];
-    const razorIncludes = assetGrouping[AssetGroup.includes] || [];
-    const razorPages = assetGrouping[AssetGroup.general] || [];
-
-    razorTemplates.forEach(templateAsset => {
-      console.log("Template Path: " + templateAsset.path);
-      if (!templateAsset.textContent) {
-        console.error('Error parsing', templateAsset);
-      }
-      const compiledTemplate = vash.compile(templateAsset.textContent);
-      const templateName = getTemplateName(templateAsset);
-      vash.install(templateName, compiledTemplate);
-      templateAsset.isHandled = true;
-
-      console.log('TemplateName: ', templateName);
-    });
-
-    const compileOutput = (asset: SourceFileContext) => {
-      const model = {
-        context,
-        page: asset,
-        sections: asset.sections,
-        vash,
-        ...asset.frontMatter,
-      };
-
-      if (asset.textContent) {
-        this.log('Compiling ' + asset.path);
-
-        const page = vash.compile(asset.textContent);
-        const output = page(model, finishLayout);
-
-        asset.sections.main = output;
-        asset.output = output;
-      } else {
-        this.log(asset.path, ' cannot be compiled because no textContent', asset.textContent);
-      }
-    };
-
-    this.log('Compiled includes');
-    razorIncludes.forEach(compileOutput);
-
-    this.log('Compiling pages');
-    razorPages.forEach(compileOutput);
-
-    this.log('Applying razor templates');
-
-    context.assets
-      .filter(asset => isSystemFolder(asset.path))
-      .filter(asset => asset.outputType === OutputType.html)
-      .forEach(asset => (asset.isHandled = true));
-
-    context.assets
-      .filter(asset => !isSystemFolder(asset.path))
-      .filter(asset => asset.outputType === OutputType.html)
-      .forEach(asset => {
-        const baseModel = {
-          category: 'tech',
-          categoryDescription: '',
-          excerpt: '',
-          hidebyline: false,
-          hidefooter: false,
-          tags: [],
-          title: '',
-          titleonly: '',
+        const getTemplateName = (templateAsset: SourceFileContext) => {
+            return path.basename(templateAsset.path, '.vash');
         };
 
-        const templateName = asset.frontMatter.layout || context.options.template;
-        const applyTemplate = templates[templateName];
+        const templates = vash.helpers.tplcache;
 
-        if (applyTemplate) {
-          try {
+        const allVashAssets = context.assets.filter(asset => asset.isType(RazerSourceFileContext.name)) as RazerSourceFileContext[];
+
+        const assetGrouping = toGrouping(
+            allVashAssets,
+            v => getCategory(v.path),
+            v => v,
+        );
+
+        const razorTemplates = assetGrouping[AssetGroup.template] || [];
+        const razorIncludes = assetGrouping[AssetGroup.includes] || [];
+        const razorPages = assetGrouping[AssetGroup.general] || [];
+
+        razorTemplates.forEach(templateAsset => {
+            console.log("Template Path: " + templateAsset.path);
+            if (!templateAsset.textContent) {
+                console.error('Error parsing', templateAsset);
+            }
+            const compiledTemplate = vash.compile(templateAsset.textContent);
+            const templateName = getTemplateName(templateAsset);
+            vash.install(templateName, compiledTemplate);
+            templateAsset.isHandled = true;
+
+            console.log('TemplateName: ', templateName);
+        });
+
+        const compileOutput = (asset: SourceFileContext) => {
             const model = {
-              ...baseModel,
-              context,
-              page: asset,
-              sections: asset.sections,
-              ...asset.frontMatter,
+                context,
+                page: asset,
+                sections: asset.sections,
+                vash,
+                ...asset.frontMatter,
             };
 
-            if (model.category) {
-              const siteData: Array<{ category: string; display: string }> = context.dataStore.sitedata;
-              const categoryData = siteData.find(d => d.category === model.category);
-              if (!categoryData) {
-                this.log('Category description missing for ' + model.category);
-              }
-              model.categoryDescription = categoryData?.display || model.category;
+            if (asset.textContent) {
+                this.log('Compiling ' + asset.path);
+
+                const page = vash.compile(asset.textContent);
+                vash.install(getTemplateName(asset), page);
+                const output = page(model, finishLayout);
+
+                asset.sections.main = output;
+                asset.output = output;
+            } else {
+                this.log(asset.path, ' cannot be compiled because no textContent', asset.textContent);
             }
+        };
 
-            asset.output = applyTemplate(model, finishLayout);
-          } catch (exception) {
-            this.log('error applying template', JSON.stringify(asset.frontMatter));
-            throw exception;
-          }
-        } else {
-          this.log('Template', templateName, 'was not found');
-          process.exit(1);
-        }
-      });
+        this.log('Compiling includes');
+        razorIncludes.forEach(compileOutput);
+
+        this.log('Compiling pages');
+        razorPages.forEach(compileOutput);
+
+        this.log('Applying razor templates');
+
+        context.assets
+            .filter(asset => isSystemFolder(asset.path))
+            .filter(asset => asset.outputType === OutputType.html)
+            .forEach(asset => (asset.isHandled = true));
+
+        context.assets
+            .filter(asset => !isSystemFolder(asset.path))
+            .filter(asset => asset.outputType === OutputType.html)
+            .forEach(asset => {
+                const baseModel = {
+                    category: 'tech',
+                    categoryDescription: '',
+                    excerpt: '',
+                    hidebyline: false,
+                    hidefooter: false,
+                    tags: [],
+                    title: '',
+                    titleonly: '',
+                };
+
+                const templateName = asset.frontMatter.layout || context.options.template;
+                const applyTemplate = templates[templateName];
+
+                if (applyTemplate) {
+                    try {
+                        const model = {
+                            ...baseModel,
+                            context,
+                            page: asset,
+                            sections: asset.sections,
+                            ...asset.frontMatter,
+                        };
+
+                        if (model.category) {
+                            const siteData: Array<{ category: string; display: string; }> = context.dataStore.sitedata;
+                            const categoryData = siteData.find(d => d.category === model.category);
+                            if (!categoryData) {
+                                this.log('Category description missing for ' + model.category);
+                            }
+                            model.categoryDescription = categoryData?.display || model.category;
+                        }
+
+                        asset.output = applyTemplate(model, finishLayout);
+                    } catch (exception) {
+                        this.log('error applying template', JSON.stringify(asset.frontMatter));
+                        throw exception;
+                    }
+                } else {
+                    this.log('Template', templateName, 'was not found');
+                    process.exit(1);
+                }
+            });
 
 
 
-    return await this.next(context);
-  }
+        return await this.next(context);
+    }
 }
