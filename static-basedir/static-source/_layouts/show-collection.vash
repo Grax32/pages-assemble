@@ -1,7 +1,7 @@
-@if (collection && collection.length) {
-    <h3>@collectionName</h3>
+@if (model.collection && model.collection.length) {
+    <h3>@model.collectionName</h3>
     <ul>
-    @collection.forEach(asset => {
+    @model.collection.forEach(asset => {
         <li>
             <a href="@asset.outputRoute">@asset.frontMatter.title</a>
         </li>

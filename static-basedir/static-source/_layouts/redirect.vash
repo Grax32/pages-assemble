@@ -1,13 +1,13 @@
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url=@destinationlink">
-    <link rel="canonical" href="@destinationlink" />
+    <meta http-equiv="refresh" content="0; url=@model.destinationlink">
+    <link rel="canonical" href="@model.destinationlink" />
     <script>
-        location.href = "@destinationlink";
+        location.href = "@model.destinationlink";
     </script>
 </head>
 <body>
-    Page Moved to <a href="@destinationlink">@destinationlink</a>
+    Page Moved to <a href="@model.destinationlink">@model.destinationlink</a>
 </body>
 </html>
 

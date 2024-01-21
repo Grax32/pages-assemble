@@ -1,7 +1,7 @@
 import grayMatter from 'gray-matter';
 import fs         from 'fs';
 import path       from 'path';
-import glob       from 'glob';
+import {glob}       from 'glob';
 
 import ResultContext                      from '../models/ResultContext';
 import BuildContext                       from '../models/BuildContext';

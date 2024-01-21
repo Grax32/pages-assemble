@@ -24,16 +24,16 @@
   </div>
 
   <div class="page-nav page-general">
-    @if (category === 'home') {
+    @if (model.category === 'home') {
       <a href="/articles/">Articles</a> 
       <span> • </span>
       <a href="/software-projects">Software Projects</a>
     } else {
       <a href="/">Home</a><span> &bull; </span>
-      @if (category) {
+      @if (model.category) {
         <span><a href="/articles/">Articles</a></span>
         <span> • </span>
-        <span><a href="/articles/@category">@categoryDescription</a></span>
+        <span><a href="/articles/@model.category">@model.categoryDescription</a></span>
       }
     }
     <br />
@@ -44,16 +44,16 @@
     <br />
   </div>
 
-  @if (title) {
+  @if (model.title) {
   <div class="page-title page-general">
-    <h3>@title</h3>
+    <h3>@model.title</h3>
     @if (excerpt) {
     <div class="excerpt">@excerpt</div>
     }
   </div>
   }
 
-  @if (!hidebyline) {
+  @if (!model.hidebyline) {
     <div class="page-byline page-general">by <a href="/about/david-walker/">David Walker</a></div>
   }
 
@@ -67,7 +67,7 @@
       <a class="share-link" title="Email" onclick="shareTo('email')"><i class="fas fa-at"></i></a>
     </p>
 
-    @if (!hidefooter) {
+    @if (!model.hidefooter) {
       <footer>@html.raw(sections.footer)</footer>
     }
     <br />

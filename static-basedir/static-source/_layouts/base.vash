@@ -4,7 +4,7 @@
   <!-- build time @(new Date()).toISOString() -->
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>@(title || titleonly)</title>
+  <title>@(model.title || model.titleonly)</title>
   @html.block('headers', function () {})
   <!--<script src='/content/framebuffer.js'></script>-->
 </head>
