@@ -4,13 +4,16 @@
   "description": "Assemble supplied resources into a static site",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf _site",
-    "build": "npx @11ty/eleventy",
-    "dev": "npx @11ty/eleventy --serve --port=8081",
+    "clean": "rimraf _site && echo \"✅ Clean completed\"",
+    "build": "eleventy --quiet && echo \"✅ Build completed successfully\"",
+    "build:verbose": "eleventy && echo \"✅ Verbose build completed\"",
+    "dev": "eleventy --serve --port=8081 --watch",
     "start": "npm run dev",
     "netlify": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "serve -n ./_site"
+    "serve": "serve -n ./_site",
+    "build-and-serve": "npm run build && npm run serve",
+    "preview": "npm run build && npm run serve"
   },
   "files": [
     "src/**/*",
@@ -27,44 +30,12 @@
   "author": "David Walker <dwalker-git@grax32.com> (https://grax32.com/)",
   "license": "ISC",
   "dependencies": {
-    "@mapbox/node-pre-gyp": "^1.0.11",
-    "@types/color-thief-node": "^1.0.4",
-    "@types/command-line-usage": "^5.0.4",
-    "@types/glob": "^8.1.0",
-    "@types/html-minifier": "^4.0.5",
-    "@types/markdown-it": "13.0.7",
-    "@types/uglifycss": "0.0.11",
-    "base64-img": "^1.0.4",
-    "command-line-args": "^5.2.1",
-    "command-line-usage": "^7.0.1",
-    "file-type": "^19.0.0",
-    "glob": "^10.3.10",
-    "gray-matter": "^4.0.3",
-    "html-minifier": "^4.0.0",
-    "http-server": "^14.1.1",
-    "inversify": "^6.0.2",
-    "markdown-it": "^14.0.0",
-    "minimatch": "^9.0.3",
-    "node": "^21.2.0",
-    "path": "^0.12.7",
-    "rimraf": "^5.0.5",
-    "uglify": "^0.1.5",
-    "uglifycss": "0.0.29",
-    "webpack": "^5.89.0"
+    "@11ty/eleventy": "^3.1.2",
+    "markdown-it": "^14.1.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "@types/command-line-args": "^5.2.3",
-    "@types/node": "^20.11.5",
-    "@types/ts-nameof": "^4.2.5",
-    "color-thief-node": "^1.0.4",
-    "jimp": "^0.22.10",
     "prettier": "^3.2.4",
-    "serve": "^14.2.1",
-    "ts-nameof": "^5.0.0",
-    "ts-node": "^10.9.2",
-    "ttypescript": "^1.5.15",
-    "typescript": "^5.3.3",
-    "vash": "^0.13.0"
+    "rimraf": "^6.0.1",
+    "serve": "^14.2.1"
   }
 }
