@@ -1,9 +1,11 @@
 ---
-title: Poinsettia
+title: Holiday Elegance
 layout: art-exhibit
 imgPath: /art/dreamwalker-gallery/poinsettia.jpg
 thumbPath: /art/dreamwalker-gallery/poinsettia.jpg
 category: art
-imgDescription: Beautiful poinsettia flowers in seasonal colors
-tags: [art, photography, flowers, nature]
+imgDescription: The iconic beauty of poinsettia blooms captured in their seasonal glory, where deep crimson petals create a study in natural geometry and festive warmth
+tags: [photography, botanical, seasonal, macro photography]
+date: 2023-12-15
+dimensions: "Fine Art Print, 16x20 inches available"
 ---

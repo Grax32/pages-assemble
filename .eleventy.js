@@ -46,6 +46,17 @@ module.exports = async function(eleventyConfig) {
     return new Date(date).toISOString();
   });
 
+  // Add date filter for formatting dates
+  eleventyConfig.addFilter("date", (dateInput, format) => {
+    if (!dateInput) return '';
+    const date = new Date(dateInput);
+    if (format === 'Y') {
+      return date.getFullYear().toString();
+    }
+    // Add more format options as needed
+    return date.toLocaleDateString();
+  });
+
   // Add a filter to get category description (matching your system's logic)
   eleventyConfig.addFilter("getCategoryDescription", function(category, sitedata) {
     if (!category || !sitedata) return category;

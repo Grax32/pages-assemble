@@ -28,7 +28,11 @@
 <div id='main-body'>
   <header>
     <h1>Dreamwalker Gallery</h1>
-    An online exhibition featuring selected works from the artist David&nbsp;Walker&nbsp;(@grax32).
+    <p class="exhibition-subtitle">An online exhibition featuring selected works from contemporary artist David Walker</p>
+    <p class="exhibition-description">
+      Exploring the intersection of nature and digital artistry through photography and mixed media. 
+      Each piece invites viewers to pause and contemplate the extraordinary beauty found in everyday moments.
+    </p>
   </header>
   <section>
     {% if imgPath %}
@@ -49,31 +53,47 @@
 
   </section>
   <article>
-    <h1>{{ title }}</h1>
-    {{ imgDescription | safe }}
-    <div class='ghost-footer'>
-        Share to:
-        <a class='share-link' title='Facebook' onclick="shareTo('facebook')"><i class='fab fa-facebook-f'></i></a>
-        <a class='share-link' title='LinkedIn' onclick="shareTo('linkedin')"><i class='fab fa-linkedin-in'></i></a>
-        <a class='share-link' title='Email' onclick="shareTo('email', 'art')"><i class='fas fa-at'></i></a>
+    <div class="artwork-details">
+      <h1 class="artwork-title-main">{{ title }}</h1>
+      {% if imgDescription %}
+      <p class="artwork-description-main">{{ imgDescription }}</p>
+      {% endif %}
+      <div class="artwork-metadata">
+        <div class="metadata-row">
+          <span class="metadata-label">Artist:</span>
+          <span class="metadata-value">David Walker</span>
+        </div>
+        {% if date %}
+        <div class="metadata-row">
+          <span class="metadata-label">Year:</span>
+          <span class="metadata-value">{{ date | date('Y') }}</span>
+        </div>
+        {% endif %}
+        {% if tags %}
+        <div class="metadata-row">
+          <span class="metadata-label">Medium:</span>
+          <span class="metadata-value">{{ tags | join(', ') }}</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
 
+    <div class='exhibition-footer'>
         <h3 class='about-artist-header'>About the Artist</h3>
-        <span class='about-artist'>
-        David Walker is an Orlando-based artist working in photography and digital art mediums.
-        </span>
+        <div class='about-artist'>
+        David Walker is an Orlando-based artist working in photography and digital art mediums. 
+        His work explores the intersection of nature and technology, capturing moments of beauty 
+        in both natural and urban environments.
+        </div>
+        
+        <div class="share-section">
+          <h4>Share this artwork:</h4>
+          <a class='share-link' title='Facebook' onclick="shareTo('facebook')"><i class='fab fa-facebook-f'></i></a>
+          <a class='share-link' title='LinkedIn' onclick="shareTo('linkedin')"><i class='fab fa-linkedin-in'></i></a>
+          <a class='share-link' title='Email' onclick="shareTo('email', 'artwork')"><i class='fas fa-at'></i></a>
+        </div>
     </div>
   </article>
-  <footer>
-    Share to:
-    <a class='share-link' title='Facebook' onclick="shareTo('facebook')"><i class='fab fa-facebook-f'></i></a>
-    <a class='share-link' title='LinkedIn' onclick="shareTo('linkedin')"><i class='fab fa-linkedin-in'></i></a>
-    <a class='share-link' title='Email' onclick="shareTo('email', 'art')"><i class='fas fa-at'></i></a>
-
-    <h3 class='about-artist-header'>About the Artist</h3>
-    <span class='about-artist'>
-    David Walker is an Orlando-based artist working in photography and digital art mediums.
-    </span>
-  </footer>
 </div>
 <template id='previous'>{{ collections.art | getRelativeUrl(page, -1) }}</template>
 <template id='first'>{{ collections.art[0].url }}</template>
