@@ -23,15 +23,15 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
   // Copy static files (matching your system's static patterns)
-  eleventyConfig.addPassthroughCopy("static-basedir/static-source/**/*.{jpg,png,gif,ico,pdf,svg,eot,ttf,woff,woff2}");
-  eleventyConfig.addPassthroughCopy("static-basedir/static-source/robots.txt");
-  eleventyConfig.addPassthroughCopy("static-basedir/static-source/favicon.ico");
-  eleventyConfig.addPassthroughCopy("static-basedir/static-source/content");
-  eleventyConfig.addPassthroughCopy("static-basedir/static-source/images");
+  eleventyConfig.addPassthroughCopy("src/**/*.{jpg,png,gif,ico,pdf,svg,eot,ttf,woff,woff2}");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("src/content");
+  eleventyConfig.addPassthroughCopy("src/images");
 
   // Watch for changes
-  eleventyConfig.addWatchTarget("static-basedir/static-source/**/*.css");
-  eleventyConfig.addWatchTarget("static-basedir/static-source/**/*.js");
+  eleventyConfig.addWatchTarget("src/**/*.css");
+  eleventyConfig.addWatchTarget("src/**/*.js");
 
   // Add layout aliases (matching your Vash template names)
   eleventyConfig.addLayoutAlias("pages", "pages.njk");
@@ -229,7 +229,7 @@ module.exports = async function(eleventyConfig) {
   // Global data (matching your dataStore)
   eleventyConfig.addGlobalData("softwareprojects", () => {
     try {
-      return require("./static-basedir/static-source/data/softwareprojects.json");
+      return require("./src/data/softwareprojects.json");
     } catch (e) {
       return [];
     }
@@ -237,7 +237,7 @@ module.exports = async function(eleventyConfig) {
 
   eleventyConfig.addGlobalData("sitedata", () => {
     try {
-      return require("./static-basedir/static-source/data/sitedata.json");
+      return require("./src/data/sitedata.json");
     } catch (e) {
       return [
         { category: "tech", display: "Technology" },
@@ -249,10 +249,10 @@ module.exports = async function(eleventyConfig) {
   });
 
   return {
-    // Configure directories (matching your folder structure)
+    // Configure directories (standard 11ty structure)
     dir: {
-      input: "static-basedir/static-source",
-      output: "static-basedir/build",
+      input: "src",
+      output: "_site",
       includes: "_includes",
       layouts: "_layouts",
       data: "_data"

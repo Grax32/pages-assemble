@@ -1,6 +1,4 @@
-lib
-build
-static-basedir/build
+_site
 
 # Logs
 logs

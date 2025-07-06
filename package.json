@@ -2,21 +2,21 @@
   "name": "pages-assemble",
   "version": "1.0.0",
   "description": "Assemble supplied resources into a static site",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "index.js",
   "scripts": {
-    "clean": "rimraf static-basedir/build",
-    "build": "tsc -v && tsc",
-    "assemble-pages": "node --harmony lib -v -b static-basedir",
-    "netlify": "node -v && npm run build && npm run assemble-pages",
+    "clean": "rimraf _site",
+    "build": "npx @11ty/eleventy",
+    "dev": "npx @11ty/eleventy --serve --port=8081",
+    "start": "npm run dev",
+    "netlify": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "serve": "serve -n ./static-basedir/build",
-    "start-nowatch": "npm run netlify && npm run serve",
+    "serve": "serve -n ./_site",
     "push": "git add . && git commit -m PUSH && git push"
   },
   "files": [
-    "lib/**/*"
+    "src/**/*",
+    "_site/**/*",
+    ".eleventy.js"
   ],
   "repository": {
     "type": "git",
