@@ -1,9 +1,4 @@
-/****
- webImport: true,
- minify: true
-****/
-
-import.url('prism.js');
+// Art gallery and site functionality scripts
 
 function shareTo(service, itemDescription) {
   const encodedUrl = encodeURIComponent(document.URL);

@@ -10,8 +10,7 @@
     "start": "npm run dev",
     "netlify": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "serve -n ./_site",
-    "push": "git add . && git commit -m PUSH && git push"
+    "serve": "serve -n ./_site"
   },
   "files": [
     "src/**/*",
