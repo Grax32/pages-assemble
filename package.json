@@ -4,6 +4,7 @@
   "description": "Assemble supplied resources into a static site",
   "main": "index.js",
   "scripts": {
+    "prebuild": "node scripts/build-info.js",
     "clean": "rimraf _site && echo \"✅ Clean completed\"",
     "build": "eleventy --quiet && echo \"✅ Build completed successfully\"",
     "build:verbose": "eleventy && echo \"✅ Verbose build completed\"",
@@ -13,7 +14,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "serve -n ./_site",
     "build-and-serve": "npm run build && npm run serve",
-    "preview": "npm run build && npm run serve"
+    "preview": "npm run build && npm run serve",
+    "build-info": "node scripts/build-info.js"
   },
   "files": [
     "src/**/*",

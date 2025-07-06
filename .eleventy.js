@@ -97,6 +97,16 @@ module.exports = async function(eleventyConfig) {
     return new Date().toISOString();
   });
 
+  // Add build info shortcode
+  eleventyConfig.addShortcode("buildinfo", () => {
+    try {
+      const buildInfo = require("./src/data/build-info.json");
+      return JSON.stringify(buildInfo, null, 2);
+    } catch (error) {
+      return JSON.stringify({ error: "Build info not available" }, null, 2);
+    }
+  });
+
   // Collections (matching your system's categorization)
   
   // All articles collection
