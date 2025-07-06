@@ -1,0 +1,21 @@
+{% if tagCollection and tagCollection.length %}
+    <h3>Tags</h3>
+    <ul>
+    {% for asset in tagCollection %}
+        <li>
+            <a href="{{ asset.url }}">{{ asset.data.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% elif collection and collection.length %}
+    <h3>{{ collectionName }}</h3>
+    <ul>
+    {% for asset in collection %}
+        <li>
+            <a href="{{ asset.url }}">{{ asset.data.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <span>Collection Not Found</span>
+{% endif %}

@@ -1,0 +1,61 @@
+---
+layout: pages
+permalink: /articles/tech/
+title: Tech
+systemTags: never-archive
+---
+
+<div>
+  <h3>C# / Programming</h3>
+  <ul>
+  {% for asset in collections.csharp %}
+    <li>
+      <a href="{{ asset.url }}">{{ asset.data.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div>
+  <h3>Sql Server</h3>
+  <ul>
+  {% for asset in collections.sqlserver %}
+    <li>
+      <a href="{{ asset.url }}">{{ asset.data.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div>
+  <h3>Azure</h3>
+  <ul>
+  {% for asset in collections.azure %}
+    <li>
+      <a href="{{ asset.url }}">{{ asset.data.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div>
+  <h3>Content Style Sheets / CSS</h3>
+  <ul>
+  {% for asset in collections.css %}
+    <li>
+      <a href="{{ asset.url }}">{{ asset.data.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div>
+  <h3>Other Tech</h3>
+  <ul>
+  {% for asset in collections.otherTech %}
+    <li>
+      <a href="{{ asset.url }}">{{ asset.data.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>

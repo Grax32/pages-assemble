@@ -1,0 +1,34 @@
+---
+layout: art-exhibit
+permalink: /art/dreamwalker-gallery/
+title: Art
+category: ''
+systemTags: never-archive
+imgPath:
+next:
+previous:
+imgDescription:
+---
+<style>
+    section {
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: baseline;
+        background-color: black;
+        overflow-y: auto;
+        padding-top: 5px;
+    }
+
+    img {
+        height: 25vh;
+        display: block;
+        border-radius: 5px;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+</style>
+{% for asset in collections.art %}
+<img src='{{ asset.data.thumbPath }}' alt='{{ asset.data.title }}' onclick="location.href='{{ asset.url }}'" />
+{% endfor %}

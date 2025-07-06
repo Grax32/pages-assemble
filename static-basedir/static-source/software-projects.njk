@@ -1,0 +1,22 @@
+---
+layout: pages
+permalink: /software-projects/
+title: Software Projects
+category:
+systemTags: never-archive
+---
+<div class="tile-collection">
+  {% for project in softwareprojects %}
+  <div class="tile-item">
+    <div class="tile-title">
+      <a href="{{ project.site }}">{{ project.name }}</a>
+    </div>
+    <div class="tile-menu">
+      <a href="{{ project.source }}" alt="Source"><i class="fas fa-code"></i></a> 
+      <a href="{{ project.site }}"><i class="fa fa-globe" aria-hidden="true"></i></a> 
+      <a href="{{ project.package }}"><i class="fa fa-archive" aria-hidden="true"></i></a>
+    </div>
+    <div class="tile-description">{{ project.description }}<br /></div>
+  </div>
+  {% endfor %}
+</div>
