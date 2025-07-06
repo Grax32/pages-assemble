@@ -1,0 +1,82 @@
+---
+layout: art-exhibit
+permalink: /art/dreamwalker-gallery/
+title: Art
+category: ''
+systemTags: never-archive
+imgPath:
+next:
+previous:
+imgDescription:
+---
+<style>
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        overflow-y: auto;
+    }
+
+    .artwork-card {
+        background: #f8f8f8;
+        border-radius: 8px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .artwork-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    }
+
+    .artwork-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .artwork-info {
+        padding: 1.2rem;
+        background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+    }
+
+    .artwork-title {
+        font-family: 'Georgia', serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2c2c2c;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    .artwork-description {
+        font-family: 'Arial', sans-serif;
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.4;
+        font-style: italic;
+    }
+
+    .artwork-year {
+        font-family: 'Arial', sans-serif;
+        font-size: 0.8rem;
+        color: #999;
+        margin-top: 0.5rem;
+        text-align: right;
+    }
+</style>
+{% for asset in collections.art %}
+<div class="artwork-card" onclick="location.href='{{ asset.url }}'">
+    <img src='{{ asset.data.thumbPath }}' alt='{{ asset.data.title }}' class="artwork-image" />
+    <div class="artwork-info">
+        <div class="artwork-title">{{ asset.data.title }}</div>
+        <div class="artwork-description">{{ asset.data.imgDescription }}</div>
+        <div class="artwork-year">David Walker, {{ asset.date | date('Y') }}</div>
+    </div>
+</div>
+{% endfor %}

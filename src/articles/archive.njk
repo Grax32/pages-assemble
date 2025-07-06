@@ -1,0 +1,17 @@
+---
+layout: pages
+permalink: /articles/archive/
+title: Archive (The old stuff)
+category: ''
+systemTags: never-archive
+---
+
+<ul>
+{% for asset in collections.archives %}
+<li>
+  <a href="{{ asset.url }}">
+    {{ asset.data.title }}
+  </a>
+</li>
+{% endfor %}
+</ul>

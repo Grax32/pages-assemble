@@ -1,0 +1,16 @@
+---
+layout: pages
+permalink: /articles/team/
+title: Team
+category: ''
+---
+
+<ul>
+{% for asset in collections.team %}
+<li>
+  <a href="{{ asset.url }}">
+    {{ asset.data.title }}
+  </a>
+</li>
+{% endfor %}
+</ul>

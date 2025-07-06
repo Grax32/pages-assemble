@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <!-- build time {% buildtime %} -->
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>{{ title or titleonly }}</title>
+  <link rel="stylesheet" href="/content/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!--<script src='/content/framebuffer.js'></script>-->
+</head>
+<body>
+<div class="page-banner">
+  <img class="page-header-author-image" src="/images/david-walker.jpg" alt="David Walker" />
+  <div class="overflow"></div>
+</div><div class="page context-page">
+  <div class="page-header page-general">
+    <div class="page-tag-left-box">
+      <div class="page-tag-text">
+        <a href="/about/david-walker"><img src="/images/david-walker-text.svg" /></a>
+      </div>
+    </div>
+    <div class="page-tag-right-box">
+      <div class="page-tag-text">
+        <img src="/images/tagline.svg" />
+      </div>
+    </div>
+  </div>
+
+  <div class="page-nav page-general">
+    {% if category === 'home' %}
+      <a href="/articles/">Articles</a><span> • </span><a href="/software-projects">Software Projects</a>
+    {% else %}
+      <a href="/">Home</a><span> &bull; </span>
+      {% if category %}
+        <span><a href="/articles/">Articles</a></span>
+        <span> • </span>
+        <span><a href="/articles/{{ category }}">{{ category | getCategoryDescription(sitedata) }}</a></span>
+      {% endif %}
+    {% endif %}
+    <br />
+
+    {% for tag in tags %}
+    <span> • <a class="tag-link" href="/tag/{{ tag }}">{{ tag }}</a></span>
+    {% endfor %}
+    <br />
+  </div>
+
+  {% if title %}
+  <div class="page-title page-general">
+    <h3>{{ title }}</h3>
+    {% if excerpt %}
+    <div class="excerpt">{{ excerpt }}</div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if not hidebyline %}
+  <div class="page-byline page-general">by <a href="/about/david-walker/">David Walker</a></div>
+  {% endif %}
+
+  <div class="page-content page-general">
+    {{ content }}
+
+    <p class="share-block">
+      Share to:
+      <a class="share-link" title="Facebook" onclick="shareTo('facebook')"><i class="fab fa-facebook-f"></i></a>
+      <a class="share-link" title="LinkedIn" onclick="shareTo('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+      <a class="share-link" title="Email" onclick="shareTo('email')"><i class="fas fa-at"></i></a>
+    </p>
+
+    {% if not hidefooter %}
+      <footer>{{ footer | safe }}</footer>
+    {% endif %}
+    <br />
+  </div>
+</div>
+<script src='/content/scripts.js' type='text/javascript'></script>
+</body>
+</html>
