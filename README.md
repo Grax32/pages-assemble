@@ -1,4 +1,4 @@
-# pages-assemble
+# Custom Static Site
 
 A static site generator built with 11ty (Eleventy).
 
