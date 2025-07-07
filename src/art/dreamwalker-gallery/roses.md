@@ -4,6 +4,7 @@ layout: art-exhibit
 imgPath: /art/dreamwalker-gallery/roses.jpg
 thumbPath: /art/dreamwalker-gallery/roses.jpg
 category: art
+backgroundColor: "#8B4A5C"
 imgDescription: A stunning composition of roses captured at the peak of their beauty, showcasing the delicate interplay of light and shadow across velvety petals
 tags: [photography, nature, floral, digital art]
 date: 2023-06-15

@@ -35,8 +35,9 @@ imgDescription:
 
     .artwork-image {
         width: 100%;
-        height: 200px;
-        object-fit: cover;
+        height: 250px;
+        object-fit: contain;
+        object-position: center;
         display: block;
     }
 
@@ -72,7 +73,7 @@ imgDescription:
 </style>
 {% for asset in collections.art %}
 <div class="artwork-card" onclick="location.href='{{ asset.url }}'">
-    <img src='{{ asset.data.thumbPath }}' alt='{{ asset.data.title }}' class="artwork-image" />
+    <img src='{{ asset.data.thumbPath }}' alt='{{ asset.data.title }}' class="artwork-image" style="background-color: {{ asset.data.backgroundColor or '#f0f0f0' }};" />
     <div class="artwork-info">
         <div class="artwork-title">{{ asset.data.title }}</div>
         <div class="artwork-description">{{ asset.data.imgDescription }}</div>

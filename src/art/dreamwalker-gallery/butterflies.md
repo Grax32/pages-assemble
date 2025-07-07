@@ -4,8 +4,9 @@ layout: art-exhibit
 imgPath: /art/dreamwalker-gallery/butterflies.jpg
 thumbPath: /art/dreamwalker-gallery/butterflies.jpg
 category: art
-imgDescription: A mesmerizing dance of butterflies captured in their natural habitat, their delicate wings creating patterns of color and movement that speak to the ephemeral beauty of nature
-tags: [photography, nature, wildlife, macro photography]
+backgroundColor: "#D4452A"
+imgDescription: A captivating collection of Chinese lanterns dancing in the gentle breeze, their vibrant colors and soft illumination creating a mesmerizing tapestry of light that celebrates the artistry and cultural heritage of traditional festival decorations
+tags: [photography, cultural, chinese lanterns, festival, lighting, traditional art]
 date: 2023-07-10
 dimensions: "High Resolution Digital Print, 20x30 inches available"
 ---
