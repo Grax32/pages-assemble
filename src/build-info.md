@@ -8,33 +8,31 @@ title: Build Information
 <div class="build-info">
   <h2>🔧 System Information</h2>
   <ul>
-    <li><strong>Build Time:</strong> {{ build-info.buildTime }}</li>
-    <li><strong>Node Version:</strong> {{ build-info.nodeVersion }}</li>
-    <li><strong>Platform:</strong> {{ build-info.platform }} ({{ build-info.arch }})</li>
+    <li><strong>Build Time:</strong> {{ buildInfo.buildTime }}</li>
+    <li><strong>Node Version:</strong> {{ buildInfo.nodeVersion }}</li>
+    <li><strong>Platform:</strong> {{ buildInfo.platform }} ({{ buildInfo.arch }})</li>
   </ul>
 
   <h2>📦 Package Information</h2>
   <ul>
-    <li><strong>Name:</strong> {{ build-info.package.name }}</li>
-    <li><strong>Version:</strong> {{ build-info.package.version }}</li>
-    <li><strong>Description:</strong> {{ build-info.package.description }}</li>
+    <li><strong>Name:</strong> {{ buildInfo.package.name }}</li>
+    <li><strong>Version:</strong> {{ buildInfo.package.version }}</li>
+    <li><strong>Description:</strong> {{ buildInfo.package.description }}</li>
   </ul>
 
   <h2>🔗 Git Information</h2>
   <ul>
-    <li><strong>Branch:</strong> {{ build-info.git.branch }}</li>
-    <li><strong>Commit:</strong> <code>{{ build-info.git.commitShort }}</code></li>
-    <li><strong>Full Commit:</strong> <code>{{ build-info.git.commit }}</code></li>
-    <li><strong>Has Changes:</strong> {{ "Yes" if build-info.git.isDirty else "No" }}</li>
-    {% if build-info.github %}
-    <li><strong>GitHub:</strong> <a href="{{ build-info.github.url }}" target="_blank">{{ build-info.github.owner }}/{{ build-info.github.repo }}</a></li>
-    {% endif %}
+    <li><strong>Branch:</strong> {{ buildInfo.git.branch }}</li>
+    <li><strong>Commit:</strong> <code>{{ buildInfo.git.commitShort }}</code></li>
+    <li><strong>Full Commit:</strong> <code>{{ buildInfo.git.commit }}</code></li>
+    <li><strong>Has Changes:</strong> {{ "Yes" if buildInfo.git.isDirty else "No" }}</li>{% if buildInfo.github %}
+    <li><strong>GitHub:</strong> <a href="{{ buildInfo.github.url }}" target="_blank">{{ buildInfo.github.owner }}/{{ buildInfo.github.repo }}</a></li>{% endif %}
   </ul>
 
   <h2>📋 Raw Build Data</h2>
   <details>
     <summary>Click to expand raw JSON</summary>
-    <pre><code>{% buildinfo %}</code></pre>
+    <pre><code>{{ buildInfo | dump | safe }}</code></pre>
   </details>
 </div>
 

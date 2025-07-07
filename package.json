@@ -4,18 +4,13 @@
   "description": "Assemble supplied resources into a static site",
   "main": "index.js",
   "scripts": {
-    "prebuild": "node scripts/build-info.js",
+    "build": "eleventy --quiet && echo \"✅ Build completed successfully.\"",
+    "build:verbose": "eleventy && echo \"✅ Build completed successfully. [Verbose]\"",
     "clean": "rimraf _site && echo \"✅ Clean completed\"",
-    "build": "eleventy --quiet && echo \"✅ Build completed successfully\"",
-    "build:verbose": "eleventy && echo \"✅ Verbose build completed\"",
-    "dev": "eleventy --serve --port=8081 --watch",
+    "dev": "node scripts/check-port.js 8081 && eleventy --serve --port=8081 --watch",
+    "dev:auto-port": "eleventy --serve --port=8081 --watch",
     "start": "npm run dev",
-    "netlify": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "serve -n ./_site",
-    "build-and-serve": "npm run build && npm run serve",
-    "preview": "npm run build && npm run serve",
-    "build-info": "node scripts/build-info.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
     "src/**/*",
@@ -37,7 +32,6 @@
   },
   "devDependencies": {
     "prettier": "^3.2.4",
-    "rimraf": "^6.0.1",
-    "serve": "^14.2.1"
+    "rimraf": "^6.0.1"
   }
 }

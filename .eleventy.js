@@ -100,7 +100,7 @@ module.exports = async function(eleventyConfig) {
   // Add build info shortcode
   eleventyConfig.addShortcode("buildinfo", () => {
     try {
-      const buildInfo = require("./src/data/build-info.json");
+      const buildInfo = require("./src/data/buildInfo.js");
       return JSON.stringify(buildInfo, null, 2);
     } catch (error) {
       return JSON.stringify({ error: "Build info not available" }, null, 2);
@@ -276,14 +276,14 @@ module.exports = async function(eleventyConfig) {
       output: "_site",
       includes: "_includes",
       layouts: "_layouts",
-      data: "_data"
+      data: "data"
     },
     
     // Configure template formats
     templateFormats: ["md", "njk", "html"],
     
     // Configure template engines
-    markdownTemplateEngine: false,
+    markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     
     // Configure path prefix
