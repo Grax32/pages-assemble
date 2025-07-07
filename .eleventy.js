@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it");
+const slugify = require("slugify");
 
 module.exports = async function(eleventyConfig) {
   const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
@@ -42,6 +43,7 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("show-collection", "show-collection.njk");
 
   // Add custom filters
+  eleventyConfig.addFilter("json", obj => JSON.stringify(obj, null, 2));
   eleventyConfig.addFilter("dateToISO", (date) => {
     return new Date(date).toISOString();
   });
@@ -220,14 +222,19 @@ module.exports = async function(eleventyConfig) {
   // All tags collection for the tags page
   eleventyConfig.addCollection("allTags", function(collectionApi) {
     const tagSet = new Set();
+
     collectionApi.getAll().forEach(item => {
       if (item.data.tags) {
         item.data.tags.forEach(tag => tagSet.add(tag));
       }
     });
+
     return Array.from(tagSet).sort().map(tag => ({
-      data: { title: tag },
-      url: `/tag/${tag}/`
+      data: { 
+        title: tag,
+        count: collectionApi.getFilteredByTag(tag).length
+       },
+      url: `/tag/${slugify(tag)}/`
     }));
   });
 
@@ -268,6 +275,9 @@ module.exports = async function(eleventyConfig) {
       ];
     }
   });
+
+  // Add slug filter for clean tag URLs
+  eleventyConfig.addFilter("slug", str => slugify(str, { lower: true, strict: true }));
 
   return {
     // Configure directories (standard 11ty structure)

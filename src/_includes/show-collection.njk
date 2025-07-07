@@ -3,7 +3,7 @@
     <ul>
     {% for asset in tagCollection %}
         <li>
-            <a href="{{ asset.url }}">{{ asset.data.title }}</a>
+            <a href="{{ asset.url }}">{{ asset.data.title }}</a> ( {{ asset.data.count }} )
         </li>
     {% endfor %}
     </ul>

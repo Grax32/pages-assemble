@@ -30,7 +30,7 @@ function getBuildInfo() {
     };
     
     // Try to get tag, but don't fail if none exists
-    buildInfo.git.tag = safeExecSync('git describe --tags --abbrev=0');
+    buildInfo.git.tag = safeExecSync('git describe --tags --always --abbrev=0');
     
     // Add remote URL if available
     const remoteUrl = safeExecSync('git config --get remote.origin.url');
