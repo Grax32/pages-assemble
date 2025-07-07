@@ -77,7 +77,6 @@ function getBuildInfo() {
     };
   }
 
-  console.log('Build Info:', JSON.stringify(buildInfo, null, 2));
   return buildInfo;
 }
 
