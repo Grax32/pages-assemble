@@ -21,6 +21,7 @@ module.exports = async function(eleventyConfig) {
     breaks: false,
     linkify: true
   });
+
   eleventyConfig.setLibrary("md", md);
 
   // Copy static files (matching your system's static patterns)
@@ -216,26 +217,30 @@ module.exports = async function(eleventyConfig) {
         item.data.tags.forEach(tag => tagSet.add(tag));
       }
     });
-    return Array.from(tagSet).sort();
+    const tagList = Array.from(tagSet).sort();
+    // DEBUG: Output tagList to console
+    console.log("[DEBUG] tagList:", tagList);
+    return tagList;
   });
 
   // All tags collection for the tags page
   eleventyConfig.addCollection("allTags", function(collectionApi) {
     const tagSet = new Set();
-
     collectionApi.getAll().forEach(item => {
       if (item.data.tags) {
         item.data.tags.forEach(tag => tagSet.add(tag));
       }
     });
-
-    return Array.from(tagSet).sort().map(tag => ({
+    const allTags = Array.from(tagSet).sort().map(tag => ({
       data: { 
         title: tag,
         count: collectionApi.getFilteredByTag(tag).length
        },
       url: `/tag/${slugify(tag)}/`
     }));
+    // DEBUG: Output allTags to console
+    console.log("[DEBUG] allTags:", allTags);
+    return allTags;
   });
 
   // Archive collections by year
@@ -290,7 +295,7 @@ module.exports = async function(eleventyConfig) {
     },
     
     // Configure template formats
-    templateFormats: ["md", "njk", "html"],
+    templateFormats: ["md", "njk", "html", "js"],
     
     // Configure template engines
     markdownTemplateEngine: "njk",

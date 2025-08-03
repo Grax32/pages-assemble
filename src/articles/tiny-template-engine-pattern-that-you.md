@@ -43,16 +43,16 @@ Note that the for loop starts with index 1 to skip over item 0 that is returned 
 <br />
 The property value lookup could be any lookup that can look up string data based on the a string key.<br />
 <br />
-<a href="http://jsfiddle.net/rg42apuh/">Working JavaScript Version (JSFiddle)</a><br />
+<a href="https://jsfiddle.net/rg42apuh/">Working JavaScript Version (JSFiddle)</a><br />
 <a href="https://dotnetfiddle.net/KOZdLf">Working C# Version (DotNetFiddle)</a><br />
 <br />
 My goal was to break down the process to something a developer could remember and use quickly and easily in a pinch. &nbsp;It doesn't do escaping or anything fancy but it is quick and simple.<br />
 <br />
-Reddit user <a href="http://www.reddit.com/user/gynnihanssen">gynnihanssen</a> posted a link to a regex variant &nbsp;<a href="https://dotnetfiddle.net/WojntT">https://dotnetfiddle.net/WojntT</a>&nbsp;which I think could meet that goal also.<br />
+Reddit user <a href="https://www.reddit.com/user/gynnihanssen">gynnihanssen</a> posted a link to a regex variant &nbsp;<a href="https://dotnetfiddle.net/WojntT">https://dotnetfiddle.net/WojntT</a>&nbsp;which I think could meet that goal also.<br />
 <br />
-John Resig has a nice micro-templating function that caches a reusable templating function at <a href="http://ejohn.org/blog/javascript-micro-templating/">http://ejohn.org/blog/javascript-micro-templating/</a>&nbsp; It doesn't necessarily meet my quick, simple, and memorable design goal but it is pretty succint and should offer some nice performance and memory usage gains.<br />
+John Resig has a nice micro-templating function that caches a reusable templating function at <a href="https://ejohn.org/blog/javascript-micro-templating/">https://ejohn.org/blog/javascript-micro-templating/</a>&nbsp; It doesn't necessarily meet my quick, simple, and memorable design goal but it is pretty succint and should offer some nice performance and memory usage gains.<br />
 <br />
 Phil Haack has a more involved version that looks at escaping and edge cases at<br />
-<a href="http://haacked.com/archive/2009/01/04/fun-with-named-formats-string-parsing-and-edge-cases.aspx/">http://haacked.com/archive/2009/01/04/fun-with-named-formats-string-parsing-and-edge-cases.aspx/</a><br />
+<a href="https://haacked.com/archive/2009/01/04/fun-with-named-formats-string-parsing-and-edge-cases.aspx/">https://haacked.com/archive/2009/01/04/fun-with-named-formats-string-parsing-and-edge-cases.aspx/</a><br />
 <br />
-Scott Hanselman has a fairly involved ToString function that does string interpolation. &nbsp;<a href="http://www.hanselman.com/blog/ASmarterOrPureEvilToStringWithExtensionMethods.aspx">http://www.hanselman.com/blog/ASmarterOrPureEvilToStringWithExtensionMethods.aspx</a><br />
+Scott Hanselman has a fairly involved ToString function that does string interpolation. &nbsp;<a href="https://www.hanselman.com/blog/ASmarterOrPureEvilToStringWithExtensionMethods.aspx">https://www.hanselman.com/blog/ASmarterOrPureEvilToStringWithExtensionMethods.aspx</a><br />

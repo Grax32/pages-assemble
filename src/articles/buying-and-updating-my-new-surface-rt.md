@@ -32,7 +32,7 @@ I opened the box and immediately tried to power on the device but nothing happen
 <div>
 <b>0x800b0101 means your clock is wrong in Microsoft language</b></div>
 <div>
-I tried to go through setup and add my Microsoft account but I got the very cryptic "0x800b0101" error. &nbsp;Thanks to <a href="http://windowsitpro.com/windows-81/one-fix-0x800b0101-error-when-setting-microsoft-account-new-surface">this blog post</a>, I decided to try setting the clock. &nbsp;To do that, swipe in from the right, type the word "date" (or "time") in the search box and hit the search button. &nbsp;Tap "Settings" below the search and you should see a "Set the time and date" in the middle of the screen. &nbsp;Click on that and change the time and time zone to your current time and time zone.</div>
+I tried to go through setup and add my Microsoft account but I got the very cryptic "0x800b0101" error. &nbsp;Thanks to <a href="https://windowsitpro.com/windows-81/one-fix-0x800b0101-error-when-setting-microsoft-account-new-surface">this blog post</a>, I decided to try setting the clock. &nbsp;To do that, swipe in from the right, type the word "date" (or "time") in the search box and hit the search button. &nbsp;Tap "Settings" below the search and you should see a "Set the time and date" in the middle of the screen. &nbsp;Click on that and change the time and time zone to your current time and time zone.</div>
 <div>
 <br /></div>
 <div>
@@ -40,7 +40,7 @@ That worked and after that change I could update to my Microsoft account.</div>
 <div>
 <br /></div>
 <div>
-Why the clock did not automatically update, I do not know. &nbsp;Windows 8 is configured by default to update its time from an internet time source, and I did have a good connection to the internet at this point. &nbsp;(For those of you interested in a technical explanation, my colleague is probably right when he ways "I'm guessing your time thing is related to how long your Surface sat in the box and <a href="http://blogs.msdn.com/b/oldnewthing/archive/2010/11/05/10086404.aspx" target="_blank">this</a>.")</div>
+Why the clock did not automatically update, I do not know. &nbsp;Windows 8 is configured by default to update its time from an internet time source, and I did have a good connection to the internet at this point. &nbsp;(For those of you interested in a technical explanation, my colleague is probably right when he ways "I'm guessing your time thing is related to how long your Surface sat in the box and <a href="https://devblogs.microsoft.com/oldnewthing/20101105-00/?p=12343" target="_blank">this</a>.")</div>
 <div>
 <br /></div>
 <div>

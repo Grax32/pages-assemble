@@ -69,7 +69,7 @@ About Extension Methods</h4>
 </div>
 <div class="NoSpacing">
 In order to implement that clause as an extention method, we
-first need an extension methods class. &nbsp;(Additional reading on extension methods at <a href="http://www.hanselman.com/blog/HowDoExtensionMethodsWorkAndWhyWasANewCLRNotRequired.aspx">Scott Hanselman's blog</a>) &nbsp;Like any extension methods class, this class must be a static
+first need an extension methods class. &nbsp;(Additional reading on extension methods at <a href="https://www.hanselman.com/blog/HowDoExtensionMethodsWorkAndWhyWasANewCLRNotRequired.aspx">Scott Hanselman's blog</a>) &nbsp;Like any extension methods class, this class must be a static
 class. &nbsp;It doesn't matter what the class is called but when you want to use that extension method anywhere in your project, that class must be in the same project or in the references and the namespace of your extension methods class must be in a using statement in the file your use the extensions in.<br />
 <br />
 <h4>

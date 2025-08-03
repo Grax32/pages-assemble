@@ -70,7 +70,7 @@ Here is why I don't like to do it this way.<br />
 <br />
 <br />
 <ol>
-<li>Too many ways to screw up the declaration. &nbsp;"<i>If neither GLOBAL or LOCAL is specified, the default is controlled by the setting of the default to local cursor database option</i>" -- <a href="http://msdn.microsoft.com/en-us/library/ms180169.aspx">MSDN</a></li>
+<li>Too many ways to screw up the declaration. &nbsp;"<i>If neither GLOBAL or LOCAL is specified, the default is controlled by the setting of the default to local cursor database option</i>" -- <a href="https://msdn.microsoft.com/en-us/library/ms180169.aspx">MSDN</a></li>
 <li>"OPEN" statement. &nbsp;Picking nits but I don't want to bother opening it, I just want to use it.</li>
 <li>"CLOSE" and "DEALLOCATE". &nbsp;I am under the impression that since this is defined as a local cursor with a local variable, that everything will be closed and cleaned up when procedure or function completes, but not CLOSEing and DEALLOCATEing your cursors is a bad habit to get into, so I would still always specify these 2 commands when using a CURSOR</li>
 </ol>

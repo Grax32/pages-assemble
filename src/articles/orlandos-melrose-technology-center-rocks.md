@@ -27,7 +27,7 @@ h3.post-title{
 
 <div class="separator" style="clear: both; text-align: center;">
 <a href="//1.bp.blogspot.com/-aLyRBLcTd9o/U2AGNSqd-MI/AAAAAAAAl9Y/KFIOb_tyb6Y/s1600/WP_20140426_001.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="//1.bp.blogspot.com/-aLyRBLcTd9o/U2AGNSqd-MI/AAAAAAAAl9Y/KFIOb_tyb6Y/s1600/WP_20140426_001.jpg" height="200" width="112" /></a></div>
-I just returned from my vacation to Orlando, Florida. &nbsp;This time we did things a little different and skipped the Disney and Universal parks. &nbsp;We visited some museums, Leu Gardens, Gatorland, the Merritt Island Manatee Overlook, and a couple of beaches. &nbsp;But one of the most exciting things we saw was the <a href="http://tic.ocls.info/">Dorothy Lumley Melrose Technology Center</a>.<br />
+I just returned from my vacation to Orlando, Florida. &nbsp;This time we did things a little different and skipped the Disney and Universal parks. &nbsp;We visited some museums, Leu Gardens, Gatorland, the Merritt Island Manatee Overlook, and a couple of beaches. &nbsp;But one of the most exciting things we saw was the <a href="https://tic.ocls.info/">Dorothy Lumley Melrose Technology Center</a>.<br />
 <br />
 The Melrose Technology Center takes up 26,000 square feet on the 2nd floor of the Orlando Public Library. &nbsp;It is for the free use of residents of Orange County (except Winter Garden and Maitland)*. &nbsp;This is almost enough reason to pick up and move to Orange County.<br />
 <br />
@@ -52,9 +52,9 @@ Video Studio / Audio Studio</h3>
 <a href="https://4.bp.blogspot.com/-wW0hJK-Kg2A/U2ALLSSWZ1I/AAAAAAAAl98/qa-6GRh5p4I/s1600/WP_20140426_018.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-wW0hJK-Kg2A/U2ALLSSWZ1I/AAAAAAAAl98/qa-6GRh5p4I/s1600/WP_20140426_018.jpg" height="180" width="320" /></a></div>
 The 2 most exciting spaces to me were the video studio and the audio studio.<br />
 <br />
-The <a href="http://tic.ocls.info/audio/">audio studio</a> is not ready for use yet but is a state-of-the-art audio recording studio with enough space to record an entire choir. &nbsp;While I have done plenty of live audio work, I am not an expert in professional audio recording equipment but it appears to have everything you need to create a completely professional recording.<br />
+The <a href="https://tic.ocls.info/audio/">audio studio</a> is not ready for use yet but is a state-of-the-art audio recording studio with enough space to record an entire choir. &nbsp;While I have done plenty of live audio work, I am not an expert in professional audio recording equipment but it appears to have everything you need to create a completely professional recording.<br />
 <br />
-Unfortunately, I was not able to visit the <a href="http://tic.ocls.info/video/">video studio</a> as someone was filming. &nbsp;I have an idea of the size of the room and it is pretty good sized. &nbsp;It would be suitable for quite a few types of productions. &nbsp;One wall is a green screen and they have already worked out the proper lighting to use it as such. &nbsp;With their professional video, audio, and lighting equipment, I imagine you could create very high quality output.<br />
+Unfortunately, I was not able to visit the <a href="https://tic.ocls.info/video/">video studio</a> as someone was filming. &nbsp;I have an idea of the size of the room and it is pretty good sized. &nbsp;It would be suitable for quite a few types of productions. &nbsp;One wall is a green screen and they have already worked out the proper lighting to use it as such. &nbsp;With their professional video, audio, and lighting equipment, I imagine you could create very high quality output.<br />
 <br />
 <h3>
 Fabrication Lab (3D Printers and Electronics)</h3>
@@ -74,7 +74,7 @@ If you haven't done 3D printing before, I recommend taking the class so that you
 Photo Studio</h3>
 <div class="separator" style="clear: both; text-align: center;">
 <a href="//1.bp.blogspot.com/-Ss52YwjwqMc/U2BBzDocgoI/AAAAAAAAl-s/sRoRS6UeGWY/s1600/WP_20140426_010.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="//1.bp.blogspot.com/-Ss52YwjwqMc/U2BBzDocgoI/AAAAAAAAl-s/sRoRS6UeGWY/s1600/WP_20140426_010.jpg" height="112" width="200" /></a></div>
-The <a href="http://tic.ocls.info/photo/">photo studio</a> is sized appropriately for professional-looking photo shoots and photo editing. &nbsp;You could probably do some minor video shooting as well but it doesn't have the same noise reducing materials as the video studio. &nbsp;You are, however, in a library and the ambient noise level seems pretty low.<br />
+The <a href="https://tic.ocls.info/photo/">photo studio</a> is sized appropriately for professional-looking photo shoots and photo editing. &nbsp;You could probably do some minor video shooting as well but it doesn't have the same noise reducing materials as the video studio. &nbsp;You are, however, in a library and the ambient noise level seems pretty low.<br />
 <br />
 The studio is fully equipped with lights, camera, and backdrops.<br />
 <h3>

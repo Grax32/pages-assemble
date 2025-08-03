@@ -6,7 +6,7 @@ tags:
  - software
 category: archive
 ---
-I downloaded Danial Palme's wonderful <a href="http://www.palmmedia.de/blog/2011/8/30/ioc-container-benchmark-performance-comparison">IoC Container Benchmark</a>&nbsp;and added an adapter for my own fFastInjector. &nbsp;As you can see from the results, fFastInjector is clearly faster than all other IoC containers, even managing to beat Hiro, Munq, and Funq by a significant margin.<br />
+I downloaded Danial Palme's wonderful <a href="https://www.palmmedia.de/blog/2011/8/30/ioc-container-benchmark-performance-comparison">IoC Container Benchmark</a>&nbsp;and added an adapter for my own fFastInjector. &nbsp;As you can see from the results, fFastInjector is clearly faster than all other IoC containers, even managing to beat Hiro, Munq, and Funq by a significant margin.<br />
 <br />
 It is also tinier than TinyIOC. &nbsp;In fact, the only smaller IoC container of those I tested against was MicroSliver at 12 kb versus fFastInjector at 14kb.<br />
 <br />

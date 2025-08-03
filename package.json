@@ -10,7 +10,7 @@
     "dev": "node scripts/check-port.js 8081 && eleventy --serve --port=8081 --watch",
     "dev:auto-port": "eleventy --serve --port=8081 --watch",
     "start": "npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --detectOpenHandles --forceExit --runInBand --testTimeout=30000"
   },
   "files": [
     "src/**/*",
@@ -32,6 +32,9 @@
   },
   "devDependencies": {
     "prettier": "^3.2.4",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1",
+    "jest": "^29.7.0",
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^2.6.7"
   }
 }

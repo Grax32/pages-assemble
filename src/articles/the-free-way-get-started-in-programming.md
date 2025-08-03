@@ -9,7 +9,7 @@ category: tech
 ---
 <h3>
 Introduction</h3>
-At our recent Code Camp, our keynote speaker was <a href="http://www.irisclasson.com/">Iris Classon</a>. &nbsp;She told us the inspiring tale of her journey into software development. &nbsp;Several of her stories struck a chord with me and reminded me of some of my own experiences. &nbsp;One part that stood out in particular was how she responded when she got her first exposure to computers and computer programming and how she really took to it and things just made sense.<br />
+At our recent Code Camp, our keynote speaker was <a href="https://www.irisclasson.com/">Iris Classon</a>. &nbsp;She told us the inspiring tale of her journey into software development. &nbsp;Several of her stories struck a chord with me and reminded me of some of my own experiences. &nbsp;One part that stood out in particular was how she responded when she got her first exposure to computers and computer programming and how she really took to it and things just made sense.<br />
 <br />
 In my case, I was a little third-grader exposed to a Commodore Vic-20 for the first time when someone donated one to my school. &nbsp;The Vic-20 came with a manual that detailed Commodore Basic and that was all I needed to get started programming.<br />
 <br />
@@ -18,7 +18,7 @@ I am of the opinion that there are a number of people out there with an aptitude
 If you are at all curious about programming, I recommend downloading Visual Studio Express 2013 for Web and getting started.<br />
 <h3>
 Download, Install Visual Studio Express and Configure VisualStudio.com</h3>
-If you are a student, I recommend signing up with&nbsp;<a href="https://www.dreamspark.com/">Microsoft's Dreamspark project</a>&nbsp;and downloading the free Visual Studio 2013 Professional from them, but otherwise, just use free&nbsp;<a href="http://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx">Visual Studio Express 2013 for Web</a><br />
+If you are a student, I recommend signing up with&nbsp;<a href="https://www.dreamspark.com/">Microsoft's Dreamspark project</a>&nbsp;and downloading the free Visual Studio 2013 Professional from them, but otherwise, just use free&nbsp;<a href="https://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx">Visual Studio Express 2013 for Web</a><br />
 <br />
 When you start the download for Visual Studio Express, it will ask you to log in with your live.com account. &nbsp;If you already have one, go ahead and use that, otherwise create a new one.<br />
 <br />

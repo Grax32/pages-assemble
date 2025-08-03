@@ -10,7 +10,7 @@ systemTags:
  - page:csharp
 category: tech
 ---
-I wanted to point out this little hidden coding gem from Ted Neward's column in the <a href="http://msdn.microsoft.com/en-us/magazine/dn781363.aspx">September 2014 issue of MSDN Magazine</a>.<br />
+I wanted to point out this little hidden coding gem from Ted Neward's column in the <a href="https://msdn.microsoft.com/en-us/magazine/dn781363.aspx">September 2014 issue of MSDN Magazine</a>.<br />
 
 <br />
 <pre style="border: 0px; font-family: inherit; font-size: 13px; line-height: 16.0016021728516px; outline: 0px; padding: 0px; white-space: pre-wrap;"><code class="xml" style="border: 0px; font-family: inherit; font-style: inherit; font-weight: inherit; margin: 0px; outline: 0px; padding: 0px;"><span style="background-color: white; color: #333333;">&nbsp; if (locAmt == remAmt)

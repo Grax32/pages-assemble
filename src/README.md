@@ -3,7 +3,7 @@
     outputType: "text"
 }
 ---
-# Grax32.com - Modern Static Site
+# [Grax32.com](https://grax32.com) - Modern Static Site
 
 A professional static site built with [11ty (Eleventy)](https://11ty.dev), featuring a fine art gallery, technical articles, and project showcase.
 

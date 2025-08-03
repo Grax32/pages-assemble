@@ -14,4 +14,4 @@ HLSL shaders, effects, or pixel shaders are all referring to basically the same 
 <br />
 The shader (DepthMerge.fx) gets textures for the color and depth of each frame it is combining.  It compares the depths to find the closest pixel and returns the color for that pixel.<br />
 <br />
-Download the Code Camp version of VideoMagic from <a href="http://graxark.codeplex.com/releases/view/84267">http://graxark.codeplex.com/releases/view/84267</a>
+Download the Code Camp version of VideoMagic from <a href="https://graxark.codeplex.com/releases/view/84267">https://graxark.codeplex.com/releases/view/84267</a>

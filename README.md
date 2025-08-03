@@ -38,7 +38,7 @@ _site/                 # Generated site (output)
 
 - **Source**: `src/`
 - **Output**: `_site/`
-- **Dev Server**: http://localhost:8081/
+- **Dev Server**: https://localhost:8081/
 - **Template Engine**: Nunjucks + Markdown
 - **Static Assets**: Automatically copied from `src/content/` and `src/images/`
 

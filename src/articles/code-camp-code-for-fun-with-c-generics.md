@@ -8,7 +8,7 @@ tags:
  - codecamp
 category: archive
 ---
-The source code from my Nebraska Code Camp presentation on Fun with C# Generics can be downloaded from&nbsp;<a href="http://sdrv.ms/119gDMP">http://sdrv.ms/119gDMP</a>. &nbsp;This is a Visual Studio 2012 project.<br />
+The source code from my Nebraska Code Camp presentation on Fun with C# Generics can be downloaded from <span class="outdated-link">https://sdrv.ms/119gDMP</span>. &nbsp;This is a Visual Studio 2012 project.<br />
 <br />
 The example code is in the Unit Tests project.<br />
 <br />
