@@ -1,25 +1,30 @@
 ---
-layout: pages
 title: Art • Science • Love
 hidebyline: true
 category: home
 systemTags: never-archive
 ---
+{% extends "../src/_layouts/pages.njk" %}
+{% set tags = ['art', 'science', 'love'] %}
+{% set hidefooter = true %}
+{% set hidebyline = true %}
 
-<style>
-    b {
-        font-weight: bolder;
-        size: 3rem;
-    }
+{% block head %}
+    <style>
+        b {
+            font-weight: bolder;
+            size: 3rem;
+        }
 
-    i.fas {
-        size: 3rem;
-    }
+        i.fas {
+            size: 3rem;
+        }
 
-    p {
-        size: 2rem;
-    }
-</style>
+        p {
+            size: 2rem;
+        }
+    </style>
+{% endblock %}
 
 <p onclick="location.href='/art/dreamwalker-gallery/'">
   <div style="display: flex;flex-direction: row;justify-content: start; flex-wrap: wrap;">

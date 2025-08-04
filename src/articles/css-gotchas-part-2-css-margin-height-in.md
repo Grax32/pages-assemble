@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/understanding-css-margins
-alternateRoute: /2014/06/css-gotchas-part-2-css-margin-height-in.html
+permalink: /articles/understanding-css-margins/
+alternatepermalink: /2014/06/css-gotchas-part-2-css-margin-height-in.html
 title: CSS Margin Height In Percent is Calculated Using the Width of the Parent Object
 tags:
  - coding

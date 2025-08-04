@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2013/07/response-to-ffastinjector-concerns.html
+permalink: /2013/07/response-to-ffastinjector-concerns.html
 title: Response to fFastInjector concerns
 tags:
  - software

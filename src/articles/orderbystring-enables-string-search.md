@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2015/01/orderbystring-enables-string-search.html
+permalink: /2015/01/orderbystring-enables-string-search.html
 title: OrderByString enables string search parameters in LINQ OrderBy clauses
 tags:
  - software

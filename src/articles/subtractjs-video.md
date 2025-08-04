@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2014/01/subtractjs-video.html
+permalink: /2014/01/subtractjs-video.html
 title: SubtractJS - The Video
 tags:
  - software

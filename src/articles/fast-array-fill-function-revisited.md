@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2013/06/fast-array-fill-function-revisited.html
+permalink: /2013/06/fast-array-fill-function-revisited.html
 title: Fast array fill function (revisited)
 tags:
  - coding

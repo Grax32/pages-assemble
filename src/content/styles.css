@@ -824,13 +824,23 @@ p:hover {
 }
 
 .outdated-link {
-  color: #999;
+  color: #ccccff;
   text-decoration: line-through;
   cursor: not-allowed;
 }
 
 .outdated-link::after {
-  content: " (outdated link)";
-  font-size: 0.8em;
-  color: #999;
+  content: " [outdated link]";
+  display: inline-block;
+  text-decoration: none !important;
+  font-style: italic;
+  font-size: 1em;
+  color: black;
+  margin: .5em;
+}
+
+.outdated-link code {
+  all: inherit;
+  font: inherit;
+  color: inherit;
 }

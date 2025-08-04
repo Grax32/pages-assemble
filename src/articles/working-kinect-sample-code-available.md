@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/archive/2013/kinect-sample-code.html
-alternateRoutes: [/2012/02/working-kinect-sample-code-available.html]
+permalink: /articles/archive/2013/kinect-sample-code.html
+
 title: Working Kinect sample code available
 tags:
  - coding

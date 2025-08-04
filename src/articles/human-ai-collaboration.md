@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /articles/human-ai-collaboration.html
+permalink: /articles/human-ai-collaboration.html
 title: Human-AI Collaboration in Modern Development
 tags: [ ai, collaboration, development, productivity, future-of-work ]
 category: tech

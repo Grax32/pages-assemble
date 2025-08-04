@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/archive/2013-announcing-ffastmapper-release-052.html
-alternateRoutes: [/2013/04/announcing-ffastmapper-release-052.html]
+permalink: /articles/archive/2013-announcing-ffastmapper-release-052.html
+
 title: Announcing fFastMapper release 0.5.2
 tags: [ software, ffastmapper ]
 category: archive

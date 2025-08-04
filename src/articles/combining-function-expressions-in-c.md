@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/combining-function-expressions-c-sharp.html
-alternateRoutes: [/2014/10/combining-function-expressions-in-c.html]
+permalink: /articles/combining-function-expressions-c-sharp.html
+
 title: Combining Function Expressions in C# using a ReplacementVisitor
 tags:
  - coding

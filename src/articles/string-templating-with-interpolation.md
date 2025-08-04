@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2014/10/string-templating-with-interpolation.html
+permalink: /2014/10/string-templating-with-interpolation.html
 title: String templating with Interpolation Format Provider
 tags:
  - coding

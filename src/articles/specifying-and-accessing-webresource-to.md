@@ -1,12 +1,12 @@
 ---
 layout: pages
-route: /2011/12/specifying-and-accessing-webresource-to.html
+permalink: /2011/12/specifying-and-accessing-webresource-to.html
 title: Specifying and using a WebResource to access embedded resources
 tags:
  - coding
 category: tech
 ---
-Adam Miller had a great <a href="https://blog.milrr.com/2011/12/aspnet-load-image-from-embedded.html#comment-form">post</a> on this blog about returning an embedded resource in an aspx page.  Since I have some experience with embedded resources, I wanted to share instructions to access embedded resources using the WebResource attribute.
+Adam Miller had a great <span class="outdated-link">`https://blog.milrr.com/2011/12/aspnet-load-image-from-embedded.html#comment-form`</span> post on this blog about returning an embedded resource in an aspx page.  Since I have some experience with embedded resources, I wanted to share instructions to access embedded resources using the WebResource attribute.
 
 If you specify the embedded resource as an web resource, you can access it using a special url.
 

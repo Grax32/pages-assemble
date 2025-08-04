@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/future-proof-your-switch-statements
-alternateRoute: /2014/09/safely-deal-with-impossible.html
+permalink: /articles/future-proof-your-switch-statements/
+alternatepermalink: /2014/09/safely-deal-with-impossible.html
 title: Future Proof Your Switch Statements
 tags:
  - coding

@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/archive/2013/announcing-hypermapper-release-05.html
-alternateRoutes: [/2013/04/announcing-hypermapper-release-05.html]
+permalink: /articles/archive/2013/announcing-hypermapper-release-05.html
+
 title: Announcing fFastMapper release 0.5
 tags: [ software ]
 category: archive
@@ -15,20 +15,19 @@ fFastMapper&nbsp;is a component to map property values between objects. <br />
 <br />
 <ul>
 <li>Maps are statically defined based upon the types being mapped</li>
-<ul>
-<li>Only a single map exists in the system for mapping object X to object Y</li>
-</ul>
+<li> &middot;Only a single map exists in the system for mapping object X to object Y</li>
 <li>By default, mappings are bi-directional</li>
 <li>Mappings of complex objects fail silently (no null reference exceptions)</li>
 <li>Mapping actions are performed very quickly</li>
-<ul>
-<li>In my tests of a simple object map run one million times, AutoMapper took about 38 times as long to complete the mapping</li>
+<li>
+    &middot; In my tests of a simple object map run one million times, AutoMapper took about 38 times as long to complete the mapping<br/>
+<br/>
 <table><tbody>
 <tr><td style="border-bottom: lightgrey 1px solid; border-left: lightgrey 1px solid; border-right: lightgrey 1px solid; border-top: lightgrey 1px solid; text-align: right;">AutoMapper took&nbsp;342,179,880 ticks</td></tr>
 <tr><td style="border-bottom: lightgrey 1px solid; border-left: lightgrey 1px solid; border-right: lightgrey 1px solid; border-top: lightgrey 1px solid; text-align: right;">fFastMapper&nbsp;took&nbsp;8,836,513 ticks</td></tr>
 <tr><td style="border-bottom: lightgrey 1px solid; border-left: lightgrey 1px solid; border-right: lightgrey 1px solid; border-top: lightgrey 1px solid; text-align: right;">Direct coded function took&nbsp;7,004,837 ticks</td></tr>
 </tbody></table>
-</ul>
+</li>
 <li>Auto-initializes map on first use based on name and type matching.</li>
 </ul>
 <b>Usage:</b><br />

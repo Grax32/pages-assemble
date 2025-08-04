@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2014/06/t-sql-foreach-style-loop.html
+permalink: /2014/06/t-sql-foreach-style-loop.html
 title: T-SQL ForEach style loop
 tags:
  - coding

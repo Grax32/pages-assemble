@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2013/12/subtractjs-update.html
+permalink: /2013/12/subtractjs-update.html
 title: SubtractJS Update
 tags:
  - software

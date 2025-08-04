@@ -1,5 +1,6 @@
 ---
 {
+    layout: "base",
     outputType: "text"
 }
 ---

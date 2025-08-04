@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2014/04/the-free-way-get-started-in-programming.html
+permalink: /2014/04/the-free-way-get-started-in-programming.html
 title: The Free Way To Get Started In Programming 
 tags:
  - coding
@@ -18,7 +18,7 @@ I am of the opinion that there are a number of people out there with an aptitude
 If you are at all curious about programming, I recommend downloading Visual Studio Express 2013 for Web and getting started.<br />
 <h3>
 Download, Install Visual Studio Express and Configure VisualStudio.com</h3>
-If you are a student, I recommend signing up with&nbsp;<a href="https://www.dreamspark.com/">Microsoft's Dreamspark project</a>&nbsp;and downloading the free Visual Studio 2013 Professional from them, but otherwise, just use free&nbsp;<a href="https://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx">Visual Studio Express 2013 for Web</a><br />
+If you are a student, I recommend signing up with&nbsp;<span class="outdated-link">`https://www.dreamspark.com/`</span>Microsoft's Dreamspark project</a>&nbsp;and downloading the free Visual Studio 2013 Professional from them, but otherwise, just use free <span class="outdated-link">`https://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx`</span>>Visual Studio Express 2013 for Web<br />
 <br />
 When you start the download for Visual Studio Express, it will ask you to log in with your live.com account. &nbsp;If you already have one, go ahead and use that, otherwise create a new one.<br />
 <br />

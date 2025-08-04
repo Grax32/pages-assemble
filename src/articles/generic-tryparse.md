@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/generic-tryparse.html
-alternateRoute: /2013/04/generic-tryparse.html
+permalink: /articles/generic-tryparse.html
+alternatepermalink: /2013/04/generic-tryparse.html
 title: Generic TryParse, convert string to any type
 tags:
  - coding

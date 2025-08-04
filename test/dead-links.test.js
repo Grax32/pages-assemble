@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 const fetch = require('node-fetch');
+const assert = require('assert');
 
 const https = require('https');
 const agent = new https.Agent({ keepAlive: false });
@@ -108,7 +109,11 @@ describe('Dead Links Test', () => {
         }
     });
 
-    it.only('should not have dead remote links', async () => {
+    it("should warn about remote links testing", () => {
+        assert.fail("Remote link testing is disabled by default.");
+    });
+
+    it.skip('should not have dead remote links', async () => {
         const linkCheckPromises = [];
 
         for (const { href } of netLinks) {

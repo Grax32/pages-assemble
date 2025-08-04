@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/coding/css-box-model
-alternateRoutes: [/2014/06/css-gotchas-part-1.html]
+permalink: /articles/coding/css-box-model/
+
 title: Understanding the CSS Box Model
 tags:
  - coding

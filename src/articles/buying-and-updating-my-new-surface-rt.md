@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /archive/2013/buying-and-updating-my-new-surface-rt.html
-alternateRoutes: [/2013/12/buying-and-updating-my-new-surface-rt.html]
+permalink: /archive/2013/buying-and-updating-my-new-surface-rt.html
+
 title: Buying and Updating My New Surface RT Tablet
 tags:
  - opinion

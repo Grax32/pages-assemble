@@ -1,7 +1,6 @@
 ---
 layout: pages
-route: /articles/understanding-hiding-in-c-sharp
-alternateRoutes: [/2017/12/why-hiding-is-bad]
+permalink: /articles/understanding-hiding-in-c-sharp/
 title: Understanding Hiding in C#
 tags: 
  - coding

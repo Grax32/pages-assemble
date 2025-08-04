@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2012/03/kinect-sample-code-from-code-camp.html
+permalink: /2012/03/kinect-sample-code-from-code-camp.html
 title: Kinect sample code from Code Camp
 tags:
  - coding
@@ -14,4 +14,4 @@ HLSL shaders, effects, or pixel shaders are all referring to basically the same 
 <br />
 The shader (DepthMerge.fx) gets textures for the color and depth of each frame it is combining.  It compares the depths to find the closest pixel and returns the color for that pixel.<br />
 <br />
-Download the Code Camp version of VideoMagic from <a href="https://graxark.codeplex.com/releases/view/84267">https://graxark.codeplex.com/releases/view/84267</a>
+Download the Code Camp version of VideoMagic from <span class="outdated-link">`https://graxark.codeplex.com/releases/view/84267`</span>

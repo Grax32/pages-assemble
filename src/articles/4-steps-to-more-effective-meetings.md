@@ -1,7 +1,6 @@
 ---
 layout: pages
-route: /articles/4-steps-to-more-effective-meetings.html
-alternateRoutes: [/2015/06/4-steps-to-more-effective-meetings.html]
+permalink: /articles/4-steps-to-more-effective-meetings.html
 title: 4 Steps to More Effective Meetings
 tags:
   - team

@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2013/05/linking-db2-to-ms-sql-server.html
+permalink: /2013/05/linking-db2-to-ms-sql-server.html
 title: Linking db2 to MS Sql Server
 tags:
  - coding

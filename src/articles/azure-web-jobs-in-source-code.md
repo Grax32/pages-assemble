@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /articles/azure-web-jobs-in-source-code
+permalink: /articles/azure-web-jobs-in-source-code/
 title: Azure Web Jobs in Source Code
 tags: 
  - coding

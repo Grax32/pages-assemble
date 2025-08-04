@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/on-success.html
-alternateRoute: /2014/01/on-success.html
+permalink: /articles/on-success.html
+alternatepermalink: /2014/01/on-success.html
 title: On Success
 tags:
  - life
