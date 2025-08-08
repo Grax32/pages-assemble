@@ -10,7 +10,7 @@ Two of my favorite features in Windows Phone 8.1 are the hands-free texting and 
 <br />
 With hands-free texting, I can reply to an incoming text without touching or looking at my phone. &nbsp;I can send a new text by pressing two buttons and then not touching or looking at the phone after that. &nbsp;This is great for when I am driving or working on a project like assembling a bookshelf or cooking.<br />
 <br />
-<iframe allowfullscreen="" frameborder="0" height="315" src="//www.youtube.com/embed/6BuRBf_aQ-w" width="420"></iframe>
+<iframe title="video" allowfullscreen="" frameheight="315" src="//www.youtube.com/embed/6BuRBf_aQ-w" width="420"></iframe>
 
 <br />
 <br />

@@ -9,7 +9,7 @@ category: archive
 fFastInjector 1.0.1 is here! &nbsp;(I skipped the 1.0.0 release since that programs with that version number always seems to have problems.)<br />
 <br />
 <h3>
-<a href="//4.bp.blogspot.com/-M10eCQqSx5E/VLuuv9044mI/AAAAAAAAmOk/a8_n99f4Ooc/s1600/IMG_3941crop.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="//4.bp.blogspot.com/-M10eCQqSx5E/VLuuv9044mI/AAAAAAAAmOk/a8_n99f4Ooc/s1600/IMG_3941crop.jpg" height="200" width="191" /></a>Awesome! What is it?</h3>
+<a href="//4.bp.blogspot.com/-M10eCQqSx5E/VLuuv9044mI/AAAAAAAAmOk/a8_n99f4Ooc/s1600/IMG_3941crop.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img src="//4.bp.blogspot.com/-M10eCQqSx5E/VLuuv9044mI/AAAAAAAAmOk/a8_n99f4Ooc/s1600/IMG_3941crop.jpg" height="200" width="191" /></a>Awesome! What is it?</h3>
 <div>
 fFastInjector is one of the fastest and smallest dependency injectors available for .NET. &nbsp;It is available as a portable class library that targets .NET framework 4, Windows 8/8.1, and Windows Phone 8.1 or as a file that compiles into your dll.<br />
 <br />
@@ -24,19 +24,25 @@ How do I Start Using It?</h3>
 <div>
 fFastInjector comes in three NuGet packages</div>
 <div>
-<ul>
-<li>fFastInjector-Embedded</li>
-<ul>
-<li>This package add the Injector.cs file to your project so that compiles into your dll instead of creating a dependency on an outside dll</li>
-</ul>
+    <ul>
+    <li>fFastInjector-Embedded</li>
+    <li>
+    <ul>
+    <li>This package add the Injector.cs file to your project so that compiles into your dll instead of creating a dependency on an outside dll</li>
+    </ul>
+</li>
 <li>fFastInjector-MVC</li>
-<ul>
-<li>This package installs fFastInjector for MVC 5 projects. &nbsp;You will need to add a call to&nbsp;<span style="color: #253340; font-family: monospace; font-size: 11px; line-height: 19.0176963806152px;">fFastInjector.fFastInjectorControllerFactory.RegisterControllerFactory();&nbsp;</span>into your Application_Start method in global.asax</li>
-</ul>
+<li>
+    <ul>
+    <li>This package installs fFastInjector for MVC 5 projects. &nbsp;You will need to add a call to&nbsp;<span style="color: #253340; font-family: monospace; font-size: 11px; line-height: 19.0176963806152px;">fFastInjector.fFastInjectorControllerFactory.RegisterControllerFactory();&nbsp;</span>into your Application_Start method in global.asax</li>
+    </ul>
+</li>
 <li>fFastInjector</li>
-<ul>
-<li>Installs the dll as a reference in your project</li>
-</ul>
+<li>
+    <ul>
+    <li>Installs the dll as a reference in your project</li>
+    </ul>
+</li>
 </ul>
 <div>
 <h3>

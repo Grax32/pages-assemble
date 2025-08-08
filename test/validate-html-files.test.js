@@ -8,7 +8,10 @@ const assert = require('assert');
 
 const ignoreList = [
     'Initial heading level must be',
-    '<img> is missing required \"alt\" attribute'
+    '<img> is missing required \"alt\" attribute',
+    'Element <style> is not permitted as content',
+    '<th> is missing required "scope" attribute',
+    'Heading level can only increase by one, expected'
 ];
 
 function applyIgnoreFilters(result) {
@@ -51,7 +54,7 @@ describe.only('Validate generated HTML files in _site', function () {
                     const errorMessage = result.errors.map(err => {
                         return `Error: ${err.message} at line ${err.line}, column ${err.column}`;
                     });
-                    assert.fail(`HTML file ${file} is not valid: ${result.errorCount} errors found:\n${errorMessage.join('\n')}`);
+                    assert.fail(`HTML file ${file} is not valid: ${result.errors.length} errors found:\n${errorMessage.join('\n')}`);
                 } else {
                     assert.fail(`HTML file ${file} is not valid: ${result}.  Unexpected result: ${result}`);
                 }

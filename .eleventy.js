@@ -295,7 +295,7 @@ module.exports = async function(eleventyConfig) {
     },
     
     // Configure template formats
-    templateFormats: ["md", "njk", "html", "js"],
+    templateFormats: ["md", "njk", "html", "11ty.js"],
     
     // Configure template engines
     markdownTemplateEngine: "njk",

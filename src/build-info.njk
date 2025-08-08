@@ -1,10 +1,9 @@
 ---
-layout: pages
 title: Build Information
 ---
+{% extends "../src/_layouts/base.njk" %}
 
-
-{% block head %}
+{% block headers %}
 <style>
 .build-info {
   max-width: 800px;
@@ -65,7 +64,7 @@ title: Build Information
 </style>
 {% endblock %}
 
-
+{% block body %}
 <div class="build-info">
   <h1>Build Information</h1>
   <h2>🔧 System Information</h2>
@@ -98,3 +97,4 @@ title: Build Information
   </details>
 </div>
 
+{% endblock %}

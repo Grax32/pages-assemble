@@ -6,11 +6,10 @@ tags:
  - coding
 category: tech
 ---
-My current project has a need to read and update DB2 data in addition to MS Sql Server data.  The primary server is Sql Server, DB2 is additional.
-
-Our selected way of doing this is by creating a linked server on Sql Server (2008 R2). &nbsp;As you will see, there are plenty of things I don't know, so if you know fixes or workarounds, I would appreciate a comment.<br />
+<p>My current project has a need to read and update DB2 data in addition to MS Sql Server data.  The primary server is Sql Server, DB2 is additional.</p>
+<p>Our selected way of doing this is by creating a linked server on Sql Server (2008 R2).  As you will see, there are plenty of things I don't know, so if you know fixes or workarounds, I would appreciate a comment.<br />
 <br />
-<b>Pros:</b><br />
+<b>Pros:</b><br /></p>
 <ul>
 <li>All data access via one driver, no messing with the DB2 drivers on the development machines or the web servers&nbsp;</li>
 <li>Stored procedures can operate against data in either database or both databases</li>
@@ -24,7 +23,7 @@ Our selected way of doing this is by creating a linked server on Sql Server (200
 </ul>
 <div>
 <div style="text-align: left;">
-<a imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img alt="" border="0" height="213" src="https://4.bp.blogspot.com/-oplnjJV3cfg/UYOuFFf-IDI/AAAAAAAAljo/HM0G8getifo/s320/IMG_2623-web.jpg" title="No.  It doesn't really relate to the story.  It is just a photo I took that I am proud of." width="320" /></a></div>
+<a imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img alt="" style="border:0;" height="213" src="https://4.bp.blogspot.com/-oplnjJV3cfg/UYOuFFf-IDI/AAAAAAAAljo/HM0G8getifo/s320/IMG_2623-web.jpg" title="No.  It doesn't really relate to the story.  It is just a photo I took that I am proud of." width="320" /></a></div>
 We recently upgraded our DB2 environment from 9.x to 10.0. &nbsp;There are differences between the 2 in a linked server environment. &nbsp;I mention this because my observations below are based on the 10.0 environment and you may not have the same experience if you use a different version or a different driver for the link.</div>
 <div>
 <br /></div>
@@ -49,7 +48,6 @@ When I refer to parameterized values, this could be in a stored procedure using 
 <br />
 <pre>declare <span style="color: green;">@Id</span> int
 select <span style="color: green;">@Id</span> = 1
-
 select * from <span style="color: green;">db2server.CompanyData.MySchema.MyDb2Table</span> where <span style="color: green;">Id</span> = <span style="color: green;">@Id</span></pre>
 <br />
 <h4>

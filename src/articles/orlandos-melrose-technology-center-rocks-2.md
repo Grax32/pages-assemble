@@ -24,7 +24,7 @@ h3.post-title{
 </style>
 
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//1.bp.blogspot.com/-aLyRBLcTd9o/U2AGNSqd-MI/AAAAAAAAl9Y/KFIOb_tyb6Y/s1600/WP_20140426_001.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="//1.bp.blogspot.com/-aLyRBLcTd9o/U2AGNSqd-MI/AAAAAAAAl9Y/KFIOb_tyb6Y/s1600/WP_20140426_001.jpg" height="200" width="112" /></a></div>
+<a href="//1.bp.blogspot.com/-aLyRBLcTd9o/U2AGNSqd-MI/AAAAAAAAl9Y/KFIOb_tyb6Y/s1600/WP_20140426_001.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="//1.bp.blogspot.com/-aLyRBLcTd9o/U2AGNSqd-MI/AAAAAAAAl9Y/KFIOb_tyb6Y/s1600/WP_20140426_001.jpg" height="200" width="112" /></a></div>
 I just returned from my vacation to Orlando, Florida. &nbsp;This time we did things a little different and skipped the Disney and Universal parks. &nbsp;We visited some museums, Leu Gardens, Gatorland, the Merritt Island Manatee Overlook, and a couple of beaches. &nbsp;But one of the most exciting things we saw was the <a href="https://tic.ocls.info/">Dorothy Lumley Melrose Technology Center</a>.<br />
 <br />
 The Melrose Technology Center takes up 26,000 square feet on the 2nd floor of the Orlando Public Library. &nbsp;It is for the free use of residents of Orange County (except Winter Garden and Maitland)*. &nbsp;This is almost enough reason to pick up and move to Orange County.<br />
@@ -34,7 +34,7 @@ Multi-Use Space</h3>
 <div class="separator" style="clear: both; text-align: center;">
 </div>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-7DTYEC7vAEo/U2AI2F9BcYI/AAAAAAAAl9w/mQrWa8nxZYQ/s1600/WP_20140426_003.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="https://4.bp.blogspot.com/-7DTYEC7vAEo/U2AI2F9BcYI/AAAAAAAAl9w/mQrWa8nxZYQ/s1600/WP_20140426_003.jpg" height="112" width="200" /></a></div>
+<a href="https://4.bp.blogspot.com/-7DTYEC7vAEo/U2AI2F9BcYI/AAAAAAAAl9w/mQrWa8nxZYQ/s1600/WP_20140426_003.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img src="https://4.bp.blogspot.com/-7DTYEC7vAEo/U2AI2F9BcYI/AAAAAAAAl9w/mQrWa8nxZYQ/s1600/WP_20140426_003.jpg" height="112" width="200" /></a></div>
 When you enter the technology center, you see a vast open space that is sparsely populated with groupings of chairs, work areas, work tables, computer stations, etc. &nbsp;Each area is outfitted with power connections in the tables or popping up from the floor. &nbsp;One section is configured for meetings with a podium and chairs, another is configured with screens that can display a single computer or up to four at once.<br />
 <br />
 These spaces are intended for various types of collaboration including meetings, group work sessions, brainstorming, etc. &nbsp;The classroom is used for classes on things like Adobe Creative Suite, using the simulators, working with Gimp.<br />
@@ -47,7 +47,7 @@ And there is still lots more.<br />
 <h3>
 Video Studio / Audio Studio</h3>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-wW0hJK-Kg2A/U2ALLSSWZ1I/AAAAAAAAl98/qa-6GRh5p4I/s1600/WP_20140426_018.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-wW0hJK-Kg2A/U2ALLSSWZ1I/AAAAAAAAl98/qa-6GRh5p4I/s1600/WP_20140426_018.jpg" height="180" width="320" /></a></div>
+<a href="https://4.bp.blogspot.com/-wW0hJK-Kg2A/U2ALLSSWZ1I/AAAAAAAAl98/qa-6GRh5p4I/s1600/WP_20140426_018.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="https://4.bp.blogspot.com/-wW0hJK-Kg2A/U2ALLSSWZ1I/AAAAAAAAl98/qa-6GRh5p4I/s1600/WP_20140426_018.jpg" height="180" width="320" /></a></div>
 The 2 most exciting spaces to me were the video studio and the audio studio.<br />
 <br />
 The <a href="https://tic.ocls.info/audio/">audio studio</a> is not ready for use yet but is a state-of-the-art audio recording studio with enough space to record an entire choir. &nbsp;While I have done plenty of live audio work, I am not an expert in professional audio recording equipment but it appears to have everything you need to create a completely professional recording.<br />
@@ -57,13 +57,13 @@ Unfortunately, I was not able to visit the <a href="https://tic.ocls.info/video/
 <h3>
 Fabrication Lab (3D Printers and Electronics)</h3>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//1.bp.blogspot.com/-Vdor19FI1Dk/U2A6Ugd0YOI/AAAAAAAAl-M/2_grTmtUGBU/s1600/WP_20140426_016.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="//1.bp.blogspot.com/-Vdor19FI1Dk/U2A6Ugd0YOI/AAAAAAAAl-M/2_grTmtUGBU/s1600/WP_20140426_016.jpg" height="112" width="200" /></a></div>
+<a href="//1.bp.blogspot.com/-Vdor19FI1Dk/U2A6Ugd0YOI/AAAAAAAAl-M/2_grTmtUGBU/s1600/WP_20140426_016.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="//1.bp.blogspot.com/-Vdor19FI1Dk/U2A6Ugd0YOI/AAAAAAAAl-M/2_grTmtUGBU/s1600/WP_20140426_016.jpg" height="112" width="200" /></a></div>
 The fabrication lab is used to teach classes on 3D printing, creating circuit boards, and electronics. <br />
 <br />
 In my opinion, the stars of this room, though, are the two 3D printers. &nbsp;They tell me that the MakerBot: Replicator 2 can print items up to about the size of a football and the CubeX Duo can print items up to about the size of a basketball. &nbsp;In addition, the CubeX Duo is a dual extruder, so you can create multi-colored items.<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//1.bp.blogspot.com/-mrxmQI7obuk/U2A-nowu_SI/AAAAAAAAl-g/succDsK1Fec/s1600/WP_20140426_014-crop.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="//1.bp.blogspot.com/-mrxmQI7obuk/U2A-nowu_SI/AAAAAAAAl-g/succDsK1Fec/s1600/WP_20140426_014-crop.jpg" height="195" width="200" /></a></div>
+<a href="//1.bp.blogspot.com/-mrxmQI7obuk/U2A-nowu_SI/AAAAAAAAl-g/succDsK1Fec/s1600/WP_20140426_014-crop.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img src="//1.bp.blogspot.com/-mrxmQI7obuk/U2A-nowu_SI/AAAAAAAAl-g/succDsK1Fec/s1600/WP_20140426_014-crop.jpg" height="195" width="200" /></a></div>
 The library will, currently, print items for library cardholders at cost. &nbsp;You create the 3D file and send it to them. &nbsp;They tell you how much it will cost and, if you approve, create the object for you to pick up. &nbsp;An example that they showed me was a cookie cutter that they said would cost about $2.50 to print. &nbsp;Not the best price for a cookie cutter but pretty cool if it was a cookie cutter (or other item) that you designed yourself.<br />
 <br />
 If you haven't done 3D printing before, I recommend taking the class so that you can understand how 3D printing works, how to optimize your designs, and what to expect from the whole 3D printing process.<br />
@@ -71,7 +71,7 @@ If you haven't done 3D printing before, I recommend taking the class so that you
 <h3>
 Photo Studio</h3>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//1.bp.blogspot.com/-Ss52YwjwqMc/U2BBzDocgoI/AAAAAAAAl-s/sRoRS6UeGWY/s1600/WP_20140426_010.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="//1.bp.blogspot.com/-Ss52YwjwqMc/U2BBzDocgoI/AAAAAAAAl-s/sRoRS6UeGWY/s1600/WP_20140426_010.jpg" height="112" width="200" /></a></div>
+<a href="//1.bp.blogspot.com/-Ss52YwjwqMc/U2BBzDocgoI/AAAAAAAAl-s/sRoRS6UeGWY/s1600/WP_20140426_010.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="//1.bp.blogspot.com/-Ss52YwjwqMc/U2BBzDocgoI/AAAAAAAAl-s/sRoRS6UeGWY/s1600/WP_20140426_010.jpg" height="112" width="200" /></a></div>
 The <a href="https://tic.ocls.info/photo/">photo studio</a> is sized appropriately for professional-looking photo shoots and photo editing. &nbsp;You could probably do some minor video shooting as well but it doesn't have the same noise reducing materials as the video studio. &nbsp;You are, however, in a library and the ambient noise level seems pretty low.<br />
 <br />
 The studio is fully equipped with lights, camera, and backdrops.<br />
@@ -80,13 +80,13 @@ More Audio</h3>
 <div class="separator" style="clear: both; text-align: center;">
 </div>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//1.bp.blogspot.com/-MvY80CPhuCA/U2BECF6CnII/AAAAAAAAl_A/O_TR9V_hJH8/s1600/WP_20140426_012-crop.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="//1.bp.blogspot.com/-MvY80CPhuCA/U2BECF6CnII/AAAAAAAAl_A/O_TR9V_hJH8/s1600/WP_20140426_012-crop.jpg" height="156" width="200" /></a></div>
+<a href="//1.bp.blogspot.com/-MvY80CPhuCA/U2BECF6CnII/AAAAAAAAl_A/O_TR9V_hJH8/s1600/WP_20140426_012-crop.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img src="//1.bp.blogspot.com/-MvY80CPhuCA/U2BECF6CnII/AAAAAAAAl_A/O_TR9V_hJH8/s1600/WP_20140426_012-crop.jpg" height="156" width="200" /></a></div>
 These things look like portable jail cells but they are small recording booths. &nbsp;These are appropriate for recording a single user speaking, singing, or playing an instrument. &nbsp;They contain the digital recording equipment and the booth serves to keep out outside noises. &nbsp;Some of the possible uses are recording an e-book, podcast, or voice-over or singing alone or with an instrument.<br />
 <br />
 <h3>
 More Video</h3>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//2.bp.blogspot.com/-YHKVpJYyI2k/U2BF9o-hB7I/AAAAAAAAl_M/AWLMLoaqLmU/s1600/WP_20140426_024.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="//2.bp.blogspot.com/-YHKVpJYyI2k/U2BF9o-hB7I/AAAAAAAAl_M/AWLMLoaqLmU/s1600/WP_20140426_024.jpg" height="112" width="200" /></a></div>
+<a href="//2.bp.blogspot.com/-YHKVpJYyI2k/U2BF9o-hB7I/AAAAAAAAl_M/AWLMLoaqLmU/s1600/WP_20140426_024.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="//2.bp.blogspot.com/-YHKVpJYyI2k/U2BF9o-hB7I/AAAAAAAAl_M/AWLMLoaqLmU/s1600/WP_20140426_024.jpg" height="112" width="200" /></a></div>
 There are also a couple of video production suites. &nbsp;These are rooms that can be used to edit video in a more collaborative setting. &nbsp;The workstations mentioned earlier can also be used for editing video, but they are in a shared space where you have to be sensitive about the needs of the other users. &nbsp;In the editing suite, you can turn up the audio or bring in additional people to advice or comment on the editing process.<br />
 <br />
 <br />

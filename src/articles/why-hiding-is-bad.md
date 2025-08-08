@@ -21,7 +21,7 @@ but many times we ignore it.  But what does it really mean?
 
 Working from the code sample below
 
-<iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/7S6IFf" frameborder="0"></iframe>
+<iframe title="fiddle" width="100%" height="475" src="https://dotnetfiddle.net/Widget/7S6IFf" style="border: 0"></iframe>
 
 If you follow the recommended methods of using virtual and override when you have methods of the same name on the base and the derived class, you find that no matter what the type you get the same output.
 
