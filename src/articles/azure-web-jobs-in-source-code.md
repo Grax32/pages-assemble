@@ -71,12 +71,12 @@ Now we just need to publish to an Azure instance.
 
 After you publish this web site to the root instance of an Azure web app, visit&nbsp;`https://YOURSITE.scm.azurewebsites.net/azurejobs/#/jobs/triggered/MyEasyJob` to see that the job is recognized, is running, and to view the results.
 
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<table class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
 <tr><td style="text-align: center;"><a href="//4.bp.blogspot.com/-gVeaVDqggN8/VnVMsoL-R9I/AAAAAAAAmVM/dlf130N0PQQ/s1600/screenshot-webjob-details.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img height="269" src="//4.bp.blogspot.com/-gVeaVDqggN8/VnVMsoL-R9I/AAAAAAAAmVM/dlf130N0PQQ/s320/screenshot-webjob-details.png" width="320" /></a></td></tr>
 <tr><td class="tr-caption" style="text-align: center;">The results of a running WebJob</td></tr>
 </tbody></table>
 Click on a specific result to see the details of the job run.
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<table class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
 <tr><td style="text-align: center;"><a href="//2.bp.blogspot.com/-3vPoyXWPowQ/VnVNEEy-fCI/AAAAAAAAmVY/g24_Wvu9Kmw/s1600/screenshot-webjob-results.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img height="265" src="//2.bp.blogspot.com/-3vPoyXWPowQ/VnVNEEy-fCI/AAAAAAAAmVY/g24_Wvu9Kmw/s320/screenshot-webjob-results.png" width="320" /></a></td></tr>
 <tr><td class="tr-caption" style="text-align: center;">Detailed output from a specific run</td></tr>
 </tbody></table>

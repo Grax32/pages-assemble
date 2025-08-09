@@ -14,7 +14,7 @@ The goal here is to enable to string.Format to insert either property/field valu
 <br />
 The resulting InterpolationFormatProvider is a provider that is passed to the string.Format. &nbsp;The format strings look like "{0:FirstName}" to display the FirstName property or "{0:BirthDate:D}" to display the BirthDate datetime value using the "D" datetime formatting.<br />
 <br />
-<pre>var dates = new Dictionary<string datetime="">
+<pre>var dates = new Dictionary&lt;string, DateTime&gt;
 {
     { "Anniversary", new DateTime(2014,4,4) }
 };

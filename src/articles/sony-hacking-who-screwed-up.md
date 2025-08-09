@@ -25,7 +25,7 @@ In 2002, Bill Gates sent out the trustworthy computing memo. &nbsp;Microsoft had
 A similar memo would go far to empowering the Sony employees to make the necessary changes to make Sony a safe place to work and a safe haven for customer and employee data.<br />
 <h4>
 A Layered Approach</h4>
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"><tbody>
+<table class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"><tbody>
 <tr><td style="text-align: center;"><a href="https://3.bp.blogspot.com/-WqjkrZJ4H5k/VJQUdGbgnQI/AAAAAAAAmN0/-7bUk01jKLY/s1600/onion-security-file.png" imageanchor="1" style="clear: right; display: inline !important; float: right; margin-bottom: 1em; margin-left: 1em; text-align: center;"><img src="https://3.bp.blogspot.com/-WqjkrZJ4H5k/VJQUdGbgnQI/AAAAAAAAmN0/-7bUk01jKLY/s1600/onion-security-file.png" /></a></td></tr>
 <tr><td class="tr-caption" style="text-align: center;">Good security is<br />
 compared&nbsp;to an onion<br />

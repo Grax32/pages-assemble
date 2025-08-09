@@ -9,27 +9,28 @@ category: tech
 ---
 Here is a simple pattern that I came up with for executing a ForEach style loop in t-sql against a set of data in T-SQL.<br />
 <br />
-<pre style="background: #EEEEEE;">declare @Enumerator table (id int)
+
+```sql
+declare @Enumerator table (id int)
 
 insert into @Enumerator
 select UserId
 from Users
-where IsActive = 1  <span style="color: #38761d;">-- your query to select a list of ids goes here</span>
+where IsActive = 1  -- your query to select a list of ids goes here
 
 declare @id int
 
 while exists (select 1 from @Enumerator)
 begin
-     select top 1 @id = id from @Enumerator<span class="Apple-tab-span" style="white-space: pre;"> </span>
+     select top 1 @id = id from @Enumerator
 
      exec dbo.DoSomething @id
-     <span style="color: #38761d;">-- your code to do something for a particular id goes here</span>
+     -- your code to do something for a particular id goes here
 
      delete from @Enumerator where id = @id
 end
+```
 
-</pre>
-<br />
 First, I declared a table variable that I called&nbsp;@Enumerator. &nbsp;Then, I am inserting a list of UserId into the table variable.<br />
 <br />
 The loop is set to keep looping as long as there is at least a row of data in&nbsp;@Enumerator. &nbsp;Inside the loop, we first select the next id from&nbsp;@Enumerator. <br />
@@ -42,7 +43,9 @@ The loop continues until&nbsp;@Enumerator is out of rows and we're done.<br />
 Update: What About SQL Server Cursors?</h3>
 The same functionality can be accomplished using cursors in TSQL.<br />
 <br />
-<pre style="background: #EEEEEE;">declare @Enumerator CURSOR
+
+```sql
+declare @Enumerator CURSOR
 
 SET @Enumerator = CURSOR LOCAL FAST_FORWARD FOR
 select UserId
@@ -56,16 +59,15 @@ declare @id int
 while (1=1)
 begin
  FETCH NEXT FROM @Enumerator into @id
- if (@@FETCH_STATUS &lt;&gt; 0) break
+ if (@@FETCH_STATUS <> 0) break
  
  exec dbo.DoSomething @id
 end
 
 CLOSE @Enumerator
 DEALLOCATE @Enumerator
+```
 
-</pre>
-<br />
 Here is why I don't like to do it this way.<br />
 <br />
 <br />
