@@ -42,6 +42,6 @@ imgDescription:
 </style>
 {% for asset in collections.art %}
 <div class="image-container" style="background-color: {{ asset.data.backgroundColor or '#f0f0f0' }};" onclick="location.href='{{ asset.url }}'">
-    <img src='{{ asset.data.thumbPath }}' alt='{{ asset.data.title }}' />
+    <img src='{{ asset.data.thumbPath }}' alt='{{ asset.data.title | escape }}' />
 </div>
 {% endfor %}

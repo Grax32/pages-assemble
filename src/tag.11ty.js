@@ -22,12 +22,14 @@ module.exports = {
         return `/tag/${slug}/index.html`;
       },
       eleventyComputed: {
+        title(data) {
+          return `Posts tagged "${data.tag}"`;
+        },
         tagPosts(data) {
           return data.collections[data.tag] || [];
         }
       },
-      layout: "tag.njk",
-      title: data => data.tag ? `Posts tagged "${data.tag}"` : "Tag Page"
+      layout: "tag.njk"
     };
   }
 };
