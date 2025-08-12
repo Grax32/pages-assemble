@@ -218,8 +218,6 @@ module.exports = async function(eleventyConfig) {
       }
     });
     const tagList = Array.from(tagSet).sort();
-    // DEBUG: Output tagList to console
-    console.log("[DEBUG] tagList:", tagList);
     return tagList;
   });
 
@@ -238,8 +236,6 @@ module.exports = async function(eleventyConfig) {
        },
       url: `/tag/${slugify(tag)}/`
     }));
-    // DEBUG: Output allTags to console
-    console.log("[DEBUG] allTags:", allTags);
     return allTags;
   });
 
@@ -261,24 +257,11 @@ module.exports = async function(eleventyConfig) {
 
   // Global data (matching your dataStore)
   eleventyConfig.addGlobalData("softwareprojects", () => {
-    try {
       return require("./src/data/softwareprojects.json");
-    } catch (e) {
-      return [];
-    }
   });
 
   eleventyConfig.addGlobalData("sitedata", () => {
-    try {
       return require("./src/data/sitedata.json");
-    } catch (e) {
-      return [
-        { category: "tech", display: "Technology" },
-        { category: "team", display: "Teamwork" },
-        { category: "opinion", display: "Opinion" },
-        { category: "home", display: "Home" }
-      ];
-    }
   });
 
   // Add slug filter for clean tag URLs

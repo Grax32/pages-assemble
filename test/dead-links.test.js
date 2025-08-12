@@ -104,8 +104,18 @@ describe('Dead Links Test', () => {
         }
 
         if (deadLinks.length > 0) {
-            const msg = deadLinks.map(l => `Dead link: ${l.href} in file: ${l.filePath}`).join('\n');
-            throw new Error(msg);
+            const groupByFile = deadLinks.reduce((acc, link) => {
+                if (!acc[link.filePath]) {
+                    acc[link.filePath] = [];
+                }
+                acc[link.filePath].push(link);
+                return acc;
+            }, {});
+            const msg = Object.entries(groupByFile).map(([filePath, links]) => {
+                return `Dead links in file: ${filePath}\n` + links.map(l => `  - ${l.href}`).join('\n');
+            }).join('\n');
+
+            assert.fail(`Dead local links found:\n${msg}`);
         }
     });
 
