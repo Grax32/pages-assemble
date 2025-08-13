@@ -3,20 +3,8 @@
  * Creates individual pages for each tag showing all posts with that tag
  */
 
-/**
- * Converts a string to a URL-friendly slug
- * @param {string} str - The string to slugify
- * @returns {string} - URL-friendly slug
- */
-const slugify = str => str
-  .toString()
-  .toLowerCase()
-  .replace(/\s+/g, '-')        // Replace spaces with hyphens
-  .replace(/_/g, '-')          // Replace underscores with hyphens
-  .replace(/[^\w\-]+/g, '')    // Remove non-word characters except hyphens
-  .replace(/\-\-+/g, '-')      // Replace multiple hyphens with single hyphen
-  .replace(/^-+/, '')          // Remove leading hyphens
-  .replace(/-+$/, '');         // Remove trailing hyphens
+
+const { slugifyTag } = require("./utils/functions");
 
 module.exports = {
   data() {
@@ -28,8 +16,8 @@ module.exports = {
       },
       
       permalink(data) {
-        const slug = slugify(data.tag);
-        return `/tag/${slug}/index.html`;
+        const slug = slugifyTag(data.tag);
+        return `/tag/${slug}/`;
       },
       
       eleventyComputed: {

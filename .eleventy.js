@@ -1,5 +1,5 @@
 const markdownIt = require("markdown-it");
-const slugify = require("slugify");
+const { slugifyTag } = require("./src/utils/functions.js");
 
 module.exports = async function(eleventyConfig) {
   const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
@@ -35,7 +35,7 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addWatchTarget("src/**/*.css");
   eleventyConfig.addWatchTarget("src/**/*.js");
 
-  // Add layout aliases (matching your Vash template names)
+  // Add layout aliases
   eleventyConfig.addLayoutAlias("pages", "pages.njk");
   eleventyConfig.addLayoutAlias("base", "base.njk");
   eleventyConfig.addLayoutAlias("redirect", "redirect.njk");
@@ -234,7 +234,7 @@ module.exports = async function(eleventyConfig) {
         title: tag,
         count: collectionApi.getFilteredByTag(tag).length
        },
-      url: `/tag/${slugify(tag)}/`
+      url: `/tag/${slugifyTag(tag)}/`
     }));
     return allTags;
   });
@@ -265,7 +265,7 @@ module.exports = async function(eleventyConfig) {
   });
 
   // Add slug filter for clean tag URLs
-  eleventyConfig.addFilter("slug", str => slugify(str, { lower: true, strict: true }));
+  eleventyConfig.addFilter("slug", str => slugifyTag(str));
 
   return {
     // Configure directories (standard 11ty structure)

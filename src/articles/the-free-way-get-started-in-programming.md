@@ -75,7 +75,7 @@ On the check-in screen, enter a comment and click "Check in"<br />
 <br />
 <h3>
 Configure Azure Free Web Site</h3>
-Now go to <a href="https://manage.windowsazure.com/">https://manage.windowsazure.com/</a> and log in with your live account<br />
+Now go to <a href="https://portal.azure.com/">https://portal.azure.com/</a> and log in with your live account<br />
 Click on "Sign Up for Windows Azure" on the screen that says it cannot find subscription<br />
 Enter phone number and Click Send text message to verify you are you.<br />
 <br />

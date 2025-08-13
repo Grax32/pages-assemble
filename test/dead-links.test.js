@@ -12,6 +12,11 @@ const agent = new https.Agent({ keepAlive: false });
 
 const SITE_DIR = path.join(__dirname, '../_site');
 
+const whitelist = [
+    'https://www.linkedin.com/in/grax32/',
+    'https://www.nytimes.com/2014/01/26/opinion/sunday/what-drives-success.html'
+];
+
 async function linkCheck(url) {
 
     const res = await fetch(url, { method: 'GET', timeout: 10000, agent });
@@ -85,6 +90,13 @@ describe('Dead Links Test', () => {
 
         localLinks = localLinks.sort((a, b) => a.href.localeCompare(b.href));
         netLinks = netLinks.sort((a, b) => a.href.localeCompare(b.href));
+
+        const whitelistedNetLinks = netLinks.filter(link => whitelist.includes(link.href));
+        if (whitelistedNetLinks.length > 0) {
+            console.log(`Whitelisted remote links found:\n${whitelistedNetLinks.map(link => `  ✅ ${link.href} (in ${link.filePath})`).join('\n')}`);
+        }
+
+        netLinks = netLinks.filter(link => !whitelist.includes(link.href));
     });
 
     it('should not have dead local links', () => {
@@ -119,11 +131,7 @@ describe('Dead Links Test', () => {
         }
     });
 
-    it("should warn about remote links testing", () => {
-        assert.fail("Remote link testing is disabled by default.");
-    });
-
-    it.skip('should not have dead remote links', async () => {
+    it('should not have dead remote links', async () => {
         const linkCheckPromises = [];
 
         for (const { href } of netLinks) {

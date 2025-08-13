@@ -18,7 +18,7 @@ Version 1.0.1 features</h4>
 Version 1.0.1 adds generic resolution, so that if we specify IEnumerable&lt;T&gt; resolves to List&lt;T&gt;, and we ask for a resolution for type IEnumerable&lt;Cat&gt; we will get instance of List&lt;Cat&gt;.</div>
 <div>
 <br />
-Additionally, it adds <a href="https://ffastinjector.codeplex.com/wikipage?title=Generic%20Matching%20Configuration&amp;referringTitle=Documentation">constrained matching</a>, so that I can specify that IEnumerable&lt;Cat&gt; can return a different type than IEnumerable&lt;Dog&gt;.</div>
+Additionally, it adds constrained matching, so that I can specify that IEnumerable&lt;Cat&gt; can return a different type than IEnumerable&lt;Dog&gt;.</div>
 <h3>
 How do I Start Using It?</h3>
 <div>
