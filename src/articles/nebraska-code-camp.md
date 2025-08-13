@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /articles/archive/nebraska-code-camp-2012
+permalink: /articles/archive/nebraska-code-camp-2012/
 alternateRoutes:
  - /2012/03/nebraska-code-camp.html
 title: Nebraska Code Camp (2012)
@@ -15,5 +15,5 @@ I will be presenting at 1:45 PM in the Twilio Room (Avery Hall rm 106).<br />
 <br />
 Code camp is a free community-driven developer conference.  It will be Saturday, March 10 at University of Nebraska-Lincoln.<br />
 <br />
-Register at <a href="http://www.nebraskacodecamp.com/">http://www.nebraskacodecamp.com/</a>
-
+Register at <span class="outdated-link">`https://www.nebraskacodecamp.com/`</span>
+<a href="https://nebraskacode.amegala.com">(New Link)</a>

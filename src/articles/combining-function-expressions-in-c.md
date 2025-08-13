@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/combining-function-expressions-c-sharp.html
-alternateRoutes: [/2014/10/combining-function-expressions-in-c.html]
+permalink: /articles/combining-function-expressions-c-sharp.html
+
 title: Combining Function Expressions in C# using a ReplacementVisitor
 tags:
  - coding
@@ -17,37 +17,40 @@ When working with expressions, I often want to combine multiple expressions into
 ReplacementVisitor</h3>
 ReplacementVisitor is a memorable pattern* for C#. &nbsp;I first saw it somewhere on StackOverflow and I have started to use it extensively.<br />
 <br />
-<pre>&nbsp; &nbsp; &nbsp; &nbsp; public class ReplaceVisitor : ExpressionVisitor
-&nbsp; &nbsp; &nbsp; &nbsp; {
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Expression _left;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Expression _right;
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; public ReplaceVisitor(Expression left, Expression right)
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _left = left;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _right = right;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }
+```csharp
+public class ReplaceVisitor : ExpressionVisitor
+{
+    Expression _left;
+    Expression _right;
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; public override Expression Visit(Expression node)
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (node.Equals(_left))
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return _right;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }
+    public ReplaceVisitor(Expression left, Expression right)
+    {
+        _left = left;
+        _right = right;
+    }
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return base.Visit(node);
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }
-&nbsp; &nbsp; &nbsp; &nbsp; }
-</pre>
-<br />
+    public override Expression Visit(Expression node)
+    {
+        if (node.Equals(_left))
+        {
+            return _right;
+        }
+
+        return base.Visit(node);
+    }
+}
+```
+
 I usually like to pair this with a function that encapsulates the replacement operation<br />
 <br />
-<pre>&nbsp; &nbsp; &nbsp; &nbsp; public Expression Replace(Expression main, Expression current, Expression replacement)
-&nbsp; &nbsp; &nbsp; &nbsp; {
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return (new ReplaceVisitor(current, replacement)).Visit(main);
-&nbsp; &nbsp; &nbsp; &nbsp; }
 
-</pre>
+```csharp
+public Expression Replace(Expression main, Expression current, Expression replacement)
+{
+    return (new ReplaceVisitor(current, replacement)).Visit(main);
+}
+```
 
 <h3 style="font-family: 'Times New Roman'; white-space: normal;">
 Expression Composition</h3>
@@ -57,13 +60,17 @@ Now there are lots of different ways to combine function expressions but I am go
 <br />
 We will be combining 2 expressions where the output type of the first function expression is the input type of the second function expression. &nbsp;For example, our "f" function expression takes an string and returns a string and our "g" function also takes a string and returns a string. &nbsp;Other variations would work, but as long as the output of the first is the same type as the input to the second, we can composite the functions.<br />
 <br />
-<pre>Expression&lt;Func&lt;string, string&gt;&gt; f = z =&gt; z.Trim();
-Expression&lt;Func&lt;string, string&gt;&gt; g = v =&gt; v.ToUpper();
-</pre>
-<br />
-Goal:<br />
-<pre>  Expression&lt;Func&lt;string, string&gt;&gt; fg = z =&gt; z.Trim().ToUpper();
-</pre>
+
+```csharp
+Expression<Func<string, string>> f = z => z.Trim();
+Expression<Func<string, string>> g = v => v.ToUpper();
+```
+
+Goal:
+
+```csharp
+Expression<Func<string, string>> fg = z => z.Trim().ToUpper();
+```
 <br />
 1. &nbsp;Variable f is of type LambaExpression which has properties we care about of "Parameters" and "Body". <br />
 &nbsp; &nbsp; &nbsp;f.Parameters is an collection containing expression parameters, so it will have a length of one and a single parameter of type string with a name of "<span style="background-color: yellow;">z</span>"<br />
@@ -79,18 +86,22 @@ Note: Even if we had named both parameters the same, the parameter from the firs
 <span class="Apple-tab-span" style="white-space: pre;"> </span>function, we get an expression that looks like "<span style="background-color: yellow;">z.Trim().ToUpper()</span>".<br />
 <span class="Apple-tab-span" style="white-space: pre;"> </span>As you can see, that is the body of the goal function.<br />
 <br />
-3.&nbsp;Assign this to a variable of fgBody.<br />
-<pre>var fgBody = Replace(g.Body,g.Parameters[0],f.Body);
-</pre>
-<br />
-4. Create the goal function from the new body we created<br />
-<span class="Apple-tab-span" style="white-space: pre;"> </span>combined with the "z" parameter.<br />
-<pre>var resultExpression = Expression.Lambda&lt;Func&lt;string,string&gt;&gt;(fgBody,f.Parameters[0]);
+3.&nbsp;Assign this to a variable of fgBody.
+
+```csharp
+var fgBody = Replace(g.Body,g.Parameters[0],f.Body);
+```
+
+4. Create the goal function from the new body we created
+combined with the "z" parameter.
+
+```csharp
+var resultExpression = Expression.Lambda<Func<string,string>>(fgBody,f.Parameters[0]);
 // and compile it
 var func = resultExpression.Compile();
 // and test that it returns "ABCD" for an input of "    abcd    "
 Assert.AreEqual("ABCD", func("    abcd    "));
-</pre>
+```
 <span class="Apple-tab-span" style="white-space: pre;"> </span><br />
 <span class="Apple-tab-span" style="white-space: pre;"><br /></span>
 <br />

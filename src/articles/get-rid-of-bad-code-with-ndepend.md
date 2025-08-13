@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2014/04/get-rid-of-bad-code-with-ndepend.html
+permalink: /2014/04/get-rid-of-bad-code-with-ndepend.html
 title: Get Rid of Bad Code once and for all with nDepend 5
 tags:
  - opinion
@@ -10,8 +10,8 @@ category: archive
 <b>What is nDepend?</b></h3>
 <a href="//www.ndepend.com/">nDepend</a> is a tool used for analyzing a .NET code base. &nbsp;It can find issues, track metrics, and create reports.<br />
 <br />
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
-<tr><td style="text-align: center;"><a href="//www.ndepend.com/Res/CQLEdition2.PNG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="//www.ndepend.com/Res/CQLEdition2.PNG" height="362" width="400" /></a></td></tr>
+<table class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="//www.ndepend.com/Res/CQLEdition2.PNG" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img src="//www.ndepend.com/Res/CQLEdition2.PNG" height="362" width="400" /></a></td></tr>
 <tr><td class="tr-caption" style="text-align: center;">nDepend version 5</td></tr>
 </tbody></table>
 <br />

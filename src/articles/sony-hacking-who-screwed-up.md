@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2014/12/sony-hacking-who-screwed-up.html
+permalink: /2014/12/sony-hacking-who-screwed-up.html
 title: Sony Hacking - Who Screwed Up
 tags:
  - opinion
@@ -17,7 +17,7 @@ You can look at this security issue or that security oversight but those things 
 <br />
 True information security (and security in general) is a commitment and it is one that needs to be made at the highest levels of management. &nbsp;It doesn't matter how dedicated the various staff members are if they aren't getting the support from management.<br />
 <br />
-But instead of accepting responsibility and making changes,&nbsp;<a href="http://www.npr.org/blogs/thetwo-way/2014/12/19/371966188/ceo-says-sony-pictures-did-not-capitulate-is-exploring-options">Sony CEO, Michael Lynton says</a> "We were extremely well prepared for conventional cyber security...&nbsp;90 percent of all U.S. corporations would not have withstood the cyber attack that we experienced." &nbsp;Sony was <a href="http://fortune.com/global500/sony-105/">number 105</a> on the Fortune 500 list for 2014. &nbsp;Their security should be among the best in the world, not somewhere down in the 90 percent, sorta OK area. &nbsp;If that is what the CEO thinks, they still have a big problem and it won't get better until the mindsets change.<br />
+But instead of accepting responsibility and making changes,&nbsp;<a href="https://www.npr.org/blogs/thetwo-way/2014/12/19/371966188/ceo-says-sony-pictures-did-not-capitulate-is-exploring-options">Sony CEO, Michael Lynton says</a> "We were extremely well prepared for conventional cyber security...&nbsp;90 percent of all U.S. corporations would not have withstood the cyber attack that we experienced." &nbsp;Sony was number 105 on the Fortune 500 list for 2014. &nbsp;Their security should be among the best in the world, not somewhere down in the 90 percent, sorta OK area. &nbsp;If that is what the CEO thinks, they still have a big problem and it won't get better until the mindsets change.<br />
 <h4>
 Empowered from Above</h4>
 In 2002, Bill Gates sent out the trustworthy computing memo. &nbsp;Microsoft had become a laughingstock in the technical community for the lackluster security in Microsoft Windows. &nbsp;The memo and the ensuing actions turned Windows around and put Microsoft back in the security game.<br />
@@ -25,8 +25,8 @@ In 2002, Bill Gates sent out the trustworthy computing memo. &nbsp;Microsoft had
 A similar memo would go far to empowering the Sony employees to make the necessary changes to make Sony a safe place to work and a safe haven for customer and employee data.<br />
 <h4>
 A Layered Approach</h4>
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"><tbody>
-<tr><td style="text-align: center;"><a href="https://3.bp.blogspot.com/-WqjkrZJ4H5k/VJQUdGbgnQI/AAAAAAAAmN0/-7bUk01jKLY/s1600/onion-security-file.png" imageanchor="1" style="clear: right; display: inline !important; float: right; margin-bottom: 1em; margin-left: 1em; text-align: center;"><img border="0" src="https://3.bp.blogspot.com/-WqjkrZJ4H5k/VJQUdGbgnQI/AAAAAAAAmN0/-7bUk01jKLY/s1600/onion-security-file.png" /></a></td></tr>
+<table class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"><tbody>
+<tr><td style="text-align: center;"><a href="https://3.bp.blogspot.com/-WqjkrZJ4H5k/VJQUdGbgnQI/AAAAAAAAmN0/-7bUk01jKLY/s1600/onion-security-file.png" imageanchor="1" style="clear: right; display: inline !important; float: right; margin-bottom: 1em; margin-left: 1em; text-align: center;"><img src="https://3.bp.blogspot.com/-WqjkrZJ4H5k/VJQUdGbgnQI/AAAAAAAAmN0/-7bUk01jKLY/s1600/onion-security-file.png" /></a></td></tr>
 <tr><td class="tr-caption" style="text-align: center;">Good security is<br />
 compared&nbsp;to an onion<br />
 &nbsp;because it has<br />

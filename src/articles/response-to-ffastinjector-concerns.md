@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2013/07/response-to-ffastinjector-concerns.html
+permalink: /2013/07/response-to-ffastinjector-concerns.html
 title: Response to fFastInjector concerns
 tags:
  - software
@@ -8,7 +8,7 @@ category: tech
 ---
 Below are some comments from Daniel de Palme's IOC Container performance benchmark and my responses.<br />
 <br />
-<a href="http://www.palmmedia.de/blog/2011/8/30/ioc-container-benchmark-performance-comparison">http://www.palmmedia.de/blog/2011/8/30/ioc-container-benchmark-performance-comparison</a>&nbsp;Post #48<br />
+<a href="https://www.palmmedia.de/blog/2011/8/30/ioc-container-benchmark-performance-comparison">https://www.palmmedia.de/blog/2011/8/30/ioc-container-benchmark-performance-comparison</a>&nbsp;Post #48<br />
 <i><span style="background-color: white; color: #333333; font-family: Verdana, Arial, sans-serif; font-size: 14px; text-align: justify;"><br /></span></i>
 <i><span style="background-color: white; color: #333333; font-family: Verdana, Arial, sans-serif; font-size: 14px; text-align: justify;">Something to notice about fFastInjector is that it is static, and it is made pretty much only for speed by creating a static generic class for every registration instead of storing them in some sort of collection like all the other (it does use a collection - but only to map resolving by Type to the static generic class).&nbsp;</span></i><br />
 <i><br /></i>
@@ -31,7 +31,7 @@ Only the first resolution is resolved using Type. &nbsp;If you resolve a control
 <br style="background-color: white; color: #333333; font-family: Verdana, Arial, sans-serif; font-size: 14px; text-align: justify;" />
 <span style="background-color: white; color: #333333; font-family: Verdana, Arial, sans-serif; font-size: 14px; font-style: italic; text-align: justify;">So it performs very nice under the test conditions but in a real world scenario it is no different from the other fast containers, and doesn't have the same feature set and seems difficult (if not currently impossible) to extend with custom lifetime registrations (for example perRequest or perSession lifetimes for Web scenarios or perThread etc.).&nbsp;</span><br />
 <i><br /></i>
-fFastInjector is smaller than other containers and it is very compatible with different project types. &nbsp;In fact, I am very proud that with <a href="http://nuget.org/packages/fFastInjector-Embedded/">fFastInjector-embedded</a>, you can add a small injector to your code by just adding a source file.<br />
+fFastInjector is smaller than other containers and it is very compatible with different project types. &nbsp;In fact, I am very proud that with <a href="https://nuget.org/packages/fFastInjector-Embedded/">fFastInjector-embedded</a>, you can add a small injector to your code by just adding a source file.<br />
 <div style="text-align: start;">
 <br /></div>
 <div style="text-align: start;">

@@ -7,7 +7,6 @@
   <title>{{ title or titleonly }}</title>
   <link rel="stylesheet" href="/content/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <!--<script src='/content/framebuffer.js'></script>-->
 </head>
 <body>
 <div class="page-banner">
@@ -41,7 +40,7 @@
     <br />
 
     {% for tag in tags %}
-    <span> • <a class="tag-link" href="/tag/{{ tag }}">{{ tag }}</a></span>
+    <span> • <a class="tag-link" href="/tag/{{ tag | slug }}">{{ tag }}</a></span>
     {% endfor %}
     <br />
   </div>
@@ -61,6 +60,9 @@
 
   <div class="page-content page-general">
     {{ content }}
+
+    {% block body %}
+    {% endblock %}
 
     <p class="share-block">
       Share to:

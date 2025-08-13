@@ -822,3 +822,25 @@ p:hover {
     box-shadow: 0 0 2px black;
     border: 1px solid rgba(250, 240, 240, .8);
 }
+
+.outdated-link {
+  color: #ccccff;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.outdated-link::after {
+  content: " [outdated link]";
+  display: inline-block;
+  text-decoration: none !important;
+  font-style: italic;
+  font-size: 1em;
+  color: black;
+  margin: .5em;
+}
+
+.outdated-link code {
+  all: inherit;
+  font: inherit;
+  color: inherit;
+}

@@ -1,7 +1,6 @@
 ---
 layout: pages
-route: /articles/4-steps-to-more-effective-meetings.html
-alternateRoutes: [/2015/06/4-steps-to-more-effective-meetings.html]
+permalink: /articles/4-steps-to-more-effective-meetings.html
 title: 4 Steps to More Effective Meetings
 tags:
   - team
@@ -28,5 +27,5 @@ In order to have more effective meetings, I recommend the following:
 
 If you follow these rules, you will find your meetings more satisfying, more focused and more productive. Your attendees will be happier and more ready to involve themselves in the mission at hand.
 
-\* I pulled this list from [Rusty Divine](http://osmyn.com/)'s [PluralSight course](http://www.pluralsight.com/courses/agile-requirements-process-idea-to-minimum-viable-product) on Requirements Gathering. It closely matches the rules we have been using.
+\* I pulled this list from [Rusty Divine](https://osmyn.com/)'s [PluralSight course](https://www.pluralsight.com/courses/agile-requirements-process-idea-to-minimum-viable-product) on Requirements Gathering. It closely matches the rules we have been using.
 

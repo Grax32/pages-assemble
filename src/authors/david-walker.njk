@@ -5,6 +5,9 @@ hidefooter: true
 hidebyline: true
 ---
 
+{% extends "../_layouts/base.njk" %}
+
+{% block body %}
 <h1 class="row col-md-12">About David</h1>
 I am a Secure Software Consultant, a Certified Secure Software Lifecycle Professional (CSSLP), and a Professional
 Scrum Master. I believe in secure and reliable software and productive happy teams. I live in Orlando with my
@@ -14,7 +17,7 @@ lovely wife Lynn.
 
 <div class="row">
   <div class="col-md-4 col-sm-6">
-    <i class="fixed-width fab fa-github-alt"></i> <a href="http://github.com/Grax32">Github</a><br />
+    <i class="fixed-width fab fa-github-alt"></i> <a href="https://github.com/Grax32">Github</a><br />
     <i class="fixed-width fas fa-box"></i> <a href="https://www.nuget.org/profiles/Grax32">NuGet</a><br />
   </div>
   <div class="col-md-4 col-sm-6">
@@ -43,3 +46,5 @@ Certified Secure Software Lifecycle Professional (CSSLP) - ISC2.org<br />
   <li>Instagram - <a href="https://www.instagram.com/grax32/">Grax32 Art and Photography</a></li>
   <li>Instagram - <a href="https://www.instagram.com/clermontreve/">Clear Mountain Dreams</a></li>
 </ul>
+
+{% endblock %}

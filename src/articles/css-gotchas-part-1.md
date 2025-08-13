@@ -1,7 +1,7 @@
 ---
 layout: pages
-route: /articles/coding/css-box-model
-alternateRoutes: [/2014/06/css-gotchas-part-1.html]
+permalink: /articles/coding/css-box-model/
+
 title: Understanding the CSS Box Model
 tags:
  - coding
@@ -27,7 +27,7 @@ Here we have a simple box with 2 boxes inside of it.  Each of the boxes are 50% 
 </div>
 </div>
 <br />
-It looks kinda ugly because it overflows and displays some scroll bars. &nbsp;As it happens, the <a href="http://css-tricks.com/the-css-box-model/">CSS box model</a> puts the padding, border, and margin outside of the height and width measurements.  This means that height height of the inner box is really 50% of the outer box plus 1 pixel border on the top and bottom and a 2 pixel padding on the top and bottom.  For many applications, this can be easily fixed by adding the CSS tag "box-sizing: border-box;" which will tell the browser to include the padding and border inside of the 50% instead of adding it to the 50%.  Here is what that result looks like.<br />
+It looks kinda ugly because it overflows and displays some scroll bars. &nbsp;As it happens, the <a href="https://css-tricks.com/the-css-box-model/">CSS box model</a> puts the padding, border, and margin outside of the height and width measurements.  This means that height height of the inner box is really 50% of the outer box plus 1 pixel border on the top and bottom and a 2 pixel padding on the top and bottom.  For many applications, this can be easily fixed by adding the CSS tag "box-sizing: border-box;" which will tell the browser to include the padding and border inside of the 50% instead of adding it to the 50%.  Here is what that result looks like.<br />
 <br />
 <div style="background: gray; border: 1px solid black; box-sizing: border-box; height: 200px; overflow: auto; position: relative; width: 300px;">
 <div style="background: red; border: 1px solid black; box-sizing: border-box; height: 50%; margin: 0; padding: 2px; width: 100%;">
@@ -50,7 +50,7 @@ The margin is still always outside of the box.  If you want to also have a margi
 </div>
 </div>
 <br />
-If you look at this result you will notice it still doesn't look right.  That brings us to the bonus gotcha.  <a href="http://css-tricks.com/almanac/properties/m/margin/">Vertical Margin Collapsing</a>.  The margin between the 2 boxes is set to 2 pixels for each box.  Vertical Margin Collapsing turns that into 2 pixels total, instead of 2 pixels each by taking the maximum of the 2 margins (2px since they are both the same).<br />
+If you look at this result you will notice it still doesn't look right.  That brings us to the bonus gotcha.  <a href="https://css-tricks.com/almanac/properties/m/margin/">Vertical Margin Collapsing</a>.  The margin between the 2 boxes is set to 2 pixels for each box.  Vertical Margin Collapsing turns that into 2 pixels total, instead of 2 pixels each by taking the maximum of the 2 margins (2px since they are both the same).<br />
 <br />
 The quick fix is to adjust the formula to make the inner boxes a little taller to compensate.  Since the 2 margins of 2 pixels each collapsed into 1 margin of 2 pixels each, we need to make each of the inner boxes 1 pixel bigger.
 <br />

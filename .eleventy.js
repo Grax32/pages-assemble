@@ -1,5 +1,5 @@
 const markdownIt = require("markdown-it");
-const slugify = require("slugify");
+const { slugifyTag } = require("./src/utils/functions.js");
 
 module.exports = async function(eleventyConfig) {
   const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
@@ -21,6 +21,7 @@ module.exports = async function(eleventyConfig) {
     breaks: false,
     linkify: true
   });
+
   eleventyConfig.setLibrary("md", md);
 
   // Copy static files (matching your system's static patterns)
@@ -34,7 +35,7 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addWatchTarget("src/**/*.css");
   eleventyConfig.addWatchTarget("src/**/*.js");
 
-  // Add layout aliases (matching your Vash template names)
+  // Add layout aliases
   eleventyConfig.addLayoutAlias("pages", "pages.njk");
   eleventyConfig.addLayoutAlias("base", "base.njk");
   eleventyConfig.addLayoutAlias("redirect", "redirect.njk");
@@ -216,26 +217,26 @@ module.exports = async function(eleventyConfig) {
         item.data.tags.forEach(tag => tagSet.add(tag));
       }
     });
-    return Array.from(tagSet).sort();
+    const tagList = Array.from(tagSet).sort();
+    return tagList;
   });
 
   // All tags collection for the tags page
   eleventyConfig.addCollection("allTags", function(collectionApi) {
     const tagSet = new Set();
-
     collectionApi.getAll().forEach(item => {
       if (item.data.tags) {
         item.data.tags.forEach(tag => tagSet.add(tag));
       }
     });
-
-    return Array.from(tagSet).sort().map(tag => ({
+    const allTags = Array.from(tagSet).sort().map(tag => ({
       data: { 
         title: tag,
         count: collectionApi.getFilteredByTag(tag).length
        },
-      url: `/tag/${slugify(tag)}/`
+      url: `/tag/${slugifyTag(tag)}/`
     }));
+    return allTags;
   });
 
   // Archive collections by year
@@ -256,28 +257,15 @@ module.exports = async function(eleventyConfig) {
 
   // Global data (matching your dataStore)
   eleventyConfig.addGlobalData("softwareprojects", () => {
-    try {
       return require("./src/data/softwareprojects.json");
-    } catch (e) {
-      return [];
-    }
   });
 
   eleventyConfig.addGlobalData("sitedata", () => {
-    try {
       return require("./src/data/sitedata.json");
-    } catch (e) {
-      return [
-        { category: "tech", display: "Technology" },
-        { category: "team", display: "Teamwork" },
-        { category: "opinion", display: "Opinion" },
-        { category: "home", display: "Home" }
-      ];
-    }
   });
 
   // Add slug filter for clean tag URLs
-  eleventyConfig.addFilter("slug", str => slugify(str, { lower: true, strict: true }));
+  eleventyConfig.addFilter("slug", str => slugifyTag(str));
 
   return {
     // Configure directories (standard 11ty structure)
@@ -290,7 +278,7 @@ module.exports = async function(eleventyConfig) {
     },
     
     // Configure template formats
-    templateFormats: ["md", "njk", "html"],
+    templateFormats: ["md", "njk", "html", "11ty.js"],
     
     // Configure template engines
     markdownTemplateEngine: "njk",

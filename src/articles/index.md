@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /articles/index
+permalink: /articles/
 title: Articles
 category: 
 systemTags: never-archive

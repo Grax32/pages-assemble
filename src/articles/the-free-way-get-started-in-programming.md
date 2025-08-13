@@ -1,6 +1,6 @@
 ---
 layout: pages
-route: /2014/04/the-free-way-get-started-in-programming.html
+permalink: /2014/04/the-free-way-get-started-in-programming.html
 title: The Free Way To Get Started In Programming 
 tags:
  - coding
@@ -9,7 +9,7 @@ category: tech
 ---
 <h3>
 Introduction</h3>
-At our recent Code Camp, our keynote speaker was <a href="http://www.irisclasson.com/">Iris Classon</a>. &nbsp;She told us the inspiring tale of her journey into software development. &nbsp;Several of her stories struck a chord with me and reminded me of some of my own experiences. &nbsp;One part that stood out in particular was how she responded when she got her first exposure to computers and computer programming and how she really took to it and things just made sense.<br />
+At our recent Code Camp, our keynote speaker was <a href="https://www.irisclasson.com/">Iris Classon</a>. &nbsp;She told us the inspiring tale of her journey into software development. &nbsp;Several of her stories struck a chord with me and reminded me of some of my own experiences. &nbsp;One part that stood out in particular was how she responded when she got her first exposure to computers and computer programming and how she really took to it and things just made sense.<br />
 <br />
 In my case, I was a little third-grader exposed to a Commodore Vic-20 for the first time when someone donated one to my school. &nbsp;The Vic-20 came with a manual that detailed Commodore Basic and that was all I needed to get started programming.<br />
 <br />
@@ -18,7 +18,7 @@ I am of the opinion that there are a number of people out there with an aptitude
 If you are at all curious about programming, I recommend downloading Visual Studio Express 2013 for Web and getting started.<br />
 <h3>
 Download, Install Visual Studio Express and Configure VisualStudio.com</h3>
-If you are a student, I recommend signing up with&nbsp;<a href="https://www.dreamspark.com/">Microsoft's Dreamspark project</a>&nbsp;and downloading the free Visual Studio 2013 Professional from them, but otherwise, just use free&nbsp;<a href="http://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx">Visual Studio Express 2013 for Web</a><br />
+If you are a student, I recommend signing up with&nbsp;<span class="outdated-link">`https://www.dreamspark.com/`</span>Microsoft's Dreamspark project and downloading the free Visual Studio 2013 Professional from them, but otherwise, just use free <span class="outdated-link">`https://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx`</span>Visual Studio Express 2013 for Web<br />
 <br />
 When you start the download for Visual Studio Express, it will ask you to log in with your live.com account. &nbsp;If you already have one, go ahead and use that, otherwise create a new one.<br />
 <br />
@@ -32,7 +32,7 @@ If you are under a certain age, I think the age is 13, you need a parent's permi
 <div class="separator" style="clear: both; text-align: center;">
 </div>
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//1.bp.blogspot.com/-I-YmPJ8biz8/Uz18FNYUu1I/AAAAAAAAl7U/1tsrY2ftEOE/s1600/downloadVSExpress.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="//1.bp.blogspot.com/-I-YmPJ8biz8/Uz18FNYUu1I/AAAAAAAAl7U/1tsrY2ftEOE/s1600/downloadVSExpress.png" height="237" width="400" /></a></div>
+<a href="//1.bp.blogspot.com/-I-YmPJ8biz8/Uz18FNYUu1I/AAAAAAAAl7U/1tsrY2ftEOE/s1600/downloadVSExpress.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="//1.bp.blogspot.com/-I-YmPJ8biz8/Uz18FNYUu1I/AAAAAAAAl7U/1tsrY2ftEOE/s1600/downloadVSExpress.png" height="237" width="400" /></a></div>
 <br />
 <br />
 Create your Visual Studio Online account&nbsp;by entering a name for your account on the "few more details" screen. &nbsp;Say that we call our account "something" then the url for your account will be something.visualstudio.com. &nbsp;You will use this later on to tell Azure where to find the code for your web site.<br />
@@ -40,7 +40,7 @@ Create your Visual Studio Online account&nbsp;by entering a name for your accoun
 Create a new Visual Studio Online project from the something.visualstudio.com web page.<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://3.bp.blogspot.com/-LfchsorO98Q/Uz18DVzHKqI/AAAAAAAAl7Q/OmmcdLxAI0A/s1600/createNewProject.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-LfchsorO98Q/Uz18DVzHKqI/AAAAAAAAl7Q/OmmcdLxAI0A/s1600/createNewProject.png" height="185" width="400" /></a></div>
+<a href="https://3.bp.blogspot.com/-LfchsorO98Q/Uz18DVzHKqI/AAAAAAAAl7Q/OmmcdLxAI0A/s1600/createNewProject.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="https://3.bp.blogspot.com/-LfchsorO98Q/Uz18DVzHKqI/AAAAAAAAl7Q/OmmcdLxAI0A/s1600/createNewProject.png" height="185" width="400" /></a></div>
 <br />
 <br />
 Complete the install of Visual Studio Express but don't open it yet.<br />
@@ -69,13 +69,13 @@ Find the Solution Explorer window on the right side of your screen. &nbsp;Press 
 Right-click on the Solution and select "Check in"<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//1.bp.blogspot.com/-UsoNJOc5JGw/Uz2CNKuDpBI/AAAAAAAAl8Y/gqPH6IbZA30/s1600/vs-solution-view.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="//1.bp.blogspot.com/-UsoNJOc5JGw/Uz2CNKuDpBI/AAAAAAAAl8Y/gqPH6IbZA30/s1600/vs-solution-view.png" height="308" width="320" /></a></div>
+<a href="//1.bp.blogspot.com/-UsoNJOc5JGw/Uz2CNKuDpBI/AAAAAAAAl8Y/gqPH6IbZA30/s1600/vs-solution-view.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="//1.bp.blogspot.com/-UsoNJOc5JGw/Uz2CNKuDpBI/AAAAAAAAl8Y/gqPH6IbZA30/s1600/vs-solution-view.png" height="308" width="320" /></a></div>
 <br />
 On the check-in screen, enter a comment and click "Check in"<br />
 <br />
 <h3>
 Configure Azure Free Web Site</h3>
-Now go to <a href="https://manage.windowsazure.com/">https://manage.windowsazure.com/</a> and log in with your live account<br />
+Now go to <a href="https://portal.azure.com/">https://portal.azure.com/</a> and log in with your live account<br />
 Click on "Sign Up for Windows Azure" on the screen that says it cannot find subscription<br />
 Enter phone number and Click Send text message to verify you are you.<br />
 <br />
@@ -90,12 +90,12 @@ However, we want to set up a free web site, not a trial web site. &nbsp;Click "A
 Now you should see 2 Subscriptions. &nbsp;"Free Trial" and "Pay-As-You-Go"<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//2.bp.blogspot.com/-VGnlF-f8Ras/Uz2AU3qrpnI/AAAAAAAAl7o/tHtCCoSDPzw/s1600/subscriptionsPage.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="//2.bp.blogspot.com/-VGnlF-f8Ras/Uz2AU3qrpnI/AAAAAAAAl7o/tHtCCoSDPzw/s1600/subscriptionsPage.png" height="213" width="400" /></a></div>
+<a href="//2.bp.blogspot.com/-VGnlF-f8Ras/Uz2AU3qrpnI/AAAAAAAAl7o/tHtCCoSDPzw/s1600/subscriptionsPage.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="//2.bp.blogspot.com/-VGnlF-f8Ras/Uz2AU3qrpnI/AAAAAAAAl7o/tHtCCoSDPzw/s1600/subscriptionsPage.png" height="213" width="400" /></a></div>
 <br />
 Click "Portal" to set up your free web site.<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-gJQHZcvYH5I/Uz2AEz6qacI/AAAAAAAAl7g/8iZasgTGjiw/s1600/azure-main.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-gJQHZcvYH5I/Uz2AEz6qacI/AAAAAAAAl7g/8iZasgTGjiw/s1600/azure-main.png" height="250" width="400" /></a></div>
+<a href="https://4.bp.blogspot.com/-gJQHZcvYH5I/Uz2AEz6qacI/AAAAAAAAl7g/8iZasgTGjiw/s1600/azure-main.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="https://4.bp.blogspot.com/-gJQHZcvYH5I/Uz2AEz6qacI/AAAAAAAAl7g/8iZasgTGjiw/s1600/azure-main.png" height="250" width="400" /></a></div>
 <br />
 <br />
 Take the little tour if you wish, but then click "New" from the bottom left of the main page.<br />
@@ -103,10 +103,10 @@ Take the little tour if you wish, but then click "New" from the bottom left of t
 Select "COMPUTE", "WEB SITE", and "CUSTOM CREATE" to create your web site.<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://3.bp.blogspot.com/-Lv_ku5IXSu8/Uz2BIYrmEeI/AAAAAAAAl70/AbVAHXg_8KQ/s1600/newWebSite.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-Lv_ku5IXSu8/Uz2BIYrmEeI/AAAAAAAAl70/AbVAHXg_8KQ/s1600/newWebSite.png" height="92" width="320" /></a></div>
+<a href="https://3.bp.blogspot.com/-Lv_ku5IXSu8/Uz2BIYrmEeI/AAAAAAAAl70/AbVAHXg_8KQ/s1600/newWebSite.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="https://3.bp.blogspot.com/-Lv_ku5IXSu8/Uz2BIYrmEeI/AAAAAAAAl70/AbVAHXg_8KQ/s1600/newWebSite.png" height="92" width="320" /></a></div>
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-3SCjXB3f8j0/Uz2BX1jvoII/AAAAAAAAl78/WWkyXW8OeO8/s1600/azure-custom-create.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-3SCjXB3f8j0/Uz2BX1jvoII/AAAAAAAAl78/WWkyXW8OeO8/s1600/azure-custom-create.png" height="228" width="320" /></a></div>
+<a href="https://4.bp.blogspot.com/-3SCjXB3f8j0/Uz2BX1jvoII/AAAAAAAAl78/WWkyXW8OeO8/s1600/azure-custom-create.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="https://4.bp.blogspot.com/-3SCjXB3f8j0/Uz2BX1jvoII/AAAAAAAAl78/WWkyXW8OeO8/s1600/azure-custom-create.png" height="228" width="320" /></a></div>
 <br />
 <br />
 Enter the URL. &nbsp;something.azurewebsites.net &nbsp;Since this is a free web site, you will not be able to set the domain name to anything that azurewebsites.net, even if you own your own domain.<br />
@@ -126,7 +126,7 @@ Click the Check Mark to create<br />
 "Where is your source code?"<br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-cgcLn6nQpM0/Uz2Bnt16L8I/AAAAAAAAl8E/EIEjZzaF4HY/s1600/azure-where-is-your-source.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-cgcLn6nQpM0/Uz2Bnt16L8I/AAAAAAAAl8E/EIEjZzaF4HY/s1600/azure-where-is-your-source.png" height="263" width="400" /></a></div>
+<a href="https://4.bp.blogspot.com/-cgcLn6nQpM0/Uz2Bnt16L8I/AAAAAAAAl8E/EIEjZzaF4HY/s1600/azure-where-is-your-source.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="https://4.bp.blogspot.com/-cgcLn6nQpM0/Uz2Bnt16L8I/AAAAAAAAl8E/EIEjZzaF4HY/s1600/azure-where-is-your-source.png" height="263" width="400" /></a></div>
 <br />
 <br />
 Click "Visual Studio Online"<br />
@@ -143,7 +143,7 @@ The build and deploy process will kick off automatically and will probably take 
 <br />
 <br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="//2.bp.blogspot.com/-Bg4BQwdZl-A/Uz2CDwWN6UI/AAAAAAAAl8Q/i7byBfMfzzA/s1600/default-page.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="//2.bp.blogspot.com/-Bg4BQwdZl-A/Uz2CDwWN6UI/AAAAAAAAl8Q/i7byBfMfzzA/s1600/default-page.png" height="232" width="400" /></a></div>
+<a href="//2.bp.blogspot.com/-Bg4BQwdZl-A/Uz2CDwWN6UI/AAAAAAAAl8Q/i7byBfMfzzA/s1600/default-page.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img src="//2.bp.blogspot.com/-Bg4BQwdZl-A/Uz2CDwWN6UI/AAAAAAAAl8Q/i7byBfMfzzA/s1600/default-page.png" height="232" width="400" /></a></div>
 <br />
 <br />
 You now have Visual Studio Express 2013 for Web installed on your machine, your source code is safely housed at your VisualStudio.com site (you can add up to four additional users to your project), and your code is automatically built and deployed to your Azure web site whenever you check in. &nbsp;You are practically a professional developer already, all you need now is to learn to program.<br />
