@@ -1,6 +1,6 @@
-# Custom Static Site
+# pages-assemble (Angular)
 
-A static site generator built with 11ty (Eleventy).
+This repository has been migrated from Eleventy to Angular.
 
 ## Getting Started
 
@@ -8,43 +8,36 @@ A static site generator built with 11ty (Eleventy).
 # Install dependencies
 npm install
 
-# Start development server with live reload
+# Start development server (port 8081)
 npm run dev
 
 # Build for production
 npm run build
-
-# Clean build directory
-npm run clean
 ```
 
 ## Project Structure
 
 ```
-src/                    # Source files
-├── _layouts/          # Nunjucks layouts
-├── _includes/         # Reusable template includes  
-├── articles/          # Blog posts and articles
-├── content/           # CSS, JS, and other assets
-├── data/              # Global data files (JSON)
-├── images/            # Image assets
-└── ...                # Pages and other content
+src/                    # Angular app source
+├── app/                # Components and routed pages
+├── assets/             # Runtime assets (e.g., softwareprojects.json)
+├── index.html          # Angular host page
+├── main.ts             # Angular bootstrap
+└── styles.css          # Global styles
 
-_site/                 # Generated site (output)
-.eleventy.js          # Eleventy configuration
+legacy-src/             # Original Eleventy/Nunjucks content preserved for migration reference
+angular.json            # Angular CLI workspace configuration
 ```
 
-## Development
+## Current Migration Status
 
-- **Source**: `src/`
-- **Output**: `_site/`
-- **Dev Server**: https://localhost:8081/
-- **Template Engine**: Nunjucks + Markdown
-- **Static Assets**: Automatically copied from `src/content/` and `src/images/`
+- ✅ Angular shell, routing, and top-level pages (`/`, `/contact`, `/software-projects`) are migrated.
+- ✅ Software project data is loaded from JSON via Angular `HttpClient`.
+- ✅ Legacy static assets are still copied into the Angular build output.
+- ⏳ Remaining article/art detail routes can be migrated incrementally from `legacy-src/`.
 
 ## Scripts
 
-- `npm run dev` - Start development server with live reload
-- `npm run build` - Build production site  
-- `npm run clean` - Clean output directory
-- `npm run serve` - Serve built site (production)
+- `npm run dev` - Start Angular development server on port `8081`
+- `npm run build` - Build the Angular app
+- `npm run test` - Build in development mode as a CI sanity check
